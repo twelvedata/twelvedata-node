@@ -1,0 +1,13 @@
+{
+    "name": "twelvedata-node-examples",
+    "version": "1.0.0",
+    "license": "MIT",
+    "dependencies": {
+        "@twelvedata/twelvedata-node": "file:../"
+    },
+    "devDependencies": {
+        "@types/node": "^18.19.130",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3"
+    }
+}
