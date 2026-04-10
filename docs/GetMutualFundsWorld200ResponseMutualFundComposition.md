@@ -7,8 +7,8 @@ Composition of a mutual fund
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **majorMarketSectors** | [**Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner&gt;**](GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner.md) | Breakdown of the fund’s portfolio by major industry sectors and their respective weights | [optional] [default to undefined]
-**assetAllocation** | [**GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation**](GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation.md) |  | [optional] [default to undefined]
 **topHoldings** | [**Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner&gt;**](GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner.md) | Top holdings of the fund with their respective weights in the overall portfolio composition | [optional] [default to undefined]
+**assetAllocation** | [**GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation**](GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation.md) |  | [optional] [default to undefined]
 **bondBreakdown** | [**GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown**](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown.md) |  | [optional] [default to undefined]
 
 ## Example
@@ -18,8 +18,8 @@ import { GetMutualFundsWorld200ResponseMutualFundComposition } from '@twelvedata
 
 const instance: GetMutualFundsWorld200ResponseMutualFundComposition = {
     majorMarketSectors,
-    assetAllocation,
     topHoldings,
+    assetAllocation,
     bondBreakdown,
 };
 ```

@@ -11,6 +11,7 @@ import type { Configuration } from "./configuration";
 // @ts-ignore
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from "axios";
 import globalAxios from "axios";
+import { setupErrorInterceptor } from "./errors";
 
 export const BASE_PATH = "https://api.twelvedata.com".replace(/\/+$/, "");
 
@@ -38,6 +39,11 @@ export class BaseAPI {
       this.configuration = configuration;
       this.basePath = configuration.basePath ?? basePath;
     }
+    if (this.axios === globalAxios) {
+      this.axios = globalAxios.create();
+    }
+    this.axios.defaults.headers.common["X-API-Version"] = "last";
+    setupErrorInterceptor(this.axios);
   }
 }
 

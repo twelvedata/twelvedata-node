@@ -67,6 +67,13 @@ const { status, data } = await apiInstance.getMutualFundsFamily(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -151,6 +158,13 @@ const { status, data } = await apiInstance.getMutualFundsList(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -205,6 +219,13 @@ const { status, data } = await apiInstance.getMutualFundsType(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -271,6 +292,13 @@ const { status, data } = await apiInstance.getMutualFundsWorld(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -337,6 +365,13 @@ const { status, data } = await apiInstance.getMutualFundsWorldComposition(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -403,6 +438,13 @@ const { status, data } = await apiInstance.getMutualFundsWorldPerformance(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -469,6 +511,13 @@ const { status, data } = await apiInstance.getMutualFundsWorldPurchaseInfo(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -535,6 +584,13 @@ const { status, data } = await apiInstance.getMutualFundsWorldRatings(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -601,6 +657,13 @@ const { status, data } = await apiInstance.getMutualFundsWorldRisk(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -667,6 +730,13 @@ const { status, data } = await apiInstance.getMutualFundsWorldSummary(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -733,6 +803,13 @@ const { status, data } = await apiInstance.getMutualFundsWorldSustainability(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

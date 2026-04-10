@@ -103,6 +103,13 @@ const { status, data } = await apiInstance.getBalanceSheet(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -184,6 +191,13 @@ const { status, data } = await apiInstance.getBalanceSheetConsolidated(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -265,6 +279,13 @@ const { status, data } = await apiInstance.getCashFlow(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -346,6 +367,13 @@ const { status, data } = await apiInstance.getCashFlowConsolidated(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -427,6 +455,13 @@ const { status, data } = await apiInstance.getDividends(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -508,6 +543,13 @@ const { status, data } = await apiInstance.getDividendsCalendar(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -601,6 +643,13 @@ const { status, data } = await apiInstance.getEarnings(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -673,6 +722,13 @@ const { status, data } = await apiInstance.getEarningsCalendar(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -754,6 +810,13 @@ const { status, data } = await apiInstance.getIncomeStatement(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -835,6 +898,13 @@ const { status, data } = await apiInstance.getIncomeStatementConsolidated(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -898,6 +968,13 @@ const { status, data } = await apiInstance.getIpoCalendar(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -967,6 +1044,13 @@ const { status, data } = await apiInstance.getKeyExecutives(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1039,6 +1123,13 @@ const { status, data } = await apiInstance.getLastChanges(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1099,6 +1190,13 @@ const { status, data } = await apiInstance.getLogo(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1180,6 +1278,13 @@ const { status, data } = await apiInstance.getMarketCap(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1249,6 +1354,13 @@ const { status, data } = await apiInstance.getProfile(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1327,6 +1439,13 @@ const { status, data } = await apiInstance.getSplits(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1408,6 +1527,13 @@ const { status, data } = await apiInstance.getSplitsCalendar(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1477,6 +1603,13 @@ const { status, data } = await apiInstance.getStatistics(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1558,6 +1691,13 @@ const { status, data } = await apiInstance.pressReleasesListParameters(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** |  |  -  |
+|**400** |  |  -  |
+|**401** |  |  -  |
+|**403** |  |  -  |
+|**404** |  |  -  |
+|**414** |  |  -  |
+|**429** |  |  -  |
+|**500** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

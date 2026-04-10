@@ -35,18 +35,25 @@ Create `.env` file and add to it: `TWELVEDATA_API_KEY=your_api_key`.
 ### 3. Create `time-series.ts` script
 
 ```typescript
-import { MarketDataApi, CreateConfig } from "@twelvedata/twelvedata-node";
+import { MarketDataApi, CreateConfig, TwelvedataApiError } from "@twelvedata/twelvedata-node";
 
 const config = CreateConfig();
 const api = new MarketDataApi(config);
 
 async function main() {
-    const response = await api.getTimeSeries({
-        interval: "1day",
-        symbol: "AAPL",
-        outputsize: 5,
-    });
-    console.log(response.data);
+    try {
+        const response = await api.getTimeSeries({
+            interval: "1day",
+            symbol: "AAPL",
+            outputsize: 5,
+        });
+        console.log(response.data);
+    } catch (error) {
+        if (error instanceof TwelvedataApiError) {
+            console.error("API error:", error);
+        }
+        console.error("Unexpected error:", error);
+    }
 }
 
 main().catch(console.error);
@@ -59,9 +66,16 @@ npx ts-node time-series.ts
 
 👀 Check the full example and other examples [here](https://github.com/twelvedata/twelvedata-node/tree/master/examples).
 
+
+## Error Handling
+
+See [error_handling.md](error_handling.md) for error types, properties, and usage examples.
+
+For the complete list of API error codes and their meanings, see the [Twelve Data Errors documentation](https://twelvedata.com/docs/introduction/errors).
+
 ## API Reference
 
-See [API_REFERENCE.md](API_REFERENCE.md) for the complete list of API endpoints and models.
+See [api_reference.md](api_reference.md) for the complete list of API endpoints and models.
 
 ## Documentation
 Delve deeper with our [official documentation](https://twelvedata.com/docs).

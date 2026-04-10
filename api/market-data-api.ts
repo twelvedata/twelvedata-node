@@ -36,6 +36,20 @@ import {
 // @ts-ignore
 import type { AdjustEnum } from "../models";
 // @ts-ignore
+import type { ApiBadRequestErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiForbiddenErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiInternalServerErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiNotFoundErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiParameterTooLongErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiTooManyRequestsErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiUnauthorizedErrorResponseBody } from "../models";
+// @ts-ignore
 import type { DirectionEnum } from "../models";
 // @ts-ignore
 import type { FormatEnum } from "../models";

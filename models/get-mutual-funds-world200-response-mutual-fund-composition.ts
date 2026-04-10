@@ -27,10 +27,10 @@ export interface GetMutualFundsWorld200ResponseMutualFundComposition {
    * Breakdown of the fund’s portfolio by major industry sectors and their respective weights
    */
   major_market_sectors?: Array<GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner>;
-  asset_allocation?: GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation;
   /**
    * Top holdings of the fund with their respective weights in the overall portfolio composition
    */
   top_holdings?: Array<GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner>;
+  asset_allocation?: GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation;
   bond_breakdown?: GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown;
 }

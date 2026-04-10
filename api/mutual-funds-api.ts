@@ -34,6 +34,20 @@ import {
   operationServerMap,
 } from "../base";
 // @ts-ignore
+import type { ApiBadRequestErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiForbiddenErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiInternalServerErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiNotFoundErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiParameterTooLongErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiTooManyRequestsErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiUnauthorizedErrorResponseBody } from "../models";
+// @ts-ignore
 import type { GetMutualFundsFamily200Response } from "../models";
 // @ts-ignore
 import type { GetMutualFundsList200Response } from "../models";

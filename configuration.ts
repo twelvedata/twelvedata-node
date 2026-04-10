@@ -132,13 +132,19 @@ export class Configuration {
   }
 }
 
-export const CreateConfig = (userApiKey?: string, baseOptions?: any) => {
+export const CreateConfig = (
+  userApiKey?: string,
+  userBasePath?: string,
+  baseOptions?: any,
+) => {
   const apiKey = userApiKey || process.env.TWELVEDATA_API_KEY;
   if (!apiKey) {
     throw new Error("TWELVEDATA_API_KEY environment variable is not set");
   }
+  const basePath = userBasePath || process.env.TWELVEDATA_API_BASE_URL;
   return new Configuration({
     apiKey: `apikey ${apiKey}`,
+    ...(basePath ? { basePath } : {}),
     baseOptions: baseOptions ?? {},
   });
 };

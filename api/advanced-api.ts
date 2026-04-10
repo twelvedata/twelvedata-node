@@ -38,6 +38,20 @@ import type { Advanced200Response } from "../models";
 // @ts-ignore
 import type { AdvancedRequestValue } from "../models";
 // @ts-ignore
+import type { ApiBadRequestErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiForbiddenErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiInternalServerErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiNotFoundErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiParameterTooLongErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiTooManyRequestsErrorResponseBody } from "../models";
+// @ts-ignore
+import type { ApiUnauthorizedErrorResponseBody } from "../models";
+// @ts-ignore
 import type { FormatEnum } from "../models";
 // @ts-ignore
 import type { GetApiUsage200Response } from "../models";
