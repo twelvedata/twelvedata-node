@@ -34,7 +34,14 @@ Create `.env` file and add to it: `TWELVEDATA_API_KEY=your_api_key`.
 
 ### 3. Create `time-series.ts` script
 
+> `CreateConfig()` reads `TWELVEDATA_API_KEY` from `process.env` when no
+> `apiKey` argument is passed. The library does not load `.env` files itself —
+> load them in your application (e.g. via `import "dotenv/config";`) or set
+> the variable in your environment before calling `CreateConfig()`.
+
 ```typescript
+import "dotenv/config";
+
 import { MarketDataApi, CreateConfig, TwelvedataApiError } from "@twelvedata/twelvedata-node";
 
 const config = CreateConfig();
@@ -66,6 +73,114 @@ npx ts-node time-series.ts
 
 👀 Check the full example and other examples [here](https://github.com/twelvedata/twelvedata-node/tree/master/examples).
 
+
+## WebSocket
+
+The library ships with a WebSocket client for streaming real-time prices from
+Twelve Data. It handles authorization, sends both application-level heartbeats
+and protocol-level pings, detects dead connections, and automatically
+reconnects with exponential backoff — re-subscribing to your active symbols on
+the way back up.
+
+> WebSocket streaming is available on the **Pro** (individual) and **Venture**
+> (business) plans and above. **Basic** and **Grow** plans are limited to one
+> connection and up to 8 simultaneous subscriptions from the
+> [trial symbol list](https://support.twelvedata.com/en/articles/5335783-trial).
+> See the [WebSocket FAQ](https://support.twelvedata.com/en/articles/5194610-websocket-faq)
+> for more details.
+
+### Usage
+
+The client reads `TWELVEDATA_API_KEY` from `process.env` when no `apiKey`
+option is passed. The library does not load `.env` files itself — load them
+in your application (e.g. via `dotenv/config`) or set the variable in your
+environment before calling `connect()`.
+
+```typescript
+import "dotenv/config";
+
+import {
+    TwelvedataWebSocketClient,
+    TwelvedataWebSocketError,
+    WebSocketAuthError,
+} from "@twelvedata/twelvedata-node";
+
+const client = new TwelvedataWebSocketClient();
+
+client.on("price", (event) => {
+    console.log(`${event.symbol} @ ${event.price} (${event.timestamp})`);
+});
+
+client.on("subscribe-status", (event) => {
+    console.log("Subscribed:", event.success.map((s) => s.symbol));
+    if (event.fails.length) {
+        console.warn("Failed:", event.fails);
+    }
+});
+
+client.on("reconnecting", ({ attempt, delayMs }) => {
+    console.log(`Reconnecting (attempt ${attempt}) in ${delayMs}ms…`);
+});
+
+client.on("error", (error) => {
+    if (error instanceof TwelvedataWebSocketError) {
+        console.error("WebSocket error:", error.name, error.message);
+    } else {
+        console.error("Unexpected error:", error);
+    }
+});
+
+async function main() {
+    try {
+        await client.connect();
+    } catch (error) {
+        if (error instanceof WebSocketAuthError) {
+            // Invalid / missing API key — not retried.
+            process.exit(1);
+        }
+        throw error;
+    }
+
+    client.subscribe("AAPL,EUR/USD,BTC/USD");
+
+    // Later, if you want to stop:
+    // client.unsubscribe("BTC/USD");
+    // client.disconnect();
+}
+
+main().catch(console.error);
+```
+
+For the full list of WebSocket error types and recommended handling, see
+[WebSocket errors](error_handling.md#websocket-errors).
+
+### WebSocket client configuration
+
+All timing and retry knobs are exported as constants and can be overridden via
+constructor options:
+
+```typescript
+import {
+    TwelvedataWebSocketClient,
+    DEFAULT_HEARTBEAT_INTERVAL_MS,
+} from "@twelvedata/twelvedata-node";
+
+const client = new TwelvedataWebSocketClient({
+    apiKey: process.env.TWELVEDATA_API_KEY, // optional; falls back to env var
+    heartbeatIntervalMs: DEFAULT_HEARTBEAT_INTERVAL_MS, // 10_000 by default
+    pingIntervalMs: 30_000,
+    pingTimeoutMs: 10_000,
+    reconnect: {
+        initialDelayMs: 1_000,
+        maxDelayMs: 30_000,
+        maxAttempts: 10,
+        backoffFactor: 2,
+    },
+    // Pass `reconnect: false` to disable automatic reconnection entirely.
+});
+```
+
+👀 Check the full example and other examples [here](https://github.com/twelvedata/twelvedata-node/tree/master/examples).
 
 ## Error Handling
 

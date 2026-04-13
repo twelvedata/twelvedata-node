@@ -1,4 +1,4 @@
-## Error Handling
+## API errors
 
 All API errors are thrown as typed exceptions that extend `TwelvedataApiError`. You can use `instanceof` checks to handle specific HTTP error scenarios.
 
@@ -80,3 +80,56 @@ async function main() {
 
 main().catch(console.error);
 ```
+
+## WebSocket errors
+
+All WebSocket errors extend `TwelvedataWebSocketError`. They are surfaced in
+two places: `connect()` rejects with the first error it encounters, and any
+error that occurs after a successful connection is delivered via the
+`error` event on the client. Fatal errors (e.g. an invalid API key) suppress
+the auto-reconnect loop so the client fails fast instead of retrying
+indefinitely.
+
+| Exception | Raised when |
+|---|---|
+| `WebSocketAuthError` | API key is missing, invalid, or rejected by the server during the upgrade handshake. **Not retried.** |
+| `WebSocketConnectionError` | Socket failed to open, a send failed, or the server returned an unexpected non-auth response. |
+| `WebSocketTimeoutError` | No pong reply received within `pingTimeoutMs`. Triggers a reconnect. |
+| `WebSocketReconnectError` | Reconnect attempts were exhausted (hit `reconnect.maxAttempts`). |
+
+```typescript
+import {
+    TwelvedataWebSocketClient,
+    TwelvedataWebSocketError,
+    WebSocketAuthError,
+    WebSocketReconnectError,
+} from "@twelvedata/twelvedata-node";
+
+const client = new TwelvedataWebSocketClient();
+
+client.on("error", (error) => {
+    if (error instanceof TwelvedataWebSocketError) {
+        console.error(`WebSocket error [${error.name}]: ${error.message}`);
+
+        if (error instanceof WebSocketReconnectError) {
+            // Retries exhausted — client is inert until connect() is called again
+        }
+    } else {
+        // Non-library error (e.g. low-level socket error propagated from `ws`)
+        console.error(error);
+    }
+});
+
+try {
+    await client.connect();
+} catch (error) {
+    if (error instanceof WebSocketAuthError) {
+        // Invalid / missing API key — not retried; fail fast.
+        process.exit(1);
+    }
+    throw error;
+}
+
+client.subscribe("AAPL");
+```
+

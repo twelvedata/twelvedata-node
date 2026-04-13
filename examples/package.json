@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "license": "MIT",
     "dependencies": {
-        "@twelvedata/twelvedata-node": "file:../"
+        "@twelvedata/twelvedata-node": "file:.."
     },
     "devDependencies": {
         "@types/node": "^18.19.130",

@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import { ReferenceDataApi, CreateConfig } from "@twelvedata/twelvedata-node";
 
 const config = CreateConfig();

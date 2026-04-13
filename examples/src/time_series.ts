@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import { MarketDataApi, CreateConfig } from "@twelvedata/twelvedata-node";
 
 const config = CreateConfig();

@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import {
   AdvancedApi,
   AnalysisApi,
@@ -11,6 +13,7 @@ import {
   TechnicalIndicatorApi,
 } from "../api";
 import { CreateConfig } from "../configuration";
+import { SourceEnum } from "../models";
 
 const SYMBOL_STOCK = "AAPL";
 const INTERVAL = "1day";
@@ -26,7 +29,7 @@ const START_DATE = "2025-01-01";
 const END_DATE = "2025-01-31";
 const FOREX_BASE = "EUR";
 const FOREX_QUOTE = "USD";
-const SANCTIONS_SOURCE = "OFAC";
+const SANCTIONS_SOURCE = SourceEnum.OFAC;
 const DELAY_MS = 200;
 
 const config = CreateConfig();
@@ -823,7 +826,7 @@ async function testRegulatoryGetTaxInfo(): Promise<void> {
 
 async function testRegulatoryGetSourceSanctionedEntities(): Promise<void> {
   const response = await regulatoryApi.getSourceSanctionedEntities({
-    source: SANCTIONS_SOURCE as any,
+    source: SANCTIONS_SOURCE,
   });
   assert(
     response.status === 200,
