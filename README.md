@@ -72,8 +72,6 @@ npx ts-node time-series.ts
 ```
 
 👀 Check the full example and other examples [here](https://github.com/twelvedata/twelvedata-node/tree/master/examples).
-
-
 ## WebSocket
 
 The library ships with a WebSocket client for streaming real-time prices from
@@ -88,7 +86,6 @@ the way back up.
 > [trial symbol list](https://support.twelvedata.com/en/articles/5335783-trial).
 > See the [WebSocket FAQ](https://support.twelvedata.com/en/articles/5194610-websocket-faq)
 > for more details.
-
 ### Usage
 
 The client reads `TWELVEDATA_API_KEY` from `process.env` when no `apiKey`

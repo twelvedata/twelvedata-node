@@ -1,6 +1,6 @@
 {
   "name": "@twelvedata/twelvedata-node",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Twelve Data API client for Node.js",
   "author": "Twelve Data",
   "repository": {

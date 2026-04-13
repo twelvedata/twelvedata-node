@@ -114,7 +114,12 @@ export function setupErrorInterceptor(instance: AxiosInstance): void {
         if (resolver) {
           throw resolver(data);
         }
-        throw new TwelvedataApiError(status, data.code, data.status, data.message);
+        throw new TwelvedataApiError(
+          status,
+          data.code,
+          data.status,
+          data.message,
+        );
       }
       throw error;
     },

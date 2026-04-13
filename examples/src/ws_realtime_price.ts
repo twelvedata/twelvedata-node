@@ -12,9 +12,15 @@ client.on("price", (event) => {
 });
 
 client.on("subscribe-status", (event) => {
-  console.log("Subscribed:", event.success.map((s) => s.symbol));
+  console.log(
+    "Subscribed:",
+    event.success.map((s) => s.symbol),
+  );
   if (event.fails.length) {
-    console.warn("Failed:", event.fails.map((s) => s.symbol));
+    console.warn(
+      "Failed:",
+      event.fails.map((s) => s.symbol),
+    );
   }
 });
 

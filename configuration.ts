@@ -4,7 +4,6 @@
  *
  * NOTE: This code is auto generated, please do not edit it manually.
  */
-
 interface AWSv4Configuration {
   options?: {
     region?: string;

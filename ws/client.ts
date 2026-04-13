@@ -304,7 +304,10 @@ export class TwelvedataWebSocketClient extends EventEmitter {
 
       const onUnexpectedResponse = (
         _req: unknown,
-        res: { statusCode?: number; on: (e: string, cb: (...a: any[]) => void) => void },
+        res: {
+          statusCode?: number;
+          on: (e: string, cb: (...a: any[]) => void) => void;
+        },
       ) => {
         classifyingUpgrade = true;
         const chunks: Buffer[] = [];
@@ -400,9 +403,7 @@ export class TwelvedataWebSocketClient extends EventEmitter {
     if (!this.ws || this.ws.readyState !== WebSocket.OPEN) {
       this.emit(
         "error",
-        new WebSocketConnectionError(
-          "Cannot send: WebSocket is not open",
-        ),
+        new WebSocketConnectionError("Cannot send: WebSocket is not open"),
       );
       return;
     }
@@ -583,7 +584,9 @@ function resolveReconnect(
   };
 }
 
-function normalizeInput(input: SubscribeInput): Array<string | SubscribeSymbol> {
+function normalizeInput(
+  input: SubscribeInput,
+): Array<string | SubscribeSymbol> {
   const raw = Array.isArray(input) ? input.filter(Boolean) : [input];
   const out: Array<string | SubscribeSymbol> = [];
   for (const item of raw) {
@@ -628,7 +631,8 @@ function classifyUpgradeFailure(
   status: number,
   body: string,
 ): TwelvedataWebSocketError {
-  let parsed: { code?: number; message?: string; status?: string } | null = null;
+  let parsed: { code?: number; message?: string; status?: string } | null =
+    null;
   try {
     parsed = JSON.parse(body);
   } catch {

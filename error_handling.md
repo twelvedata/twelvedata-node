@@ -132,4 +132,3 @@ try {
 
 client.subscribe("AAPL");
 ```
-
