@@ -75,7 +75,7 @@ npx ts-node time-series.ts
 
 Node.js < 22:
 ```bash
-npx ts-node --esm time-series.ts
+npx tsx time-series.ts
 ```
 
 👀 Check the full example and other examples [here](https://github.com/twelvedata/twelvedata-node/tree/master/examples).
