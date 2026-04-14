@@ -1,43 +1,57 @@
+
 # StocksResponseItem
 
 StocksResponseItem represents details of a stock instrument
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Instrument symbol (ticker) | [optional] [default to undefined]
-**name** | **string** | Full name of instrument | [optional] [default to undefined]
-**currency** | **string** | Currency of the instrument according to the ISO 4217 standard | [optional] [default to undefined]
-**exchange** | **string** | Exchange where instrument is traded | [optional] [default to undefined]
-**micCode** | **string** | Market identifier code (MIC) under ISO 10383 standard | [optional] [default to undefined]
-**country** | **string** | Country where exchange is located | [optional] [default to undefined]
-**type** | **string** | Common issue type | [optional] [default to undefined]
-**figiCode** | **string** | Financial instrument global identifier (FIGI) | [optional] [default to undefined]
-**cfiCode** | **string** | Classification of Financial Instruments (CFI) | [optional] [default to undefined]
-**isin** | **string** | International securities identification number (ISIN), available by individual request to support | [optional] [default to undefined]
-**cusip** | **string** | A unique nine-character alphanumeric code used to identify financial securities, ensuring accurate data retrieval for the specified asset | [optional] [default to undefined]
-**access** | [**EtfResponseItemAccess**](EtfResponseItemAccess.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`name` | string
+`currency` | string
+`exchange` | string
+`micCode` | string
+`country` | string
+`type` | string
+`figiCode` | string
+`cfiCode` | string
+`isin` | string
+`cusip` | string
+`access` | [EtfResponseItemAccess](EtfResponseItemAccess.md)
 
 ## Example
 
 ```typescript
-import { StocksResponseItem } from '@twelvedata/twelvedata-node';
+import type { StocksResponseItem } from '@twelvedata/twelvedata-node'
 
-const instance: StocksResponseItem = {
-    symbol,
-    name,
-    currency,
-    exchange,
-    micCode,
-    country,
-    type,
-    figiCode,
-    cfiCode,
-    isin,
-    cusip,
-    access,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "name": null,
+  "currency": null,
+  "exchange": null,
+  "micCode": null,
+  "country": null,
+  "type": null,
+  "figiCode": null,
+  "cfiCode": null,
+  "isin": null,
+  "cusip": null,
+  "access": null,
+} satisfies StocksResponseItem
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as StocksResponseItem
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

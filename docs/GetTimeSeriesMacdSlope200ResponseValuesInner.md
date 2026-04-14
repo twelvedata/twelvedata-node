@@ -1,26 +1,40 @@
+
 # GetTimeSeriesMacdSlope200ResponseValuesInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**datetime** | **string** | Datetime in local market time for equities and in UTC for forex and cryptocurrencies referring to when the bar with specified interval was opened | [optional] [default to undefined]
-**macdSlope** | **string** | MACD slope value | [optional] [default to undefined]
-**macdSignalSlope** | **string** | MACD signal slope value | [optional] [default to undefined]
-**macdHistSlope** | **string** | MACD histogram slope value | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`datetime` | string
+`macdSlope` | string
+`macdSignalSlope` | string
+`macdHistSlope` | string
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesMacdSlope200ResponseValuesInner } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesMacdSlope200ResponseValuesInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesMacdSlope200ResponseValuesInner = {
-    datetime,
-    macdSlope,
-    macdSignalSlope,
-    macdHistSlope,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "datetime": null,
+  "macdSlope": null,
+  "macdSignalSlope": null,
+  "macdHistSlope": null,
+} satisfies GetTimeSeriesMacdSlope200ResponseValuesInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesMacdSlope200ResponseValuesInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

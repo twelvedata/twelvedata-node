@@ -1,33 +1,47 @@
+
 # CrossMeta
 
 Json object with request general information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**baseInstrument** | **string** | Base instrument symbol | [optional] [default to undefined]
-**baseCurrency** | **string** | Base currency | [optional] [default to undefined]
-**baseExchange** | **string** | Base exchange | [optional] [default to undefined]
-**interval** | **string** | Interval between two consecutive points in time series | [optional] [default to undefined]
-**quoteInstrument** | **string** | Quote instrument symbol | [optional] [default to undefined]
-**quoteCurrency** | **string** | Quote currency | [optional] [default to undefined]
-**quoteExchange** | **string** | Quote exchange | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`baseInstrument` | string
+`baseCurrency` | string
+`baseExchange` | string
+`interval` | string
+`quoteInstrument` | string
+`quoteCurrency` | string
+`quoteExchange` | string
 
 ## Example
 
 ```typescript
-import { CrossMeta } from '@twelvedata/twelvedata-node';
+import type { CrossMeta } from '@twelvedata/twelvedata-node'
 
-const instance: CrossMeta = {
-    baseInstrument,
-    baseCurrency,
-    baseExchange,
-    interval,
-    quoteInstrument,
-    quoteCurrency,
-    quoteExchange,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "baseInstrument": null,
+  "baseCurrency": null,
+  "baseExchange": null,
+  "interval": null,
+  "quoteInstrument": null,
+  "quoteCurrency": null,
+  "quoteExchange": null,
+} satisfies CrossMeta
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as CrossMeta
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

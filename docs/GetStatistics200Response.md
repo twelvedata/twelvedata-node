@@ -1,22 +1,36 @@
+
 # GetStatistics200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**meta** | [**GetStatistics200ResponseMeta**](GetStatistics200ResponseMeta.md) |  | [optional] [default to undefined]
-**statistics** | [**GetStatistics200ResponseStatistics**](GetStatistics200ResponseStatistics.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`meta` | [GetStatistics200ResponseMeta](GetStatistics200ResponseMeta.md)
+`statistics` | [GetStatistics200ResponseStatistics](GetStatistics200ResponseStatistics.md)
 
 ## Example
 
 ```typescript
-import { GetStatistics200Response } from '@twelvedata/twelvedata-node';
+import type { GetStatistics200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetStatistics200Response = {
-    meta,
-    statistics,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "meta": null,
+  "statistics": null,
+} satisfies GetStatistics200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetStatistics200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

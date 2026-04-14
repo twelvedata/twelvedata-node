@@ -1,33 +1,47 @@
+
 # GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesNonCurrentLiabilities
 
 Non-current liabilities section
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**longTermProvisions** | **number** | Represents money set aside for employee benefits such as gratuity | [optional] [default to undefined]
-**longTermDebt** | **number** | Represents amount of outstanding debt that has a maturity of 12 months or longer | [optional] [default to undefined]
-**provisionForRisksAndCharges** | **number** | Represents funds set aside as assets to pay for anticipated future losses | [optional] [default to undefined]
-**deferredLiabilities** | **number** | Represents revenue producing activity for which revenue has not yet been recognized, and is not expected to be recognized in the next 12 months | [optional] [default to undefined]
-**derivativeProductLiabilities** | **number** | Represents the value of derivative financial instruments that a company has issued | [optional] [default to undefined]
-**otherNonCurrentLiabilities** | **number** | Represents other non-current liabilities | [optional] [default to undefined]
-**totalNonCurrentLiabilities** | **number** | Represents total non-current liabilities | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`longTermProvisions` | number
+`longTermDebt` | number
+`provisionForRisksAndCharges` | number
+`deferredLiabilities` | number
+`derivativeProductLiabilities` | number
+`otherNonCurrentLiabilities` | number
+`totalNonCurrentLiabilities` | number
 
 ## Example
 
 ```typescript
-import { GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesNonCurrentLiabilities } from '@twelvedata/twelvedata-node';
+import type { GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesNonCurrentLiabilities } from '@twelvedata/twelvedata-node'
 
-const instance: GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesNonCurrentLiabilities = {
-    longTermProvisions,
-    longTermDebt,
-    provisionForRisksAndCharges,
-    deferredLiabilities,
-    derivativeProductLiabilities,
-    otherNonCurrentLiabilities,
-    totalNonCurrentLiabilities,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "longTermProvisions": null,
+  "longTermDebt": null,
+  "provisionForRisksAndCharges": null,
+  "deferredLiabilities": null,
+  "derivativeProductLiabilities": null,
+  "otherNonCurrentLiabilities": null,
+  "totalNonCurrentLiabilities": null,
+} satisfies GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesNonCurrentLiabilities
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesNonCurrentLiabilities
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

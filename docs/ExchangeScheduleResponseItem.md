@@ -1,31 +1,45 @@
+
 # ExchangeScheduleResponseItem
 
 ExchangeScheduleResponseItem represents details of an exchange schedule
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**title** | **string** | Official name of exchange | [optional] [default to undefined]
-**name** | **string** | Name of exchange | [optional] [default to undefined]
-**code** | **string** | Market identifier code (MIC) under ISO 10383 standard | [optional] [default to undefined]
-**country** | **string** | Country to which stock exchange belongs to | [optional] [default to undefined]
-**timeZone** | **string** | Time zone where exchange is located | [optional] [default to undefined]
-**sessions** | [**Array&lt;ExchangeScheduleSession&gt;**](ExchangeScheduleSession.md) | Exchange trading hours | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`title` | string
+`name` | string
+`code` | string
+`country` | string
+`timeZone` | string
+`sessions` | [Array&lt;ExchangeScheduleSession&gt;](ExchangeScheduleSession.md)
 
 ## Example
 
 ```typescript
-import { ExchangeScheduleResponseItem } from '@twelvedata/twelvedata-node';
+import type { ExchangeScheduleResponseItem } from '@twelvedata/twelvedata-node'
 
-const instance: ExchangeScheduleResponseItem = {
-    title,
-    name,
-    code,
-    country,
-    timeZone,
-    sessions,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "title": null,
+  "name": null,
+  "code": null,
+  "country": null,
+  "timeZone": null,
+  "sessions": null,
+} satisfies ExchangeScheduleResponseItem
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as ExchangeScheduleResponseItem
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

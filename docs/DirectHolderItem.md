@@ -1,28 +1,42 @@
+
 # DirectHolderItem
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**entityName** | **string** | Refers to the legal name of the institution | [optional] [default to undefined]
-**dateReported** | **string** | Refers to date reported | [optional] [default to undefined]
-**shares** | **number** | Refers to the number of shares owned | [optional] [default to undefined]
-**value** | **number** | Total value of shares owned, calculated by multiplying &#x60;shares&#x60; by the current price | [optional] [default to undefined]
-**percentHeld** | **number** | Represents the percentage of shares outstanding that are owned by the financial institution | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`entityName` | string
+`dateReported` | string
+`shares` | number
+`value` | number
+`percentHeld` | number
 
 ## Example
 
 ```typescript
-import { DirectHolderItem } from '@twelvedata/twelvedata-node';
+import type { DirectHolderItem } from '@twelvedata/twelvedata-node'
 
-const instance: DirectHolderItem = {
-    entityName,
-    dateReported,
-    shares,
-    value,
-    percentHeld,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "entityName": null,
+  "dateReported": null,
+  "shares": null,
+  "value": null,
+  "percentHeld": null,
+} satisfies DirectHolderItem
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as DirectHolderItem
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

@@ -1,23 +1,37 @@
+
 # GetMutualFundsWorld200ResponseMutualFundRisk
 
 Risk metrics of a mutual fund
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**volatilityMeasures** | [**Array&lt;GetMutualFundsWorld200ResponseMutualFundRiskVolatilityMeasuresInner&gt;**](GetMutualFundsWorld200ResponseMutualFundRiskVolatilityMeasuresInner.md) | Volatility statistics of the fund | [optional] [default to undefined]
-**valuationMetrics** | [**GetMutualFundsWorld200ResponseMutualFundRiskValuationMetrics**](GetMutualFundsWorld200ResponseMutualFundRiskValuationMetrics.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`volatilityMeasures` | [Array&lt;GetMutualFundsWorld200ResponseMutualFundRiskVolatilityMeasuresInner&gt;](GetMutualFundsWorld200ResponseMutualFundRiskVolatilityMeasuresInner.md)
+`valuationMetrics` | [GetMutualFundsWorld200ResponseMutualFundRiskValuationMetrics](GetMutualFundsWorld200ResponseMutualFundRiskValuationMetrics.md)
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundRisk } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundRisk } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundRisk = {
-    volatilityMeasures,
-    valuationMetrics,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "volatilityMeasures": null,
+  "valuationMetrics": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundRisk
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundRisk
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

@@ -1,25 +1,39 @@
+
 # GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
 
 Breakdown of the fund’s bond holdings by maturity, duration, and credit quality
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**averageMaturity** | [**GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturity**](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturity.md) |  | [optional] [default to undefined]
-**averageDuration** | [**GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration**](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration.md) |  | [optional] [default to undefined]
-**creditQuality** | [**Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner&gt;**](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner.md) | Breakdown of the fund’s bond holdings by credit rating and their respective portfolio weights | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`averageMaturity` | [GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturity](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturity.md)
+`averageDuration` | [GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration.md)
+`creditQuality` | [Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner&gt;](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner.md)
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown = {
-    averageMaturity,
-    averageDuration,
-    creditQuality,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "averageMaturity": null,
+  "averageDuration": null,
+  "creditQuality": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

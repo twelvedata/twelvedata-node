@@ -1,27 +1,41 @@
+
 # GetMutualFundsWorld200ResponseMutualFundPurchaseInfoPricing
 
 Pricing information for the mutual fund
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**nav** | **number** | Net Asset Value: fund value minus liabilities | [optional] [default to undefined]
-**_12monthLow** | **number** | Lowest price of the fund over the last year | [optional] [default to undefined]
-**_12monthHigh** | **number** | Highest price of the fund over the last year | [optional] [default to undefined]
-**lastMonth** | **number** | Fund price at the end of the last month | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`nav` | number
+`_12monthLow` | number
+`_12monthHigh` | number
+`lastMonth` | number
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundPurchaseInfoPricing } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundPurchaseInfoPricing } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundPurchaseInfoPricing = {
-    nav,
-    _12monthLow,
-    _12monthHigh,
-    lastMonth,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "nav": null,
+  "_12monthLow": null,
+  "_12monthHigh": null,
+  "lastMonth": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundPurchaseInfoPricing
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundPurchaseInfoPricing
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

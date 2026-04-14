@@ -1,24 +1,38 @@
+
 # GetTaxInfo200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**meta** | [**GetTaxInfo200ResponseMeta**](GetTaxInfo200ResponseMeta.md) |  | [optional] [default to undefined]
-**data** | [**GetTaxInfo200ResponseData**](GetTaxInfo200ResponseData.md) |  | [optional] [default to undefined]
-**status** | **string** | The status of the request, e.g., &#x60;ok&#x60;, &#x60;error&#x60; | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`meta` | [GetTaxInfo200ResponseMeta](GetTaxInfo200ResponseMeta.md)
+`data` | [GetTaxInfo200ResponseData](GetTaxInfo200ResponseData.md)
+`status` | string
 
 ## Example
 
 ```typescript
-import { GetTaxInfo200Response } from '@twelvedata/twelvedata-node';
+import type { GetTaxInfo200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetTaxInfo200Response = {
-    meta,
-    data,
-    status,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "meta": null,
+  "data": null,
+  "status": null,
+} satisfies GetTaxInfo200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTaxInfo200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

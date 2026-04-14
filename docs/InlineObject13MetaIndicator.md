@@ -1,30 +1,44 @@
+
 # InlineObject13MetaIndicator
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**maType** | **string** |  | [optional] [default to undefined]
-**maxPeriod** | **number** |  | [optional] [default to undefined]
-**minPeriod** | **number** |  | [optional] [default to undefined]
-**name** | **string** |  | [optional] [default to undefined]
-**periods** | **Array&lt;number&gt;** |  | [optional] [default to undefined]
-**seriesType** | **string** |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`maType` | string
+`maxPeriod` | number
+`minPeriod` | number
+`name` | string
+`periods` | Array&lt;number&gt;
+`seriesType` | string
 
 ## Example
 
 ```typescript
-import { InlineObject13MetaIndicator } from '@twelvedata/twelvedata-node';
+import type { InlineObject13MetaIndicator } from '@twelvedata/twelvedata-node'
 
-const instance: InlineObject13MetaIndicator = {
-    maType,
-    maxPeriod,
-    minPeriod,
-    name,
-    periods,
-    seriesType,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "maType": null,
+  "maxPeriod": null,
+  "minPeriod": null,
+  "name": null,
+  "periods": null,
+  "seriesType": null,
+} satisfies InlineObject13MetaIndicator
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as InlineObject13MetaIndicator
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

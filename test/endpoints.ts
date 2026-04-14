@@ -11,15 +11,14 @@ import {
   ReferenceDataApi,
   RegulatoryApi,
   TechnicalIndicatorApi,
-} from "../api";
-import { CreateConfig } from "../configuration";
-import { SourceEnum } from "../models";
+} from "../src/apis";
+import { CreateConfig } from "../src/runtime";
+import { SourceEnum } from "../src/models";
 
 const SYMBOL_STOCK = "AAPL";
 const INTERVAL = "1day";
 const TIMEZONE = "UTC";
 const OUTPUTSIZE = 10;
-const MIC_CODE = "XNAS";
 const SYMBOL_ETF = "SPY";
 const SYMBOL_FOREX = "EUR/USD";
 const SYMBOL_CRYPTO = "BTC/USD";
@@ -72,56 +71,40 @@ async function testMarketDataGetTimeSeries(): Promise<void> {
     outputsize: OUTPUTSIZE,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(
-    Array.isArray(response.data.values) && response.data.values.length > 0,
+    Array.isArray(response.values) && response.values.length > 0,
     "expected non-empty values array",
   );
-  console.log(response.data.values[0]);
+  console.log(response.values[0]);
 }
 
 async function testMarketDataGetExchangeRate(): Promise<void> {
   const response = await currenciesApi.getExchangeRate({
     symbol: SYMBOL_FOREX,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data.rate != null, "expected rate to be present");
-  console.log(response.data);
+  assert(response.rate != null, "expected rate to be present");
+  console.log(response);
 }
 
 async function testMarketDataGetPrice(): Promise<void> {
   const response = await marketDataApi.getPrice({ symbol: SYMBOL_STOCK });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data.price != null, "expected price to be present");
-  console.log(response.data);
+  assert(response.price != null, "expected price to be present");
+  console.log(response);
 }
 
 async function testMarketDataGetQuote(): Promise<void> {
   const response = await marketDataApi.getQuote({ symbol: SYMBOL_STOCK });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data.symbol != null, "expected symbol to be present");
-  console.log(response.data);
+  assert(response.symbol != null, "expected symbol to be present");
+  console.log(response);
 }
 
 async function testMarketDataGetEod(): Promise<void> {
   const response = await marketDataApi.getEod({ symbol: SYMBOL_STOCK });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data.close != null, "expected close to be present");
-  console.log(response.data);
+  assert(response.close != null, "expected close to be present");
+  console.log(response);
 }
 
 async function testMarketDataGetCurrencyConversion(): Promise<void> {
@@ -129,12 +112,8 @@ async function testMarketDataGetCurrencyConversion(): Promise<void> {
     symbol: SYMBOL_FOREX,
     amount: CURRENCY_AMOUNT,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data.rate != null, "expected rate to be present");
-  console.log(response.data);
+  assert(response.rate != null, "expected rate to be present");
+  console.log(response);
 }
 
 async function testMarketDataGetMarketMovers(): Promise<void> {
@@ -142,14 +121,14 @@ async function testMarketDataGetMarketMovers(): Promise<void> {
     market: "stocks" as any,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(
-    Array.isArray(response.data.values) && response.data.values.length > 0,
+    Array.isArray(response.values) && response.values.length > 0,
     "expected non-empty values array",
   );
-  console.log(response.data.values[0]);
+  console.log(response.values[0]);
 }
 
 async function testMarketDataGetTimeSeriesCross(): Promise<void> {
@@ -160,14 +139,10 @@ async function testMarketDataGetTimeSeriesCross(): Promise<void> {
     outputsize: OUTPUTSIZE,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(
-    Array.isArray(response.data.values) && response.data.values.length > 0,
+    Array.isArray(response.values) && response.values.length > 0,
     "expected non-empty values array",
   );
-  console.log(response.data.values[0]);
+  console.log(response.values[0]);
 }
 
 // --- FundamentalsApi ---
@@ -180,36 +155,28 @@ async function testFundamentalsGetIpoCalendar(): Promise<void> {
     endDate: END_DATE,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(
-    response.data != null && Object.keys(response.data).length > 0,
+    response != null && Object.keys(response).length > 0,
     "expected non-empty response data",
   );
-  console.log(response.data);
+  console.log(response);
 }
 
 async function testFundamentalsGetEarningsCalendar(): Promise<void> {
   const response = await fundamentalsApi.getEarningsCalendar({});
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.earnings != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetDividendsCalendar(): Promise<void> {
   const response = await fundamentalsApi.getDividendsCalendar({
     symbol: SYMBOL_STOCK,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetSplitsCalendar(): Promise<void> {
@@ -217,130 +184,86 @@ async function testFundamentalsGetSplitsCalendar(): Promise<void> {
     startDate: START_DATE,
     endDate: END_DATE,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetEarnings(): Promise<void> {
   const response = await fundamentalsApi.getEarnings({ symbol: SYMBOL_STOCK });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.earnings != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetDividends(): Promise<void> {
   const response = await fundamentalsApi.getDividends({ symbol: SYMBOL_STOCK });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetSplits(): Promise<void> {
   const response = await fundamentalsApi.getSplits({ symbol: SYMBOL_STOCK });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetBalanceSheet(): Promise<void> {
   const response = await fundamentalsApi.getBalanceSheet({
     symbol: SYMBOL_STOCK,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetCashFlow(): Promise<void> {
   const response = await fundamentalsApi.getCashFlow({ symbol: SYMBOL_STOCK });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetIncomeStatement(): Promise<void> {
   const response = await fundamentalsApi.getIncomeStatement({
     symbol: SYMBOL_STOCK,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetProfile(): Promise<void> {
   const response = await fundamentalsApi.getProfile({ symbol: SYMBOL_STOCK });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data.symbol != null, "expected symbol to be present");
-  console.log(response.data);
+  assert(response.symbol != null, "expected symbol to be present");
+  console.log(response);
 }
 
 async function testFundamentalsGetStatistics(): Promise<void> {
   const response = await fundamentalsApi.getStatistics({
     symbol: SYMBOL_STOCK,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data.statistics != null, "expected statistics to be present");
-  console.log(response.data);
+  assert(response.statistics != null, "expected statistics to be present");
+  console.log(response);
 }
 
 async function testFundamentalsGetMarketCap(): Promise<void> {
   const response = await fundamentalsApi.getMarketCap({ symbol: SYMBOL_STOCK });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetKeyExecutives(): Promise<void> {
   const response = await fundamentalsApi.getKeyExecutives({
     symbol: SYMBOL_STOCK,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetLogo(): Promise<void> {
   const response = await fundamentalsApi.getLogo({ symbol: SYMBOL_STOCK });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testFundamentalsGetPressReleases(): Promise<void> {
@@ -348,11 +271,11 @@ async function testFundamentalsGetPressReleases(): Promise<void> {
     symbol: SYMBOL_STOCK,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.pressReleases != null, "expected response data");
+  console.log(response);
 }
 
 // --- AnalysisApi ---
@@ -364,21 +287,21 @@ async function testAnalysisGetAnalystRatingsUsEquities(): Promise<void> {
     symbol: SYMBOL_STOCK,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.ratings != null, "expected response data");
+  console.log(response);
 }
 
 async function testAnalysisGetPriceTarget(): Promise<void> {
   const response = await analysisApi.getPriceTarget({ symbol: SYMBOL_STOCK });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.priceTarget != null, "expected response data");
+  console.log(response);
 }
 
 async function testAnalysisGetRecommendations(): Promise<void> {
@@ -386,11 +309,11 @@ async function testAnalysisGetRecommendations(): Promise<void> {
     symbol: SYMBOL_STOCK,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.trends != null, "expected response data");
+  console.log(response);
 }
 
 async function testAnalysisGetEarningsEstimate(): Promise<void> {
@@ -398,31 +321,31 @@ async function testAnalysisGetEarningsEstimate(): Promise<void> {
     symbol: SYMBOL_STOCK,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.earningsEstimate != null, "expected response data");
+  console.log(response);
 }
 
 async function testAnalysisGetEpsRevisions(): Promise<void> {
   const response = await analysisApi.getEpsRevisions({ symbol: SYMBOL_STOCK });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.epsRevision != null, "expected response data");
+  console.log(response);
 }
 
 async function testAnalysisGetEpsTrend(): Promise<void> {
   const response = await analysisApi.getEpsTrend({ symbol: SYMBOL_STOCK });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.epsTrend != null, "expected response data");
+  console.log(response);
 }
 
 async function testAnalysisGetGrowthEstimates(): Promise<void> {
@@ -430,11 +353,11 @@ async function testAnalysisGetGrowthEstimates(): Promise<void> {
     symbol: SYMBOL_STOCK,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.growthEstimates != null, "expected response data");
+  console.log(response);
 }
 
 async function testAnalysisGetRevenueEstimate(): Promise<void> {
@@ -442,11 +365,11 @@ async function testAnalysisGetRevenueEstimate(): Promise<void> {
     symbol: SYMBOL_STOCK,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.revenueEstimate != null, "expected response data");
+  console.log(response);
 }
 
 // --- EtfsApi ---
@@ -456,21 +379,21 @@ const etfsApi = new EtfsApi(config);
 async function testEtfsGetETFsWorld(): Promise<void> {
   const response = await etfsApi.getETFsWorld({ symbol: SYMBOL_ETF });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data.etf != null, "expected etf to be present");
-  console.log(response.data);
+  assert(response.etf != null, "expected etf to be present");
+  console.log(response);
 }
 
 async function testEtfsGetETFsWorldSummary(): Promise<void> {
   const response = await etfsApi.getETFsWorldSummary({ symbol: SYMBOL_ETF });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.etf != null, "expected response data");
+  console.log(response);
 }
 
 async function testEtfsGetETFsWorldComposition(): Promise<void> {
@@ -478,11 +401,11 @@ async function testEtfsGetETFsWorldComposition(): Promise<void> {
     symbol: SYMBOL_ETF,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.etf != null, "expected response data");
+  console.log(response);
 }
 
 async function testEtfsGetETFsWorldPerformance(): Promise<void> {
@@ -490,21 +413,21 @@ async function testEtfsGetETFsWorldPerformance(): Promise<void> {
     symbol: SYMBOL_ETF,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.etf != null, "expected response data");
+  console.log(response);
 }
 
 async function testEtfsGetETFsWorldRisk(): Promise<void> {
   const response = await etfsApi.getETFsWorldRisk({ symbol: SYMBOL_ETF });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.etf != null, "expected response data");
+  console.log(response);
 }
 
 // --- MutualFundsApi ---
@@ -516,11 +439,11 @@ async function testMutualFundsGetMutualFundsWorld(): Promise<void> {
     symbol: SYMBOL_MUTUAL_FUND,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.mutualFund != null, "expected response data");
+  console.log(response);
 }
 
 async function testMutualFundsGetMutualFundsWorldSummary(): Promise<void> {
@@ -528,11 +451,11 @@ async function testMutualFundsGetMutualFundsWorldSummary(): Promise<void> {
     symbol: SYMBOL_MUTUAL_FUND,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.mutualFund != null, "expected response data");
+  console.log(response);
 }
 
 async function testMutualFundsGetMutualFundsWorldComposition(): Promise<void> {
@@ -540,11 +463,11 @@ async function testMutualFundsGetMutualFundsWorldComposition(): Promise<void> {
     symbol: SYMBOL_MUTUAL_FUND,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.mutualFund != null, "expected response data");
+  console.log(response);
 }
 
 async function testMutualFundsGetMutualFundsWorldPerformance(): Promise<void> {
@@ -552,11 +475,11 @@ async function testMutualFundsGetMutualFundsWorldPerformance(): Promise<void> {
     symbol: SYMBOL_MUTUAL_FUND,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.mutualFund != null, "expected response data");
+  console.log(response);
 }
 
 async function testMutualFundsGetMutualFundsWorldRisk(): Promise<void> {
@@ -564,11 +487,11 @@ async function testMutualFundsGetMutualFundsWorldRisk(): Promise<void> {
     symbol: SYMBOL_MUTUAL_FUND,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.mutualFund != null, "expected response data");
+  console.log(response);
 }
 
 async function testMutualFundsGetMutualFundsWorldRatings(): Promise<void> {
@@ -576,11 +499,11 @@ async function testMutualFundsGetMutualFundsWorldRatings(): Promise<void> {
     symbol: SYMBOL_MUTUAL_FUND,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.mutualFund != null, "expected response data");
+  console.log(response);
 }
 
 async function testMutualFundsGetMutualFundsWorldPurchaseInfo(): Promise<void> {
@@ -588,11 +511,11 @@ async function testMutualFundsGetMutualFundsWorldPurchaseInfo(): Promise<void> {
     symbol: SYMBOL_MUTUAL_FUND,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.mutualFund != null, "expected response data");
+  console.log(response);
 }
 
 async function testMutualFundsGetMutualFundsWorldSustainability(): Promise<void> {
@@ -600,11 +523,11 @@ async function testMutualFundsGetMutualFundsWorldSustainability(): Promise<void>
     symbol: SYMBOL_MUTUAL_FUND,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.mutualFund != null, "expected response data");
+  console.log(response);
 }
 
 // --- ReferenceDataApi ---
@@ -614,28 +537,28 @@ const referenceDataApi = new ReferenceDataApi(config);
 async function testReferenceDataGetStocks(): Promise<void> {
   const response = await referenceDataApi.getStocks({ symbol: SYMBOL_STOCK });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(
-    Array.isArray(response.data.data) && response.data.data.length > 0,
+    Array.isArray(response.data) && response.data.length > 0,
     "expected non-empty data array",
   );
-  console.log(response.data.data[0]);
+  console.log(response.data[0]);
 }
 
 async function testReferenceDataGetETFsList(): Promise<void> {
   const response = await etfsApi.getETFsList({ symbol: SYMBOL_ETF });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(
-    Array.isArray(response.data.result?.list) &&
-      (response.data.result?.list?.length ?? 0) > 0,
+    Array.isArray(response.result?.list) &&
+      (response.result?.list?.length ?? 0) > 0,
     "expected non-empty data array",
   );
-  console.log(response.data.result?.list[0]);
+  console.log(response.result?.list[0]);
 }
 
 async function testReferenceDataGetCryptocurrencies(): Promise<void> {
@@ -643,14 +566,14 @@ async function testReferenceDataGetCryptocurrencies(): Promise<void> {
     symbol: SYMBOL_CRYPTO,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(
-    Array.isArray(response.data.data) && response.data.data.length > 0,
+    Array.isArray(response.data) && response.data.length > 0,
     "expected non-empty data array",
   );
-  console.log(response.data.data[0]);
+  console.log(response.data[0]);
 }
 
 async function testReferenceDataGetForexPairs(): Promise<void> {
@@ -658,63 +581,55 @@ async function testReferenceDataGetForexPairs(): Promise<void> {
     symbol: SYMBOL_FOREX,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(
-    Array.isArray(response.data.data) && response.data.data.length > 0,
+    Array.isArray(response.data) && response.data.length > 0,
     "expected non-empty data array",
   );
-  console.log(response.data.data[0]);
+  console.log(response.data[0]);
 }
 
 async function testReferenceDataGetExchanges(): Promise<void> {
   const response = await referenceDataApi.getExchanges({});
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(
-    Array.isArray(response.data.data) && response.data.data.length > 0,
+    Array.isArray(response.data) && response.data.length > 0,
     "expected non-empty data array",
   );
-  console.log(response.data.data[0]);
+  console.log(response.data[0]);
 }
 
 async function testReferenceDataGetCountries(): Promise<void> {
-  const response = await referenceDataApi.getCountries({});
+  const response = await referenceDataApi.getCountries();
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(
-    Array.isArray(response.data.data) && response.data.data.length > 0,
+    Array.isArray(response.data) && response.data.length > 0,
     "expected non-empty data array",
   );
-  console.log(response.data.data[0]);
+  console.log(response.data[0]);
 }
 
 async function testReferenceDataGetIntervals(): Promise<void> {
-  const response = await referenceDataApi.getIntervals({});
+  const response = await referenceDataApi.getIntervals();
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(response.data != null, "expected response data");
-  console.log(response.data);
+  console.log(response);
 }
 
 async function testReferenceDataGetMarketState(): Promise<void> {
   const response = await referenceDataApi.getMarketState({});
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(
-    Array.isArray(response.data) && response.data.length > 0,
+    Array.isArray(response) && response.length > 0,
     "expected non-empty array",
   );
-  console.log(response.data[0]);
+  console.log(response[0]);
 }
 
 async function testReferenceDataGetEarliestTimestamp(): Promise<void> {
@@ -722,12 +637,8 @@ async function testReferenceDataGetEarliestTimestamp(): Promise<void> {
     symbol: SYMBOL_STOCK,
     interval: INTERVAL,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.datetime != null, "expected response data");
+  console.log(response);
 }
 
 async function testReferenceDataGetSymbolSearch(): Promise<void> {
@@ -735,33 +646,29 @@ async function testReferenceDataGetSymbolSearch(): Promise<void> {
     symbol: SYMBOL_STOCK,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(response.data != null, "expected response data");
-  console.log(response.data);
+  console.log(response);
 }
 
 async function testReferenceDataGetInstrumentType(): Promise<void> {
   const response = await referenceDataApi.getInstrumentType();
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.result != null, "expected response data");
+  console.log(response);
 }
 
 async function testReferenceDataGetCrossListings(): Promise<void> {
   const response = await referenceDataApi.getCrossListings({
     symbol: SYMBOL_STOCK,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.result != null, "expected response data");
+  console.log(response);
 }
 
 // --- RegulatoryApi ---
@@ -772,56 +679,40 @@ async function testRegulatoryGetDirectHolders(): Promise<void> {
   const response = await regulatoryApi.getDirectHolders({
     symbol: SYMBOL_STOCK,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testRegulatoryGetFundHolders(): Promise<void> {
   const response = await regulatoryApi.getFundHolders({ symbol: SYMBOL_STOCK });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testRegulatoryGetInstitutionalHolders(): Promise<void> {
   const response = await regulatoryApi.getInstitutionalHolders({
     symbol: SYMBOL_STOCK,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testRegulatoryGetInsiderTransactions(): Promise<void> {
   const response = await regulatoryApi.getInsiderTransactions({
     symbol: SYMBOL_STOCK,
   });
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 async function testRegulatoryGetTaxInfo(): Promise<void> {
   const response = await regulatoryApi.getTaxInfo({ symbol: SYMBOL_STOCK });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(response.data != null, "expected response data");
-  console.log(response.data);
+  console.log(response);
 }
 
 async function testRegulatoryGetSourceSanctionedEntities(): Promise<void> {
@@ -829,11 +720,11 @@ async function testRegulatoryGetSourceSanctionedEntities(): Promise<void> {
     source: SANCTIONS_SOURCE,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response.sanctions != null, "expected response data");
+  console.log(response);
 }
 
 // --- TechnicalIndicatorApi (2 only) ---
@@ -848,14 +739,14 @@ async function testTechnicalIndicatorGetTimeSeriesRsi(): Promise<void> {
     timezone: TIMEZONE,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(
-    Array.isArray(response.data.values) && response.data.values.length > 0,
+    Array.isArray(response.values) && response.values.length > 0,
     "expected non-empty values array",
   );
-  console.log(response.data.values[0]);
+  console.log(response.values[0]);
 }
 
 async function testTechnicalIndicatorGetTimeSeriesMacd(): Promise<void> {
@@ -866,14 +757,14 @@ async function testTechnicalIndicatorGetTimeSeriesMacd(): Promise<void> {
     timezone: TIMEZONE,
   });
   assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
   );
   assert(
-    Array.isArray(response.data.values) && response.data.values.length > 0,
+    Array.isArray(response.values) && response.values.length > 0,
     "expected non-empty values array",
   );
-  console.log(response.data.values[0]);
+  console.log(response.values[0]);
 }
 
 // --- AdvancedApi ---
@@ -882,12 +773,8 @@ const advancedApi = new AdvancedApi(config);
 
 async function testAdvancedGetApiUsage(): Promise<void> {
   const response = await advancedApi.getApiUsage({});
-  assert(
-    response.status === 200,
-    `expected status 200, got ${response.status}`,
-  );
-  assert(response.data != null, "expected response data");
-  console.log(response.data);
+  assert(response != null, "expected response data");
+  console.log(response);
 }
 
 // --- Main ---

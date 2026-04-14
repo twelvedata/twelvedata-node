@@ -1,25 +1,39 @@
+
 # GetBalanceSheet200ResponseBalanceSheetInnerLiabilities
 
 Liabilities section of the balance sheet
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currentLiabilities** | [**GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesCurrentLiabilities**](GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesCurrentLiabilities.md) |  | [optional] [default to undefined]
-**nonCurrentLiabilities** | [**GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesNonCurrentLiabilities**](GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesNonCurrentLiabilities.md) |  | [optional] [default to undefined]
-**totalLiabilities** | **number** | The sum of total_current_liabilities + total_non_current_liabilities | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`currentLiabilities` | [GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesCurrentLiabilities](GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesCurrentLiabilities.md)
+`nonCurrentLiabilities` | [GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesNonCurrentLiabilities](GetBalanceSheet200ResponseBalanceSheetInnerLiabilitiesNonCurrentLiabilities.md)
+`totalLiabilities` | number
 
 ## Example
 
 ```typescript
-import { GetBalanceSheet200ResponseBalanceSheetInnerLiabilities } from '@twelvedata/twelvedata-node';
+import type { GetBalanceSheet200ResponseBalanceSheetInnerLiabilities } from '@twelvedata/twelvedata-node'
 
-const instance: GetBalanceSheet200ResponseBalanceSheetInnerLiabilities = {
-    currentLiabilities,
-    nonCurrentLiabilities,
-    totalLiabilities,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "currentLiabilities": null,
+  "nonCurrentLiabilities": null,
+  "totalLiabilities": null,
+} satisfies GetBalanceSheet200ResponseBalanceSheetInnerLiabilities
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetBalanceSheet200ResponseBalanceSheetInnerLiabilities
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

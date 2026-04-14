@@ -1,37 +1,51 @@
+
 # CashFlowData
 
 CashFlowData represents cash flow data for a specific fiscal date
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fiscalDate** | **string** | Fiscal date | [optional] [default to undefined]
-**year** | **number** | Year of the cash flow statement | [optional] [default to undefined]
-**cashFlowFromOperatingActivities** | [**CashFlowDataCashFlowFromOperatingActivities**](CashFlowDataCashFlowFromOperatingActivities.md) |  | [optional] [default to undefined]
-**cashFlowFromInvestingActivities** | [**CashFlowDataCashFlowFromInvestingActivities**](CashFlowDataCashFlowFromInvestingActivities.md) |  | [optional] [default to undefined]
-**cashFlowFromFinancingActivities** | [**CashFlowDataCashFlowFromFinancingActivities**](CashFlowDataCashFlowFromFinancingActivities.md) |  | [optional] [default to undefined]
-**supplementalData** | [**CashFlowDataSupplementalData**](CashFlowDataSupplementalData.md) |  | [optional] [default to undefined]
-**foreignAndDomesticSales** | [**CashFlowDataForeignAndDomesticSales**](CashFlowDataForeignAndDomesticSales.md) |  | [optional] [default to undefined]
-**cashPosition** | [**CashFlowDataCashPosition**](CashFlowDataCashPosition.md) |  | [optional] [default to undefined]
-**directMethodCashFlow** | [**CashFlowDataDirectMethodCashFlow**](CashFlowDataDirectMethodCashFlow.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`fiscalDate` | string
+`year` | number
+`cashFlowFromOperatingActivities` | [CashFlowDataCashFlowFromOperatingActivities](CashFlowDataCashFlowFromOperatingActivities.md)
+`cashFlowFromInvestingActivities` | [CashFlowDataCashFlowFromInvestingActivities](CashFlowDataCashFlowFromInvestingActivities.md)
+`cashFlowFromFinancingActivities` | [CashFlowDataCashFlowFromFinancingActivities](CashFlowDataCashFlowFromFinancingActivities.md)
+`supplementalData` | [CashFlowDataSupplementalData](CashFlowDataSupplementalData.md)
+`foreignAndDomesticSales` | [CashFlowDataForeignAndDomesticSales](CashFlowDataForeignAndDomesticSales.md)
+`cashPosition` | [CashFlowDataCashPosition](CashFlowDataCashPosition.md)
+`directMethodCashFlow` | [CashFlowDataDirectMethodCashFlow](CashFlowDataDirectMethodCashFlow.md)
 
 ## Example
 
 ```typescript
-import { CashFlowData } from '@twelvedata/twelvedata-node';
+import type { CashFlowData } from '@twelvedata/twelvedata-node'
 
-const instance: CashFlowData = {
-    fiscalDate,
-    year,
-    cashFlowFromOperatingActivities,
-    cashFlowFromInvestingActivities,
-    cashFlowFromFinancingActivities,
-    supplementalData,
-    foreignAndDomesticSales,
-    cashPosition,
-    directMethodCashFlow,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "fiscalDate": null,
+  "year": null,
+  "cashFlowFromOperatingActivities": null,
+  "cashFlowFromInvestingActivities": null,
+  "cashFlowFromFinancingActivities": null,
+  "supplementalData": null,
+  "foreignAndDomesticSales": null,
+  "cashPosition": null,
+  "directMethodCashFlow": null,
+} satisfies CashFlowData
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as CashFlowData
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

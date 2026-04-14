@@ -1,22 +1,36 @@
+
 # GetMutualFundsWorldPerformance200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**mutualFund** | [**GetMutualFundsWorldPerformance200ResponseMutualFund**](GetMutualFundsWorldPerformance200ResponseMutualFund.md) |  | [optional] [default to undefined]
-**status** | **string** | Status of the response | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`mutualFund` | [GetMutualFundsWorldPerformance200ResponseMutualFund](GetMutualFundsWorldPerformance200ResponseMutualFund.md)
+`status` | string
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorldPerformance200Response } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorldPerformance200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorldPerformance200Response = {
-    mutualFund,
-    status,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "mutualFund": null,
+  "status": null,
+} satisfies GetMutualFundsWorldPerformance200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorldPerformance200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

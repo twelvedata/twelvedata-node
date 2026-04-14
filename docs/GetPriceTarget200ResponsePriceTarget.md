@@ -1,31 +1,45 @@
+
 # GetPriceTarget200ResponsePriceTarget
 
 Price target information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**high** | **number** | Highest price target given by an analyst | [optional] [default to undefined]
-**median** | **number** | Median price target given across analysts | [optional] [default to undefined]
-**low** | **number** | Lowest price target given by an analyst | [optional] [default to undefined]
-**average** | **number** | Average price target given across analysts | [optional] [default to undefined]
-**current** | **number** | Current price from of a security | [optional] [default to undefined]
-**currency** | **string** | Currency in which the price targets values are quoted | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`high` | number
+`median` | number
+`low` | number
+`average` | number
+`current` | number
+`currency` | string
 
 ## Example
 
 ```typescript
-import { GetPriceTarget200ResponsePriceTarget } from '@twelvedata/twelvedata-node';
+import type { GetPriceTarget200ResponsePriceTarget } from '@twelvedata/twelvedata-node'
 
-const instance: GetPriceTarget200ResponsePriceTarget = {
-    high,
-    median,
-    low,
-    average,
-    current,
-    currency,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "high": null,
+  "median": null,
+  "low": null,
+  "average": null,
+  "current": null,
+  "currency": null,
+} satisfies GetPriceTarget200ResponsePriceTarget
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetPriceTarget200ResponsePriceTarget
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

@@ -1,27 +1,41 @@
+
 # CrossListingsItem
 
 Represents details of a cross listing
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Ticker symbol of instrument | [optional] [default to undefined]
-**name** | **string** | Name of symbol | [optional] [default to undefined]
-**exchange** | **string** | Exchange where instrument is traded | [optional] [default to undefined]
-**micCode** | **string** | Market identifier code (MIC) under ISO 10383 standard | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`name` | string
+`exchange` | string
+`micCode` | string
 
 ## Example
 
 ```typescript
-import { CrossListingsItem } from '@twelvedata/twelvedata-node';
+import type { CrossListingsItem } from '@twelvedata/twelvedata-node'
 
-const instance: CrossListingsItem = {
-    symbol,
-    name,
-    exchange,
-    micCode,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "name": null,
+  "exchange": null,
+  "micCode": null,
+} satisfies CrossListingsItem
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as CrossListingsItem
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

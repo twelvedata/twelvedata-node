@@ -1,30 +1,44 @@
+
 # EarningsItem
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**date** | **string** | Date of earning release | [optional] [default to undefined]
-**time** | **string** | Time of earning release, can be either of the following values: &#x60;Pre Market&#x60;, &#x60;After Hours&#x60;, &#x60;Time Not Supplied&#x60; | [optional] [default to undefined]
-**epsEstimate** | **number** | Analyst estimate of the future company earning | [optional] [default to undefined]
-**epsActual** | **number** | Actual value of reported earning | [optional] [default to undefined]
-**difference** | **number** | Delta between &#x60;eps_actual&#x60; and &#x60;eps_estimate&#x60; | [optional] [default to undefined]
-**surprisePrc** | **number** | Surprise in the percentage of the &#x60;eps_actual&#x60; related to &#x60;eps_estimate&#x60; | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`date` | string
+`time` | string
+`epsEstimate` | number
+`epsActual` | number
+`difference` | number
+`surprisePrc` | number
 
 ## Example
 
 ```typescript
-import { EarningsItem } from '@twelvedata/twelvedata-node';
+import type { EarningsItem } from '@twelvedata/twelvedata-node'
 
-const instance: EarningsItem = {
-    date,
-    time,
-    epsEstimate,
-    epsActual,
-    difference,
-    surprisePrc,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "date": null,
+  "time": null,
+  "epsEstimate": null,
+  "epsActual": null,
+  "difference": null,
+  "surprisePrc": null,
+} satisfies EarningsItem
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as EarningsItem
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

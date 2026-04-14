@@ -1,31 +1,45 @@
+
 # AssetsInfoCurrentAssetsInventory
 
 Inventory information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalInventory** | **number** | Total inventory | [optional] [default to undefined]
-**inventoriesAdjustmentsAllowances** | **number** | Inventories adjustments allowances | [optional] [default to undefined]
-**otherInventories** | **number** | Other inventories | [optional] [default to undefined]
-**finishedGoods** | **number** | Finished goods | [optional] [default to undefined]
-**workInProcess** | **number** | Work in process | [optional] [default to undefined]
-**rawMaterials** | **number** | Raw materials | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`totalInventory` | number
+`inventoriesAdjustmentsAllowances` | number
+`otherInventories` | number
+`finishedGoods` | number
+`workInProcess` | number
+`rawMaterials` | number
 
 ## Example
 
 ```typescript
-import { AssetsInfoCurrentAssetsInventory } from '@twelvedata/twelvedata-node';
+import type { AssetsInfoCurrentAssetsInventory } from '@twelvedata/twelvedata-node'
 
-const instance: AssetsInfoCurrentAssetsInventory = {
-    totalInventory,
-    inventoriesAdjustmentsAllowances,
-    otherInventories,
-    finishedGoods,
-    workInProcess,
-    rawMaterials,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "totalInventory": null,
+  "inventoriesAdjustmentsAllowances": null,
+  "otherInventories": null,
+  "finishedGoods": null,
+  "workInProcess": null,
+  "rawMaterials": null,
+} satisfies AssetsInfoCurrentAssetsInventory
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as AssetsInfoCurrentAssetsInventory
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

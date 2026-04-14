@@ -1,22 +1,36 @@
+
 # GetEarliestTimestamp200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**datetime** | **string** | Earliest datetime, the format depends on interval | [optional] [default to undefined]
-**unixTime** | **number** | Datetime converted to UNIX timestamp | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`datetime` | string
+`unixTime` | number
 
 ## Example
 
 ```typescript
-import { GetEarliestTimestamp200Response } from '@twelvedata/twelvedata-node';
+import type { GetEarliestTimestamp200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetEarliestTimestamp200Response = {
-    datetime,
-    unixTime,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "datetime": null,
+  "unixTime": null,
+} satisfies GetEarliestTimestamp200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetEarliestTimestamp200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

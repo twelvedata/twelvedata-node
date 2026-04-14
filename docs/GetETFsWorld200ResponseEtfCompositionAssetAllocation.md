@@ -1,31 +1,45 @@
+
 # GetETFsWorld200ResponseEtfCompositionAssetAllocation
 
 Asset allocation of a fund by different asset classes and their respective weights
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**cash** | **number** | Percentage of overall portfolio composition in cash | [optional] [default to undefined]
-**stocks** | **number** | Percentage of overall portfolio composition in stocks | [optional] [default to undefined]
-**preferredStocks** | **number** | Percentage of overall portfolio composition in preferred stocks | [optional] [default to undefined]
-**convertables** | **number** | Percentage of overall portfolio composition in convertable securities | [optional] [default to undefined]
-**bonds** | **number** | Percentage of overall portfolio composition in bond | [optional] [default to undefined]
-**others** | **number** | Percentage of overall portfolio composition in other forms of holding | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`cash` | number
+`stocks` | number
+`preferredStocks` | number
+`convertables` | number
+`bonds` | number
+`others` | number
 
 ## Example
 
 ```typescript
-import { GetETFsWorld200ResponseEtfCompositionAssetAllocation } from '@twelvedata/twelvedata-node';
+import type { GetETFsWorld200ResponseEtfCompositionAssetAllocation } from '@twelvedata/twelvedata-node'
 
-const instance: GetETFsWorld200ResponseEtfCompositionAssetAllocation = {
-    cash,
-    stocks,
-    preferredStocks,
-    convertables,
-    bonds,
-    others,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "cash": null,
+  "stocks": null,
+  "preferredStocks": null,
+  "convertables": null,
+  "bonds": null,
+  "others": null,
+} satisfies GetETFsWorld200ResponseEtfCompositionAssetAllocation
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetETFsWorld200ResponseEtfCompositionAssetAllocation
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

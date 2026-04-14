@@ -1,25 +1,39 @@
+
 # CashFlowDataForeignAndDomesticSales
 
 Foreign and domestic sales
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**foreignSales** | **number** | Foreign sales | [optional] [default to undefined]
-**domesticSales** | **number** | Domestic sales | [optional] [default to undefined]
-**adjustedGeographySegmentData** | **number** | Adjusted geography segment data | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`foreignSales` | number
+`domesticSales` | number
+`adjustedGeographySegmentData` | number
 
 ## Example
 
 ```typescript
-import { CashFlowDataForeignAndDomesticSales } from '@twelvedata/twelvedata-node';
+import type { CashFlowDataForeignAndDomesticSales } from '@twelvedata/twelvedata-node'
 
-const instance: CashFlowDataForeignAndDomesticSales = {
-    foreignSales,
-    domesticSales,
-    adjustedGeographySegmentData,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "foreignSales": null,
+  "domesticSales": null,
+  "adjustedGeographySegmentData": null,
+} satisfies CashFlowDataForeignAndDomesticSales
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as CashFlowDataForeignAndDomesticSales
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

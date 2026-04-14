@@ -9,7 +9,7 @@ async function main() {
   const response = await api.getQuote({
     symbol: "AAPL",
   });
-  console.log(response.data);
+  console.log(response);
 }
 
 main().catch(console.error);

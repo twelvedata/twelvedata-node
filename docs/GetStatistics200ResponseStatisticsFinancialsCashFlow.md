@@ -1,23 +1,37 @@
+
 # GetStatistics200ResponseStatisticsFinancialsCashFlow
 
 Cash flow information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**operatingCashFlowTtm** | **number** | Refers to operating cash flow measure over the last 12 months | [optional] [default to undefined]
-**leveredFreeCashFlowTtm** | **number** | Refers to levered free cash flow measure over the last 12 months | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`operatingCashFlowTtm` | number
+`leveredFreeCashFlowTtm` | number
 
 ## Example
 
 ```typescript
-import { GetStatistics200ResponseStatisticsFinancialsCashFlow } from '@twelvedata/twelvedata-node';
+import type { GetStatistics200ResponseStatisticsFinancialsCashFlow } from '@twelvedata/twelvedata-node'
 
-const instance: GetStatistics200ResponseStatisticsFinancialsCashFlow = {
-    operatingCashFlowTtm,
-    leveredFreeCashFlowTtm,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "operatingCashFlowTtm": null,
+  "leveredFreeCashFlowTtm": null,
+} satisfies GetStatistics200ResponseStatisticsFinancialsCashFlow
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetStatistics200ResponseStatisticsFinancialsCashFlow
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

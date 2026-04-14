@@ -1,20 +1,34 @@
+
 # InlineObject1
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | [**Array&lt;Index&gt;**](Index.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`data` | [Array&lt;ModelIndex&gt;](ModelIndex.md)
 
 ## Example
 
 ```typescript
-import { InlineObject1 } from '@twelvedata/twelvedata-node';
+import type { InlineObject1 } from '@twelvedata/twelvedata-node'
 
-const instance: InlineObject1 = {
-    data,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "data": null,
+} satisfies InlineObject1
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as InlineObject1
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

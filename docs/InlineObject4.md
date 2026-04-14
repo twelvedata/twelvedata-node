@@ -1,26 +1,40 @@
+
 # InlineObject4
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**corporateAum** | **number** |  | [optional] [default to undefined]
-**corporateEsgPillars** | **{ [key: string]: number; }** |  | [optional] [default to undefined]
-**score** | **number** |  | [optional] [default to undefined]
-**sustainableInvestment** | **boolean** |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`corporateAum` | number
+`corporateEsgPillars` | { [key: string]: number; }
+`score` | number
+`sustainableInvestment` | boolean
 
 ## Example
 
 ```typescript
-import { InlineObject4 } from '@twelvedata/twelvedata-node';
+import type { InlineObject4 } from '@twelvedata/twelvedata-node'
 
-const instance: InlineObject4 = {
-    corporateAum,
-    corporateEsgPillars,
-    score,
-    sustainableInvestment,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "corporateAum": null,
+  "corporateEsgPillars": null,
+  "score": null,
+  "sustainableInvestment": null,
+} satisfies InlineObject4
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as InlineObject4
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

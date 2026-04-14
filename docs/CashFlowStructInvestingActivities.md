@@ -1,33 +1,47 @@
+
 # CashFlowStructInvestingActivities
 
 Investing activities section
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**capitalExpenditures** | **number** | Capital expenditures (CapEx) are funds used by a company to acquire, upgrade, and maintain physical assets (PPE) | [optional] [default to undefined]
-**netIntangibles** | **number** | Represents purchase of a not physical asset | [optional] [default to undefined]
-**netAcquisitions** | **number** | Refers to net amount of business purchase and sale | [optional] [default to undefined]
-**purchaseOfInvestments** | **number** | Represents how much money has been used in making investments, including purchases of physical assets, investments in securities | [optional] [default to undefined]
-**saleOfInvestments** | **number** | Represents how much money has been generated from the sale of securities or assets | [optional] [default to undefined]
-**otherInvestingActivity** | **number** | Represents other investing activity | [optional] [default to undefined]
-**investingCashFlow** | **number** | Returns total amount of cash flow used in investments | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`capitalExpenditures` | number
+`netIntangibles` | number
+`netAcquisitions` | number
+`purchaseOfInvestments` | number
+`saleOfInvestments` | number
+`otherInvestingActivity` | number
+`investingCashFlow` | number
 
 ## Example
 
 ```typescript
-import { CashFlowStructInvestingActivities } from '@twelvedata/twelvedata-node';
+import type { CashFlowStructInvestingActivities } from '@twelvedata/twelvedata-node'
 
-const instance: CashFlowStructInvestingActivities = {
-    capitalExpenditures,
-    netIntangibles,
-    netAcquisitions,
-    purchaseOfInvestments,
-    saleOfInvestments,
-    otherInvestingActivity,
-    investingCashFlow,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "capitalExpenditures": null,
+  "netIntangibles": null,
+  "netAcquisitions": null,
+  "purchaseOfInvestments": null,
+  "saleOfInvestments": null,
+  "otherInvestingActivity": null,
+  "investingCashFlow": null,
+} satisfies CashFlowStructInvestingActivities
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as CashFlowStructInvestingActivities
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

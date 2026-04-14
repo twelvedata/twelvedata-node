@@ -1,28 +1,42 @@
+
 # GetAnalystRatingsLight200ResponseRatingsInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**date** | **string** | Date when the rating was released | [optional] [default to undefined]
-**firm** | **string** | Firm that issued the ranking | [optional] [default to undefined]
-**ratingChange** | **string** | Defines the action of the firm to ranking, could be &#x60;Maintains&#x60;, &#x60;Upgrade&#x60;, &#x60;Downgrade&#x60;, &#x60;Initiates&#x60; or &#x60;Reiterates&#x60; | [optional] [default to undefined]
-**ratingCurrent** | **string** | Current firm\&#39;s ranking of the instrument | [optional] [default to undefined]
-**ratingPrior** | **string** | Prior firm\&#39;s ranking of the instrument | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`date` | string
+`firm` | string
+`ratingChange` | string
+`ratingCurrent` | string
+`ratingPrior` | string
 
 ## Example
 
 ```typescript
-import { GetAnalystRatingsLight200ResponseRatingsInner } from '@twelvedata/twelvedata-node';
+import type { GetAnalystRatingsLight200ResponseRatingsInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetAnalystRatingsLight200ResponseRatingsInner = {
-    date,
-    firm,
-    ratingChange,
-    ratingCurrent,
-    ratingPrior,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "date": null,
+  "firm": null,
+  "ratingChange": null,
+  "ratingCurrent": null,
+  "ratingPrior": null,
+} satisfies GetAnalystRatingsLight200ResponseRatingsInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetAnalystRatingsLight200ResponseRatingsInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

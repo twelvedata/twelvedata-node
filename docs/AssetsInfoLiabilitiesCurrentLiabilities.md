@@ -1,53 +1,67 @@
+
 # AssetsInfoLiabilitiesCurrentLiabilities
 
 Current liabilities information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalCurrentLiabilities** | **number** | Total current liabilities | [optional] [default to undefined]
-**currentDebtAndCapitalLeaseObligation** | **number** | Current debt and capital lease obligation | [optional] [default to undefined]
-**currentDebt** | **number** | Current debt | [optional] [default to undefined]
-**currentCapitalLeaseObligation** | **number** | Current capital lease obligation | [optional] [default to undefined]
-**otherCurrentBorrowings** | **number** | Other current borrowings | [optional] [default to undefined]
-**lineOfCredit** | **number** | Line of credit | [optional] [default to undefined]
-**commercialPaper** | **number** | Commercial paper | [optional] [default to undefined]
-**currentNotesPayable** | **number** | Current notes payable | [optional] [default to undefined]
-**currentProvisions** | **number** | Current provisions | [optional] [default to undefined]
-**payablesAndAccruedExpenses** | [**AssetsInfoLiabilitiesCurrentLiabilitiesPayablesAndAccruedExpenses**](AssetsInfoLiabilitiesCurrentLiabilitiesPayablesAndAccruedExpenses.md) |  | [optional] [default to undefined]
-**pensionAndOtherPostRetirementBenefitPlansCurrent** | **number** | Pension and other post retirement benefit plans current | [optional] [default to undefined]
-**employeeBenefits** | **number** | Employee benefits | [optional] [default to undefined]
-**currentDeferredLiabilities** | **number** | Current deferred liabilities | [optional] [default to undefined]
-**currentDeferredRevenue** | **number** | Current deferred revenue | [optional] [default to undefined]
-**currentDeferredTaxesLiabilities** | **number** | Current deferred taxes liabilities | [optional] [default to undefined]
-**otherCurrentLiabilities** | **number** | Other current liabilities | [optional] [default to undefined]
-**liabilitiesHeldForSaleNonCurrent** | **number** | Liabilities held for sale non current | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`totalCurrentLiabilities` | number
+`currentDebtAndCapitalLeaseObligation` | number
+`currentDebt` | number
+`currentCapitalLeaseObligation` | number
+`otherCurrentBorrowings` | number
+`lineOfCredit` | number
+`commercialPaper` | number
+`currentNotesPayable` | number
+`currentProvisions` | number
+`payablesAndAccruedExpenses` | [AssetsInfoLiabilitiesCurrentLiabilitiesPayablesAndAccruedExpenses](AssetsInfoLiabilitiesCurrentLiabilitiesPayablesAndAccruedExpenses.md)
+`pensionAndOtherPostRetirementBenefitPlansCurrent` | number
+`employeeBenefits` | number
+`currentDeferredLiabilities` | number
+`currentDeferredRevenue` | number
+`currentDeferredTaxesLiabilities` | number
+`otherCurrentLiabilities` | number
+`liabilitiesHeldForSaleNonCurrent` | number
 
 ## Example
 
 ```typescript
-import { AssetsInfoLiabilitiesCurrentLiabilities } from '@twelvedata/twelvedata-node';
+import type { AssetsInfoLiabilitiesCurrentLiabilities } from '@twelvedata/twelvedata-node'
 
-const instance: AssetsInfoLiabilitiesCurrentLiabilities = {
-    totalCurrentLiabilities,
-    currentDebtAndCapitalLeaseObligation,
-    currentDebt,
-    currentCapitalLeaseObligation,
-    otherCurrentBorrowings,
-    lineOfCredit,
-    commercialPaper,
-    currentNotesPayable,
-    currentProvisions,
-    payablesAndAccruedExpenses,
-    pensionAndOtherPostRetirementBenefitPlansCurrent,
-    employeeBenefits,
-    currentDeferredLiabilities,
-    currentDeferredRevenue,
-    currentDeferredTaxesLiabilities,
-    otherCurrentLiabilities,
-    liabilitiesHeldForSaleNonCurrent,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "totalCurrentLiabilities": null,
+  "currentDebtAndCapitalLeaseObligation": null,
+  "currentDebt": null,
+  "currentCapitalLeaseObligation": null,
+  "otherCurrentBorrowings": null,
+  "lineOfCredit": null,
+  "commercialPaper": null,
+  "currentNotesPayable": null,
+  "currentProvisions": null,
+  "payablesAndAccruedExpenses": null,
+  "pensionAndOtherPostRetirementBenefitPlansCurrent": null,
+  "employeeBenefits": null,
+  "currentDeferredLiabilities": null,
+  "currentDeferredRevenue": null,
+  "currentDeferredTaxesLiabilities": null,
+  "otherCurrentLiabilities": null,
+  "liabilitiesHeldForSaleNonCurrent": null,
+} satisfies AssetsInfoLiabilitiesCurrentLiabilities
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as AssetsInfoLiabilitiesCurrentLiabilities
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

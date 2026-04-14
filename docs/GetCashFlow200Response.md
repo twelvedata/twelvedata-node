@@ -1,22 +1,36 @@
+
 # GetCashFlow200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**meta** | [**GetCashFlow200ResponseMeta**](GetCashFlow200ResponseMeta.md) |  | [optional] [default to undefined]
-**cashFlow** | [**Array&lt;CashFlowStruct&gt;**](CashFlowStruct.md) | Cash flow data | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`meta` | [GetCashFlow200ResponseMeta](GetCashFlow200ResponseMeta.md)
+`cashFlow` | [Array&lt;CashFlowStruct&gt;](CashFlowStruct.md)
 
 ## Example
 
 ```typescript
-import { GetCashFlow200Response } from '@twelvedata/twelvedata-node';
+import type { GetCashFlow200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetCashFlow200Response = {
-    meta,
-    cashFlow,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "meta": null,
+  "cashFlow": null,
+} satisfies GetCashFlow200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetCashFlow200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

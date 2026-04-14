@@ -1,49 +1,63 @@
+
 # EquityInfo
 
 EquityInfo represents equity information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalEquityGrossMinorityInterest** | **number** | Total equity gross minority interest | [optional] [default to undefined]
-**stockholdersEquity** | **number** | Stockholders equity | [optional] [default to undefined]
-**commonStockEquity** | **number** | Common stock equity | [optional] [default to undefined]
-**preferredStockEquity** | **number** | Preferred stock equity | [optional] [default to undefined]
-**otherEquityInterest** | **number** | Other equity interest | [optional] [default to undefined]
-**minorityInterest** | **number** | Minority interest | [optional] [default to undefined]
-**totalCapitalization** | **number** | Total capitalization | [optional] [default to undefined]
-**netTangibleAssets** | **number** | Net tangible assets | [optional] [default to undefined]
-**tangibleBookValue** | **number** | Tangible book value | [optional] [default to undefined]
-**investedCapital** | **number** | Invested capital | [optional] [default to undefined]
-**workingCapital** | **number** | Working capital | [optional] [default to undefined]
-**capitalStock** | [**EquityInfoCapitalStock**](EquityInfoCapitalStock.md) |  | [optional] [default to undefined]
-**equityAdjustments** | [**EquityInfoEquityAdjustments**](EquityInfoEquityAdjustments.md) |  | [optional] [default to undefined]
-**netDebt** | **number** | Net debt | [optional] [default to undefined]
-**totalDebt** | **number** | Total debt | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`totalEquityGrossMinorityInterest` | number
+`stockholdersEquity` | number
+`commonStockEquity` | number
+`preferredStockEquity` | number
+`otherEquityInterest` | number
+`minorityInterest` | number
+`totalCapitalization` | number
+`netTangibleAssets` | number
+`tangibleBookValue` | number
+`investedCapital` | number
+`workingCapital` | number
+`capitalStock` | [EquityInfoCapitalStock](EquityInfoCapitalStock.md)
+`equityAdjustments` | [EquityInfoEquityAdjustments](EquityInfoEquityAdjustments.md)
+`netDebt` | number
+`totalDebt` | number
 
 ## Example
 
 ```typescript
-import { EquityInfo } from '@twelvedata/twelvedata-node';
+import type { EquityInfo } from '@twelvedata/twelvedata-node'
 
-const instance: EquityInfo = {
-    totalEquityGrossMinorityInterest,
-    stockholdersEquity,
-    commonStockEquity,
-    preferredStockEquity,
-    otherEquityInterest,
-    minorityInterest,
-    totalCapitalization,
-    netTangibleAssets,
-    tangibleBookValue,
-    investedCapital,
-    workingCapital,
-    capitalStock,
-    equityAdjustments,
-    netDebt,
-    totalDebt,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "totalEquityGrossMinorityInterest": null,
+  "stockholdersEquity": null,
+  "commonStockEquity": null,
+  "preferredStockEquity": null,
+  "otherEquityInterest": null,
+  "minorityInterest": null,
+  "totalCapitalization": null,
+  "netTangibleAssets": null,
+  "tangibleBookValue": null,
+  "investedCapital": null,
+  "workingCapital": null,
+  "capitalStock": null,
+  "equityAdjustments": null,
+  "netDebt": null,
+  "totalDebt": null,
+} satisfies EquityInfo
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as EquityInfo
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

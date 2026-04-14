@@ -1,33 +1,47 @@
+
 # GetQuote200ResponseFiftyTwoWeek
 
 Collection of 52-week metrics
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**low** | **string** | 52-week low price | [optional] [default to undefined]
-**high** | **string** | 52-week high price | [optional] [default to undefined]
-**lowChange** | **string** | Current price - 52-week low | [optional] [default to undefined]
-**highChange** | **string** | Current price - 52-week high | [optional] [default to undefined]
-**lowChangePercent** | **string** | Percentage change from 52-week low | [optional] [default to undefined]
-**highChangePercent** | **string** | Percentage change from 52-week high | [optional] [default to undefined]
-**range** | **string** | Range between 52-week low and high | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`low` | string
+`high` | string
+`lowChange` | string
+`highChange` | string
+`lowChangePercent` | string
+`highChangePercent` | string
+`range` | string
 
 ## Example
 
 ```typescript
-import { GetQuote200ResponseFiftyTwoWeek } from '@twelvedata/twelvedata-node';
+import type { GetQuote200ResponseFiftyTwoWeek } from '@twelvedata/twelvedata-node'
 
-const instance: GetQuote200ResponseFiftyTwoWeek = {
-    low,
-    high,
-    lowChange,
-    highChange,
-    lowChangePercent,
-    highChangePercent,
-    range,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "low": null,
+  "high": null,
+  "lowChange": null,
+  "highChange": null,
+  "lowChangePercent": null,
+  "highChangePercent": null,
+  "range": null,
+} satisfies GetQuote200ResponseFiftyTwoWeek
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetQuote200ResponseFiftyTwoWeek
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

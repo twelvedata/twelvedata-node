@@ -1,29 +1,43 @@
+
 # GetStatistics200ResponseStatistics
 
 Statistics of the company
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**valuationsMetrics** | [**GetStatistics200ResponseStatisticsValuationsMetrics**](GetStatistics200ResponseStatisticsValuationsMetrics.md) |  | [optional] [default to undefined]
-**financials** | [**GetStatistics200ResponseStatisticsFinancials**](GetStatistics200ResponseStatisticsFinancials.md) |  | [optional] [default to undefined]
-**stockStatistics** | [**GetStatistics200ResponseStatisticsStockStatistics**](GetStatistics200ResponseStatisticsStockStatistics.md) |  | [optional] [default to undefined]
-**stockPriceSummary** | [**GetStatistics200ResponseStatisticsStockPriceSummary**](GetStatistics200ResponseStatisticsStockPriceSummary.md) |  | [optional] [default to undefined]
-**dividendsAndSplits** | [**GetStatistics200ResponseStatisticsDividendsAndSplits**](GetStatistics200ResponseStatisticsDividendsAndSplits.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`valuationsMetrics` | [GetStatistics200ResponseStatisticsValuationsMetrics](GetStatistics200ResponseStatisticsValuationsMetrics.md)
+`financials` | [GetStatistics200ResponseStatisticsFinancials](GetStatistics200ResponseStatisticsFinancials.md)
+`stockStatistics` | [GetStatistics200ResponseStatisticsStockStatistics](GetStatistics200ResponseStatisticsStockStatistics.md)
+`stockPriceSummary` | [GetStatistics200ResponseStatisticsStockPriceSummary](GetStatistics200ResponseStatisticsStockPriceSummary.md)
+`dividendsAndSplits` | [GetStatistics200ResponseStatisticsDividendsAndSplits](GetStatistics200ResponseStatisticsDividendsAndSplits.md)
 
 ## Example
 
 ```typescript
-import { GetStatistics200ResponseStatistics } from '@twelvedata/twelvedata-node';
+import type { GetStatistics200ResponseStatistics } from '@twelvedata/twelvedata-node'
 
-const instance: GetStatistics200ResponseStatistics = {
-    valuationsMetrics,
-    financials,
-    stockStatistics,
-    stockPriceSummary,
-    dividendsAndSplits,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "valuationsMetrics": null,
+  "financials": null,
+  "stockStatistics": null,
+  "stockPriceSummary": null,
+  "dividendsAndSplits": null,
+} satisfies GetStatistics200ResponseStatistics
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetStatistics200ResponseStatistics
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

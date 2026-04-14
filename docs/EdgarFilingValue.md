@@ -1,31 +1,45 @@
+
 # EdgarFilingValue
 
 Filing value object
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**cik** | **number** | CIK code | [optional] [default to undefined]
-**filedAt** | **number** | Filing date in UNIX timestamp | [optional] [default to undefined]
-**files** | [**Array&lt;EdgarFilingFile&gt;**](EdgarFilingFile.md) | Filing files | [optional] [default to undefined]
-**filingUrl** | **string** | Full URL of the filing | [optional] [default to undefined]
-**formType** | **string** | Filing form type | [optional] [default to undefined]
-**ticker** | **Array&lt;string&gt;** | Ticker symbols associated with the filing | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`cik` | number
+`filedAt` | number
+`files` | [Array&lt;EdgarFilingFile&gt;](EdgarFilingFile.md)
+`filingUrl` | string
+`formType` | string
+`ticker` | Array&lt;string&gt;
 
 ## Example
 
 ```typescript
-import { EdgarFilingValue } from '@twelvedata/twelvedata-node';
+import type { EdgarFilingValue } from '@twelvedata/twelvedata-node'
 
-const instance: EdgarFilingValue = {
-    cik,
-    filedAt,
-    files,
-    filingUrl,
-    formType,
-    ticker,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "cik": null,
+  "filedAt": null,
+  "files": null,
+  "filingUrl": null,
+  "formType": null,
+  "ticker": null,
+} satisfies EdgarFilingValue
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as EdgarFilingValue
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

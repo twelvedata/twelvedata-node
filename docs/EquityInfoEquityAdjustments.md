@@ -1,31 +1,45 @@
+
 # EquityInfoEquityAdjustments
 
 Equity adjustments information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**gainsLossesNotAffectingRetainedEarnings** | **number** | Gains losses not affecting retained earnings | [optional] [default to undefined]
-**otherEquityAdjustments** | **number** | Other equity adjustments | [optional] [default to undefined]
-**fixedAssetsRevaluationReserve** | **number** | Fixed assets revaluation reserve | [optional] [default to undefined]
-**foreignCurrencyTranslationAdjustments** | **number** | Foreign currency translation adjustments | [optional] [default to undefined]
-**minimumPensionLiabilities** | **number** | Minimum pension liabilities | [optional] [default to undefined]
-**unrealizedGainLoss** | **number** | Unrealized gain loss | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`gainsLossesNotAffectingRetainedEarnings` | number
+`otherEquityAdjustments` | number
+`fixedAssetsRevaluationReserve` | number
+`foreignCurrencyTranslationAdjustments` | number
+`minimumPensionLiabilities` | number
+`unrealizedGainLoss` | number
 
 ## Example
 
 ```typescript
-import { EquityInfoEquityAdjustments } from '@twelvedata/twelvedata-node';
+import type { EquityInfoEquityAdjustments } from '@twelvedata/twelvedata-node'
 
-const instance: EquityInfoEquityAdjustments = {
-    gainsLossesNotAffectingRetainedEarnings,
-    otherEquityAdjustments,
-    fixedAssetsRevaluationReserve,
-    foreignCurrencyTranslationAdjustments,
-    minimumPensionLiabilities,
-    unrealizedGainLoss,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "gainsLossesNotAffectingRetainedEarnings": null,
+  "otherEquityAdjustments": null,
+  "fixedAssetsRevaluationReserve": null,
+  "foreignCurrencyTranslationAdjustments": null,
+  "minimumPensionLiabilities": null,
+  "unrealizedGainLoss": null,
+} satisfies EquityInfoEquityAdjustments
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as EquityInfoEquityAdjustments
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

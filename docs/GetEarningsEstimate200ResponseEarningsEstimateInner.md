@@ -1,32 +1,46 @@
+
 # GetEarningsEstimate200ResponseEarningsEstimateInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**date** | **string** | Date of the earnings estimate | [optional] [default to undefined]
-**period** | **string** | Period of estimation, can be &#x60;current_quarter&#x60;, &#x60;next_quarter&#x60;, &#x60;current_year&#x60;, or &#x60;next_year&#x60; | [optional] [default to undefined]
-**numberOfAnalysts** | **number** | Number of analysts that made the estimation | [optional] [default to undefined]
-**avgEstimate** | **number** | Average estimation across analysts | [optional] [default to undefined]
-**lowEstimate** | **number** | Lowest estimation given by an analyst | [optional] [default to undefined]
-**highEstimate** | **number** | Highest estimation given by an analyst | [optional] [default to undefined]
-**yearAgoEps** | **number** | Average estimation of this period\&#39;s earnings given a year ago | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`date` | string
+`period` | string
+`numberOfAnalysts` | number
+`avgEstimate` | number
+`lowEstimate` | number
+`highEstimate` | number
+`yearAgoEps` | number
 
 ## Example
 
 ```typescript
-import { GetEarningsEstimate200ResponseEarningsEstimateInner } from '@twelvedata/twelvedata-node';
+import type { GetEarningsEstimate200ResponseEarningsEstimateInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetEarningsEstimate200ResponseEarningsEstimateInner = {
-    date,
-    period,
-    numberOfAnalysts,
-    avgEstimate,
-    lowEstimate,
-    highEstimate,
-    yearAgoEps,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "date": null,
+  "period": null,
+  "numberOfAnalysts": null,
+  "avgEstimate": null,
+  "lowEstimate": null,
+  "highEstimate": null,
+  "yearAgoEps": null,
+} satisfies GetEarningsEstimate200ResponseEarningsEstimateInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetEarningsEstimate200ResponseEarningsEstimateInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

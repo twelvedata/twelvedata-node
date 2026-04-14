@@ -1,46 +1,32 @@
+
 # TypeEnum
 
 
-## Enum
+## Properties
 
-* `AMERICAN_DEPOSITARY_RECEIPT` (value: `'American Depositary Receipt'`)
+Name | Type
+------------ | -------------
 
-* `BOND` (value: `'Bond'`)
+## Example
 
-* `BOND_FUND` (value: `'Bond Fund'`)
+```typescript
+import type { TypeEnum } from '@twelvedata/twelvedata-node'
 
-* `CLOSED_END_FUND` (value: `'Closed-end Fund'`)
+// TODO: Update the object below with actual values
+const example = {
+} satisfies TypeEnum
 
-* `COMMON_STOCK` (value: `'Common Stock'`)
+console.log(example)
 
-* `DEPOSITARY_RECEIPT` (value: `'Depositary Receipt'`)
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
 
-* `DIGITAL_CURRENCY` (value: `'Digital Currency'`)
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as TypeEnum
+console.log(exampleParsed)
+```
 
-* `ETF` (value: `'ETF'`)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
-* `EXCHANGE_TRADED_NOTE` (value: `'Exchange-Traded Note'`)
 
-* `GLOBAL_DEPOSITARY_RECEIPT` (value: `'Global Depositary Receipt'`)
-
-* `LIMITED_PARTNERSHIP` (value: `'Limited Partnership'`)
-
-* `MUTUAL_FUND` (value: `'Mutual Fund'`)
-
-* `PHYSICAL_CURRENCY` (value: `'Physical Currency'`)
-
-* `PREFERRED_STOCK` (value: `'Preferred Stock'`)
-
-* `REIT` (value: `'REIT'`)
-
-* `RIGHT` (value: `'Right'`)
-
-* `STRUCTURED_PRODUCT` (value: `'Structured Product'`)
-
-* `TRUST` (value: `'Trust'`)
-
-* `UNIT` (value: `'Unit'`)
-
-* `WARRANT` (value: `'Warrant'`)
-
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

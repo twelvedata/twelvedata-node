@@ -1,25 +1,39 @@
+
 # GetMutualFundsWorld200ResponseMutualFundRatings
 
 Ratings of a mutual fund
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**performanceRating** | **number** | Performance rating from 0 to 5 | [optional] [default to undefined]
-**riskRating** | **number** | Risk rating from 0 to 5 | [optional] [default to undefined]
-**returnRating** | **number** | Return rating from 0 to 5 | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`performanceRating` | number
+`riskRating` | number
+`returnRating` | number
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundRatings } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundRatings } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundRatings = {
-    performanceRating,
-    riskRating,
-    returnRating,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "performanceRating": null,
+  "riskRating": null,
+  "returnRating": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundRatings
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundRatings
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

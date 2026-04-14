@@ -1,34 +1,48 @@
+
 # GetTechnicalIndicators200ResponseDataValue
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**enable** | **boolean** | If the indicator is tested, approved and is recommended for use returns &lt;code&gt;true&lt;/code&gt;, otherwise returns &lt;code&gt;false&lt;/code&gt; | [optional] [default to undefined]
-**fullName** | **string** | Full indicator name | [optional] [default to undefined]
-**description** | **string** | Brief description of the indicator | [optional] [default to undefined]
-**type** | **string** | Group to which indicator belongs to | [optional] [default to undefined]
-**overlay** | **boolean** | If indicator should be plotted over price bars returns &lt;code&gt;true&lt;/code&gt;, otherwise returns &lt;code&gt;false&lt;/code&gt; | [optional] [default to undefined]
-**outputValues** | [**TechnicalIndicatorsResponseMacdOutputValues**](TechnicalIndicatorsResponseMacdOutputValues.md) |  | [optional] [default to undefined]
-**parameters** | [**TechnicalIndicatorsResponseMacdParameters**](TechnicalIndicatorsResponseMacdParameters.md) |  | [optional] [default to undefined]
-**tinting** | [**TechnicalIndicatorsResponseMacdTinting**](TechnicalIndicatorsResponseMacdTinting.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`enable` | boolean
+`fullName` | string
+`description` | string
+`type` | string
+`overlay` | boolean
+`outputValues` | [TechnicalIndicatorsResponseMacdOutputValues](TechnicalIndicatorsResponseMacdOutputValues.md)
+`parameters` | [TechnicalIndicatorsResponseMacdParameters](TechnicalIndicatorsResponseMacdParameters.md)
+`tinting` | [TechnicalIndicatorsResponseMacdTinting](TechnicalIndicatorsResponseMacdTinting.md)
 
 ## Example
 
 ```typescript
-import { GetTechnicalIndicators200ResponseDataValue } from '@twelvedata/twelvedata-node';
+import type { GetTechnicalIndicators200ResponseDataValue } from '@twelvedata/twelvedata-node'
 
-const instance: GetTechnicalIndicators200ResponseDataValue = {
-    enable,
-    fullName,
-    description,
-    type,
-    overlay,
-    outputValues,
-    parameters,
-    tinting,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "enable": null,
+  "fullName": null,
+  "description": null,
+  "type": null,
+  "overlay": null,
+  "outputValues": null,
+  "parameters": null,
+  "tinting": null,
+} satisfies GetTechnicalIndicators200ResponseDataValue
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTechnicalIndicators200ResponseDataValue
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

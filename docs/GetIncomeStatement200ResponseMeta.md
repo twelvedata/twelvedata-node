@@ -1,33 +1,47 @@
+
 # GetIncomeStatement200ResponseMeta
 
 Meta information about the instrument
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Symbol ticker of the instrument | [optional] [default to undefined]
-**name** | **string** | Name of the company | [optional] [default to undefined]
-**currency** | **string** | Currency of the instrument according to the ISO 4217 standard | [optional] [default to undefined]
-**exchange** | **string** | Exchange where the instrument is traded | [optional] [default to undefined]
-**micCode** | **string** | Market identifier code (MIC) under ISO 10383 standard | [optional] [default to undefined]
-**exchangeTimezone** | **string** | Exchange timezone | [optional] [default to undefined]
-**period** | **string** | Period of the income statement (Annual or Quarterly) | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`name` | string
+`currency` | string
+`exchange` | string
+`micCode` | string
+`exchangeTimezone` | string
+`period` | string
 
 ## Example
 
 ```typescript
-import { GetIncomeStatement200ResponseMeta } from '@twelvedata/twelvedata-node';
+import type { GetIncomeStatement200ResponseMeta } from '@twelvedata/twelvedata-node'
 
-const instance: GetIncomeStatement200ResponseMeta = {
-    symbol,
-    name,
-    currency,
-    exchange,
-    micCode,
-    exchangeTimezone,
-    period,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "name": null,
+  "currency": null,
+  "exchange": null,
+  "micCode": null,
+  "exchangeTimezone": null,
+  "period": null,
+} satisfies GetIncomeStatement200ResponseMeta
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetIncomeStatement200ResponseMeta
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

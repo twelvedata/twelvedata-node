@@ -1,48 +1,62 @@
+
 # GetMutualFundsWorld200ResponseMutualFundRiskVolatilityMeasuresInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**period** | **string** | Period of a measure | [optional] [default to undefined]
-**alpha** | **number** | Alpha score of a fund | [optional] [default to undefined]
-**alphaCategory** | **number** | Average alpha score of a fund\&#39;s category | [optional] [default to undefined]
-**beta** | **number** | Beta score of a fund | [optional] [default to undefined]
-**betaCategory** | **number** | Average beta score of a fund\&#39;s category | [optional] [default to undefined]
-**meanAnnualReturn** | **number** | Mean annual return of a fund | [optional] [default to undefined]
-**meanAnnualReturnCategory** | **number** | Average mean annual return of a fund\&#39;s category | [optional] [default to undefined]
-**rSquared** | **number** | R-squared metric of a fund | [optional] [default to undefined]
-**rSquaredCategory** | **number** | Average r-squared metric of a fund\&#39;s category | [optional] [default to undefined]
-**std** | **number** | Standard deviation of a fund | [optional] [default to undefined]
-**stdCategory** | **number** | Average standard deviation of a fund\&#39;s category | [optional] [default to undefined]
-**sharpeRatio** | **number** | Sharpe ratio of a fund | [optional] [default to undefined]
-**sharpeRatioCategory** | **number** | Average sharpe ratio of a fund\&#39;s category | [optional] [default to undefined]
-**treynorRatio** | **number** | Treynor ratio of a fund | [optional] [default to undefined]
-**treynorRatioCategory** | **number** | Average treynor ratio of a fund\&#39;s category | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`period` | string
+`alpha` | number
+`alphaCategory` | number
+`beta` | number
+`betaCategory` | number
+`meanAnnualReturn` | number
+`meanAnnualReturnCategory` | number
+`rSquared` | number
+`rSquaredCategory` | number
+`std` | number
+`stdCategory` | number
+`sharpeRatio` | number
+`sharpeRatioCategory` | number
+`treynorRatio` | number
+`treynorRatioCategory` | number
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundRiskVolatilityMeasuresInner } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundRiskVolatilityMeasuresInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundRiskVolatilityMeasuresInner = {
-    period,
-    alpha,
-    alphaCategory,
-    beta,
-    betaCategory,
-    meanAnnualReturn,
-    meanAnnualReturnCategory,
-    rSquared,
-    rSquaredCategory,
-    std,
-    stdCategory,
-    sharpeRatio,
-    sharpeRatioCategory,
-    treynorRatio,
-    treynorRatioCategory,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "period": null,
+  "alpha": null,
+  "alphaCategory": null,
+  "beta": null,
+  "betaCategory": null,
+  "meanAnnualReturn": null,
+  "meanAnnualReturnCategory": null,
+  "rSquared": null,
+  "rSquaredCategory": null,
+  "std": null,
+  "stdCategory": null,
+  "sharpeRatio": null,
+  "sharpeRatioCategory": null,
+  "treynorRatio": null,
+  "treynorRatioCategory": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundRiskVolatilityMeasuresInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundRiskVolatilityMeasuresInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

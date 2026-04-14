@@ -9,7 +9,7 @@ async function main() {
   const response = await api.getExchangeRate({
     symbol: "USD/EUR",
   });
-  console.log(response.data);
+  console.log(response);
 }
 
 main().catch(console.error);

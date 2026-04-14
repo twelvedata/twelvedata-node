@@ -1,28 +1,42 @@
+
 # GetETFsWorld200ResponseEtfCompositionTopHoldingsInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Symbol ticker of a holding instrument | [optional] [default to undefined]
-**name** | **string** | Name of a holding instrument | [optional] [default to undefined]
-**exchange** | **string** | Exchange where instrument is traded | [optional] [default to undefined]
-**micCode** | **string** | Market Identifier Code (MIC) under ISO 10383 standard | [optional] [default to undefined]
-**weight** | **number** | Weight of a holding instrument in overall portfolio composition | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`name` | string
+`exchange` | string
+`micCode` | string
+`weight` | number
 
 ## Example
 
 ```typescript
-import { GetETFsWorld200ResponseEtfCompositionTopHoldingsInner } from '@twelvedata/twelvedata-node';
+import type { GetETFsWorld200ResponseEtfCompositionTopHoldingsInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetETFsWorld200ResponseEtfCompositionTopHoldingsInner = {
-    symbol,
-    name,
-    exchange,
-    micCode,
-    weight,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "name": null,
+  "exchange": null,
+  "micCode": null,
+  "weight": null,
+} satisfies GetETFsWorld200ResponseEtfCompositionTopHoldingsInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetETFsWorld200ResponseEtfCompositionTopHoldingsInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

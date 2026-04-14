@@ -1,32 +1,46 @@
+
 # GetInsiderTransactions200ResponseInsiderTransactionsInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fullName** | **string** | Full name of an individual, including first name, middle name, last name, and suffix | [optional] [default to undefined]
-**position** | **string** | Job position of insider | [optional] [default to undefined]
-**dateReported** | **string** | Date the transaction was reported | [optional] [default to undefined]
-**isDirect** | **boolean** | &#x60;true&#x60; if direct, &#x60;false&#x60; if indirect | [optional] [default to undefined]
-**shares** | **number** | As per report the number of shares acquired or disposed of the transaction | [optional] [default to undefined]
-**value** | **number** | Represents the value of transaction, calculated as price multiplied by the volume | [optional] [default to undefined]
-**description** | **string** | Exact price or price range of the transaction if available | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`fullName` | string
+`position` | string
+`dateReported` | string
+`isDirect` | boolean
+`shares` | number
+`value` | number
+`description` | string
 
 ## Example
 
 ```typescript
-import { GetInsiderTransactions200ResponseInsiderTransactionsInner } from '@twelvedata/twelvedata-node';
+import type { GetInsiderTransactions200ResponseInsiderTransactionsInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetInsiderTransactions200ResponseInsiderTransactionsInner = {
-    fullName,
-    position,
-    dateReported,
-    isDirect,
-    shares,
-    value,
-    description,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "fullName": null,
+  "position": null,
+  "dateReported": null,
+  "isDirect": null,
+  "shares": null,
+  "value": null,
+  "description": null,
+} satisfies GetInsiderTransactions200ResponseInsiderTransactionsInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetInsiderTransactions200ResponseInsiderTransactionsInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

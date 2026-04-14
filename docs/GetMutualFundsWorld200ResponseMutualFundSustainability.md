@@ -1,27 +1,41 @@
+
 # GetMutualFundsWorld200ResponseMutualFundSustainability
 
 Sustainability information of a mutual fund
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**score** | **number** | Sustainability score: asset-weighted average of normalized company-level ESG Scores for the covered holdings in the portfolio from &#x60;0&#x60; to &#x60;100&#x60; | [optional] [default to undefined]
-**corporateEsgPillars** | [**GetMutualFundsWorld200ResponseMutualFundSustainabilityCorporateEsgPillars**](GetMutualFundsWorld200ResponseMutualFundSustainabilityCorporateEsgPillars.md) |  | [optional] [default to undefined]
-**sustainableInvestment** | **boolean** | Indication that the fund discloses in their prospectus that they employ socially responsible or ESG principles in their investment selection processes | [optional] [default to undefined]
-**corporateAum** | **number** | Percentage of AUM used to calculate sustainability score | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`score` | number
+`corporateEsgPillars` | [GetMutualFundsWorld200ResponseMutualFundSustainabilityCorporateEsgPillars](GetMutualFundsWorld200ResponseMutualFundSustainabilityCorporateEsgPillars.md)
+`sustainableInvestment` | boolean
+`corporateAum` | number
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundSustainability } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundSustainability } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundSustainability = {
-    score,
-    corporateEsgPillars,
-    sustainableInvestment,
-    corporateAum,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "score": null,
+  "corporateEsgPillars": null,
+  "sustainableInvestment": null,
+  "corporateAum": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundSustainability
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundSustainability
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

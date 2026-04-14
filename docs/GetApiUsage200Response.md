@@ -1,26 +1,40 @@
+
 # GetApiUsage200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**timestamp** | **string** | Current timestamp in UTC timezone | [optional] [default to undefined]
-**currentUsage** | **number** | Number of requests made in last minute | [optional] [default to undefined]
-**planLimit** | **number** | Your personal API limit (requests/minute) depending on the plan | [optional] [default to undefined]
-**planCategory** | **string** | Plan category name | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`timestamp` | string
+`currentUsage` | number
+`planLimit` | number
+`planCategory` | string
 
 ## Example
 
 ```typescript
-import { GetApiUsage200Response } from '@twelvedata/twelvedata-node';
+import type { GetApiUsage200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetApiUsage200Response = {
-    timestamp,
-    currentUsage,
-    planLimit,
-    planCategory,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "timestamp": null,
+  "currentUsage": null,
+  "planLimit": null,
+  "planCategory": null,
+} satisfies GetApiUsage200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetApiUsage200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

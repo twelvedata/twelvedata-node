@@ -1,27 +1,41 @@
+
 # GetTimeSeriesT3ma200ResponseMetaIndicator
 
 Technical indicator information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **string** | Name of the technical indicator | [optional] [default to undefined]
-**seriesType** | **string** | Price type on which technical indicator is calculated | [optional] [default to undefined]
-**timePeriod** | **number** | The time period used for calculation in the indicator | [optional] [default to undefined]
-**vFactor** | **number** | The factor used to adjust the indicator\&#39;s volatility | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`name` | string
+`seriesType` | string
+`timePeriod` | number
+`vFactor` | number
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesT3ma200ResponseMetaIndicator } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesT3ma200ResponseMetaIndicator } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesT3ma200ResponseMetaIndicator = {
-    name,
-    seriesType,
-    timePeriod,
-    vFactor,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "name": null,
+  "seriesType": null,
+  "timePeriod": null,
+  "vFactor": null,
+} satisfies GetTimeSeriesT3ma200ResponseMetaIndicator
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesT3ma200ResponseMetaIndicator
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

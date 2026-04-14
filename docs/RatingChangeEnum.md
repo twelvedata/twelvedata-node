@@ -1,16 +1,32 @@
+
 # RatingChangeEnum
 
 
-## Enum
+## Properties
 
-* `MAINTAINS` (value: `'Maintains'`)
+Name | Type
+------------ | -------------
 
-* `UPGRADE` (value: `'Upgrade'`)
+## Example
 
-* `DOWNGRADE` (value: `'Downgrade'`)
+```typescript
+import type { RatingChangeEnum } from '@twelvedata/twelvedata-node'
 
-* `INITIATES` (value: `'Initiates'`)
+// TODO: Update the object below with actual values
+const example = {
+} satisfies RatingChangeEnum
 
-* `REITERATES` (value: `'Reiterates'`)
+console.log(example)
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as RatingChangeEnum
+console.log(exampleParsed)
+```
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

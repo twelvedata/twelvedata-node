@@ -1,23 +1,37 @@
+
 # BalanceSheetConsolidatedItem
 
 Balance sheet for a specific fiscal date
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fiscalDate** | **string** | Date of the balance sheet release | [optional] [default to undefined]
-**assets** | [**AssetsInfo**](AssetsInfo.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`fiscalDate` | string
+`assets` | [AssetsInfo](AssetsInfo.md)
 
 ## Example
 
 ```typescript
-import { BalanceSheetConsolidatedItem } from '@twelvedata/twelvedata-node';
+import type { BalanceSheetConsolidatedItem } from '@twelvedata/twelvedata-node'
 
-const instance: BalanceSheetConsolidatedItem = {
-    fiscalDate,
-    assets,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "fiscalDate": null,
+  "assets": null,
+} satisfies BalanceSheetConsolidatedItem
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as BalanceSheetConsolidatedItem
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

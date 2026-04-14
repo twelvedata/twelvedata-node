@@ -1,41 +1,55 @@
+
 # GetStatistics200ResponseStatisticsDividendsAndSplits
 
 Dividends and splits information of the company
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**forwardAnnualDividendRate** | **number** | Refers to the forward dividend yield estimation in the currency of instrument | [optional] [default to undefined]
-**forwardAnnualDividendYield** | **number** | Refers to the forward dividend yield percentage relative to stock price | [optional] [default to undefined]
-**trailingAnnualDividendRate** | **number** | Refers to the trailing dividend yield rate in the currency of instrument over the last 12 months | [optional] [default to undefined]
-**trailingAnnualDividendYield** | **number** | Refers to the trailing dividend yield percentage relative to stock price | [optional] [default to undefined]
-**_5yearAverageDividendYield** | **number** | Refers to the average 5 years dividend yield | [optional] [default to undefined]
-**payoutRatio** | **number** | Refers to payout ratio, showing the proportion of earnings a company pays its shareholders in the form of dividends | [optional] [default to undefined]
-**dividendFrequency** | **string** | Refers to how often a stock or fund pays dividends | [optional] [default to undefined]
-**dividendDate** | **string** | Refers to the last dividend payout date | [optional] [default to undefined]
-**exDividendDate** | **string** | Refers to the last ex-dividend payout date | [optional] [default to undefined]
-**lastSplitFactor** | **string** | Specification of the last split event | [optional] [default to undefined]
-**lastSplitDate** | **string** | Refers for the last split date | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`forwardAnnualDividendRate` | number
+`forwardAnnualDividendYield` | number
+`trailingAnnualDividendRate` | number
+`trailingAnnualDividendYield` | number
+`_5yearAverageDividendYield` | number
+`payoutRatio` | number
+`dividendFrequency` | string
+`dividendDate` | string
+`exDividendDate` | string
+`lastSplitFactor` | string
+`lastSplitDate` | string
 
 ## Example
 
 ```typescript
-import { GetStatistics200ResponseStatisticsDividendsAndSplits } from '@twelvedata/twelvedata-node';
+import type { GetStatistics200ResponseStatisticsDividendsAndSplits } from '@twelvedata/twelvedata-node'
 
-const instance: GetStatistics200ResponseStatisticsDividendsAndSplits = {
-    forwardAnnualDividendRate,
-    forwardAnnualDividendYield,
-    trailingAnnualDividendRate,
-    trailingAnnualDividendYield,
-    _5yearAverageDividendYield,
-    payoutRatio,
-    dividendFrequency,
-    dividendDate,
-    exDividendDate,
-    lastSplitFactor,
-    lastSplitDate,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "forwardAnnualDividendRate": null,
+  "forwardAnnualDividendYield": null,
+  "trailingAnnualDividendRate": null,
+  "trailingAnnualDividendYield": null,
+  "_5yearAverageDividendYield": null,
+  "payoutRatio": null,
+  "dividendFrequency": null,
+  "dividendDate": null,
+  "exDividendDate": null,
+  "lastSplitFactor": null,
+  "lastSplitDate": null,
+} satisfies GetStatistics200ResponseStatisticsDividendsAndSplits
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetStatistics200ResponseStatisticsDividendsAndSplits
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

@@ -1,30 +1,44 @@
+
 # PressRelease
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **string** | Press release unique identifier | [optional] [default to undefined]
-**datetime** | **string** | Press release date in ISO 8601 format | [optional] [default to undefined]
-**title** | **string** | Press release title | [optional] [default to undefined]
-**body** | **string** | Press release body in html format | [optional] [default to undefined]
-**style** | **string** | Custom style applied to the release | [optional] [default to undefined]
-**language** | **Array&lt;string&gt;** | Press release language codes | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`id` | string
+`datetime` | string
+`title` | string
+`body` | string
+`style` | string
+`language` | Array&lt;string&gt;
 
 ## Example
 
 ```typescript
-import { PressRelease } from '@twelvedata/twelvedata-node';
+import type { PressRelease } from '@twelvedata/twelvedata-node'
 
-const instance: PressRelease = {
-    id,
-    datetime,
-    title,
-    body,
-    style,
-    language,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "id": null,
+  "datetime": null,
+  "title": null,
+  "body": null,
+  "style": null,
+  "language": null,
+} satisfies PressRelease
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as PressRelease
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

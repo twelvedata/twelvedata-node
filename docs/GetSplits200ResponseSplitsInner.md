@@ -1,28 +1,42 @@
+
 # GetSplits200ResponseSplitsInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**date** | **string** | Stands for the split date | [optional] [default to undefined]
-**description** | **string** | Specification of the split event | [optional] [default to undefined]
-**ratio** | **number** | The ratio by which the number of a company\&#39;s outstanding shares of stock are increased following a stock split. For example, a &#x60;4-for-1 split&#x60; results in four times as many outstanding shares, with each share selling at one forth of its pre-split price | [optional] [default to undefined]
-**fromFactor** | **number** | From factor of the split | [optional] [default to undefined]
-**toFactor** | **number** | To factor of the split | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`date` | string
+`description` | string
+`ratio` | number
+`fromFactor` | number
+`toFactor` | number
 
 ## Example
 
 ```typescript
-import { GetSplits200ResponseSplitsInner } from '@twelvedata/twelvedata-node';
+import type { GetSplits200ResponseSplitsInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetSplits200ResponseSplitsInner = {
-    date,
-    description,
-    ratio,
-    fromFactor,
-    toFactor,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "date": null,
+  "description": null,
+  "ratio": null,
+  "fromFactor": null,
+  "toFactor": null,
+} satisfies GetSplits200ResponseSplitsInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetSplits200ResponseSplitsInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

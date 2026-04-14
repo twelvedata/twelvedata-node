@@ -1,22 +1,36 @@
+
 # GetMutualFundsWorld200ResponseMutualFundPerformanceLoadAdjustedReturnInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**period** | **string** | Period of a load adjusted return | [optional] [default to undefined]
-**_return** | **number** | Actual return (%) an investor sees after accounting for fees and sales charges are deducted from a mutual fund\&#39;s performance | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`period` | string
+`_return` | number
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundPerformanceLoadAdjustedReturnInner } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundPerformanceLoadAdjustedReturnInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundPerformanceLoadAdjustedReturnInner = {
-    period,
-    _return,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "period": null,
+  "_return": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundPerformanceLoadAdjustedReturnInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundPerformanceLoadAdjustedReturnInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

@@ -1,35 +1,49 @@
+
 # CashFlowDataDirectMethodCashFlow
 
 Direct method cash flow
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**classesOfCashReceiptsFromOperatingActivities** | **number** | Classes of cash receipts from operating activities | [optional] [default to undefined]
-**otherCashReceiptsFromOperatingActivities** | **number** | Other cash receipts from operating activities | [optional] [default to undefined]
-**receiptsFromGovernmentGrants** | **number** | Receipts from government grants | [optional] [default to undefined]
-**receiptsFromCustomers** | **number** | Receipts from customers | [optional] [default to undefined]
-**classesOfCashPayments** | **number** | Classes of cash payments | [optional] [default to undefined]
-**otherCashPaymentsFromOperatingActivities** | **number** | Other cash payments from operating activities | [optional] [default to undefined]
-**paymentsOnBehalfOfEmployees** | **number** | Payments on behalf of employees | [optional] [default to undefined]
-**paymentsToSuppliersForGoodsAndServices** | **number** | Payments to suppliers for goods and services | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`classesOfCashReceiptsFromOperatingActivities` | number
+`otherCashReceiptsFromOperatingActivities` | number
+`receiptsFromGovernmentGrants` | number
+`receiptsFromCustomers` | number
+`classesOfCashPayments` | number
+`otherCashPaymentsFromOperatingActivities` | number
+`paymentsOnBehalfOfEmployees` | number
+`paymentsToSuppliersForGoodsAndServices` | number
 
 ## Example
 
 ```typescript
-import { CashFlowDataDirectMethodCashFlow } from '@twelvedata/twelvedata-node';
+import type { CashFlowDataDirectMethodCashFlow } from '@twelvedata/twelvedata-node'
 
-const instance: CashFlowDataDirectMethodCashFlow = {
-    classesOfCashReceiptsFromOperatingActivities,
-    otherCashReceiptsFromOperatingActivities,
-    receiptsFromGovernmentGrants,
-    receiptsFromCustomers,
-    classesOfCashPayments,
-    otherCashPaymentsFromOperatingActivities,
-    paymentsOnBehalfOfEmployees,
-    paymentsToSuppliersForGoodsAndServices,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "classesOfCashReceiptsFromOperatingActivities": null,
+  "otherCashReceiptsFromOperatingActivities": null,
+  "receiptsFromGovernmentGrants": null,
+  "receiptsFromCustomers": null,
+  "classesOfCashPayments": null,
+  "otherCashPaymentsFromOperatingActivities": null,
+  "paymentsOnBehalfOfEmployees": null,
+  "paymentsToSuppliersForGoodsAndServices": null,
+} satisfies CashFlowDataDirectMethodCashFlow
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as CashFlowDataDirectMethodCashFlow
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

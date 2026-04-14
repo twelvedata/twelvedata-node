@@ -1,22 +1,36 @@
+
 # GetFunds200ResponseResult
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**count** | **number** | Total number of matching instruments | [optional] [default to undefined]
-**list** | [**Array&lt;FundResponseItem&gt;**](FundResponseItem.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`count` | number
+`list` | [Array&lt;FundResponseItem&gt;](FundResponseItem.md)
 
 ## Example
 
 ```typescript
-import { GetFunds200ResponseResult } from '@twelvedata/twelvedata-node';
+import type { GetFunds200ResponseResult } from '@twelvedata/twelvedata-node'
 
-const instance: GetFunds200ResponseResult = {
-    count,
-    list,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "count": null,
+  "list": null,
+} satisfies GetFunds200ResponseResult
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetFunds200ResponseResult
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

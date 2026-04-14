@@ -1,47 +1,61 @@
+
 # EquityInfoCapitalStock
 
 Capital stock information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**commonStock** | **number** | Common stock | [optional] [default to undefined]
-**preferredStock** | **number** | Preferred stock | [optional] [default to undefined]
-**totalPartnershipCapital** | **number** | Total partnership capital | [optional] [default to undefined]
-**generalPartnershipCapital** | **number** | General partnership capital | [optional] [default to undefined]
-**limitedPartnershipCapital** | **number** | Limited partnership capital | [optional] [default to undefined]
-**capitalStock** | **number** | Capital stock | [optional] [default to undefined]
-**otherCapitalStock** | **number** | Other capital stock | [optional] [default to undefined]
-**additionalPaidInCapital** | **number** | Additional paid in capital | [optional] [default to undefined]
-**retainedEarnings** | **number** | Retained earnings | [optional] [default to undefined]
-**treasuryStock** | **number** | Treasury stock | [optional] [default to undefined]
-**treasurySharesNumber** | **number** | Treasury shares number | [optional] [default to undefined]
-**ordinarySharesNumber** | **number** | Ordinary shares number | [optional] [default to undefined]
-**preferredSharesNumber** | **number** | Preferred shares number | [optional] [default to undefined]
-**shareIssued** | **number** | Share issued | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`commonStock` | number
+`preferredStock` | number
+`totalPartnershipCapital` | number
+`generalPartnershipCapital` | number
+`limitedPartnershipCapital` | number
+`capitalStock` | number
+`otherCapitalStock` | number
+`additionalPaidInCapital` | number
+`retainedEarnings` | number
+`treasuryStock` | number
+`treasurySharesNumber` | number
+`ordinarySharesNumber` | number
+`preferredSharesNumber` | number
+`shareIssued` | number
 
 ## Example
 
 ```typescript
-import { EquityInfoCapitalStock } from '@twelvedata/twelvedata-node';
+import type { EquityInfoCapitalStock } from '@twelvedata/twelvedata-node'
 
-const instance: EquityInfoCapitalStock = {
-    commonStock,
-    preferredStock,
-    totalPartnershipCapital,
-    generalPartnershipCapital,
-    limitedPartnershipCapital,
-    capitalStock,
-    otherCapitalStock,
-    additionalPaidInCapital,
-    retainedEarnings,
-    treasuryStock,
-    treasurySharesNumber,
-    ordinarySharesNumber,
-    preferredSharesNumber,
-    shareIssued,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "commonStock": null,
+  "preferredStock": null,
+  "totalPartnershipCapital": null,
+  "generalPartnershipCapital": null,
+  "limitedPartnershipCapital": null,
+  "capitalStock": null,
+  "otherCapitalStock": null,
+  "additionalPaidInCapital": null,
+  "retainedEarnings": null,
+  "treasuryStock": null,
+  "treasurySharesNumber": null,
+  "ordinarySharesNumber": null,
+  "preferredSharesNumber": null,
+  "shareIssued": null,
+} satisfies EquityInfoCapitalStock
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as EquityInfoCapitalStock
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

@@ -1,22 +1,36 @@
+
 # GetMutualFundsWorld200ResponseMutualFundSummaryPeopleInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **string** | Manager name | [optional] [default to undefined]
-**tenureSince** | **string** | Manager tenuring date | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`name` | string
+`tenureSince` | string
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundSummaryPeopleInner } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundSummaryPeopleInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundSummaryPeopleInner = {
-    name,
-    tenureSince,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "name": null,
+  "tenureSince": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundSummaryPeopleInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundSummaryPeopleInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

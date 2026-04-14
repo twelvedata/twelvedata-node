@@ -1,28 +1,42 @@
+
 # ResponseSanctionedEntitiy
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | The instrument symbol ticker | [optional] [default to undefined]
-**name** | **string** | The instrument name | [optional] [default to undefined]
-**micCode** | **string** | Market Identifier Code (MIC) under ISO 10383 standard | [optional] [default to undefined]
-**country** | **string** | Country name | [optional] [default to undefined]
-**sanction** | [**ResponseSanctionItem**](ResponseSanctionItem.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`name` | string
+`micCode` | string
+`country` | string
+`sanction` | [ResponseSanctionItem](ResponseSanctionItem.md)
 
 ## Example
 
 ```typescript
-import { ResponseSanctionedEntitiy } from '@twelvedata/twelvedata-node';
+import type { ResponseSanctionedEntitiy } from '@twelvedata/twelvedata-node'
 
-const instance: ResponseSanctionedEntitiy = {
-    symbol,
-    name,
-    micCode,
-    country,
-    sanction,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "name": null,
+  "micCode": null,
+  "country": null,
+  "sanction": null,
+} satisfies ResponseSanctionedEntitiy
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as ResponseSanctionedEntitiy
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

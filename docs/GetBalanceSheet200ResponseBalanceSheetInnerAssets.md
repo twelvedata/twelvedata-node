@@ -1,25 +1,39 @@
+
 # GetBalanceSheet200ResponseBalanceSheetInnerAssets
 
 Assets section of the balance sheet
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currentAssets** | [**GetBalanceSheet200ResponseBalanceSheetInnerAssetsCurrentAssets**](GetBalanceSheet200ResponseBalanceSheetInnerAssetsCurrentAssets.md) |  | [optional] [default to undefined]
-**nonCurrentAssets** | [**GetBalanceSheet200ResponseBalanceSheetInnerAssetsNonCurrentAssets**](GetBalanceSheet200ResponseBalanceSheetInnerAssetsNonCurrentAssets.md) |  | [optional] [default to undefined]
-**totalAssets** | **number** | The sum of total_current_assets + total_non_current_assets | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`currentAssets` | [GetBalanceSheet200ResponseBalanceSheetInnerAssetsCurrentAssets](GetBalanceSheet200ResponseBalanceSheetInnerAssetsCurrentAssets.md)
+`nonCurrentAssets` | [GetBalanceSheet200ResponseBalanceSheetInnerAssetsNonCurrentAssets](GetBalanceSheet200ResponseBalanceSheetInnerAssetsNonCurrentAssets.md)
+`totalAssets` | number
 
 ## Example
 
 ```typescript
-import { GetBalanceSheet200ResponseBalanceSheetInnerAssets } from '@twelvedata/twelvedata-node';
+import type { GetBalanceSheet200ResponseBalanceSheetInnerAssets } from '@twelvedata/twelvedata-node'
 
-const instance: GetBalanceSheet200ResponseBalanceSheetInnerAssets = {
-    currentAssets,
-    nonCurrentAssets,
-    totalAssets,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "currentAssets": null,
+  "nonCurrentAssets": null,
+  "totalAssets": null,
+} satisfies GetBalanceSheet200ResponseBalanceSheetInnerAssets
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetBalanceSheet200ResponseBalanceSheetInnerAssets
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

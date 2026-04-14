@@ -1,30 +1,32 @@
+
 # IntervalEnum
 
 
-## Enum
+## Properties
 
-* `_1MIN` (value: `'1min'`)
+Name | Type
+------------ | -------------
 
-* `_5MIN` (value: `'5min'`)
+## Example
 
-* `_15MIN` (value: `'15min'`)
+```typescript
+import type { IntervalEnum } from '@twelvedata/twelvedata-node'
 
-* `_30MIN` (value: `'30min'`)
+// TODO: Update the object below with actual values
+const example = {
+} satisfies IntervalEnum
 
-* `_45MIN` (value: `'45min'`)
+console.log(example)
 
-* `_1H` (value: `'1h'`)
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
 
-* `_2H` (value: `'2h'`)
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as IntervalEnum
+console.log(exampleParsed)
+```
 
-* `_4H` (value: `'4h'`)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
-* `_8H` (value: `'8h'`)
 
-* `_1DAY` (value: `'1day'`)
-
-* `_1WEEK` (value: `'1week'`)
-
-* `_1MONTH` (value: `'1month'`)
-
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

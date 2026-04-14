@@ -1,44 +1,58 @@
+
 # OptionSide
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**ask** | **number** |  | [optional] [default to undefined]
-**bid** | **number** |  | [optional] [default to undefined]
-**change** | **number** |  | [optional] [default to undefined]
-**contractName** | **string** |  | [optional] [default to undefined]
-**impliedVolatility** | **number** |  | [optional] [default to undefined]
-**inTheMoney** | **boolean** |  | [optional] [default to undefined]
-**lastPrice** | **number** |  | [optional] [default to undefined]
-**lastTradeDate** | **string** |  | [optional] [default to undefined]
-**openInterest** | **number** |  | [optional] [default to undefined]
-**optionId** | **string** |  | [optional] [default to undefined]
-**percentChange** | **number** |  | [optional] [default to undefined]
-**strike** | **number** |  | [optional] [default to undefined]
-**volume** | **number** |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`ask` | number
+`bid` | number
+`change` | number
+`contractName` | string
+`impliedVolatility` | number
+`inTheMoney` | boolean
+`lastPrice` | number
+`lastTradeDate` | string
+`openInterest` | number
+`optionId` | string
+`percentChange` | number
+`strike` | number
+`volume` | number
 
 ## Example
 
 ```typescript
-import { OptionSide } from '@twelvedata/twelvedata-node';
+import type { OptionSide } from '@twelvedata/twelvedata-node'
 
-const instance: OptionSide = {
-    ask,
-    bid,
-    change,
-    contractName,
-    impliedVolatility,
-    inTheMoney,
-    lastPrice,
-    lastTradeDate,
-    openInterest,
-    optionId,
-    percentChange,
-    strike,
-    volume,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "ask": null,
+  "bid": null,
+  "change": null,
+  "contractName": null,
+  "impliedVolatility": null,
+  "inTheMoney": null,
+  "lastPrice": null,
+  "lastTradeDate": null,
+  "openInterest": null,
+  "optionId": null,
+  "percentChange": null,
+  "strike": null,
+  "volume": null,
+} satisfies OptionSide
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as OptionSide
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

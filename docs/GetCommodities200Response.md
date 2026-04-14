@@ -1,22 +1,36 @@
+
 # GetCommodities200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | [**Array&lt;CommoditiesResponseItem&gt;**](CommoditiesResponseItem.md) | List of commodities | [optional] [default to undefined]
-**status** | **string** | Response status | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`data` | [Array&lt;CommoditiesResponseItem&gt;](CommoditiesResponseItem.md)
+`status` | string
 
 ## Example
 
 ```typescript
-import { GetCommodities200Response } from '@twelvedata/twelvedata-node';
+import type { GetCommodities200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetCommodities200Response = {
-    data,
-    status,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "data": null,
+  "status": null,
+} satisfies GetCommodities200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetCommodities200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

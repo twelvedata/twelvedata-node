@@ -1,25 +1,39 @@
+
 # GetTimeSeriesSar200ResponseMetaIndicator
 
 Technical indicator information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **string** | Name of the technical indicator | [optional] [default to undefined]
-**acceleration** | **number** | The acceleration factor used in the indicator calculation | [optional] [default to undefined]
-**maximum** | **number** | The maximum value considered for the indicator calculation | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`name` | string
+`acceleration` | number
+`maximum` | number
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesSar200ResponseMetaIndicator } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesSar200ResponseMetaIndicator } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesSar200ResponseMetaIndicator = {
-    name,
-    acceleration,
-    maximum,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "name": null,
+  "acceleration": null,
+  "maximum": null,
+} satisfies GetTimeSeriesSar200ResponseMetaIndicator
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesSar200ResponseMetaIndicator
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

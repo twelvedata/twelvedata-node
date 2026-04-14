@@ -1,32 +1,46 @@
+
 # GetEpsTrend200ResponseEpsTrendInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**date** | **string** | Date of the estimation | [optional] [default to undefined]
-**period** | **string** | Period of estimation, can be &#x60;current_quarter&#x60;, &#x60;next_quarter&#x60;, &#x60;current_year&#x60;, or &#x60;next_year&#x60; | [optional] [default to undefined]
-**currentEstimate** | **number** | Actual EPS estimation for the period | [optional] [default to undefined]
-**_7daysAgo** | **number** | EPS estimation value 7 days ago | [optional] [default to undefined]
-**_30daysAgo** | **number** | EPS estimation value 30 days ago | [optional] [default to undefined]
-**_60daysAgo** | **number** | EPS estimation value 60 days ago | [optional] [default to undefined]
-**_90daysAgo** | **number** | EPS estimation value 90 days ago | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`date` | string
+`period` | string
+`currentEstimate` | number
+`_7daysAgo` | number
+`_30daysAgo` | number
+`_60daysAgo` | number
+`_90daysAgo` | number
 
 ## Example
 
 ```typescript
-import { GetEpsTrend200ResponseEpsTrendInner } from '@twelvedata/twelvedata-node';
+import type { GetEpsTrend200ResponseEpsTrendInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetEpsTrend200ResponseEpsTrendInner = {
-    date,
-    period,
-    currentEstimate,
-    _7daysAgo,
-    _30daysAgo,
-    _60daysAgo,
-    _90daysAgo,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "date": null,
+  "period": null,
+  "currentEstimate": null,
+  "_7daysAgo": null,
+  "_30daysAgo": null,
+  "_60daysAgo": null,
+  "_90daysAgo": null,
+} satisfies GetEpsTrend200ResponseEpsTrendInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetEpsTrend200ResponseEpsTrendInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

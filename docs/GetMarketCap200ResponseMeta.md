@@ -1,31 +1,45 @@
+
 # GetMarketCap200ResponseMeta
 
 Meta information about the company
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Ticker of the company | [optional] [default to undefined]
-**name** | **string** | Name of the company | [optional] [default to undefined]
-**currency** | **string** | Currency in which instrument is traded by ISO 4217 standard | [optional] [default to undefined]
-**exchange** | **string** | Exchange name where the company is listed | [optional] [default to undefined]
-**micCode** | **string** | Market Identifier Code (MIC) under ISO 10383 standard | [optional] [default to undefined]
-**exchangeTimezone** | **string** | Exchange timezone | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`name` | string
+`currency` | string
+`exchange` | string
+`micCode` | string
+`exchangeTimezone` | string
 
 ## Example
 
 ```typescript
-import { GetMarketCap200ResponseMeta } from '@twelvedata/twelvedata-node';
+import type { GetMarketCap200ResponseMeta } from '@twelvedata/twelvedata-node'
 
-const instance: GetMarketCap200ResponseMeta = {
-    symbol,
-    name,
-    currency,
-    exchange,
-    micCode,
-    exchangeTimezone,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "name": null,
+  "currency": null,
+  "exchange": null,
+  "micCode": null,
+  "exchangeTimezone": null,
+} satisfies GetMarketCap200ResponseMeta
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMarketCap200ResponseMeta
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

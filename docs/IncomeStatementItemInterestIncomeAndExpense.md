@@ -1,31 +1,45 @@
+
 # IncomeStatementItemInterestIncomeAndExpense
 
 Interest income and expense information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**interestIncome** | **number** | Interest income | [optional] [default to undefined]
-**interestExpense** | **number** | Interest expense | [optional] [default to undefined]
-**netInterestIncome** | **number** | Net interest income | [optional] [default to undefined]
-**netNonOperatingInterestIncomeExpense** | **number** | Net non operating interest income expense | [optional] [default to undefined]
-**interestExpenseNonOperating** | **number** | Interest expense non operating | [optional] [default to undefined]
-**interestIncomeNonOperating** | **number** | Interest income non operating | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`interestIncome` | number
+`interestExpense` | number
+`netInterestIncome` | number
+`netNonOperatingInterestIncomeExpense` | number
+`interestExpenseNonOperating` | number
+`interestIncomeNonOperating` | number
 
 ## Example
 
 ```typescript
-import { IncomeStatementItemInterestIncomeAndExpense } from '@twelvedata/twelvedata-node';
+import type { IncomeStatementItemInterestIncomeAndExpense } from '@twelvedata/twelvedata-node'
 
-const instance: IncomeStatementItemInterestIncomeAndExpense = {
-    interestIncome,
-    interestExpense,
-    netInterestIncome,
-    netNonOperatingInterestIncomeExpense,
-    interestExpenseNonOperating,
-    interestIncomeNonOperating,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "interestIncome": null,
+  "interestExpense": null,
+  "netInterestIncome": null,
+  "netNonOperatingInterestIncomeExpense": null,
+  "interestExpenseNonOperating": null,
+  "interestIncomeNonOperating": null,
+} satisfies IncomeStatementItemInterestIncomeAndExpense
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as IncomeStatementItemInterestIncomeAndExpense
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

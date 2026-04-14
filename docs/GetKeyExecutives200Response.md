@@ -1,22 +1,36 @@
+
 # GetKeyExecutives200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**meta** | [**GetKeyExecutives200ResponseMeta**](GetKeyExecutives200ResponseMeta.md) |  | [optional] [default to undefined]
-**keyExecutives** | [**Array&lt;GetKeyExecutives200ResponseKeyExecutivesInner&gt;**](GetKeyExecutives200ResponseKeyExecutivesInner.md) | List of key executives | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`meta` | [GetKeyExecutives200ResponseMeta](GetKeyExecutives200ResponseMeta.md)
+`keyExecutives` | [Array&lt;GetKeyExecutives200ResponseKeyExecutivesInner&gt;](GetKeyExecutives200ResponseKeyExecutivesInner.md)
 
 ## Example
 
 ```typescript
-import { GetKeyExecutives200Response } from '@twelvedata/twelvedata-node';
+import type { GetKeyExecutives200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetKeyExecutives200Response = {
-    meta,
-    keyExecutives,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "meta": null,
+  "keyExecutives": null,
+} satisfies GetKeyExecutives200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetKeyExecutives200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

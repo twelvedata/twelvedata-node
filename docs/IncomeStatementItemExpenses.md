@@ -1,43 +1,57 @@
+
 # IncomeStatementItemExpenses
 
 Expenses information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalExpenses** | **number** | Total expenses | [optional] [default to undefined]
-**sellingGeneralAndAdministrationExpense** | **number** | Selling general and administration expense | [optional] [default to undefined]
-**sellingAndMarketingExpense** | **number** | Selling and marketing expense | [optional] [default to undefined]
-**generalAndAdministrativeExpense** | **number** | General and administrative expense | [optional] [default to undefined]
-**otherGeneralAndAdministrativeExpense** | **number** | Other general and administrative expense | [optional] [default to undefined]
-**depreciationAmortizationDepletionIncomeStatement** | **number** | Depreciation amortization depletion income statement | [optional] [default to undefined]
-**researchAndDevelopmentExpense** | **number** | Research and development expense | [optional] [default to undefined]
-**insuranceAndClaimsExpense** | **number** | Insurance and claims expense | [optional] [default to undefined]
-**rentAndLandingFees** | **number** | Rent and landing fees | [optional] [default to undefined]
-**salariesAndWagesExpense** | **number** | Salaries and wages expense | [optional] [default to undefined]
-**rentExpenseSupplemental** | **number** | Rent expense supplemental | [optional] [default to undefined]
-**provisionForDoubtfulAccounts** | **number** | Provision for doubtful accounts | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`totalExpenses` | number
+`sellingGeneralAndAdministrationExpense` | number
+`sellingAndMarketingExpense` | number
+`generalAndAdministrativeExpense` | number
+`otherGeneralAndAdministrativeExpense` | number
+`depreciationAmortizationDepletionIncomeStatement` | number
+`researchAndDevelopmentExpense` | number
+`insuranceAndClaimsExpense` | number
+`rentAndLandingFees` | number
+`salariesAndWagesExpense` | number
+`rentExpenseSupplemental` | number
+`provisionForDoubtfulAccounts` | number
 
 ## Example
 
 ```typescript
-import { IncomeStatementItemExpenses } from '@twelvedata/twelvedata-node';
+import type { IncomeStatementItemExpenses } from '@twelvedata/twelvedata-node'
 
-const instance: IncomeStatementItemExpenses = {
-    totalExpenses,
-    sellingGeneralAndAdministrationExpense,
-    sellingAndMarketingExpense,
-    generalAndAdministrativeExpense,
-    otherGeneralAndAdministrativeExpense,
-    depreciationAmortizationDepletionIncomeStatement,
-    researchAndDevelopmentExpense,
-    insuranceAndClaimsExpense,
-    rentAndLandingFees,
-    salariesAndWagesExpense,
-    rentExpenseSupplemental,
-    provisionForDoubtfulAccounts,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "totalExpenses": null,
+  "sellingGeneralAndAdministrationExpense": null,
+  "sellingAndMarketingExpense": null,
+  "generalAndAdministrativeExpense": null,
+  "otherGeneralAndAdministrativeExpense": null,
+  "depreciationAmortizationDepletionIncomeStatement": null,
+  "researchAndDevelopmentExpense": null,
+  "insuranceAndClaimsExpense": null,
+  "rentAndLandingFees": null,
+  "salariesAndWagesExpense": null,
+  "rentExpenseSupplemental": null,
+  "provisionForDoubtfulAccounts": null,
+} satisfies IncomeStatementItemExpenses
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as IncomeStatementItemExpenses
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

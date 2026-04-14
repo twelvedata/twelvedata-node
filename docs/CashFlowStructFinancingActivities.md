@@ -1,35 +1,49 @@
+
 # CashFlowStructFinancingActivities
 
 Financing activities section
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**longTermDebtIssuance** | **number** | Refers to the issuance of any financial obligations that extend beyond a 12 months period | [optional] [default to undefined]
-**longTermDebtPayments** | **number** | Refers to the payments of any financial obligations that extend beyond a 12 months period | [optional] [default to undefined]
-**shortTermDebtIssuance** | **number** | Refers to the issuance of any financial obligations that are expected to be paid off within a year | [optional] [default to undefined]
-**commonStockIssuance** | **number** | Represents a transaction whereby a company issues its own shares to the marketplace | [optional] [default to undefined]
-**commonStockRepurchase** | **number** | Represents a transaction whereby a company buys back its own shares from the marketplace | [optional] [default to undefined]
-**commonDividends** | **number** | Returns value of payment doled out by a company to its stockholders in the form of periodic distributions of cash | [optional] [default to undefined]
-**otherFinancingCharges** | **number** | Represents other financing charges | [optional] [default to undefined]
-**financingCashFlow** | **number** | Returns cash flow from financing activities (CFF), which shows the net flows of cash that are used to fund the company | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`longTermDebtIssuance` | number
+`longTermDebtPayments` | number
+`shortTermDebtIssuance` | number
+`commonStockIssuance` | number
+`commonStockRepurchase` | number
+`commonDividends` | number
+`otherFinancingCharges` | number
+`financingCashFlow` | number
 
 ## Example
 
 ```typescript
-import { CashFlowStructFinancingActivities } from '@twelvedata/twelvedata-node';
+import type { CashFlowStructFinancingActivities } from '@twelvedata/twelvedata-node'
 
-const instance: CashFlowStructFinancingActivities = {
-    longTermDebtIssuance,
-    longTermDebtPayments,
-    shortTermDebtIssuance,
-    commonStockIssuance,
-    commonStockRepurchase,
-    commonDividends,
-    otherFinancingCharges,
-    financingCashFlow,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "longTermDebtIssuance": null,
+  "longTermDebtPayments": null,
+  "shortTermDebtIssuance": null,
+  "commonStockIssuance": null,
+  "commonStockRepurchase": null,
+  "commonDividends": null,
+  "otherFinancingCharges": null,
+  "financingCashFlow": null,
+} satisfies CashFlowStructFinancingActivities
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as CashFlowStructFinancingActivities
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

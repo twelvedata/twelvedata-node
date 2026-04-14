@@ -1,0 +1,137 @@
+/* tslint:disable */
+/* eslint-disable */
+/**
+ * Twelve Data API client for Node.js
+ *
+ * NOTE: This code is auto generated, please do not edit it manually.
+ */
+import { mapValues } from "../runtime";
+import type { GetTimeSeriesRocr200ResponseMetaIndicator } from "./GetTimeSeriesRocr200ResponseMetaIndicator";
+import {
+  GetTimeSeriesRocr200ResponseMetaIndicatorFromJSON,
+  GetTimeSeriesRocr200ResponseMetaIndicatorFromJSONTyped,
+  GetTimeSeriesRocr200ResponseMetaIndicatorToJSON,
+  GetTimeSeriesRocr200ResponseMetaIndicatorToJSONTyped,
+} from "./GetTimeSeriesRocr200ResponseMetaIndicator";
+
+/**
+ * Json object with request general information
+ * @export
+ * @interface GetTimeSeriesRocr200ResponseMeta
+ */
+export interface GetTimeSeriesRocr200ResponseMeta {
+  /**
+   * The ticker symbol of an instrument for which data was requested.
+   * @type {string}
+   * @memberof GetTimeSeriesRocr200ResponseMeta
+   */
+  symbol?: string;
+  /**
+   * The time gap between consecutive data points.
+   * @type {string}
+   * @memberof GetTimeSeriesRocr200ResponseMeta
+   */
+  interval?: string;
+  /**
+   * The currency of a traded instrument.
+   * @type {string}
+   * @memberof GetTimeSeriesRocr200ResponseMeta
+   */
+  currency?: string;
+  /**
+   * The timezone of the exchange where the instrument is traded.
+   * @type {string}
+   * @memberof GetTimeSeriesRocr200ResponseMeta
+   */
+  exchangeTimezone?: string;
+  /**
+   * The exchange name where the instrument is traded.
+   * @type {string}
+   * @memberof GetTimeSeriesRocr200ResponseMeta
+   */
+  exchange?: string;
+  /**
+   * The Market Identifier Code (MIC) of the exchange where the instrument is traded.
+   * @type {string}
+   * @memberof GetTimeSeriesRocr200ResponseMeta
+   */
+  micCode?: string;
+  /**
+   * The asset class to which the instrument belongs.
+   * @type {string}
+   * @memberof GetTimeSeriesRocr200ResponseMeta
+   */
+  type?: string;
+  /**
+   *
+   * @type {GetTimeSeriesRocr200ResponseMetaIndicator}
+   * @memberof GetTimeSeriesRocr200ResponseMeta
+   */
+  indicator?: GetTimeSeriesRocr200ResponseMetaIndicator;
+}
+
+/**
+ * Check if a given object implements the GetTimeSeriesRocr200ResponseMeta interface.
+ */
+export function instanceOfGetTimeSeriesRocr200ResponseMeta(
+  value: object,
+): value is GetTimeSeriesRocr200ResponseMeta {
+  return true;
+}
+
+export function GetTimeSeriesRocr200ResponseMetaFromJSON(
+  json: any,
+): GetTimeSeriesRocr200ResponseMeta {
+  return GetTimeSeriesRocr200ResponseMetaFromJSONTyped(json, false);
+}
+
+export function GetTimeSeriesRocr200ResponseMetaFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean,
+): GetTimeSeriesRocr200ResponseMeta {
+  if (json == null) {
+    return json;
+  }
+  return {
+    symbol: json["symbol"] == null ? undefined : json["symbol"],
+    interval: json["interval"] == null ? undefined : json["interval"],
+    currency: json["currency"] == null ? undefined : json["currency"],
+    exchangeTimezone:
+      json["exchange_timezone"] == null ? undefined : json["exchange_timezone"],
+    exchange: json["exchange"] == null ? undefined : json["exchange"],
+    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
+    type: json["type"] == null ? undefined : json["type"],
+    indicator:
+      json["indicator"] == null
+        ? undefined
+        : GetTimeSeriesRocr200ResponseMetaIndicatorFromJSON(json["indicator"]),
+  };
+}
+
+export function GetTimeSeriesRocr200ResponseMetaToJSON(
+  json: any,
+): GetTimeSeriesRocr200ResponseMeta {
+  return GetTimeSeriesRocr200ResponseMetaToJSONTyped(json, false);
+}
+
+export function GetTimeSeriesRocr200ResponseMetaToJSONTyped(
+  value?: GetTimeSeriesRocr200ResponseMeta | null,
+  ignoreDiscriminator: boolean = false,
+): any {
+  if (value == null) {
+    return value;
+  }
+
+  return {
+    symbol: value["symbol"],
+    interval: value["interval"],
+    currency: value["currency"],
+    exchange_timezone: value["exchangeTimezone"],
+    exchange: value["exchange"],
+    mic_code: value["micCode"],
+    type: value["type"],
+    indicator: GetTimeSeriesRocr200ResponseMetaIndicatorToJSON(
+      value["indicator"],
+    ),
+  };
+}

@@ -10,7 +10,7 @@ async function main() {
     symbol: "USD/EUR",
     amount: 100,
   });
-  console.log(response.data);
+  console.log(response);
 }
 
 main().catch(console.error);

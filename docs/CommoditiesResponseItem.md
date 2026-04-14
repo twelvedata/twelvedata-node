@@ -1,27 +1,41 @@
+
 # CommoditiesResponseItem
 
 CommoditiesResponseItem represents details of a commodity
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Currency pair according to ISO 4217 standard codes with slash(/) delimiter | [optional] [default to undefined]
-**name** | **string** | Full name of the instrument | [optional] [default to undefined]
-**category** | **string** | Category of commodity | [optional] [default to undefined]
-**description** | **string** | Short description of the commodity | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`name` | string
+`category` | string
+`description` | string
 
 ## Example
 
 ```typescript
-import { CommoditiesResponseItem } from '@twelvedata/twelvedata-node';
+import type { CommoditiesResponseItem } from '@twelvedata/twelvedata-node'
 
-const instance: CommoditiesResponseItem = {
-    symbol,
-    name,
-    category,
-    description,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "name": null,
+  "category": null,
+  "description": null,
+} satisfies CommoditiesResponseItem
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as CommoditiesResponseItem
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

@@ -1,27 +1,41 @@
+
 # GetRecommendations200ResponseTrends
 
 Analyst recommendations trends
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currentMonth** | [**GetRecommendations200ResponseTrendsCurrentMonth**](GetRecommendations200ResponseTrendsCurrentMonth.md) |  | [optional] [default to undefined]
-**previousMonth** | [**GetRecommendations200ResponseTrendsPreviousMonth**](GetRecommendations200ResponseTrendsPreviousMonth.md) |  | [optional] [default to undefined]
-**_2monthsAgo** | [**GetRecommendations200ResponseTrends2MonthsAgo**](GetRecommendations200ResponseTrends2MonthsAgo.md) |  | [optional] [default to undefined]
-**_3monthsAgo** | [**GetRecommendations200ResponseTrends3MonthsAgo**](GetRecommendations200ResponseTrends3MonthsAgo.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`currentMonth` | [GetRecommendations200ResponseTrendsCurrentMonth](GetRecommendations200ResponseTrendsCurrentMonth.md)
+`previousMonth` | [GetRecommendations200ResponseTrendsPreviousMonth](GetRecommendations200ResponseTrendsPreviousMonth.md)
+`_2monthsAgo` | [GetRecommendations200ResponseTrends2MonthsAgo](GetRecommendations200ResponseTrends2MonthsAgo.md)
+`_3monthsAgo` | [GetRecommendations200ResponseTrends3MonthsAgo](GetRecommendations200ResponseTrends3MonthsAgo.md)
 
 ## Example
 
 ```typescript
-import { GetRecommendations200ResponseTrends } from '@twelvedata/twelvedata-node';
+import type { GetRecommendations200ResponseTrends } from '@twelvedata/twelvedata-node'
 
-const instance: GetRecommendations200ResponseTrends = {
-    currentMonth,
-    previousMonth,
-    _2monthsAgo,
-    _3monthsAgo,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "currentMonth": null,
+  "previousMonth": null,
+  "_2monthsAgo": null,
+  "_3monthsAgo": null,
+} satisfies GetRecommendations200ResponseTrends
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetRecommendations200ResponseTrends
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

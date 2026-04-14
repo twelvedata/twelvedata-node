@@ -1,43 +1,57 @@
+
 # FundResponseItem
 
 FundResponseItem represents details of a fund
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Instrument symbol (ticker) | [optional] [default to undefined]
-**name** | **string** | Full name of the fund | [optional] [default to undefined]
-**country** | **string** | Country where the fund is located | [optional] [default to undefined]
-**currency** | **string** | Currency of the fund according to the ISO 4217 standard | [optional] [default to undefined]
-**exchange** | **string** | Exchange where the fund is traded | [optional] [default to undefined]
-**micCode** | **string** | Market identifier code (MIC) under ISO 10383 standard | [optional] [default to undefined]
-**type** | **string** | Type of the fund | [optional] [default to undefined]
-**figiCode** | **string** | Financial instrument global identifier (FIGI) | [optional] [default to undefined]
-**cfiCode** | **string** | Classification of Financial Instruments (CFI) | [optional] [default to undefined]
-**isin** | **string** | International securities identification number (ISIN) | [optional] [default to undefined]
-**cusip** | **string** | A unique nine-character alphanumeric code used to identify financial securities, ensuring accurate data retrieval for the specified asset | [optional] [default to undefined]
-**access** | [**EtfResponseItemAccess**](EtfResponseItemAccess.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`name` | string
+`country` | string
+`currency` | string
+`exchange` | string
+`micCode` | string
+`type` | string
+`figiCode` | string
+`cfiCode` | string
+`isin` | string
+`cusip` | string
+`access` | [EtfResponseItemAccess](EtfResponseItemAccess.md)
 
 ## Example
 
 ```typescript
-import { FundResponseItem } from '@twelvedata/twelvedata-node';
+import type { FundResponseItem } from '@twelvedata/twelvedata-node'
 
-const instance: FundResponseItem = {
-    symbol,
-    name,
-    country,
-    currency,
-    exchange,
-    micCode,
-    type,
-    figiCode,
-    cfiCode,
-    isin,
-    cusip,
-    access,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "name": null,
+  "country": null,
+  "currency": null,
+  "exchange": null,
+  "micCode": null,
+  "type": null,
+  "figiCode": null,
+  "cfiCode": null,
+  "isin": null,
+  "cusip": null,
+  "access": null,
+} satisfies FundResponseItem
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as FundResponseItem
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

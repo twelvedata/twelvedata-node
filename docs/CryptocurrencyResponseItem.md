@@ -1,27 +1,41 @@
+
 # CryptocurrencyResponseItem
 
 CryptocurrencyResponseItem represents details of a cryptocurrency
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Cryptocurrency pair codes with slash(/) delimiter | [optional] [default to undefined]
-**availableExchanges** | **Array&lt;string&gt;** | List of exchanges where the cryptocurrency is available | [optional] [default to undefined]
-**currencyBase** | **string** | Base currency of the cryptocurrency pair | [optional] [default to undefined]
-**currencyQuote** | **string** | Quote currency of the cryptocurrency pair | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`availableExchanges` | Array&lt;string&gt;
+`currencyBase` | string
+`currencyQuote` | string
 
 ## Example
 
 ```typescript
-import { CryptocurrencyResponseItem } from '@twelvedata/twelvedata-node';
+import type { CryptocurrencyResponseItem } from '@twelvedata/twelvedata-node'
 
-const instance: CryptocurrencyResponseItem = {
-    symbol,
-    availableExchanges,
-    currencyBase,
-    currencyQuote,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "availableExchanges": null,
+  "currencyBase": null,
+  "currencyQuote": null,
+} satisfies CryptocurrencyResponseItem
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as CryptocurrencyResponseItem
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

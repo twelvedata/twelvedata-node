@@ -1,27 +1,41 @@
+
 # GetMutualFundsWorld200ResponseMutualFundComposition
 
 Composition of a mutual fund
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**majorMarketSectors** | [**Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner&gt;**](GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner.md) | Breakdown of the fund’s portfolio by major industry sectors and their respective weights | [optional] [default to undefined]
-**topHoldings** | [**Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner&gt;**](GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner.md) | Top holdings of the fund with their respective weights in the overall portfolio composition | [optional] [default to undefined]
-**assetAllocation** | [**GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation**](GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation.md) |  | [optional] [default to undefined]
-**bondBreakdown** | [**GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown**](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`majorMarketSectors` | [Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner&gt;](GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner.md)
+`topHoldings` | [Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner&gt;](GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner.md)
+`assetAllocation` | [GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation](GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation.md)
+`bondBreakdown` | [GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown.md)
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundComposition } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundComposition } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundComposition = {
-    majorMarketSectors,
-    topHoldings,
-    assetAllocation,
-    bondBreakdown,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "majorMarketSectors": null,
+  "topHoldings": null,
+  "assetAllocation": null,
+  "bondBreakdown": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundComposition
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundComposition
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

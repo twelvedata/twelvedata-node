@@ -1,22 +1,36 @@
+
 # GetTimeSeriesMfi200ResponseValuesInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**datetime** | **string** | Datetime in local market time for equities and in UTC for forex and cryptocurrencies referring to when the bar with specified interval was opened | [optional] [default to undefined]
-**mfi** | **string** | MFI value | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`datetime` | string
+`mfi` | string
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesMfi200ResponseValuesInner } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesMfi200ResponseValuesInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesMfi200ResponseValuesInner = {
-    datetime,
-    mfi,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "datetime": null,
+  "mfi": null,
+} satisfies GetTimeSeriesMfi200ResponseValuesInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesMfi200ResponseValuesInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

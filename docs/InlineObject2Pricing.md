@@ -1,26 +1,40 @@
+
 # InlineObject2Pricing
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**_12monthHigh** | **number** |  | [optional] [default to undefined]
-**_12monthLow** | **number** |  | [optional] [default to undefined]
-**lastMonth** | **number** |  | [optional] [default to undefined]
-**nav** | **number** |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`_12monthHigh` | number
+`_12monthLow` | number
+`lastMonth` | number
+`nav` | number
 
 ## Example
 
 ```typescript
-import { InlineObject2Pricing } from '@twelvedata/twelvedata-node';
+import type { InlineObject2Pricing } from '@twelvedata/twelvedata-node'
 
-const instance: InlineObject2Pricing = {
-    _12monthHigh,
-    _12monthLow,
-    lastMonth,
-    nav,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "_12monthHigh": null,
+  "_12monthLow": null,
+  "lastMonth": null,
+  "nav": null,
+} satisfies InlineObject2Pricing
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as InlineObject2Pricing
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

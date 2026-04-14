@@ -1,22 +1,36 @@
+
 # GetCryptocurrencyExchanges200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | [**Array&lt;CryptocurrencyExchangesResponseItem&gt;**](CryptocurrencyExchangesResponseItem.md) | List of cryptocurrency exchanges | [optional] [default to undefined]
-**status** | **string** | Response status | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`data` | [Array&lt;CryptocurrencyExchangesResponseItem&gt;](CryptocurrencyExchangesResponseItem.md)
+`status` | string
 
 ## Example
 
 ```typescript
-import { GetCryptocurrencyExchanges200Response } from '@twelvedata/twelvedata-node';
+import type { GetCryptocurrencyExchanges200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetCryptocurrencyExchanges200Response = {
-    data,
-    status,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "data": null,
+  "status": null,
+} satisfies GetCryptocurrencyExchanges200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetCryptocurrencyExchanges200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

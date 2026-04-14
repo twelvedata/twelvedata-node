@@ -15,7 +15,7 @@ async function main() {
     timezone: "UTC",
     outputsize: 10,
   });
-  console.log(response.data);
+  console.log(response);
 }
 
 main().catch(console.error);

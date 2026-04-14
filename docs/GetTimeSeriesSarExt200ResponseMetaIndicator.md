@@ -1,37 +1,51 @@
+
 # GetTimeSeriesSarExt200ResponseMetaIndicator
 
 Technical indicator information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **string** | Name of the technical indicator | [optional] [default to undefined]
-**startValue** | **number** | The initial value for the indicator calculation | [optional] [default to undefined]
-**offsetOnReverse** | **number** | The adjustment applied when the indicator\&#39;s direction changes | [optional] [default to undefined]
-**accelerationLimitLong** | **number** | The maximum acceleration value for long positions | [optional] [default to undefined]
-**accelerationLong** | **number** | The acceleration value for long positions | [optional] [default to undefined]
-**accelerationMaxLong** | **number** | The highest allowed acceleration for long positions | [optional] [default to undefined]
-**accelerationLimitShort** | **number** | The maximum acceleration value for short positions | [optional] [default to undefined]
-**accelerationShort** | **number** | The acceleration value for short positions | [optional] [default to undefined]
-**accelerationMaxShort** | **number** | The highest allowed acceleration for short positions | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`name` | string
+`startValue` | number
+`offsetOnReverse` | number
+`accelerationLimitLong` | number
+`accelerationLong` | number
+`accelerationMaxLong` | number
+`accelerationLimitShort` | number
+`accelerationShort` | number
+`accelerationMaxShort` | number
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesSarExt200ResponseMetaIndicator } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesSarExt200ResponseMetaIndicator } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesSarExt200ResponseMetaIndicator = {
-    name,
-    startValue,
-    offsetOnReverse,
-    accelerationLimitLong,
-    accelerationLong,
-    accelerationMaxLong,
-    accelerationLimitShort,
-    accelerationShort,
-    accelerationMaxShort,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "name": null,
+  "startValue": null,
+  "offsetOnReverse": null,
+  "accelerationLimitLong": null,
+  "accelerationLong": null,
+  "accelerationMaxLong": null,
+  "accelerationLimitShort": null,
+  "accelerationShort": null,
+  "accelerationMaxShort": null,
+} satisfies GetTimeSeriesSarExt200ResponseMetaIndicator
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesSarExt200ResponseMetaIndicator
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

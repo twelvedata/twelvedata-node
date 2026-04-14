@@ -1,29 +1,43 @@
+
 # TechnicalIndicatorsResponseMacdTinting
 
 An array of tinting values used for proper indicator coloring
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**display** | **string** | How the tinting should be rendered | [optional] [default to undefined]
-**color** | **string** | Hex color code for the tinting | [optional] [default to undefined]
-**transparency** | **number** | Transparency level, float value from &lt;code&gt;0&lt;/code&gt; to &lt;code&gt;1&lt;/code&gt; | [optional] [default to undefined]
-**lowerBound** | **object** | Lower bound of tinting, can be a number or a return parameter name | [optional] [default to undefined]
-**upperBound** | **object** | Upper bound of tinting, can be a number or a return parameter name | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`display` | string
+`color` | string
+`transparency` | number
+`lowerBound` | object
+`upperBound` | object
 
 ## Example
 
 ```typescript
-import { TechnicalIndicatorsResponseMacdTinting } from '@twelvedata/twelvedata-node';
+import type { TechnicalIndicatorsResponseMacdTinting } from '@twelvedata/twelvedata-node'
 
-const instance: TechnicalIndicatorsResponseMacdTinting = {
-    display,
-    color,
-    transparency,
-    lowerBound,
-    upperBound,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "display": null,
+  "color": null,
+  "transparency": null,
+  "lowerBound": null,
+  "upperBound": null,
+} satisfies TechnicalIndicatorsResponseMacdTinting
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as TechnicalIndicatorsResponseMacdTinting
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

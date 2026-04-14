@@ -1,21 +1,35 @@
+
 # IncomeStatementItemDepreciation
 
 Depreciation information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**reconciledDepreciation** | **number** | Reconciled depreciation | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`reconciledDepreciation` | number
 
 ## Example
 
 ```typescript
-import { IncomeStatementItemDepreciation } from '@twelvedata/twelvedata-node';
+import type { IncomeStatementItemDepreciation } from '@twelvedata/twelvedata-node'
 
-const instance: IncomeStatementItemDepreciation = {
-    reconciledDepreciation,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "reconciledDepreciation": null,
+} satisfies IncomeStatementItemDepreciation
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as IncomeStatementItemDepreciation
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

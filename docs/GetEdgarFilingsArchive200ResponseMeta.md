@@ -1,27 +1,41 @@
+
 # GetEdgarFilingsArchive200ResponseMeta
 
 Meta information about the company and listing
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Ticker of the company | [optional] [default to undefined]
-**exchange** | **string** | Exchange name where the company is listed | [optional] [default to undefined]
-**micCode** | **string** | Market Identifier Code (MIC) under ISO 10383 standard | [optional] [default to undefined]
-**type** | **string** | Issue type of the stock | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`exchange` | string
+`micCode` | string
+`type` | string
 
 ## Example
 
 ```typescript
-import { GetEdgarFilingsArchive200ResponseMeta } from '@twelvedata/twelvedata-node';
+import type { GetEdgarFilingsArchive200ResponseMeta } from '@twelvedata/twelvedata-node'
 
-const instance: GetEdgarFilingsArchive200ResponseMeta = {
-    symbol,
-    exchange,
-    micCode,
-    type,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "exchange": null,
+  "micCode": null,
+  "type": null,
+} satisfies GetEdgarFilingsArchive200ResponseMeta
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetEdgarFilingsArchive200ResponseMeta
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

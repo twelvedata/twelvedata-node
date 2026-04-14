@@ -1,26 +1,40 @@
+
 # InlineObject2Minimums
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**additionalInvestment** | **number** |  | [optional] [default to undefined]
-**additionalIraInvestment** | **object** |  | [optional] [default to undefined]
-**initialInvestment** | **number** |  | [optional] [default to undefined]
-**initialIraInvestment** | **object** |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`additionalInvestment` | number
+`additionalIraInvestment` | object
+`initialInvestment` | number
+`initialIraInvestment` | object
 
 ## Example
 
 ```typescript
-import { InlineObject2Minimums } from '@twelvedata/twelvedata-node';
+import type { InlineObject2Minimums } from '@twelvedata/twelvedata-node'
 
-const instance: InlineObject2Minimums = {
-    additionalInvestment,
-    additionalIraInvestment,
-    initialInvestment,
-    initialIraInvestment,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "additionalInvestment": null,
+  "additionalIraInvestment": null,
+  "initialInvestment": null,
+  "initialIraInvestment": null,
+} satisfies InlineObject2Minimums
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as InlineObject2Minimums
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

@@ -1,25 +1,39 @@
+
 # GetTimeSeriesSuperTrend200ResponseMetaIndicator
 
 Technical indicator information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **string** | Name of the technical indicator | [optional] [default to undefined]
-**period** | **number** | The period used for calculation in the indicator | [optional] [default to undefined]
-**multiplier** | **number** | The factor used to adjust the indicator\&#39;s sensitivity | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`name` | string
+`period` | number
+`multiplier` | number
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesSuperTrend200ResponseMetaIndicator } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesSuperTrend200ResponseMetaIndicator } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesSuperTrend200ResponseMetaIndicator = {
-    name,
-    period,
-    multiplier,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "name": null,
+  "period": null,
+  "multiplier": null,
+} satisfies GetTimeSeriesSuperTrend200ResponseMetaIndicator
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesSuperTrend200ResponseMetaIndicator
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

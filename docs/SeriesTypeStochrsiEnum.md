@@ -1,14 +1,32 @@
+
 # SeriesTypeStochrsiEnum
 
 
-## Enum
+## Properties
 
-* `OPEN` (value: `'open'`)
+Name | Type
+------------ | -------------
 
-* `HIGH` (value: `'high'`)
+## Example
 
-* `LOW` (value: `'low'`)
+```typescript
+import type { SeriesTypeStochrsiEnum } from '@twelvedata/twelvedata-node'
 
-* `CLOSE` (value: `'close'`)
+// TODO: Update the object below with actual values
+const example = {
+} satisfies SeriesTypeStochrsiEnum
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as SeriesTypeStochrsiEnum
+console.log(exampleParsed)
+```
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

@@ -1,25 +1,39 @@
+
 # GetMutualFundsWorld200ResponseMutualFundSustainabilityCorporateEsgPillars
 
 Corporate ESG pillars
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**environmental** | **number** | ESG environmental score | [optional] [default to undefined]
-**social** | **number** | ESG social score | [optional] [default to undefined]
-**governance** | **number** | ESG governance score | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`environmental` | number
+`social` | number
+`governance` | number
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundSustainabilityCorporateEsgPillars } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundSustainabilityCorporateEsgPillars } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundSustainabilityCorporateEsgPillars = {
-    environmental,
-    social,
-    governance,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "environmental": null,
+  "social": null,
+  "governance": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundSustainabilityCorporateEsgPillars
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundSustainabilityCorporateEsgPillars
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

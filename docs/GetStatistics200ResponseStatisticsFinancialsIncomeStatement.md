@@ -1,35 +1,49 @@
+
 # GetStatistics200ResponseStatisticsFinancialsIncomeStatement
 
 Income statement information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**revenueTtm** | **number** | Refers to total revenue over the last 12 months | [optional] [default to undefined]
-**revenuePerShareTtm** | **number** | Refers to revenue per share over the last 12 months | [optional] [default to undefined]
-**quarterlyRevenueGrowth** | **number** | Refers to quarterly revenue growth year over year | [optional] [default to undefined]
-**grossProfitTtm** | **number** | Refers to gross profit over the last 12 months | [optional] [default to undefined]
-**ebitda** | **number** | Refers to EBITDA (earnings before interest, taxes, depreciation, and amortization) measure; EBITDA is not calculated for banks | [optional] [default to undefined]
-**netIncomeToCommonTtm** | **number** | Refers to net income applicable to common shares over the last 12 months | [optional] [default to undefined]
-**dilutedEpsTtm** | **number** | Refers to diluted EPS measure over the last 12 months | [optional] [default to undefined]
-**quarterlyEarningsGrowthYoy** | **number** | Refers to quarterly earnings growth year over year | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`revenueTtm` | number
+`revenuePerShareTtm` | number
+`quarterlyRevenueGrowth` | number
+`grossProfitTtm` | number
+`ebitda` | number
+`netIncomeToCommonTtm` | number
+`dilutedEpsTtm` | number
+`quarterlyEarningsGrowthYoy` | number
 
 ## Example
 
 ```typescript
-import { GetStatistics200ResponseStatisticsFinancialsIncomeStatement } from '@twelvedata/twelvedata-node';
+import type { GetStatistics200ResponseStatisticsFinancialsIncomeStatement } from '@twelvedata/twelvedata-node'
 
-const instance: GetStatistics200ResponseStatisticsFinancialsIncomeStatement = {
-    revenueTtm,
-    revenuePerShareTtm,
-    quarterlyRevenueGrowth,
-    grossProfitTtm,
-    ebitda,
-    netIncomeToCommonTtm,
-    dilutedEpsTtm,
-    quarterlyEarningsGrowthYoy,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "revenueTtm": null,
+  "revenuePerShareTtm": null,
+  "quarterlyRevenueGrowth": null,
+  "grossProfitTtm": null,
+  "ebitda": null,
+  "netIncomeToCommonTtm": null,
+  "dilutedEpsTtm": null,
+  "quarterlyEarningsGrowthYoy": null,
+} satisfies GetStatistics200ResponseStatisticsFinancialsIncomeStatement
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetStatistics200ResponseStatisticsFinancialsIncomeStatement
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

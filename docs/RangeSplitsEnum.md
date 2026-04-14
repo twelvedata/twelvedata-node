@@ -1,24 +1,32 @@
+
 # RangeSplitsEnum
 
 
-## Enum
+## Properties
 
-* `LAST` (value: `'last'`)
+Name | Type
+------------ | -------------
 
-* `_1M` (value: `'1m'`)
+## Example
 
-* `_3M` (value: `'3m'`)
+```typescript
+import type { RangeSplitsEnum } from '@twelvedata/twelvedata-node'
 
-* `_6M` (value: `'6m'`)
+// TODO: Update the object below with actual values
+const example = {
+} satisfies RangeSplitsEnum
 
-* `YTD` (value: `'ytd'`)
+console.log(example)
 
-* `_1Y` (value: `'1y'`)
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
 
-* `_2Y` (value: `'2y'`)
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as RangeSplitsEnum
+console.log(exampleParsed)
+```
 
-* `_5Y` (value: `'5y'`)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
-* `FULL` (value: `'full'`)
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

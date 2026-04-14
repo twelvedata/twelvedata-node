@@ -1,23 +1,37 @@
+
 # GetLastChanges200ResponsePagination
 
 Pagination information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currentPage** | **number** | Current page number | [optional] [default to undefined]
-**perPage** | **number** | Records per page | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`currentPage` | number
+`perPage` | number
 
 ## Example
 
 ```typescript
-import { GetLastChanges200ResponsePagination } from '@twelvedata/twelvedata-node';
+import type { GetLastChanges200ResponsePagination } from '@twelvedata/twelvedata-node'
 
-const instance: GetLastChanges200ResponsePagination = {
-    currentPage,
-    perPage,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "currentPage": null,
+  "perPage": null,
+} satisfies GetLastChanges200ResponsePagination
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetLastChanges200ResponsePagination
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

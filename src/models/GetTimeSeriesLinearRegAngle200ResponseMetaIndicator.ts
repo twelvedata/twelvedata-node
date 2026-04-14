@@ -1,0 +1,89 @@
+/* tslint:disable */
+/* eslint-disable */
+/**
+ * Twelve Data API client for Node.js
+ *
+ * NOTE: This code is auto generated, please do not edit it manually.
+ */
+import { mapValues } from "../runtime";
+/**
+ * Technical indicator information
+ * @export
+ * @interface GetTimeSeriesLinearRegAngle200ResponseMetaIndicator
+ */
+export interface GetTimeSeriesLinearRegAngle200ResponseMetaIndicator {
+  /**
+   * Name of the technical indicator
+   * @type {string}
+   * @memberof GetTimeSeriesLinearRegAngle200ResponseMetaIndicator
+   */
+  name?: string;
+  /**
+   * Price type on which technical indicator is calculated
+   * @type {string}
+   * @memberof GetTimeSeriesLinearRegAngle200ResponseMetaIndicator
+   */
+  seriesType?: string;
+  /**
+   * Number of periods to average over
+   * @type {number}
+   * @memberof GetTimeSeriesLinearRegAngle200ResponseMetaIndicator
+   */
+  timePeriod?: number;
+}
+
+/**
+ * Check if a given object implements the GetTimeSeriesLinearRegAngle200ResponseMetaIndicator interface.
+ */
+export function instanceOfGetTimeSeriesLinearRegAngle200ResponseMetaIndicator(
+  value: object,
+): value is GetTimeSeriesLinearRegAngle200ResponseMetaIndicator {
+  return true;
+}
+
+export function GetTimeSeriesLinearRegAngle200ResponseMetaIndicatorFromJSON(
+  json: any,
+): GetTimeSeriesLinearRegAngle200ResponseMetaIndicator {
+  return GetTimeSeriesLinearRegAngle200ResponseMetaIndicatorFromJSONTyped(
+    json,
+    false,
+  );
+}
+
+export function GetTimeSeriesLinearRegAngle200ResponseMetaIndicatorFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean,
+): GetTimeSeriesLinearRegAngle200ResponseMetaIndicator {
+  if (json == null) {
+    return json;
+  }
+  return {
+    name: json["name"] == null ? undefined : json["name"],
+    seriesType: json["series_type"] == null ? undefined : json["series_type"],
+    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
+  };
+}
+
+export function GetTimeSeriesLinearRegAngle200ResponseMetaIndicatorToJSON(
+  json: any,
+): GetTimeSeriesLinearRegAngle200ResponseMetaIndicator {
+  return GetTimeSeriesLinearRegAngle200ResponseMetaIndicatorToJSONTyped(
+    json,
+    false,
+  );
+}
+
+export function GetTimeSeriesLinearRegAngle200ResponseMetaIndicatorToJSONTyped(
+  value?: GetTimeSeriesLinearRegAngle200ResponseMetaIndicator | null,
+  ignoreDiscriminator: boolean = false,
+): any {
+  if (value == null) {
+    return value;
+  }
+
+  return {
+    name: value["name"],
+    series_type: value["seriesType"],
+    time_period: value["timePeriod"],
+  };
+}

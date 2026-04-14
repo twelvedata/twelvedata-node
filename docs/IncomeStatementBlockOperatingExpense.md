@@ -1,25 +1,39 @@
+
 # IncomeStatementBlockOperatingExpense
 
 Operating expense details
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**researchAndDevelopment** | **number** | Refers to research &amp; development (R&amp;D) expenses | [optional] [default to undefined]
-**sellingGeneralAndAdministrative** | **number** | Refers to selling, general and administrative (SG&amp;A) expenses | [optional] [default to undefined]
-**otherOperatingExpenses** | **number** | Refers to other operating expenses | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`researchAndDevelopment` | number
+`sellingGeneralAndAdministrative` | number
+`otherOperatingExpenses` | number
 
 ## Example
 
 ```typescript
-import { IncomeStatementBlockOperatingExpense } from '@twelvedata/twelvedata-node';
+import type { IncomeStatementBlockOperatingExpense } from '@twelvedata/twelvedata-node'
 
-const instance: IncomeStatementBlockOperatingExpense = {
-    researchAndDevelopment,
-    sellingGeneralAndAdministrative,
-    otherOperatingExpenses,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "researchAndDevelopment": null,
+  "sellingGeneralAndAdministrative": null,
+  "otherOperatingExpenses": null,
+} satisfies IncomeStatementBlockOperatingExpense
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as IncomeStatementBlockOperatingExpense
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

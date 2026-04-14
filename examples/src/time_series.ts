@@ -10,7 +10,7 @@ async function main() {
     interval: "1day",
     symbol: "AAPL",
   });
-  console.log(response.data);
+  console.log(response);
 }
 
 main().catch(console.error);

@@ -1,54 +1,68 @@
+
 # GetProfile200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Ticker of the company | [optional] [default to undefined]
-**name** | **string** | Name of the company | [optional] [default to undefined]
-**exchange** | **string** | Exchange name where the company is listed | [optional] [default to undefined]
-**micCode** | **string** | Market Identifier Code (MIC) under ISO 10383 standard | [optional] [default to undefined]
-**sector** | **string** | Sector at which the company operates | [optional] [default to undefined]
-**industry** | **string** | Industry at which company operates | [optional] [default to undefined]
-**employees** | **number** | Number of employees in the company | [optional] [default to undefined]
-**website** | **string** | Website of the company | [optional] [default to undefined]
-**description** | **string** | Description of the company activities | [optional] [default to undefined]
-**type** | **string** | Issue type of the stock | [optional] [default to undefined]
-**cEO** | **string** | Name of the CEO of the company | [optional] [default to undefined]
-**address** | **string** | Street address of the company if presented | [optional] [default to undefined]
-**address2** | **string** | Secondary address of the company if presented | [optional] [default to undefined]
-**city** | **string** | City of the company if presented | [optional] [default to undefined]
-**zip** | **string** | ZIP code of the company if presented | [optional] [default to undefined]
-**state** | **string** | State of the company if presented | [optional] [default to undefined]
-**country** | **string** | Country of the company if presented | [optional] [default to undefined]
-**phone** | **string** | Phone number of the company if presented | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`name` | string
+`exchange` | string
+`micCode` | string
+`sector` | string
+`industry` | string
+`employees` | number
+`website` | string
+`description` | string
+`type` | string
+`cEO` | string
+`address` | string
+`address2` | string
+`city` | string
+`zip` | string
+`state` | string
+`country` | string
+`phone` | string
 
 ## Example
 
 ```typescript
-import { GetProfile200Response } from '@twelvedata/twelvedata-node';
+import type { GetProfile200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetProfile200Response = {
-    symbol,
-    name,
-    exchange,
-    micCode,
-    sector,
-    industry,
-    employees,
-    website,
-    description,
-    type,
-    cEO,
-    address,
-    address2,
-    city,
-    zip,
-    state,
-    country,
-    phone,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "name": null,
+  "exchange": null,
+  "micCode": null,
+  "sector": null,
+  "industry": null,
+  "employees": null,
+  "website": null,
+  "description": null,
+  "type": null,
+  "cEO": null,
+  "address": null,
+  "address2": null,
+  "city": null,
+  "zip": null,
+  "state": null,
+  "country": null,
+  "phone": null,
+} satisfies GetProfile200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetProfile200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

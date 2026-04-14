@@ -1,23 +1,37 @@
+
 # GetETFsWorld200ResponseEtfCompositionBondBreakdownAverageMaturity
 
 Average credit rating of bond holding of a fund
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fund** | **number** | Average maturity of bond holding of a fund | [optional] [default to undefined]
-**category** | **number** | Average maturity of bond holding of funds in the same category | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`fund` | number
+`category` | number
 
 ## Example
 
 ```typescript
-import { GetETFsWorld200ResponseEtfCompositionBondBreakdownAverageMaturity } from '@twelvedata/twelvedata-node';
+import type { GetETFsWorld200ResponseEtfCompositionBondBreakdownAverageMaturity } from '@twelvedata/twelvedata-node'
 
-const instance: GetETFsWorld200ResponseEtfCompositionBondBreakdownAverageMaturity = {
-    fund,
-    category,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "fund": null,
+  "category": null,
+} satisfies GetETFsWorld200ResponseEtfCompositionBondBreakdownAverageMaturity
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetETFsWorld200ResponseEtfCompositionBondBreakdownAverageMaturity
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

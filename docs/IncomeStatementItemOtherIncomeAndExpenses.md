@@ -1,47 +1,61 @@
+
 # IncomeStatementItemOtherIncomeAndExpenses
 
 Other income and expenses information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**otherIncomeExpense** | **number** | Other income expense | [optional] [default to undefined]
-**otherNonOperatingIncomeExpenses** | **number** | Other non operating income expenses | [optional] [default to undefined]
-**specialIncomeCharges** | **number** | Special income charges | [optional] [default to undefined]
-**gainOnSaleOfPpe** | **number** | Gain on sale of PPE | [optional] [default to undefined]
-**gainOnSaleOfBusiness** | **number** | Gain on sale of business | [optional] [default to undefined]
-**gainOnSaleOfSecurity** | **number** | Gain on sale of security | [optional] [default to undefined]
-**otherSpecialCharges** | **number** | Other special charges | [optional] [default to undefined]
-**writeOff** | **number** | Write off | [optional] [default to undefined]
-**impairmentOfCapitalAssets** | **number** | Impairment of capital assets | [optional] [default to undefined]
-**restructuringAndMergerAcquisition** | **number** | Restructuring and merger acquisition | [optional] [default to undefined]
-**securitiesAmortization** | **number** | Securities amortization | [optional] [default to undefined]
-**earningsFromEquityInterest** | **number** | Earnings from equity interest | [optional] [default to undefined]
-**earningsFromEquityInterestNetOfTax** | **number** | Earnings from equity interest net of tax | [optional] [default to undefined]
-**totalOtherFinanceCost** | **number** | Total other finance cost | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`otherIncomeExpense` | number
+`otherNonOperatingIncomeExpenses` | number
+`specialIncomeCharges` | number
+`gainOnSaleOfPpe` | number
+`gainOnSaleOfBusiness` | number
+`gainOnSaleOfSecurity` | number
+`otherSpecialCharges` | number
+`writeOff` | number
+`impairmentOfCapitalAssets` | number
+`restructuringAndMergerAcquisition` | number
+`securitiesAmortization` | number
+`earningsFromEquityInterest` | number
+`earningsFromEquityInterestNetOfTax` | number
+`totalOtherFinanceCost` | number
 
 ## Example
 
 ```typescript
-import { IncomeStatementItemOtherIncomeAndExpenses } from '@twelvedata/twelvedata-node';
+import type { IncomeStatementItemOtherIncomeAndExpenses } from '@twelvedata/twelvedata-node'
 
-const instance: IncomeStatementItemOtherIncomeAndExpenses = {
-    otherIncomeExpense,
-    otherNonOperatingIncomeExpenses,
-    specialIncomeCharges,
-    gainOnSaleOfPpe,
-    gainOnSaleOfBusiness,
-    gainOnSaleOfSecurity,
-    otherSpecialCharges,
-    writeOff,
-    impairmentOfCapitalAssets,
-    restructuringAndMergerAcquisition,
-    securitiesAmortization,
-    earningsFromEquityInterest,
-    earningsFromEquityInterestNetOfTax,
-    totalOtherFinanceCost,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "otherIncomeExpense": null,
+  "otherNonOperatingIncomeExpenses": null,
+  "specialIncomeCharges": null,
+  "gainOnSaleOfPpe": null,
+  "gainOnSaleOfBusiness": null,
+  "gainOnSaleOfSecurity": null,
+  "otherSpecialCharges": null,
+  "writeOff": null,
+  "impairmentOfCapitalAssets": null,
+  "restructuringAndMergerAcquisition": null,
+  "securitiesAmortization": null,
+  "earningsFromEquityInterest": null,
+  "earningsFromEquityInterestNetOfTax": null,
+  "totalOtherFinanceCost": null,
+} satisfies IncomeStatementItemOtherIncomeAndExpenses
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as IncomeStatementItemOtherIncomeAndExpenses
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

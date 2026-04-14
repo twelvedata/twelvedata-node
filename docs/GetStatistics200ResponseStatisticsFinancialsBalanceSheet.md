@@ -1,31 +1,45 @@
+
 # GetStatistics200ResponseStatisticsFinancialsBalanceSheet
 
 Balance sheet information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**totalCashMrq** | **number** | Refers to total cash measure for the most recent quarter | [optional] [default to undefined]
-**totalCashPerShareMrq** | **number** | Refers to total cash per share measure for the most recent quarter | [optional] [default to undefined]
-**totalDebtMrq** | **number** | Refers to total debt measure for the most recent quarter | [optional] [default to undefined]
-**totalDebtToEquityMrq** | **number** | Refers to total debt to equity measure for the most recent quarter | [optional] [default to undefined]
-**currentRatioMrq** | **number** | Refers to current ratio (total assets / total liabilities) ratio for the most recent quarter | [optional] [default to undefined]
-**bookValuePerShareMrq** | **number** | Refers to book value per share (BVPS) ratio for the most recent quarter | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`totalCashMrq` | number
+`totalCashPerShareMrq` | number
+`totalDebtMrq` | number
+`totalDebtToEquityMrq` | number
+`currentRatioMrq` | number
+`bookValuePerShareMrq` | number
 
 ## Example
 
 ```typescript
-import { GetStatistics200ResponseStatisticsFinancialsBalanceSheet } from '@twelvedata/twelvedata-node';
+import type { GetStatistics200ResponseStatisticsFinancialsBalanceSheet } from '@twelvedata/twelvedata-node'
 
-const instance: GetStatistics200ResponseStatisticsFinancialsBalanceSheet = {
-    totalCashMrq,
-    totalCashPerShareMrq,
-    totalDebtMrq,
-    totalDebtToEquityMrq,
-    currentRatioMrq,
-    bookValuePerShareMrq,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "totalCashMrq": null,
+  "totalCashPerShareMrq": null,
+  "totalDebtMrq": null,
+  "totalDebtToEquityMrq": null,
+  "currentRatioMrq": null,
+  "bookValuePerShareMrq": null,
+} satisfies GetStatistics200ResponseStatisticsFinancialsBalanceSheet
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetStatistics200ResponseStatisticsFinancialsBalanceSheet
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

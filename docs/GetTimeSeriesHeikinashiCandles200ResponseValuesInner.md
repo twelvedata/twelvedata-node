@@ -1,28 +1,42 @@
+
 # GetTimeSeriesHeikinashiCandles200ResponseValuesInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**datetime** | **string** | Datetime in local market time for equities and in UTC for forex and cryptocurrencies referring to when the bar with specified interval was opened | [optional] [default to undefined]
-**heikinhighs** | **string** | Heikin-Ashi highs value | [optional] [default to undefined]
-**heikinopens** | **string** | Heikin-Ashi opens value | [optional] [default to undefined]
-**heikincloses** | **string** | Heikin-Ashi closes value | [optional] [default to undefined]
-**heikinlows** | **string** | Heikin-Ashi lows value | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`datetime` | string
+`heikinhighs` | string
+`heikinopens` | string
+`heikincloses` | string
+`heikinlows` | string
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesHeikinashiCandles200ResponseValuesInner } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesHeikinashiCandles200ResponseValuesInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesHeikinashiCandles200ResponseValuesInner = {
-    datetime,
-    heikinhighs,
-    heikinopens,
-    heikincloses,
-    heikinlows,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "datetime": null,
+  "heikinhighs": null,
+  "heikinopens": null,
+  "heikincloses": null,
+  "heikinlows": null,
+} satisfies GetTimeSeriesHeikinashiCandles200ResponseValuesInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesHeikinashiCandles200ResponseValuesInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

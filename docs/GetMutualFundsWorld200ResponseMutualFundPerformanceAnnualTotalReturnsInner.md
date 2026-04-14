@@ -1,24 +1,38 @@
+
 # GetMutualFundsWorld200ResponseMutualFundPerformanceAnnualTotalReturnsInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**year** | **number** | Year of total returns | [optional] [default to undefined]
-**shareClassReturn** | **number** | Fund total returns (%) generated over a given year | [optional] [default to undefined]
-**categoryReturn** | **number** | Same category average total returns (%) generated over a given year | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`year` | number
+`shareClassReturn` | number
+`categoryReturn` | number
 
 ## Example
 
 ```typescript
-import { GetMutualFundsWorld200ResponseMutualFundPerformanceAnnualTotalReturnsInner } from '@twelvedata/twelvedata-node';
+import type { GetMutualFundsWorld200ResponseMutualFundPerformanceAnnualTotalReturnsInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetMutualFundsWorld200ResponseMutualFundPerformanceAnnualTotalReturnsInner = {
-    year,
-    shareClassReturn,
-    categoryReturn,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "year": null,
+  "shareClassReturn": null,
+  "categoryReturn": null,
+} satisfies GetMutualFundsWorld200ResponseMutualFundPerformanceAnnualTotalReturnsInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundPerformanceAnnualTotalReturnsInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

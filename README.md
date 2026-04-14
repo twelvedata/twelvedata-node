@@ -54,7 +54,7 @@ async function main() {
             symbol: "AAPL",
             outputsize: 5,
         });
-        console.log(response.data);
+        console.log(response);
     } catch (error) {
         if (error instanceof TwelvedataApiError) {
             console.error("API error:", error);
@@ -217,6 +217,24 @@ Explore practical scenarios in the [examples](https://github.com/twelvedata/twel
 4. Push your branch and open a pull request with a comprehensive description.
 
 For more guidance on contributing, see the [GitHub Docs](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) on GitHub.
+
+## Migrating from 1.0.x to 1.1.0
+
+Version 1.1.0 replaces `axios` with the native `fetch` API. This removes the `axios` dependency but introduces a **breaking change** in response handling:
+
+**Before (1.0.x with axios):**
+```typescript
+const response = await api.getTimeSeries({ symbol: "AAPL", interval: "1day" });
+console.log(response.data); // axios wrapped the body in response.data
+```
+
+**After (1.1.0 with fetch):**
+```typescript
+const response = await api.getTimeSeries({ symbol: "AAPL", interval: "1day" });
+console.log(response); // response is the parsed body directly
+```
+
+In short: replace `response.data` with `response` everywhere you call the API.
 
 ## License
 

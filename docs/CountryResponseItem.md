@@ -1,33 +1,47 @@
+
 # CountryResponseItem
 
 CountryResponseItem represents details of a country
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**iso2** | **string** | Two-letter country code defined in ISO 3166 | [optional] [default to undefined]
-**iso3** | **string** | Three-letter country code defined in ISO 3166 | [optional] [default to undefined]
-**numeric** | **string** | Numeric country code defined in ISO 3166 | [optional] [default to undefined]
-**name** | **string** | The full name of country | [optional] [default to undefined]
-**officialName** | **string** | Official name of country | [optional] [default to undefined]
-**capital** | **string** | Capital of country | [optional] [default to undefined]
-**currency** | **string** | Currency of country | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`iso2` | string
+`iso3` | string
+`numeric` | string
+`name` | string
+`officialName` | string
+`capital` | string
+`currency` | string
 
 ## Example
 
 ```typescript
-import { CountryResponseItem } from '@twelvedata/twelvedata-node';
+import type { CountryResponseItem } from '@twelvedata/twelvedata-node'
 
-const instance: CountryResponseItem = {
-    iso2,
-    iso3,
-    numeric,
-    name,
-    officialName,
-    capital,
-    currency,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "iso2": null,
+  "iso3": null,
+  "numeric": null,
+  "name": null,
+  "officialName": null,
+  "capital": null,
+  "currency": null,
+} satisfies CountryResponseItem
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as CountryResponseItem
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

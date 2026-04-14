@@ -1,27 +1,41 @@
+
 # GetTimeSeriesMama200ResponseMetaIndicator
 
 Technical indicator information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **string** | Name of the technical indicator | [optional] [default to undefined]
-**seriesType** | **string** | Price type on which technical indicator is calculated | [optional] [default to undefined]
-**fastLimit** | **number** | The limit for the fast moving average | [optional] [default to undefined]
-**slowLimit** | **number** | The limit for the slow moving average | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`name` | string
+`seriesType` | string
+`fastLimit` | number
+`slowLimit` | number
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesMama200ResponseMetaIndicator } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesMama200ResponseMetaIndicator } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesMama200ResponseMetaIndicator = {
-    name,
-    seriesType,
-    fastLimit,
-    slowLimit,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "name": null,
+  "seriesType": null,
+  "fastLimit": null,
+  "slowLimit": null,
+} satisfies GetTimeSeriesMama200ResponseMetaIndicator
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesMama200ResponseMetaIndicator
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

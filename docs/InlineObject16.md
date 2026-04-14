@@ -1,24 +1,38 @@
+
 # InlineObject16
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**meta** | [**InlineObject16Meta**](InlineObject16Meta.md) |  | [optional] [default to undefined]
-**values** | [**Array&lt;InlineObject16ValuesInner&gt;**](InlineObject16ValuesInner.md) | Array of time series data points | [optional] [default to undefined]
-**status** | **string** | Response status | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`meta` | [InlineObject16Meta](InlineObject16Meta.md)
+`values` | [Array&lt;InlineObject16ValuesInner&gt;](InlineObject16ValuesInner.md)
+`status` | string
 
 ## Example
 
 ```typescript
-import { InlineObject16 } from '@twelvedata/twelvedata-node';
+import type { InlineObject16 } from '@twelvedata/twelvedata-node'
 
-const instance: InlineObject16 = {
-    meta,
-    values,
-    status,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "meta": null,
+  "values": null,
+  "status": null,
+} satisfies InlineObject16
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as InlineObject16
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

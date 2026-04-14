@@ -1,29 +1,43 @@
+
 # GetTimeSeriesBBands200ResponseMetaIndicator
 
 Technical indicator information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **string** | Name of the technical indicator | [optional] [default to undefined]
-**seriesType** | **string** | Price type on which technical indicator is calculated | [optional] [default to undefined]
-**timePeriod** | **number** | Number of periods to average over | [optional] [default to undefined]
-**sd** | **number** | Number of standard deviations | [optional] [default to undefined]
-**maType** | **string** | Moving average type | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`name` | string
+`seriesType` | string
+`timePeriod` | number
+`sd` | number
+`maType` | string
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesBBands200ResponseMetaIndicator } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesBBands200ResponseMetaIndicator } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesBBands200ResponseMetaIndicator = {
-    name,
-    seriesType,
-    timePeriod,
-    sd,
-    maType,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "name": null,
+  "seriesType": null,
+  "timePeriod": null,
+  "sd": null,
+  "maType": null,
+} satisfies GetTimeSeriesBBands200ResponseMetaIndicator
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesBBands200ResponseMetaIndicator
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

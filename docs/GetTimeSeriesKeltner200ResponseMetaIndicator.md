@@ -1,31 +1,45 @@
+
 # GetTimeSeriesKeltner200ResponseMetaIndicator
 
 Technical indicator information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **string** | Name of the technical indicator | [optional] [default to undefined]
-**timePeriod** | **number** | Number of periods to average over | [optional] [default to undefined]
-**atrTimePeriod** | **number** | The time period used for calculating the Average True Range | [optional] [default to undefined]
-**multiplier** | **number** | The factor used to adjust the indicator\&#39;s sensitivity | [optional] [default to undefined]
-**seriesType** | **string** | Price type on which technical indicator is calculated | [optional] [default to undefined]
-**maType** | **string** | The type of moving average used | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`name` | string
+`timePeriod` | number
+`atrTimePeriod` | number
+`multiplier` | number
+`seriesType` | string
+`maType` | string
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesKeltner200ResponseMetaIndicator } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesKeltner200ResponseMetaIndicator } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesKeltner200ResponseMetaIndicator = {
-    name,
-    timePeriod,
-    atrTimePeriod,
-    multiplier,
-    seriesType,
-    maType,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "name": null,
+  "timePeriod": null,
+  "atrTimePeriod": null,
+  "multiplier": null,
+  "seriesType": null,
+  "maType": null,
+} satisfies GetTimeSeriesKeltner200ResponseMetaIndicator
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesKeltner200ResponseMetaIndicator
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

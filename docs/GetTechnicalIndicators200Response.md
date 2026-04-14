@@ -1,22 +1,36 @@
+
 # GetTechnicalIndicators200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | [**{ [key: string]: GetTechnicalIndicators200ResponseDataValue; }**](GetTechnicalIndicators200ResponseDataValue.md) | Map of technical indicators available at Twelve Data API | [optional] [default to undefined]
-**status** | **string** | Response status | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`data` | [{ [key: string]: GetTechnicalIndicators200ResponseDataValue; }](GetTechnicalIndicators200ResponseDataValue.md)
+`status` | string
 
 ## Example
 
 ```typescript
-import { GetTechnicalIndicators200Response } from '@twelvedata/twelvedata-node';
+import type { GetTechnicalIndicators200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetTechnicalIndicators200Response = {
-    data,
-    status,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "data": null,
+  "status": null,
+} satisfies GetTechnicalIndicators200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTechnicalIndicators200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

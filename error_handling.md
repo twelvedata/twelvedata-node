@@ -44,7 +44,7 @@ async function main() {
         const response = await api.getPrice({
             symbol: "AAPL",
         });
-        console.log(response.data);
+        console.log(response);
     } catch (error) {
         if (error instanceof TwelvedataApiError) {
             // All API errors have statusCode, code, status, and message

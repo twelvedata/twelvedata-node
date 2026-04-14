@@ -1,27 +1,41 @@
+
 # ResponseMutualFundWorldPurchaseInfo
 
 Purchase information for the mutual fund
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**expenses** | [**GetMutualFundsWorld200ResponseMutualFundPurchaseInfoExpenses**](GetMutualFundsWorld200ResponseMutualFundPurchaseInfoExpenses.md) |  | [optional] [default to undefined]
-**minimums** | [**GetMutualFundsWorld200ResponseMutualFundPurchaseInfoMinimums**](GetMutualFundsWorld200ResponseMutualFundPurchaseInfoMinimums.md) |  | [optional] [default to undefined]
-**pricing** | [**GetMutualFundsWorld200ResponseMutualFundPurchaseInfoPricing**](GetMutualFundsWorld200ResponseMutualFundPurchaseInfoPricing.md) |  | [optional] [default to undefined]
-**brokerages** | **Array&lt;string&gt;** | List of brokerages where mutual fund can be purchased | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`expenses` | [GetMutualFundsWorld200ResponseMutualFundPurchaseInfoExpenses](GetMutualFundsWorld200ResponseMutualFundPurchaseInfoExpenses.md)
+`minimums` | [GetMutualFundsWorld200ResponseMutualFundPurchaseInfoMinimums](GetMutualFundsWorld200ResponseMutualFundPurchaseInfoMinimums.md)
+`pricing` | [GetMutualFundsWorld200ResponseMutualFundPurchaseInfoPricing](GetMutualFundsWorld200ResponseMutualFundPurchaseInfoPricing.md)
+`brokerages` | Array&lt;string&gt;
 
 ## Example
 
 ```typescript
-import { ResponseMutualFundWorldPurchaseInfo } from '@twelvedata/twelvedata-node';
+import type { ResponseMutualFundWorldPurchaseInfo } from '@twelvedata/twelvedata-node'
 
-const instance: ResponseMutualFundWorldPurchaseInfo = {
-    expenses,
-    minimums,
-    pricing,
-    brokerages,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "expenses": null,
+  "minimums": null,
+  "pricing": null,
+  "brokerages": null,
+} satisfies ResponseMutualFundWorldPurchaseInfo
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as ResponseMutualFundWorldPurchaseInfo
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

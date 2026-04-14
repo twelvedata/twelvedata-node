@@ -1,22 +1,36 @@
+
 # GetInsiderTransactions200Response
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**meta** | [**GetInsiderTransactions200ResponseMeta**](GetInsiderTransactions200ResponseMeta.md) |  | [optional] [default to undefined]
-**insiderTransactions** | [**Array&lt;GetInsiderTransactions200ResponseInsiderTransactionsInner&gt;**](GetInsiderTransactions200ResponseInsiderTransactionsInner.md) | List of insider transactions | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`meta` | [GetInsiderTransactions200ResponseMeta](GetInsiderTransactions200ResponseMeta.md)
+`insiderTransactions` | [Array&lt;GetInsiderTransactions200ResponseInsiderTransactionsInner&gt;](GetInsiderTransactions200ResponseInsiderTransactionsInner.md)
 
 ## Example
 
 ```typescript
-import { GetInsiderTransactions200Response } from '@twelvedata/twelvedata-node';
+import type { GetInsiderTransactions200Response } from '@twelvedata/twelvedata-node'
 
-const instance: GetInsiderTransactions200Response = {
-    meta,
-    insiderTransactions,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "meta": null,
+  "insiderTransactions": null,
+} satisfies GetInsiderTransactions200Response
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetInsiderTransactions200Response
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

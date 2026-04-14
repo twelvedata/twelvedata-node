@@ -1,31 +1,45 @@
+
 # GetStatistics200ResponseStatisticsStockPriceSummary
 
 Stock price summary of the company
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fiftyTwoWeekLow** | **number** | Refers to the lowest price at which stock traded during a year | [optional] [default to undefined]
-**fiftyTwoWeekHigh** | **number** | Refers to the highest price at which stock traded during a year | [optional] [default to undefined]
-**fiftyTwoWeekChange** | **number** | Refers to the change between lowest and highest prices during a year | [optional] [default to undefined]
-**beta** | **number** | Refers to beta measure relative to the primary benchmark (index) of the country | [optional] [default to undefined]
-**day50Ma** | **number** | Refers to the 50-day simple moving average | [optional] [default to undefined]
-**day200Ma** | **number** | Refers to the 200-day simple moving average | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`fiftyTwoWeekLow` | number
+`fiftyTwoWeekHigh` | number
+`fiftyTwoWeekChange` | number
+`beta` | number
+`day50Ma` | number
+`day200Ma` | number
 
 ## Example
 
 ```typescript
-import { GetStatistics200ResponseStatisticsStockPriceSummary } from '@twelvedata/twelvedata-node';
+import type { GetStatistics200ResponseStatisticsStockPriceSummary } from '@twelvedata/twelvedata-node'
 
-const instance: GetStatistics200ResponseStatisticsStockPriceSummary = {
-    fiftyTwoWeekLow,
-    fiftyTwoWeekHigh,
-    fiftyTwoWeekChange,
-    beta,
-    day50Ma,
-    day200Ma,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "fiftyTwoWeekLow": null,
+  "fiftyTwoWeekHigh": null,
+  "fiftyTwoWeekChange": null,
+  "beta": null,
+  "day50Ma": null,
+  "day200Ma": null,
+} satisfies GetStatistics200ResponseStatisticsStockPriceSummary
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetStatistics200ResponseStatisticsStockPriceSummary
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

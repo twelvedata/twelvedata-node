@@ -1,33 +1,47 @@
+
 # GetRecommendations200ResponseMeta
 
 Metadata about the symbol
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | Symbol ticker of the instrument | [optional] [default to undefined]
-**name** | **string** | Name of the instrument | [optional] [default to undefined]
-**currency** | **string** | Currency in which the instrument is traded | [optional] [default to undefined]
-**exchangeTimezone** | **string** | Timezone of the exchange | [optional] [default to undefined]
-**exchange** | **string** | Exchange where the instrument is traded | [optional] [default to undefined]
-**micCode** | **string** | Market identifier code (MIC) under ISO 10383 standard | [optional] [default to undefined]
-**type** | **string** | Type of the instrument | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`name` | string
+`currency` | string
+`exchangeTimezone` | string
+`exchange` | string
+`micCode` | string
+`type` | string
 
 ## Example
 
 ```typescript
-import { GetRecommendations200ResponseMeta } from '@twelvedata/twelvedata-node';
+import type { GetRecommendations200ResponseMeta } from '@twelvedata/twelvedata-node'
 
-const instance: GetRecommendations200ResponseMeta = {
-    symbol,
-    name,
-    currency,
-    exchangeTimezone,
-    exchange,
-    micCode,
-    type,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "name": null,
+  "currency": null,
+  "exchangeTimezone": null,
+  "exchange": null,
+  "micCode": null,
+  "type": null,
+} satisfies GetRecommendations200ResponseMeta
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetRecommendations200ResponseMeta
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

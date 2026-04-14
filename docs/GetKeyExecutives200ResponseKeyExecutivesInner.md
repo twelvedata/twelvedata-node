@@ -1,28 +1,42 @@
+
 # GetKeyExecutives200ResponseKeyExecutivesInner
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **string** | Full name of an executive, including first name, middle name, last name, and suffix | [optional] [default to undefined]
-**title** | **string** | Refers to job title | [optional] [default to undefined]
-**age** | **number** | Current age of an executive if available | [optional] [default to undefined]
-**yearBorn** | **number** | Year of birth of an executive if available | [optional] [default to undefined]
-**pay** | **number** | Total salary of an executive if available | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`name` | string
+`title` | string
+`age` | number
+`yearBorn` | number
+`pay` | number
 
 ## Example
 
 ```typescript
-import { GetKeyExecutives200ResponseKeyExecutivesInner } from '@twelvedata/twelvedata-node';
+import type { GetKeyExecutives200ResponseKeyExecutivesInner } from '@twelvedata/twelvedata-node'
 
-const instance: GetKeyExecutives200ResponseKeyExecutivesInner = {
-    name,
-    title,
-    age,
-    yearBorn,
-    pay,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "name": null,
+  "title": null,
+  "age": null,
+  "yearBorn": null,
+  "pay": null,
+} satisfies GetKeyExecutives200ResponseKeyExecutivesInner
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetKeyExecutives200ResponseKeyExecutivesInner
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

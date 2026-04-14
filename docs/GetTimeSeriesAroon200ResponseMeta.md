@@ -1,35 +1,49 @@
+
 # GetTimeSeriesAroon200ResponseMeta
 
 Json object with request general information
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**symbol** | **string** | The ticker symbol of an instrument for which data was requested. | [optional] [default to undefined]
-**interval** | **string** | The time gap between consecutive data points. | [optional] [default to undefined]
-**currency** | **string** | The currency of a traded instrument. | [optional] [default to undefined]
-**exchangeTimezone** | **string** | The timezone of the exchange where the instrument is traded. | [optional] [default to undefined]
-**exchange** | **string** | The exchange name where the instrument is traded. | [optional] [default to undefined]
-**micCode** | **string** | The Market Identifier Code (MIC) of the exchange where the instrument is traded. | [optional] [default to undefined]
-**type** | **string** | The asset class to which the instrument belongs. | [optional] [default to undefined]
-**indicator** | [**GetTimeSeriesAroon200ResponseMetaIndicator**](GetTimeSeriesAroon200ResponseMetaIndicator.md) |  | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`symbol` | string
+`interval` | string
+`currency` | string
+`exchangeTimezone` | string
+`exchange` | string
+`micCode` | string
+`type` | string
+`indicator` | [GetTimeSeriesAroon200ResponseMetaIndicator](GetTimeSeriesAroon200ResponseMetaIndicator.md)
 
 ## Example
 
 ```typescript
-import { GetTimeSeriesAroon200ResponseMeta } from '@twelvedata/twelvedata-node';
+import type { GetTimeSeriesAroon200ResponseMeta } from '@twelvedata/twelvedata-node'
 
-const instance: GetTimeSeriesAroon200ResponseMeta = {
-    symbol,
-    interval,
-    currency,
-    exchangeTimezone,
-    exchange,
-    micCode,
-    type,
-    indicator,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "symbol": null,
+  "interval": null,
+  "currency": null,
+  "exchangeTimezone": null,
+  "exchange": null,
+  "micCode": null,
+  "type": null,
+  "indicator": null,
+} satisfies GetTimeSeriesAroon200ResponseMeta
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetTimeSeriesAroon200ResponseMeta
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

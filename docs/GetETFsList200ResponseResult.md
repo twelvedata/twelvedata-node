@@ -1,22 +1,36 @@
+
 # GetETFsList200ResponseResult
 
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**count** | **number** | Total number of matching funds | [optional] [default to undefined]
-**list** | [**Array&lt;ETFsListResponseItem&gt;**](ETFsListResponseItem.md) | List of ETFs | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`count` | number
+`list` | [Array&lt;ETFsListResponseItem&gt;](ETFsListResponseItem.md)
 
 ## Example
 
 ```typescript
-import { GetETFsList200ResponseResult } from '@twelvedata/twelvedata-node';
+import type { GetETFsList200ResponseResult } from '@twelvedata/twelvedata-node'
 
-const instance: GetETFsList200ResponseResult = {
-    count,
-    list,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "count": null,
+  "list": null,
+} satisfies GetETFsList200ResponseResult
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetETFsList200ResponseResult
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+

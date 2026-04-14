@@ -1,29 +1,43 @@
+
 # GetRecommendations200ResponseTrends3MonthsAgo
 
 Three months ago recommendations
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**strongBuy** | **number** | Number of analysts that give a strong buy recommendation | [optional] [default to undefined]
-**buy** | **number** | Number of analysts that give a buy recommendation | [optional] [default to undefined]
-**hold** | **number** | Number of analysts that give a hold recommendation | [optional] [default to undefined]
-**sell** | **number** | Number of analysts that give a sell recommendation | [optional] [default to undefined]
-**strongSell** | **number** | Number of analysts that give a strong sell recommendation | [optional] [default to undefined]
+Name | Type
+------------ | -------------
+`strongBuy` | number
+`buy` | number
+`hold` | number
+`sell` | number
+`strongSell` | number
 
 ## Example
 
 ```typescript
-import { GetRecommendations200ResponseTrends3MonthsAgo } from '@twelvedata/twelvedata-node';
+import type { GetRecommendations200ResponseTrends3MonthsAgo } from '@twelvedata/twelvedata-node'
 
-const instance: GetRecommendations200ResponseTrends3MonthsAgo = {
-    strongBuy,
-    buy,
-    hold,
-    sell,
-    strongSell,
-};
+// TODO: Update the object below with actual values
+const example = {
+  "strongBuy": null,
+  "buy": null,
+  "hold": null,
+  "sell": null,
+  "strongSell": null,
+} satisfies GetRecommendations200ResponseTrends3MonthsAgo
+
+console.log(example)
+
+// Convert the instance to a JSON string
+const exampleJSON: string = JSON.stringify(example)
+console.log(exampleJSON)
+
+// Parse the JSON string back to an object
+const exampleParsed = JSON.parse(exampleJSON) as GetRecommendations200ResponseTrends3MonthsAgo
+console.log(exampleParsed)
 ```
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
