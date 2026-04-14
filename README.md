@@ -218,6 +218,9 @@ Explore practical scenarios in the [examples](https://github.com/twelvedata/twel
 
 For more guidance on contributing, see the [GitHub Docs](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) on GitHub.
 
+## License
+
+This project is licensed under the MIT. See the `LICENSE.txt` file in this repository for more details.
 ## Migrating from 1.0.x to 1.1.0
 
 Version 1.1.0 replaces `axios` with the native `fetch` API. This removes the `axios` dependency but introduces a **breaking change** in response handling:
@@ -235,7 +238,3 @@ console.log(response); // response is the parsed body directly
 ```
 
 In short: replace `response.data` with `response` everywhere you call the API.
-
-## License
-
-This project is licensed under the MIT. See the `LICENSE.txt` file in this repository for more details.
