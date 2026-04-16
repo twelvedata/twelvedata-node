@@ -8,8 +8,8 @@ Breakdown of the fund’s bond holdings by maturity, duration, and credit qualit
 Name | Type
 ------------ | -------------
 `averageMaturity` | [GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturity](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturity.md)
-`averageDuration` | [GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration.md)
 `creditQuality` | [Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner&gt;](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner.md)
+`averageDuration` | [GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration.md)
 
 ## Example
 
@@ -19,8 +19,8 @@ import type { GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown }
 // TODO: Update the object below with actual values
 const example = {
   "averageMaturity": null,
-  "averageDuration": null,
   "creditQuality": null,
+  "averageDuration": null,
 } satisfies GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
 
 console.log(example)
