@@ -35,7 +35,7 @@ import {
  */
 export interface CashFlowStruct {
   /**
-   * Date of the cash flow release
+   * Date of fiscal period ending
    * @type {string}
    * @memberof CashFlowStruct
    */

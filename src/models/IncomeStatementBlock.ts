@@ -28,7 +28,7 @@ import {
  */
 export interface IncomeStatementBlock {
   /**
-   * Date of the income statement release
+   * Date of fiscal period ending
    * @type {string}
    * @memberof IncomeStatementBlock
    */

@@ -63,7 +63,7 @@ import {
  */
 export interface CashFlowData {
   /**
-   * Fiscal date
+   * Date of fiscal period ending
    * @type {string}
    * @memberof CashFlowData
    */

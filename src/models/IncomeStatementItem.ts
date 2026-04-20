@@ -126,7 +126,7 @@ import {
  */
 export interface IncomeStatementItem {
   /**
-   * Date of the income statement release
+   * Date of fiscal period ending
    * @type {string}
    * @memberof IncomeStatementItem
    */

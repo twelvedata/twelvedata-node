@@ -35,7 +35,7 @@ import {
  */
 export interface GetBalanceSheet200ResponseBalanceSheetInner {
   /**
-   * Date of the balance sheet release
+   * Date of fiscal period ending
    * @type {string}
    * @memberof GetBalanceSheet200ResponseBalanceSheetInner
    */

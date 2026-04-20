@@ -1,5 +1,11 @@
 # Twelve Data API client for Node.js
 
+[![npm](https://img.shields.io/npm/v/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
+[![npm](https://img.shields.io/npm/types/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
+[![downloads](https://img.shields.io/npm/dm/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
+[![npm](https://img.shields.io/npm/l/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
+[![npm](https://img.shields.io/github/issues/twelvedata/twelvedata-node)](https://github.com/twelvedata/twelvedata-node/issues)
+
 Twelve Data official library. This package supports all main features of the service:
 - Real-time and historical market data: time series, quotes, end-of-day prices, exchange rates, and market movers.
 - Fundamentals: financial statements, earnings, dividends, splits, company profiles, and key statistics.

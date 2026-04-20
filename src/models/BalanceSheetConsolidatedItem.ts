@@ -21,7 +21,7 @@ import {
  */
 export interface BalanceSheetConsolidatedItem {
   /**
-   * Date of the balance sheet release
+   * Date of fiscal period ending
    * @type {string}
    * @memberof BalanceSheetConsolidatedItem
    */
