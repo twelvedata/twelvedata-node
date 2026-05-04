@@ -17,25 +17,25 @@ export interface CrossListingsItem {
    * @type {string}
    * @memberof CrossListingsItem
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Name of symbol
    * @type {string}
    * @memberof CrossListingsItem
    */
-  name?: string;
+  name: string;
   /**
    * Exchange where instrument is traded
    * @type {string}
    * @memberof CrossListingsItem
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof CrossListingsItem
    */
-  micCode?: string;
+  micCode: string;
 }
 
 /**
@@ -44,6 +44,10 @@ export interface CrossListingsItem {
 export function instanceOfCrossListingsItem(
   value: object,
 ): value is CrossListingsItem {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
   return true;
 }
 
@@ -59,10 +63,10 @@ export function CrossListingsItemFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
+    symbol: json["symbol"],
+    name: json["name"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
   };
 }
 

@@ -47,7 +47,7 @@ export interface GetPriceTarget200ResponsePriceTarget {
    * @type {string}
    * @memberof GetPriceTarget200ResponsePriceTarget
    */
-  currency?: string;
+  currency: string;
 }
 
 /**
@@ -56,6 +56,7 @@ export interface GetPriceTarget200ResponsePriceTarget {
 export function instanceOfGetPriceTarget200ResponsePriceTarget(
   value: object,
 ): value is GetPriceTarget200ResponsePriceTarget {
+  if (!("currency" in value) || value["currency"] === undefined) return false;
   return true;
 }
 
@@ -78,7 +79,7 @@ export function GetPriceTarget200ResponsePriceTargetFromJSONTyped(
     low: json["low"] == null ? undefined : json["low"],
     average: json["average"] == null ? undefined : json["average"],
     current: json["current"] == null ? undefined : json["current"],
-    currency: json["currency"] == null ? undefined : json["currency"],
+    currency: json["currency"],
   };
 }
 

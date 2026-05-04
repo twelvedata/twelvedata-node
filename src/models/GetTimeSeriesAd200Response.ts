@@ -32,19 +32,19 @@ export interface GetTimeSeriesAd200Response {
    * @type {GetTimeSeriesAd200ResponseMeta}
    * @memberof GetTimeSeriesAd200Response
    */
-  meta?: GetTimeSeriesAd200ResponseMeta;
+  meta: GetTimeSeriesAd200ResponseMeta;
   /**
    *
    * @type {Array<GetTimeSeriesAd200ResponseValuesInner>}
    * @memberof GetTimeSeriesAd200Response
    */
-  values?: Array<GetTimeSeriesAd200ResponseValuesInner>;
+  values: Array<GetTimeSeriesAd200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesAd200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesAd200Response {
 export function instanceOfGetTimeSeriesAd200Response(
   value: object,
 ): value is GetTimeSeriesAd200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesAd200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesAd200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesAd200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesAd200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesAd200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesAd200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesAd200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesAd200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesAd200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

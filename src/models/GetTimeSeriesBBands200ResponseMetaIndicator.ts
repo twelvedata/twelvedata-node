@@ -17,31 +17,31 @@ export interface GetTimeSeriesBBands200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesBBands200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesBBands200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * Number of periods to average over
    * @type {number}
    * @memberof GetTimeSeriesBBands200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
   /**
    * Number of standard deviations
    * @type {number}
    * @memberof GetTimeSeriesBBands200ResponseMetaIndicator
    */
-  sd?: number;
+  sd: number;
   /**
    * Moving average type
    * @type {string}
    * @memberof GetTimeSeriesBBands200ResponseMetaIndicator
    */
-  maType?: string;
+  maType: string;
 }
 
 /**
@@ -50,6 +50,13 @@ export interface GetTimeSeriesBBands200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesBBands200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesBBands200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
+  if (!("sd" in value) || value["sd"] === undefined) return false;
+  if (!("maType" in value) || value["maType"] === undefined) return false;
   return true;
 }
 
@@ -67,11 +74,11 @@ export function GetTimeSeriesBBands200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
-    sd: json["sd"] == null ? undefined : json["sd"],
-    maType: json["ma_type"] == null ? undefined : json["ma_type"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    timePeriod: json["time_period"],
+    sd: json["sd"],
+    maType: json["ma_type"],
   };
 }
 

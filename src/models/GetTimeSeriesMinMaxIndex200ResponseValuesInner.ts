@@ -17,19 +17,19 @@ export interface GetTimeSeriesMinMaxIndex200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMinMaxIndex200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Index of the lowest value over the specified period
    * @type {string}
    * @memberof GetTimeSeriesMinMaxIndex200ResponseValuesInner
    */
-  minidx?: string;
+  minidx: string;
   /**
    * Index of the highest value over the specified period
    * @type {string}
    * @memberof GetTimeSeriesMinMaxIndex200ResponseValuesInner
    */
-  maxidx?: string;
+  maxidx: string;
 }
 
 /**
@@ -38,6 +38,9 @@ export interface GetTimeSeriesMinMaxIndex200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMinMaxIndex200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMinMaxIndex200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("minidx" in value) || value["minidx"] === undefined) return false;
+  if (!("maxidx" in value) || value["maxidx"] === undefined) return false;
   return true;
 }
 
@@ -58,9 +61,9 @@ export function GetTimeSeriesMinMaxIndex200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    minidx: json["minidx"] == null ? undefined : json["minidx"],
-    maxidx: json["maxidx"] == null ? undefined : json["maxidx"],
+    datetime: json["datetime"],
+    minidx: json["minidx"],
+    maxidx: json["maxidx"],
   };
 }
 

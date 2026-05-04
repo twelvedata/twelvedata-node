@@ -17,25 +17,25 @@ export interface CommoditiesResponseItem {
    * @type {string}
    * @memberof CommoditiesResponseItem
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Full name of the instrument
    * @type {string}
    * @memberof CommoditiesResponseItem
    */
-  name?: string;
+  name: string;
   /**
    * Category of commodity
    * @type {string}
    * @memberof CommoditiesResponseItem
    */
-  category?: string;
+  category: string;
   /**
    * Short description of the commodity
    * @type {string}
    * @memberof CommoditiesResponseItem
    */
-  description?: string;
+  description: string;
 }
 
 /**
@@ -44,6 +44,11 @@ export interface CommoditiesResponseItem {
 export function instanceOfCommoditiesResponseItem(
   value: object,
 ): value is CommoditiesResponseItem {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("category" in value) || value["category"] === undefined) return false;
+  if (!("description" in value) || value["description"] === undefined)
+    return false;
   return true;
 }
 
@@ -61,10 +66,10 @@ export function CommoditiesResponseItemFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    category: json["category"] == null ? undefined : json["category"],
-    description: json["description"] == null ? undefined : json["description"],
+    symbol: json["symbol"],
+    name: json["name"],
+    category: json["category"],
+    description: json["description"],
   };
 }
 

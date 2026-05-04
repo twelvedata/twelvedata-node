@@ -25,13 +25,13 @@ export interface GetExchanges200Response {
    * @type {Array<ExchangesResponseItem>}
    * @memberof GetExchanges200Response
    */
-  data?: Array<ExchangesResponseItem>;
+  data: Array<ExchangesResponseItem>;
   /**
    * Response status
    * @type {string}
    * @memberof GetExchanges200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetExchanges200Response {
 export function instanceOfGetExchanges200Response(
   value: object,
 ): value is GetExchanges200Response {
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +59,8 @@ export function GetExchanges200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(ExchangesResponseItemFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    data: (json["data"] as Array<any>).map(ExchangesResponseItemFromJSON),
+    status: json["status"],
   };
 }
 
@@ -80,10 +79,7 @@ export function GetExchanges200ResponseToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(ExchangesResponseItemToJSON),
+    data: (value["data"] as Array<any>).map(ExchangesResponseItemToJSON),
     status: value["status"],
   };
 }

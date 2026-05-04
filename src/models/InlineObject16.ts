@@ -32,19 +32,19 @@ export interface InlineObject16 {
    * @type {InlineObject16Meta}
    * @memberof InlineObject16
    */
-  meta?: InlineObject16Meta;
+  meta: InlineObject16Meta;
   /**
    * Array of time series data points
    * @type {Array<InlineObject16ValuesInner>}
    * @memberof InlineObject16
    */
-  values?: Array<InlineObject16ValuesInner>;
+  values: Array<InlineObject16ValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof InlineObject16
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface InlineObject16 {
 export function instanceOfInlineObject16(
   value: object,
 ): value is InlineObject16 {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -68,15 +71,11 @@ export function InlineObject16FromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : InlineObject16MetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(InlineObject16ValuesInnerFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: InlineObject16MetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      InlineObject16ValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -94,10 +93,9 @@ export function InlineObject16ToJSONTyped(
 
   return {
     meta: InlineObject16MetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(InlineObject16ValuesInnerToJSON),
+    values: (value["values"] as Array<any>).map(
+      InlineObject16ValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

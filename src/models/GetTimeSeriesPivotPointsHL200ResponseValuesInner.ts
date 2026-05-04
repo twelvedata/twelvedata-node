@@ -17,19 +17,19 @@ export interface GetTimeSeriesPivotPointsHL200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesPivotPointsHL200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * `1` if it is a high pivot point, otherwise `0`
    * @type {number}
    * @memberof GetTimeSeriesPivotPointsHL200ResponseValuesInner
    */
-  pivotPointH?: number;
+  pivotPointH: number;
   /**
    * `1` if it is a low pivot point, otherwise `0`
    * @type {number}
    * @memberof GetTimeSeriesPivotPointsHL200ResponseValuesInner
    */
-  pivotPointL?: number;
+  pivotPointL: number;
 }
 
 /**
@@ -38,6 +38,11 @@ export interface GetTimeSeriesPivotPointsHL200ResponseValuesInner {
 export function instanceOfGetTimeSeriesPivotPointsHL200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesPivotPointsHL200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("pivotPointH" in value) || value["pivotPointH"] === undefined)
+    return false;
+  if (!("pivotPointL" in value) || value["pivotPointL"] === undefined)
+    return false;
   return true;
 }
 
@@ -58,11 +63,9 @@ export function GetTimeSeriesPivotPointsHL200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    pivotPointH:
-      json["pivot_point_h"] == null ? undefined : json["pivot_point_h"],
-    pivotPointL:
-      json["pivot_point_l"] == null ? undefined : json["pivot_point_l"],
+    datetime: json["datetime"],
+    pivotPointH: json["pivot_point_h"],
+    pivotPointL: json["pivot_point_l"],
   };
 }
 

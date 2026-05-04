@@ -17,13 +17,13 @@ export interface GetTimeSeriesObv200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesObv200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * obv value
    * @type {string}
    * @memberof GetTimeSeriesObv200ResponseValuesInner
    */
-  obv?: string;
+  obv: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesObv200ResponseValuesInner {
 export function instanceOfGetTimeSeriesObv200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesObv200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("obv" in value) || value["obv"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesObv200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    obv: json["obv"] == null ? undefined : json["obv"],
+    datetime: json["datetime"],
+    obv: json["obv"],
   };
 }
 

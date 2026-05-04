@@ -17,31 +17,31 @@ export interface GetTimeSeriesCoppock200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesCoppock200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesCoppock200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * Number of periods for weighted moving average
    * @type {number}
    * @memberof GetTimeSeriesCoppock200ResponseMetaIndicator
    */
-  wmaPeriod?: number;
+  wmaPeriod: number;
   /**
    * Number of periods for long term rate of change
    * @type {number}
    * @memberof GetTimeSeriesCoppock200ResponseMetaIndicator
    */
-  longRocPeriod?: number;
+  longRocPeriod: number;
   /**
    * Number of periods for short term rate of change
    * @type {number}
    * @memberof GetTimeSeriesCoppock200ResponseMetaIndicator
    */
-  shortRocPeriod?: number;
+  shortRocPeriod: number;
 }
 
 /**
@@ -50,6 +50,14 @@ export interface GetTimeSeriesCoppock200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesCoppock200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesCoppock200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("wmaPeriod" in value) || value["wmaPeriod"] === undefined) return false;
+  if (!("longRocPeriod" in value) || value["longRocPeriod"] === undefined)
+    return false;
+  if (!("shortRocPeriod" in value) || value["shortRocPeriod"] === undefined)
+    return false;
   return true;
 }
 
@@ -67,13 +75,11 @@ export function GetTimeSeriesCoppock200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    wmaPeriod: json["wma_period"] == null ? undefined : json["wma_period"],
-    longRocPeriod:
-      json["long_roc_period"] == null ? undefined : json["long_roc_period"],
-    shortRocPeriod:
-      json["short_roc_period"] == null ? undefined : json["short_roc_period"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    wmaPeriod: json["wma_period"],
+    longRocPeriod: json["long_roc_period"],
+    shortRocPeriod: json["short_roc_period"],
   };
 }
 

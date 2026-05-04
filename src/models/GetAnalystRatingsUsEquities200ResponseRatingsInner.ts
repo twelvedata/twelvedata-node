@@ -17,13 +17,13 @@ export interface GetAnalystRatingsUsEquities200ResponseRatingsInner {
    * @type {string}
    * @memberof GetAnalystRatingsUsEquities200ResponseRatingsInner
    */
-  date?: string;
+  date: string;
   /**
    * Firm that issued the ranking
    * @type {string}
    * @memberof GetAnalystRatingsUsEquities200ResponseRatingsInner
    */
-  firm?: string;
+  firm: string;
   /**
    * Name of an analyst
    * @type {string}
@@ -80,6 +80,8 @@ export interface GetAnalystRatingsUsEquities200ResponseRatingsInner {
 export function instanceOfGetAnalystRatingsUsEquities200ResponseRatingsInner(
   value: object,
 ): value is GetAnalystRatingsUsEquities200ResponseRatingsInner {
+  if (!("date" in value) || value["date"] === undefined) return false;
+  if (!("firm" in value) || value["firm"] === undefined) return false;
   return true;
 }
 
@@ -100,8 +102,8 @@ export function GetAnalystRatingsUsEquities200ResponseRatingsInnerFromJSONTyped(
     return json;
   }
   return {
-    date: json["date"] == null ? undefined : json["date"],
-    firm: json["firm"] == null ? undefined : json["firm"],
+    date: json["date"],
+    firm: json["firm"],
     analystName:
       json["analyst_name"] == null ? undefined : json["analyst_name"],
     ratingChange:

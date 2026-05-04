@@ -17,13 +17,13 @@ export interface GetTimeSeriesMaxIndex200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMaxIndex200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * maxidx value
    * @type {string}
    * @memberof GetTimeSeriesMaxIndex200ResponseValuesInner
    */
-  maxidx?: string;
+  maxidx: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesMaxIndex200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMaxIndex200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMaxIndex200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("maxidx" in value) || value["maxidx"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesMaxIndex200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    maxidx: json["maxidx"] == null ? undefined : json["maxidx"],
+    datetime: json["datetime"],
+    maxidx: json["maxidx"],
   };
 }
 

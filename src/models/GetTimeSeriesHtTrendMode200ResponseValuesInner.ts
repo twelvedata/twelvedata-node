@@ -17,13 +17,13 @@ export interface GetTimeSeriesHtTrendMode200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesHtTrendMode200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * ht_trendmode value
    * @type {string}
    * @memberof GetTimeSeriesHtTrendMode200ResponseValuesInner
    */
-  htTrendmode?: string;
+  htTrendmode: string;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesHtTrendMode200ResponseValuesInner {
 export function instanceOfGetTimeSeriesHtTrendMode200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesHtTrendMode200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("htTrendmode" in value) || value["htTrendmode"] === undefined)
+    return false;
   return true;
 }
 
@@ -52,9 +55,8 @@ export function GetTimeSeriesHtTrendMode200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    htTrendmode:
-      json["ht_trendmode"] == null ? undefined : json["ht_trendmode"],
+    datetime: json["datetime"],
+    htTrendmode: json["ht_trendmode"],
   };
 }
 

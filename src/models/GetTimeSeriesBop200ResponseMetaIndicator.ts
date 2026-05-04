@@ -17,7 +17,7 @@ export interface GetTimeSeriesBop200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesBop200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
 }
 
 /**
@@ -26,6 +26,7 @@ export interface GetTimeSeriesBop200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesBop200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesBop200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
   return true;
 }
 
@@ -43,7 +44,7 @@ export function GetTimeSeriesBop200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
+    name: json["name"],
   };
 }
 

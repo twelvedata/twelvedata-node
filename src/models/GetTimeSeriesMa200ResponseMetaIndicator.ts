@@ -17,25 +17,25 @@ export interface GetTimeSeriesMa200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesMa200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesMa200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * Number of periods to average over
    * @type {number}
    * @memberof GetTimeSeriesMa200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
   /**
    * The type of moving average used
    * @type {string}
    * @memberof GetTimeSeriesMa200ResponseMetaIndicator
    */
-  maType?: string;
+  maType: string;
 }
 
 /**
@@ -44,6 +44,12 @@ export interface GetTimeSeriesMa200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesMa200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesMa200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
+  if (!("maType" in value) || value["maType"] === undefined) return false;
   return true;
 }
 
@@ -61,10 +67,10 @@ export function GetTimeSeriesMa200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
-    maType: json["ma_type"] == null ? undefined : json["ma_type"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    timePeriod: json["time_period"],
+    maType: json["ma_type"],
   };
 }
 

@@ -17,7 +17,7 @@ export interface ResponseSanctionItemList {
    * @type {string}
    * @memberof ResponseSanctionItemList
    */
-  name?: string;
+  name: string;
   /**
    * The sanction published date in the current sanctions list
    * @type {string}
@@ -32,6 +32,7 @@ export interface ResponseSanctionItemList {
 export function instanceOfResponseSanctionItemList(
   value: object,
 ): value is ResponseSanctionItemList {
+  if (!("name" in value) || value["name"] === undefined) return false;
   return true;
 }
 
@@ -49,7 +50,7 @@ export function ResponseSanctionItemListFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
+    name: json["name"],
     publishedAt:
       json["published_at"] == null ? undefined : json["published_at"],
   };

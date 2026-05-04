@@ -17,13 +17,13 @@ export interface GetTimeSeriesRocr200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesRocr200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * ROCR value
    * @type {string}
    * @memberof GetTimeSeriesRocr200ResponseValuesInner
    */
-  rocr?: string;
+  rocr: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesRocr200ResponseValuesInner {
 export function instanceOfGetTimeSeriesRocr200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesRocr200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("rocr" in value) || value["rocr"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesRocr200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    rocr: json["rocr"] == null ? undefined : json["rocr"],
+    datetime: json["datetime"],
+    rocr: json["rocr"],
   };
 }
 

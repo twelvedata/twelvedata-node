@@ -17,13 +17,13 @@ export interface GetTimeSeriesSub200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesSub200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * SUB value
    * @type {string}
    * @memberof GetTimeSeriesSub200ResponseValuesInner
    */
-  sub?: string;
+  sub: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesSub200ResponseValuesInner {
 export function instanceOfGetTimeSeriesSub200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesSub200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("sub" in value) || value["sub"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesSub200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    sub: json["sub"] == null ? undefined : json["sub"],
+    datetime: json["datetime"],
+    sub: json["sub"],
   };
 }
 

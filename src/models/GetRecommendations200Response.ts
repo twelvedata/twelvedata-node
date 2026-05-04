@@ -32,13 +32,13 @@ export interface GetRecommendations200Response {
    * @type {GetRecommendations200ResponseMeta}
    * @memberof GetRecommendations200Response
    */
-  meta?: GetRecommendations200ResponseMeta;
+  meta: GetRecommendations200ResponseMeta;
   /**
    *
    * @type {GetRecommendations200ResponseTrends}
    * @memberof GetRecommendations200Response
    */
-  trends?: GetRecommendations200ResponseTrends;
+  trends: GetRecommendations200ResponseTrends;
   /**
    * Rating from 0 to 10 represents overall analysts' recommendation. 0 to 2 - strong sell, 2 to 4 - sell, 4 to 6 - hold, 6 to 8 - buy, 8 to 10 - strong buy.
    * @type {number}
@@ -50,7 +50,7 @@ export interface GetRecommendations200Response {
    * @type {string}
    * @memberof GetRecommendations200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -59,6 +59,9 @@ export interface GetRecommendations200Response {
 export function instanceOfGetRecommendations200Response(
   value: object,
 ): value is GetRecommendations200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("trends" in value) || value["trends"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -76,16 +79,10 @@ export function GetRecommendations200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetRecommendations200ResponseMetaFromJSON(json["meta"]),
-    trends:
-      json["trends"] == null
-        ? undefined
-        : GetRecommendations200ResponseTrendsFromJSON(json["trends"]),
+    meta: GetRecommendations200ResponseMetaFromJSON(json["meta"]),
+    trends: GetRecommendations200ResponseTrendsFromJSON(json["trends"]),
     rating: json["rating"] == null ? undefined : json["rating"],
-    status: json["status"] == null ? undefined : json["status"],
+    status: json["status"],
   };
 }
 

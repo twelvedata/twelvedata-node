@@ -17,25 +17,25 @@ export interface GetTimeSeriesBBands200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesBBands200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Upper band value
    * @type {string}
    * @memberof GetTimeSeriesBBands200ResponseValuesInner
    */
-  upperBand?: string;
+  upperBand: string;
   /**
    * Middle band value
    * @type {string}
    * @memberof GetTimeSeriesBBands200ResponseValuesInner
    */
-  middleBand?: string;
+  middleBand: string;
   /**
    * Lower band value
    * @type {string}
    * @memberof GetTimeSeriesBBands200ResponseValuesInner
    */
-  lowerBand?: string;
+  lowerBand: string;
 }
 
 /**
@@ -44,6 +44,11 @@ export interface GetTimeSeriesBBands200ResponseValuesInner {
 export function instanceOfGetTimeSeriesBBands200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesBBands200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("upperBand" in value) || value["upperBand"] === undefined) return false;
+  if (!("middleBand" in value) || value["middleBand"] === undefined)
+    return false;
+  if (!("lowerBand" in value) || value["lowerBand"] === undefined) return false;
   return true;
 }
 
@@ -61,10 +66,10 @@ export function GetTimeSeriesBBands200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    upperBand: json["upper_band"] == null ? undefined : json["upper_band"],
-    middleBand: json["middle_band"] == null ? undefined : json["middle_band"],
-    lowerBand: json["lower_band"] == null ? undefined : json["lower_band"],
+    datetime: json["datetime"],
+    upperBand: json["upper_band"],
+    middleBand: json["middle_band"],
+    lowerBand: json["lower_band"],
   };
 }
 

@@ -32,19 +32,19 @@ export interface GetTimeSeriesLinearRegAngle200Response {
    * @type {GetTimeSeriesLinearRegAngle200ResponseMeta}
    * @memberof GetTimeSeriesLinearRegAngle200Response
    */
-  meta?: GetTimeSeriesLinearRegAngle200ResponseMeta;
+  meta: GetTimeSeriesLinearRegAngle200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesLinearRegAngle200ResponseValuesInner>}
    * @memberof GetTimeSeriesLinearRegAngle200Response
    */
-  values?: Array<GetTimeSeriesLinearRegAngle200ResponseValuesInner>;
+  values: Array<GetTimeSeriesLinearRegAngle200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesLinearRegAngle200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesLinearRegAngle200Response {
 export function instanceOfGetTimeSeriesLinearRegAngle200Response(
   value: object,
 ): value is GetTimeSeriesLinearRegAngle200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesLinearRegAngle200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesLinearRegAngle200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesLinearRegAngle200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesLinearRegAngle200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesLinearRegAngle200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesLinearRegAngle200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesLinearRegAngle200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesLinearRegAngle200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesLinearRegAngle200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

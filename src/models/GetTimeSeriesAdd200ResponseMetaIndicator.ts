@@ -17,19 +17,19 @@ export interface GetTimeSeriesAdd200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesAdd200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type used as the first part of technical indicator
    * @type {string}
    * @memberof GetTimeSeriesAdd200ResponseMetaIndicator
    */
-  seriesType1?: string;
+  seriesType1: string;
   /**
    * Price type used as the second part of technical indicator
    * @type {string}
    * @memberof GetTimeSeriesAdd200ResponseMetaIndicator
    */
-  seriesType2?: string;
+  seriesType2: string;
 }
 
 /**
@@ -38,6 +38,11 @@ export interface GetTimeSeriesAdd200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesAdd200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesAdd200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType1" in value) || value["seriesType1"] === undefined)
+    return false;
+  if (!("seriesType2" in value) || value["seriesType2"] === undefined)
+    return false;
   return true;
 }
 
@@ -55,11 +60,9 @@ export function GetTimeSeriesAdd200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType1:
-      json["series_type_1"] == null ? undefined : json["series_type_1"],
-    seriesType2:
-      json["series_type_2"] == null ? undefined : json["series_type_2"],
+    name: json["name"],
+    seriesType1: json["series_type_1"],
+    seriesType2: json["series_type_2"],
   };
 }
 

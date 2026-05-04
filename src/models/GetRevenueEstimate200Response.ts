@@ -32,19 +32,19 @@ export interface GetRevenueEstimate200Response {
    * @type {GetEarningsEstimate200ResponseMeta}
    * @memberof GetRevenueEstimate200Response
    */
-  meta?: GetEarningsEstimate200ResponseMeta;
+  meta: GetEarningsEstimate200ResponseMeta;
   /**
    * Revenue estimate data
    * @type {Array<GetRevenueEstimate200ResponseRevenueEstimateInner>}
    * @memberof GetRevenueEstimate200Response
    */
-  revenueEstimate?: Array<GetRevenueEstimate200ResponseRevenueEstimateInner>;
+  revenueEstimate: Array<GetRevenueEstimate200ResponseRevenueEstimateInner>;
   /**
    * Status of the response
    * @type {string}
    * @memberof GetRevenueEstimate200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,10 @@ export interface GetRevenueEstimate200Response {
 export function instanceOfGetRevenueEstimate200Response(
   value: object,
 ): value is GetRevenueEstimate200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("revenueEstimate" in value) || value["revenueEstimate"] === undefined)
+    return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +74,11 @@ export function GetRevenueEstimate200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetEarningsEstimate200ResponseMetaFromJSON(json["meta"]),
-    revenueEstimate:
-      json["revenue_estimate"] == null
-        ? undefined
-        : (json["revenue_estimate"] as Array<any>).map(
-            GetRevenueEstimate200ResponseRevenueEstimateInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetEarningsEstimate200ResponseMetaFromJSON(json["meta"]),
+    revenueEstimate: (json["revenue_estimate"] as Array<any>).map(
+      GetRevenueEstimate200ResponseRevenueEstimateInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +98,9 @@ export function GetRevenueEstimate200ResponseToJSONTyped(
 
   return {
     meta: GetEarningsEstimate200ResponseMetaToJSON(value["meta"]),
-    revenue_estimate:
-      value["revenueEstimate"] == null
-        ? undefined
-        : (value["revenueEstimate"] as Array<any>).map(
-            GetRevenueEstimate200ResponseRevenueEstimateInnerToJSON,
-          ),
+    revenue_estimate: (value["revenueEstimate"] as Array<any>).map(
+      GetRevenueEstimate200ResponseRevenueEstimateInnerToJSON,
+    ),
     status: value["status"],
   };
 }

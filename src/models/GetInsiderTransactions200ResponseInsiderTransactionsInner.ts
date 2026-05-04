@@ -17,19 +17,19 @@ export interface GetInsiderTransactions200ResponseInsiderTransactionsInner {
    * @type {string}
    * @memberof GetInsiderTransactions200ResponseInsiderTransactionsInner
    */
-  fullName?: string;
+  fullName: string;
   /**
    * Job position of insider
    * @type {string}
    * @memberof GetInsiderTransactions200ResponseInsiderTransactionsInner
    */
-  position?: string;
+  position: string;
   /**
    * Date the transaction was reported
    * @type {string}
    * @memberof GetInsiderTransactions200ResponseInsiderTransactionsInner
    */
-  dateReported?: string;
+  dateReported: string;
   /**
    * `true` if direct, `false` if indirect
    * @type {boolean}
@@ -53,7 +53,7 @@ export interface GetInsiderTransactions200ResponseInsiderTransactionsInner {
    * @type {string}
    * @memberof GetInsiderTransactions200ResponseInsiderTransactionsInner
    */
-  description?: string;
+  description: string;
 }
 
 /**
@@ -62,6 +62,12 @@ export interface GetInsiderTransactions200ResponseInsiderTransactionsInner {
 export function instanceOfGetInsiderTransactions200ResponseInsiderTransactionsInner(
   value: object,
 ): value is GetInsiderTransactions200ResponseInsiderTransactionsInner {
+  if (!("fullName" in value) || value["fullName"] === undefined) return false;
+  if (!("position" in value) || value["position"] === undefined) return false;
+  if (!("dateReported" in value) || value["dateReported"] === undefined)
+    return false;
+  if (!("description" in value) || value["description"] === undefined)
+    return false;
   return true;
 }
 
@@ -82,14 +88,13 @@ export function GetInsiderTransactions200ResponseInsiderTransactionsInnerFromJSO
     return json;
   }
   return {
-    fullName: json["full_name"] == null ? undefined : json["full_name"],
-    position: json["position"] == null ? undefined : json["position"],
-    dateReported:
-      json["date_reported"] == null ? undefined : json["date_reported"],
+    fullName: json["full_name"],
+    position: json["position"],
+    dateReported: json["date_reported"],
     isDirect: json["is_direct"] == null ? undefined : json["is_direct"],
     shares: json["shares"] == null ? undefined : json["shares"],
     value: json["value"] == null ? undefined : json["value"],
-    description: json["description"] == null ? undefined : json["description"],
+    description: json["description"],
   };
 }
 

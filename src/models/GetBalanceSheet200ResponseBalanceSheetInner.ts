@@ -39,7 +39,7 @@ export interface GetBalanceSheet200ResponseBalanceSheetInner {
    * @type {string}
    * @memberof GetBalanceSheet200ResponseBalanceSheetInner
    */
-  fiscalDate?: string;
+  fiscalDate: string;
   /**
    * Fiscal year
    * @type {number}
@@ -72,6 +72,8 @@ export interface GetBalanceSheet200ResponseBalanceSheetInner {
 export function instanceOfGetBalanceSheet200ResponseBalanceSheetInner(
   value: object,
 ): value is GetBalanceSheet200ResponseBalanceSheetInner {
+  if (!("fiscalDate" in value) || value["fiscalDate"] === undefined)
+    return false;
   return true;
 }
 
@@ -89,7 +91,7 @@ export function GetBalanceSheet200ResponseBalanceSheetInnerFromJSONTyped(
     return json;
   }
   return {
-    fiscalDate: json["fiscal_date"] == null ? undefined : json["fiscal_date"],
+    fiscalDate: json["fiscal_date"],
     year: json["year"] == null ? undefined : json["year"],
     assets:
       json["assets"] == null

@@ -25,7 +25,7 @@ export interface GetExchangeSchedule200Response {
    * @type {Array<ExchangeScheduleResponseItem>}
    * @memberof GetExchangeSchedule200Response
    */
-  data?: Array<ExchangeScheduleResponseItem>;
+  data: Array<ExchangeScheduleResponseItem>;
 }
 
 /**
@@ -34,6 +34,7 @@ export interface GetExchangeSchedule200Response {
 export function instanceOfGetExchangeSchedule200Response(
   value: object,
 ): value is GetExchangeSchedule200Response {
+  if (!("data" in value) || value["data"] === undefined) return false;
   return true;
 }
 
@@ -51,12 +52,9 @@ export function GetExchangeSchedule200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(
-            ExchangeScheduleResponseItemFromJSON,
-          ),
+    data: (json["data"] as Array<any>).map(
+      ExchangeScheduleResponseItemFromJSON,
+    ),
   };
 }
 
@@ -75,9 +73,6 @@ export function GetExchangeSchedule200ResponseToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(ExchangeScheduleResponseItemToJSON),
+    data: (value["data"] as Array<any>).map(ExchangeScheduleResponseItemToJSON),
   };
 }

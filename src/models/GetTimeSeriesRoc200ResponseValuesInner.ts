@@ -17,13 +17,13 @@ export interface GetTimeSeriesRoc200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesRoc200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * roc value
    * @type {string}
    * @memberof GetTimeSeriesRoc200ResponseValuesInner
    */
-  roc?: string;
+  roc: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesRoc200ResponseValuesInner {
 export function instanceOfGetTimeSeriesRoc200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesRoc200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("roc" in value) || value["roc"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesRoc200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    roc: json["roc"] == null ? undefined : json["roc"],
+    datetime: json["datetime"],
+    roc: json["roc"],
   };
 }
 

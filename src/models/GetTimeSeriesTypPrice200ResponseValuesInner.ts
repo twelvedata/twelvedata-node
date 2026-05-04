@@ -17,13 +17,13 @@ export interface GetTimeSeriesTypPrice200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesTypPrice200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * typprice value
    * @type {string}
    * @memberof GetTimeSeriesTypPrice200ResponseValuesInner
    */
-  typprice?: string;
+  typprice: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesTypPrice200ResponseValuesInner {
 export function instanceOfGetTimeSeriesTypPrice200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesTypPrice200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("typprice" in value) || value["typprice"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesTypPrice200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    typprice: json["typprice"] == null ? undefined : json["typprice"],
+    datetime: json["datetime"],
+    typprice: json["typprice"],
   };
 }
 

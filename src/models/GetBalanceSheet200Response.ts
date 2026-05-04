@@ -32,13 +32,13 @@ export interface GetBalanceSheet200Response {
    * @type {GetBalanceSheet200ResponseMeta}
    * @memberof GetBalanceSheet200Response
    */
-  meta?: GetBalanceSheet200ResponseMeta;
+  meta: GetBalanceSheet200ResponseMeta;
   /**
    * Array of balance sheet records
    * @type {Array<GetBalanceSheet200ResponseBalanceSheetInner>}
    * @memberof GetBalanceSheet200Response
    */
-  balanceSheet?: Array<GetBalanceSheet200ResponseBalanceSheetInner>;
+  balanceSheet: Array<GetBalanceSheet200ResponseBalanceSheetInner>;
 }
 
 /**
@@ -47,6 +47,9 @@ export interface GetBalanceSheet200Response {
 export function instanceOfGetBalanceSheet200Response(
   value: object,
 ): value is GetBalanceSheet200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("balanceSheet" in value) || value["balanceSheet"] === undefined)
+    return false;
   return true;
 }
 
@@ -64,16 +67,10 @@ export function GetBalanceSheet200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetBalanceSheet200ResponseMetaFromJSON(json["meta"]),
-    balanceSheet:
-      json["balance_sheet"] == null
-        ? undefined
-        : (json["balance_sheet"] as Array<any>).map(
-            GetBalanceSheet200ResponseBalanceSheetInnerFromJSON,
-          ),
+    meta: GetBalanceSheet200ResponseMetaFromJSON(json["meta"]),
+    balanceSheet: (json["balance_sheet"] as Array<any>).map(
+      GetBalanceSheet200ResponseBalanceSheetInnerFromJSON,
+    ),
   };
 }
 
@@ -93,11 +90,8 @@ export function GetBalanceSheet200ResponseToJSONTyped(
 
   return {
     meta: GetBalanceSheet200ResponseMetaToJSON(value["meta"]),
-    balance_sheet:
-      value["balanceSheet"] == null
-        ? undefined
-        : (value["balanceSheet"] as Array<any>).map(
-            GetBalanceSheet200ResponseBalanceSheetInnerToJSON,
-          ),
+    balance_sheet: (value["balanceSheet"] as Array<any>).map(
+      GetBalanceSheet200ResponseBalanceSheetInnerToJSON,
+    ),
   };
 }

@@ -17,25 +17,25 @@ export interface GetTimeSeriesT3ma200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesT3ma200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesT3ma200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * The time period used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesT3ma200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
   /**
    * The factor used to adjust the indicator's volatility
    * @type {number}
    * @memberof GetTimeSeriesT3ma200ResponseMetaIndicator
    */
-  vFactor?: number;
+  vFactor: number;
 }
 
 /**
@@ -44,6 +44,12 @@ export interface GetTimeSeriesT3ma200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesT3ma200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesT3ma200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
+  if (!("vFactor" in value) || value["vFactor"] === undefined) return false;
   return true;
 }
 
@@ -61,10 +67,10 @@ export function GetTimeSeriesT3ma200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
-    vFactor: json["v_factor"] == null ? undefined : json["v_factor"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    timePeriod: json["time_period"],
+    vFactor: json["v_factor"],
   };
 }
 

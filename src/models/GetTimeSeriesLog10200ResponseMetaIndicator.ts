@@ -17,13 +17,13 @@ export interface GetTimeSeriesLog10200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesLog10200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesLog10200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesLog10200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesLog10200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesLog10200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
   return true;
 }
 
@@ -49,8 +52,8 @@ export function GetTimeSeriesLog10200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
+    name: json["name"],
+    seriesType: json["series_type"],
   };
 }
 

@@ -17,7 +17,7 @@ export interface SplitsCalendarResponseItem {
    * @type {string}
    * @memberof SplitsCalendarResponseItem
    */
-  date?: string;
+  date: string;
   /**
    * Ticker of the company
    * @type {string}
@@ -41,25 +41,25 @@ export interface SplitsCalendarResponseItem {
    * @type {string}
    * @memberof SplitsCalendarResponseItem
    */
-  description?: string;
+  description: string;
   /**
    * The ratio by which the number of a company's outstanding shares of stock are increased following a stock split. For example, a `4-for-1 split` results in four times as many outstanding shares, with each share selling at one forth of its pre-split price
    * @type {number}
    * @memberof SplitsCalendarResponseItem
    */
-  ratio?: number;
+  ratio: number;
   /**
    * From factor of the split
    * @type {number}
    * @memberof SplitsCalendarResponseItem
    */
-  fromFactor?: number;
+  fromFactor: number;
   /**
    * To factor of the split
    * @type {number}
    * @memberof SplitsCalendarResponseItem
    */
-  toFactor?: number;
+  toFactor: number;
 }
 
 /**
@@ -68,6 +68,13 @@ export interface SplitsCalendarResponseItem {
 export function instanceOfSplitsCalendarResponseItem(
   value: object,
 ): value is SplitsCalendarResponseItem {
+  if (!("date" in value) || value["date"] === undefined) return false;
+  if (!("description" in value) || value["description"] === undefined)
+    return false;
+  if (!("ratio" in value) || value["ratio"] === undefined) return false;
+  if (!("fromFactor" in value) || value["fromFactor"] === undefined)
+    return false;
+  if (!("toFactor" in value) || value["toFactor"] === undefined) return false;
   return true;
 }
 
@@ -85,14 +92,14 @@ export function SplitsCalendarResponseItemFromJSONTyped(
     return json;
   }
   return {
-    date: json["date"] == null ? undefined : json["date"],
+    date: json["date"],
     symbol: json["symbol"] == null ? undefined : json["symbol"],
     micCode: json["mic_code"] == null ? undefined : json["mic_code"],
     exchange: json["exchange"] == null ? undefined : json["exchange"],
-    description: json["description"] == null ? undefined : json["description"],
-    ratio: json["ratio"] == null ? undefined : json["ratio"],
-    fromFactor: json["from_factor"] == null ? undefined : json["from_factor"],
-    toFactor: json["to_factor"] == null ? undefined : json["to_factor"],
+    description: json["description"],
+    ratio: json["ratio"],
+    fromFactor: json["from_factor"],
+    toFactor: json["to_factor"],
   };
 }
 

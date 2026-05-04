@@ -32,19 +32,19 @@ export interface GetTimeSeries200Response {
    * @type {GetTimeSeries200ResponseMeta}
    * @memberof GetTimeSeries200Response
    */
-  meta?: GetTimeSeries200ResponseMeta;
+  meta: GetTimeSeries200ResponseMeta;
   /**
    * List of time series data points
    * @type {Array<TimeSeriesItem>}
    * @memberof GetTimeSeries200Response
    */
-  values?: Array<TimeSeriesItem>;
+  values: Array<TimeSeriesItem>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeries200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeries200Response {
 export function instanceOfGetTimeSeries200Response(
   value: object,
 ): value is GetTimeSeries200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,15 +73,9 @@ export function GetTimeSeries200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeries200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(TimeSeriesItemFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeries200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(TimeSeriesItemFromJSON),
+    status: json["status"],
   };
 }
 
@@ -98,10 +95,7 @@ export function GetTimeSeries200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeries200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(TimeSeriesItemToJSON),
+    values: (value["values"] as Array<any>).map(TimeSeriesItemToJSON),
     status: value["status"],
   };
 }

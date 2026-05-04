@@ -17,7 +17,7 @@ export interface EarningsItem {
    * @type {string}
    * @memberof EarningsItem
    */
-  date?: string;
+  date: string;
   /**
    * Time of earning release, can be either of the following values: `Pre Market`, `After Hours`, `Time Not Supplied`
    * @type {string}
@@ -54,6 +54,7 @@ export interface EarningsItem {
  * Check if a given object implements the EarningsItem interface.
  */
 export function instanceOfEarningsItem(value: object): value is EarningsItem {
+  if (!("date" in value) || value["date"] === undefined) return false;
   return true;
 }
 
@@ -69,7 +70,7 @@ export function EarningsItemFromJSONTyped(
     return json;
   }
   return {
-    date: json["date"] == null ? undefined : json["date"],
+    date: json["date"],
     time: json["time"] == null ? undefined : json["time"],
     epsEstimate:
       json["eps_estimate"] == null ? undefined : json["eps_estimate"],

@@ -17,19 +17,19 @@ export interface GetTimeSeriesHtSine200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesHtSine200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * ht_sine value
    * @type {string}
    * @memberof GetTimeSeriesHtSine200ResponseValuesInner
    */
-  htSine?: string;
+  htSine: string;
   /**
    * ht_leadsine value
    * @type {string}
    * @memberof GetTimeSeriesHtSine200ResponseValuesInner
    */
-  htLeadsine?: string;
+  htLeadsine: string;
 }
 
 /**
@@ -38,6 +38,10 @@ export interface GetTimeSeriesHtSine200ResponseValuesInner {
 export function instanceOfGetTimeSeriesHtSine200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesHtSine200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("htSine" in value) || value["htSine"] === undefined) return false;
+  if (!("htLeadsine" in value) || value["htLeadsine"] === undefined)
+    return false;
   return true;
 }
 
@@ -55,9 +59,9 @@ export function GetTimeSeriesHtSine200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    htSine: json["ht_sine"] == null ? undefined : json["ht_sine"],
-    htLeadsine: json["ht_leadsine"] == null ? undefined : json["ht_leadsine"],
+    datetime: json["datetime"],
+    htSine: json["ht_sine"],
+    htLeadsine: json["ht_leadsine"],
   };
 }
 

@@ -17,13 +17,13 @@ export interface GetETFsFamily200Response {
    * @type {{ [key: string]: Array<string>; }}
    * @memberof GetETFsFamily200Response
    */
-  result?: { [key: string]: Array<string> };
+  result: { [key: string]: Array<string> };
   /**
    * Status of the response
    * @type {string}
    * @memberof GetETFsFamily200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetETFsFamily200Response {
 export function instanceOfGetETFsFamily200Response(
   value: object,
 ): value is GetETFsFamily200Response {
+  if (!("result" in value) || value["result"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetETFsFamily200ResponseFromJSONTyped(
     return json;
   }
   return {
-    result: json["result"] == null ? undefined : json["result"],
-    status: json["status"] == null ? undefined : json["status"],
+    result: json["result"],
+    status: json["status"],
   };
 }
 

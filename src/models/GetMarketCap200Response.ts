@@ -32,13 +32,13 @@ export interface GetMarketCap200Response {
    * @type {GetMarketCap200ResponseMeta}
    * @memberof GetMarketCap200Response
    */
-  meta?: GetMarketCap200ResponseMeta;
+  meta: GetMarketCap200ResponseMeta;
   /**
    * Market capitalization values
    * @type {Array<GetMarketCap200ResponseMarketCapInner>}
    * @memberof GetMarketCap200Response
    */
-  marketCap?: Array<GetMarketCap200ResponseMarketCapInner>;
+  marketCap: Array<GetMarketCap200ResponseMarketCapInner>;
 }
 
 /**
@@ -47,6 +47,8 @@ export interface GetMarketCap200Response {
 export function instanceOfGetMarketCap200Response(
   value: object,
 ): value is GetMarketCap200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("marketCap" in value) || value["marketCap"] === undefined) return false;
   return true;
 }
 
@@ -64,16 +66,10 @@ export function GetMarketCap200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetMarketCap200ResponseMetaFromJSON(json["meta"]),
-    marketCap:
-      json["market_cap"] == null
-        ? undefined
-        : (json["market_cap"] as Array<any>).map(
-            GetMarketCap200ResponseMarketCapInnerFromJSON,
-          ),
+    meta: GetMarketCap200ResponseMetaFromJSON(json["meta"]),
+    marketCap: (json["market_cap"] as Array<any>).map(
+      GetMarketCap200ResponseMarketCapInnerFromJSON,
+    ),
   };
 }
 
@@ -93,11 +89,8 @@ export function GetMarketCap200ResponseToJSONTyped(
 
   return {
     meta: GetMarketCap200ResponseMetaToJSON(value["meta"]),
-    market_cap:
-      value["marketCap"] == null
-        ? undefined
-        : (value["marketCap"] as Array<any>).map(
-            GetMarketCap200ResponseMarketCapInnerToJSON,
-          ),
+    market_cap: (value["marketCap"] as Array<any>).map(
+      GetMarketCap200ResponseMarketCapInnerToJSON,
+    ),
   };
 }

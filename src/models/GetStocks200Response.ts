@@ -21,17 +21,23 @@ import {
  */
 export interface GetStocks200Response {
   /**
+   * Count
+   * @type {number}
+   * @memberof GetStocks200Response
+   */
+  count: number;
+  /**
    * List of stock instruments
    * @type {Array<StocksResponseItem>}
    * @memberof GetStocks200Response
    */
-  data?: Array<StocksResponseItem>;
+  data: Array<StocksResponseItem>;
   /**
    * Response status
    * @type {string}
    * @memberof GetStocks200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +46,9 @@ export interface GetStocks200Response {
 export function instanceOfGetStocks200Response(
   value: object,
 ): value is GetStocks200Response {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -55,11 +64,9 @@ export function GetStocks200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(StocksResponseItemFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    count: json["count"],
+    data: (json["data"] as Array<any>).map(StocksResponseItemFromJSON),
+    status: json["status"],
   };
 }
 
@@ -76,10 +83,8 @@ export function GetStocks200ResponseToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(StocksResponseItemToJSON),
+    count: value["count"],
+    data: (value["data"] as Array<any>).map(StocksResponseItemToJSON),
     status: value["status"],
   };
 }

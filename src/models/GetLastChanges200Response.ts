@@ -32,13 +32,13 @@ export interface GetLastChanges200Response {
    * @type {GetLastChanges200ResponsePagination}
    * @memberof GetLastChanges200Response
    */
-  pagination?: GetLastChanges200ResponsePagination;
+  pagination: GetLastChanges200ResponsePagination;
   /**
    * Data contains the list of last changes
    * @type {Array<LastChangeResponseItem>}
    * @memberof GetLastChanges200Response
    */
-  data?: Array<LastChangeResponseItem>;
+  data: Array<LastChangeResponseItem>;
 }
 
 /**
@@ -47,6 +47,9 @@ export interface GetLastChanges200Response {
 export function instanceOfGetLastChanges200Response(
   value: object,
 ): value is GetLastChanges200Response {
+  if (!("pagination" in value) || value["pagination"] === undefined)
+    return false;
+  if (!("data" in value) || value["data"] === undefined) return false;
   return true;
 }
 
@@ -64,14 +67,8 @@ export function GetLastChanges200ResponseFromJSONTyped(
     return json;
   }
   return {
-    pagination:
-      json["pagination"] == null
-        ? undefined
-        : GetLastChanges200ResponsePaginationFromJSON(json["pagination"]),
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(LastChangeResponseItemFromJSON),
+    pagination: GetLastChanges200ResponsePaginationFromJSON(json["pagination"]),
+    data: (json["data"] as Array<any>).map(LastChangeResponseItemFromJSON),
   };
 }
 
@@ -91,9 +88,6 @@ export function GetLastChanges200ResponseToJSONTyped(
 
   return {
     pagination: GetLastChanges200ResponsePaginationToJSON(value["pagination"]),
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(LastChangeResponseItemToJSON),
+    data: (value["data"] as Array<any>).map(LastChangeResponseItemToJSON),
   };
 }

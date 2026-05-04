@@ -26,16 +26,16 @@ export interface GetMutualFundsWorld200ResponseMutualFundPurchaseInfoMinimums {
   additionalInvestment?: number;
   /**
    * Investment minimum for IRA
-   * @type {object}
+   * @type {number}
    * @memberof GetMutualFundsWorld200ResponseMutualFundPurchaseInfoMinimums
    */
-  initialIraInvestment?: object;
+  initialIraInvestment?: number;
   /**
    * Minimum amount of additional investment for IRA
-   * @type {object}
+   * @type {number}
    * @memberof GetMutualFundsWorld200ResponseMutualFundPurchaseInfoMinimums
    */
-  additionalIraInvestment?: object;
+  additionalIraInvestment?: number;
 }
 
 /**

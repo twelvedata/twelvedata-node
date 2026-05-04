@@ -25,7 +25,7 @@ export interface GetLogo200Response {
    * @type {GetLogo200ResponseMeta}
    * @memberof GetLogo200Response
    */
-  meta?: GetLogo200ResponseMeta;
+  meta: GetLogo200ResponseMeta;
   /**
    * Link to download the logo (for stocks only)
    * @type {string}
@@ -52,6 +52,7 @@ export interface GetLogo200Response {
 export function instanceOfGetLogo200Response(
   value: object,
 ): value is GetLogo200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
   return true;
 }
 
@@ -67,10 +68,7 @@ export function GetLogo200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetLogo200ResponseMetaFromJSON(json["meta"]),
+    meta: GetLogo200ResponseMetaFromJSON(json["meta"]),
     url: json["url"] == null ? undefined : json["url"],
     logoBase: json["logo_base"] == null ? undefined : json["logo_base"],
     logoQuote: json["logo_quote"] == null ? undefined : json["logo_quote"],

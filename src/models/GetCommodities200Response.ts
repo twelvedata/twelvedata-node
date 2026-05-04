@@ -21,17 +21,23 @@ import {
  */
 export interface GetCommodities200Response {
   /**
+   * Count
+   * @type {number}
+   * @memberof GetCommodities200Response
+   */
+  count: number;
+  /**
    * List of commodities
    * @type {Array<CommoditiesResponseItem>}
    * @memberof GetCommodities200Response
    */
-  data?: Array<CommoditiesResponseItem>;
+  data: Array<CommoditiesResponseItem>;
   /**
    * Response status
    * @type {string}
    * @memberof GetCommodities200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +46,9 @@ export interface GetCommodities200Response {
 export function instanceOfGetCommodities200Response(
   value: object,
 ): value is GetCommodities200Response {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +66,9 @@ export function GetCommodities200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(CommoditiesResponseItemFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    count: json["count"],
+    data: (json["data"] as Array<any>).map(CommoditiesResponseItemFromJSON),
+    status: json["status"],
   };
 }
 
@@ -80,10 +87,8 @@ export function GetCommodities200ResponseToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(CommoditiesResponseItemToJSON),
+    count: value["count"],
+    data: (value["data"] as Array<any>).map(CommoditiesResponseItemToJSON),
     status: value["status"],
   };
 }

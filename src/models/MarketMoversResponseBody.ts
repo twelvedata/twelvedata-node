@@ -31,7 +31,7 @@ export interface MarketMoversResponseBody {
    * @type {string}
    * @memberof MarketMoversResponseBody
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -41,6 +41,7 @@ export function instanceOfMarketMoversResponseBody(
   value: object,
 ): value is MarketMoversResponseBody {
   if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -61,7 +62,7 @@ export function MarketMoversResponseBodyFromJSONTyped(
     values: (json["values"] as Array<any>).map(
       MarketMoversResponseValueFromJSON,
     ),
-    status: json["status"] == null ? undefined : json["status"],
+    status: json["status"],
   };
 }
 

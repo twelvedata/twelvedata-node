@@ -32,19 +32,19 @@ export interface GetTimeSeriesKeltner200Response {
    * @type {GetTimeSeriesKeltner200ResponseMeta}
    * @memberof GetTimeSeriesKeltner200Response
    */
-  meta?: GetTimeSeriesKeltner200ResponseMeta;
+  meta: GetTimeSeriesKeltner200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesKeltner200ResponseValuesInner>}
    * @memberof GetTimeSeriesKeltner200Response
    */
-  values?: Array<GetTimeSeriesKeltner200ResponseValuesInner>;
+  values: Array<GetTimeSeriesKeltner200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesKeltner200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesKeltner200Response {
 export function instanceOfGetTimeSeriesKeltner200Response(
   value: object,
 ): value is GetTimeSeriesKeltner200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesKeltner200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesKeltner200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesKeltner200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesKeltner200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesKeltner200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesKeltner200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesKeltner200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesKeltner200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesKeltner200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

@@ -31,7 +31,7 @@ export interface GetMutualFundsList200Response {
    * @type {string}
    * @memberof GetMutualFundsList200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,7 @@ export interface GetMutualFundsList200Response {
 export function instanceOfGetMutualFundsList200Response(
   value: object,
 ): value is GetMutualFundsList200Response {
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -61,7 +62,7 @@ export function GetMutualFundsList200ResponseFromJSONTyped(
       json["result"] == null
         ? undefined
         : GetMutualFundsList200ResponseResultFromJSON(json["result"]),
-    status: json["status"] == null ? undefined : json["status"],
+    status: json["status"],
   };
 }
 

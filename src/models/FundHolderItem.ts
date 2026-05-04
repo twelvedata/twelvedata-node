@@ -17,7 +17,7 @@ export interface FundHolderItem {
    * @type {string}
    * @memberof FundHolderItem
    */
-  entityName?: string;
+  entityName: string;
   /**
    * Refers to date reported
    * @type {string}
@@ -50,6 +50,8 @@ export interface FundHolderItem {
 export function instanceOfFundHolderItem(
   value: object,
 ): value is FundHolderItem {
+  if (!("entityName" in value) || value["entityName"] === undefined)
+    return false;
   return true;
 }
 
@@ -65,7 +67,7 @@ export function FundHolderItemFromJSONTyped(
     return json;
   }
   return {
-    entityName: json["entity_name"] == null ? undefined : json["entity_name"],
+    entityName: json["entity_name"],
     dateReported:
       json["date_reported"] == null ? undefined : json["date_reported"],
     shares: json["shares"] == null ? undefined : json["shares"],

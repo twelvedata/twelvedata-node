@@ -32,19 +32,19 @@ export interface GetTimeSeriesPivotPointsHL200Response {
    * @type {GetTimeSeriesPivotPointsHL200ResponseMeta}
    * @memberof GetTimeSeriesPivotPointsHL200Response
    */
-  meta?: GetTimeSeriesPivotPointsHL200ResponseMeta;
+  meta: GetTimeSeriesPivotPointsHL200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesPivotPointsHL200ResponseValuesInner>}
    * @memberof GetTimeSeriesPivotPointsHL200Response
    */
-  values?: Array<GetTimeSeriesPivotPointsHL200ResponseValuesInner>;
+  values: Array<GetTimeSeriesPivotPointsHL200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesPivotPointsHL200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesPivotPointsHL200Response {
 export function instanceOfGetTimeSeriesPivotPointsHL200Response(
   value: object,
 ): value is GetTimeSeriesPivotPointsHL200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesPivotPointsHL200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesPivotPointsHL200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesPivotPointsHL200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesPivotPointsHL200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesPivotPointsHL200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesPivotPointsHL200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesPivotPointsHL200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesPivotPointsHL200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesPivotPointsHL200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

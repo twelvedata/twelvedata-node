@@ -17,13 +17,13 @@ export interface GetTimeSeriesTrima200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesTrima200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * TRIMA value
    * @type {string}
    * @memberof GetTimeSeriesTrima200ResponseValuesInner
    */
-  trima?: string;
+  trima: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesTrima200ResponseValuesInner {
 export function instanceOfGetTimeSeriesTrima200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesTrima200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("trima" in value) || value["trima"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesTrima200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    trima: json["trima"] == null ? undefined : json["trima"],
+    datetime: json["datetime"],
+    trima: json["trima"],
   };
 }
 

@@ -17,13 +17,13 @@ export interface GetTimeSeriesDiv200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesDiv200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Div value
    * @type {string}
    * @memberof GetTimeSeriesDiv200ResponseValuesInner
    */
-  div?: string;
+  div: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesDiv200ResponseValuesInner {
 export function instanceOfGetTimeSeriesDiv200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesDiv200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("div" in value) || value["div"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesDiv200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    div: json["div"] == null ? undefined : json["div"],
+    datetime: json["datetime"],
+    div: json["div"],
   };
 }
 

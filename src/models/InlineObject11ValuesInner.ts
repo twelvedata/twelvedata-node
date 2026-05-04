@@ -17,13 +17,13 @@ export interface InlineObject11ValuesInner {
    * @type {string}
    * @memberof InlineObject11ValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * COS value
    * @type {string}
    * @memberof InlineObject11ValuesInner
    */
-  cos?: string;
+  cos: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface InlineObject11ValuesInner {
 export function instanceOfInlineObject11ValuesInner(
   value: object,
 ): value is InlineObject11ValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("cos" in value) || value["cos"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function InlineObject11ValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    cos: json["cos"] == null ? undefined : json["cos"],
+    datetime: json["datetime"],
+    cos: json["cos"],
   };
 }
 

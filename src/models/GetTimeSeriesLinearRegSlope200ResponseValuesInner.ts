@@ -17,13 +17,13 @@ export interface GetTimeSeriesLinearRegSlope200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesLinearRegSlope200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * linearregslope value
    * @type {string}
    * @memberof GetTimeSeriesLinearRegSlope200ResponseValuesInner
    */
-  linearregslope?: string;
+  linearregslope: string;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesLinearRegSlope200ResponseValuesInner {
 export function instanceOfGetTimeSeriesLinearRegSlope200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesLinearRegSlope200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("linearregslope" in value) || value["linearregslope"] === undefined)
+    return false;
   return true;
 }
 
@@ -52,9 +55,8 @@ export function GetTimeSeriesLinearRegSlope200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    linearregslope:
-      json["linearregslope"] == null ? undefined : json["linearregslope"],
+    datetime: json["datetime"],
+    linearregslope: json["linearregslope"],
   };
 }
 

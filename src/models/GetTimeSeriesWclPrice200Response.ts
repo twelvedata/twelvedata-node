@@ -32,19 +32,19 @@ export interface GetTimeSeriesWclPrice200Response {
    * @type {GetTimeSeriesWclPrice200ResponseMeta}
    * @memberof GetTimeSeriesWclPrice200Response
    */
-  meta?: GetTimeSeriesWclPrice200ResponseMeta;
+  meta: GetTimeSeriesWclPrice200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesWclPrice200ResponseValuesInner>}
    * @memberof GetTimeSeriesWclPrice200Response
    */
-  values?: Array<GetTimeSeriesWclPrice200ResponseValuesInner>;
+  values: Array<GetTimeSeriesWclPrice200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesWclPrice200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesWclPrice200Response {
 export function instanceOfGetTimeSeriesWclPrice200Response(
   value: object,
 ): value is GetTimeSeriesWclPrice200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesWclPrice200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesWclPrice200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesWclPrice200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesWclPrice200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesWclPrice200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesWclPrice200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesWclPrice200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesWclPrice200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesWclPrice200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

@@ -67,7 +67,7 @@ export interface CashFlowData {
    * @type {string}
    * @memberof CashFlowData
    */
-  fiscalDate?: string;
+  fiscalDate: string;
   /**
    * Year of the cash flow statement
    * @type {number}
@@ -122,6 +122,8 @@ export interface CashFlowData {
  * Check if a given object implements the CashFlowData interface.
  */
 export function instanceOfCashFlowData(value: object): value is CashFlowData {
+  if (!("fiscalDate" in value) || value["fiscalDate"] === undefined)
+    return false;
   return true;
 }
 
@@ -137,7 +139,7 @@ export function CashFlowDataFromJSONTyped(
     return json;
   }
   return {
-    fiscalDate: json["fiscal_date"] == null ? undefined : json["fiscal_date"],
+    fiscalDate: json["fiscal_date"],
     year: json["year"] == null ? undefined : json["year"],
     cashFlowFromOperatingActivities:
       json["cash_flow_from_operating_activities"] == null

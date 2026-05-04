@@ -130,13 +130,13 @@ export interface IncomeStatementItem {
    * @type {string}
    * @memberof IncomeStatementItem
    */
-  fiscalDate?: string;
+  fiscalDate: string;
   /**
    * Fiscal year
    * @type {number}
    * @memberof IncomeStatementItem
    */
-  year?: number;
+  year: number;
   /**
    *
    * @type {IncomeStatementItemRevenue}
@@ -241,6 +241,9 @@ export interface IncomeStatementItem {
 export function instanceOfIncomeStatementItem(
   value: object,
 ): value is IncomeStatementItem {
+  if (!("fiscalDate" in value) || value["fiscalDate"] === undefined)
+    return false;
+  if (!("year" in value) || value["year"] === undefined) return false;
   return true;
 }
 
@@ -256,8 +259,8 @@ export function IncomeStatementItemFromJSONTyped(
     return json;
   }
   return {
-    fiscalDate: json["fiscal_date"] == null ? undefined : json["fiscal_date"],
-    year: json["year"] == null ? undefined : json["year"],
+    fiscalDate: json["fiscal_date"],
+    year: json["year"],
     revenue:
       json["revenue"] == null
         ? undefined

@@ -32,19 +32,19 @@ export interface GetTimeSeriesHtDcPhase200Response {
    * @type {GetTimeSeriesHtDcPhase200ResponseMeta}
    * @memberof GetTimeSeriesHtDcPhase200Response
    */
-  meta?: GetTimeSeriesHtDcPhase200ResponseMeta;
+  meta: GetTimeSeriesHtDcPhase200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesHtDcPhase200ResponseValuesInner>}
    * @memberof GetTimeSeriesHtDcPhase200Response
    */
-  values?: Array<GetTimeSeriesHtDcPhase200ResponseValuesInner>;
+  values: Array<GetTimeSeriesHtDcPhase200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesHtDcPhase200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesHtDcPhase200Response {
 export function instanceOfGetTimeSeriesHtDcPhase200Response(
   value: object,
 ): value is GetTimeSeriesHtDcPhase200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesHtDcPhase200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesHtDcPhase200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesHtDcPhase200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesHtDcPhase200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesHtDcPhase200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesHtDcPhase200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesHtDcPhase200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesHtDcPhase200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesHtDcPhase200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

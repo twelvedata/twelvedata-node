@@ -25,13 +25,13 @@ export interface GetCryptocurrencyExchanges200Response {
    * @type {Array<CryptocurrencyExchangesResponseItem>}
    * @memberof GetCryptocurrencyExchanges200Response
    */
-  data?: Array<CryptocurrencyExchangesResponseItem>;
+  data: Array<CryptocurrencyExchangesResponseItem>;
   /**
    * Response status
    * @type {string}
    * @memberof GetCryptocurrencyExchanges200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetCryptocurrencyExchanges200Response {
 export function instanceOfGetCryptocurrencyExchanges200Response(
   value: object,
 ): value is GetCryptocurrencyExchanges200Response {
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,13 +59,10 @@ export function GetCryptocurrencyExchanges200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(
-            CryptocurrencyExchangesResponseItemFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    data: (json["data"] as Array<any>).map(
+      CryptocurrencyExchangesResponseItemFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -82,12 +81,9 @@ export function GetCryptocurrencyExchanges200ResponseToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(
-            CryptocurrencyExchangesResponseItemToJSON,
-          ),
+    data: (value["data"] as Array<any>).map(
+      CryptocurrencyExchangesResponseItemToJSON,
+    ),
     status: value["status"],
   };
 }

@@ -17,13 +17,13 @@ export interface GetKeyExecutives200ResponseKeyExecutivesInner {
    * @type {string}
    * @memberof GetKeyExecutives200ResponseKeyExecutivesInner
    */
-  name?: string;
+  name: string;
   /**
    * Refers to job title
    * @type {string}
    * @memberof GetKeyExecutives200ResponseKeyExecutivesInner
    */
-  title?: string;
+  title: string;
   /**
    * Current age of an executive if available
    * @type {number}
@@ -50,6 +50,8 @@ export interface GetKeyExecutives200ResponseKeyExecutivesInner {
 export function instanceOfGetKeyExecutives200ResponseKeyExecutivesInner(
   value: object,
 ): value is GetKeyExecutives200ResponseKeyExecutivesInner {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("title" in value) || value["title"] === undefined) return false;
   return true;
 }
 
@@ -70,8 +72,8 @@ export function GetKeyExecutives200ResponseKeyExecutivesInnerFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    title: json["title"] == null ? undefined : json["title"],
+    name: json["name"],
+    title: json["title"],
     age: json["age"] == null ? undefined : json["age"],
     yearBorn: json["year_born"] == null ? undefined : json["year_born"],
     pay: json["pay"] == null ? undefined : json["pay"],

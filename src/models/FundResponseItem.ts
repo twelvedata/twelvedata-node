@@ -25,67 +25,67 @@ export interface FundResponseItem {
    * @type {string}
    * @memberof FundResponseItem
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Full name of the fund
    * @type {string}
    * @memberof FundResponseItem
    */
-  name?: string;
+  name: string;
   /**
    * Country where the fund is located
    * @type {string}
    * @memberof FundResponseItem
    */
-  country?: string;
+  country: string;
   /**
    * Currency of the fund according to the ISO 4217 standard
    * @type {string}
    * @memberof FundResponseItem
    */
-  currency?: string;
+  currency: string;
   /**
    * Exchange where the fund is traded
    * @type {string}
    * @memberof FundResponseItem
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof FundResponseItem
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Type of the fund
    * @type {string}
    * @memberof FundResponseItem
    */
-  type?: string;
+  type: string;
   /**
    * Financial instrument global identifier (FIGI)
    * @type {string}
    * @memberof FundResponseItem
    */
-  figiCode?: string;
+  figiCode: string;
   /**
    * Classification of Financial Instruments (CFI)
    * @type {string}
    * @memberof FundResponseItem
    */
-  cfiCode?: string;
+  cfiCode: string;
   /**
    * International securities identification number (ISIN)
    * @type {string}
    * @memberof FundResponseItem
    */
-  isin?: string;
+  isin: string;
   /**
    * A unique nine-character alphanumeric code used to identify financial securities, ensuring accurate data retrieval for the specified asset
    * @type {string}
    * @memberof FundResponseItem
    */
-  cusip?: string;
+  cusip: string;
   /**
    *
    * @type {EtfResponseItemAccess}
@@ -100,6 +100,17 @@ export interface FundResponseItem {
 export function instanceOfFundResponseItem(
   value: object,
 ): value is FundResponseItem {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("country" in value) || value["country"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("type" in value) || value["type"] === undefined) return false;
+  if (!("figiCode" in value) || value["figiCode"] === undefined) return false;
+  if (!("cfiCode" in value) || value["cfiCode"] === undefined) return false;
+  if (!("isin" in value) || value["isin"] === undefined) return false;
+  if (!("cusip" in value) || value["cusip"] === undefined) return false;
   return true;
 }
 
@@ -115,17 +126,17 @@ export function FundResponseItemFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    country: json["country"] == null ? undefined : json["country"],
-    currency: json["currency"] == null ? undefined : json["currency"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    type: json["type"] == null ? undefined : json["type"],
-    figiCode: json["figi_code"] == null ? undefined : json["figi_code"],
-    cfiCode: json["cfi_code"] == null ? undefined : json["cfi_code"],
-    isin: json["isin"] == null ? undefined : json["isin"],
-    cusip: json["cusip"] == null ? undefined : json["cusip"],
+    symbol: json["symbol"],
+    name: json["name"],
+    country: json["country"],
+    currency: json["currency"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
+    type: json["type"],
+    figiCode: json["figi_code"],
+    cfiCode: json["cfi_code"],
+    isin: json["isin"],
+    cusip: json["cusip"],
     access:
       json["access"] == null
         ? undefined

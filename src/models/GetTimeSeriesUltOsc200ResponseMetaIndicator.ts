@@ -17,25 +17,25 @@ export interface GetTimeSeriesUltOsc200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesUltOsc200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * The first time period used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesUltOsc200ResponseMetaIndicator
    */
-  timePeriod1?: number;
+  timePeriod1: number;
   /**
    * The second time period used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesUltOsc200ResponseMetaIndicator
    */
-  timePeriod2?: number;
+  timePeriod2: number;
   /**
    * The third time period used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesUltOsc200ResponseMetaIndicator
    */
-  timePeriod3?: number;
+  timePeriod3: number;
 }
 
 /**
@@ -44,6 +44,13 @@ export interface GetTimeSeriesUltOsc200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesUltOsc200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesUltOsc200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("timePeriod1" in value) || value["timePeriod1"] === undefined)
+    return false;
+  if (!("timePeriod2" in value) || value["timePeriod2"] === undefined)
+    return false;
+  if (!("timePeriod3" in value) || value["timePeriod3"] === undefined)
+    return false;
   return true;
 }
 
@@ -61,13 +68,10 @@ export function GetTimeSeriesUltOsc200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    timePeriod1:
-      json["time_period_1"] == null ? undefined : json["time_period_1"],
-    timePeriod2:
-      json["time_period_2"] == null ? undefined : json["time_period_2"],
-    timePeriod3:
-      json["time_period_3"] == null ? undefined : json["time_period_3"],
+    name: json["name"],
+    timePeriod1: json["time_period_1"],
+    timePeriod2: json["time_period_2"],
+    timePeriod3: json["time_period_3"],
   };
 }
 

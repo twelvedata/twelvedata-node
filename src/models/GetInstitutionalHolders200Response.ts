@@ -32,13 +32,13 @@ export interface GetInstitutionalHolders200Response {
    * @type {GetFundHolders200ResponseMeta}
    * @memberof GetInstitutionalHolders200Response
    */
-  meta?: GetFundHolders200ResponseMeta;
+  meta: GetFundHolders200ResponseMeta;
   /**
    * List of institutional holders for the financial instrument
    * @type {Array<InstitutionalHolderItem>}
    * @memberof GetInstitutionalHolders200Response
    */
-  institutionalHolders?: Array<InstitutionalHolderItem>;
+  institutionalHolders: Array<InstitutionalHolderItem>;
 }
 
 /**
@@ -47,6 +47,12 @@ export interface GetInstitutionalHolders200Response {
 export function instanceOfGetInstitutionalHolders200Response(
   value: object,
 ): value is GetInstitutionalHolders200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (
+    !("institutionalHolders" in value) ||
+    value["institutionalHolders"] === undefined
+  )
+    return false;
   return true;
 }
 
@@ -64,16 +70,10 @@ export function GetInstitutionalHolders200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetFundHolders200ResponseMetaFromJSON(json["meta"]),
-    institutionalHolders:
-      json["institutional_holders"] == null
-        ? undefined
-        : (json["institutional_holders"] as Array<any>).map(
-            InstitutionalHolderItemFromJSON,
-          ),
+    meta: GetFundHolders200ResponseMetaFromJSON(json["meta"]),
+    institutionalHolders: (json["institutional_holders"] as Array<any>).map(
+      InstitutionalHolderItemFromJSON,
+    ),
   };
 }
 
@@ -93,11 +93,8 @@ export function GetInstitutionalHolders200ResponseToJSONTyped(
 
   return {
     meta: GetFundHolders200ResponseMetaToJSON(value["meta"]),
-    institutional_holders:
-      value["institutionalHolders"] == null
-        ? undefined
-        : (value["institutionalHolders"] as Array<any>).map(
-            InstitutionalHolderItemToJSON,
-          ),
+    institutional_holders: (value["institutionalHolders"] as Array<any>).map(
+      InstitutionalHolderItemToJSON,
+    ),
   };
 }

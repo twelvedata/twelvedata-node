@@ -17,13 +17,13 @@ export interface GetInstrumentType200Response {
    * @type {Array<string>}
    * @memberof GetInstrumentType200Response
    */
-  result?: Array<string>;
+  result: Array<string>;
   /**
    * Status of the response
    * @type {string}
    * @memberof GetInstrumentType200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetInstrumentType200Response {
 export function instanceOfGetInstrumentType200Response(
   value: object,
 ): value is GetInstrumentType200Response {
+  if (!("result" in value) || value["result"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetInstrumentType200ResponseFromJSONTyped(
     return json;
   }
   return {
-    result: json["result"] == null ? undefined : json["result"],
-    status: json["status"] == null ? undefined : json["status"],
+    result: json["result"],
+    status: json["status"],
   };
 }
 

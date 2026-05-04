@@ -17,25 +17,25 @@ export interface GetProfile200Response {
    * @type {string}
    * @memberof GetProfile200Response
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Name of the company
    * @type {string}
    * @memberof GetProfile200Response
    */
-  name?: string;
+  name: string;
   /**
    * Exchange name where the company is listed
    * @type {string}
    * @memberof GetProfile200Response
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market Identifier Code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof GetProfile200Response
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Sector at which the company operates
    * @type {string}
@@ -128,6 +128,10 @@ export interface GetProfile200Response {
 export function instanceOfGetProfile200Response(
   value: object,
 ): value is GetProfile200Response {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
   return true;
 }
 
@@ -145,10 +149,10 @@ export function GetProfile200ResponseFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
+    symbol: json["symbol"],
+    name: json["name"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
     sector: json["sector"] == null ? undefined : json["sector"],
     industry: json["industry"] == null ? undefined : json["industry"],
     employees: json["employees"] == null ? undefined : json["employees"],

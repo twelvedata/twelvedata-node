@@ -17,19 +17,19 @@ export interface GetTimeSeriesKst200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesKst200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * KST value
    * @type {string}
    * @memberof GetTimeSeriesKst200ResponseValuesInner
    */
-  kst?: string;
+  kst: string;
   /**
    * KST signal value
    * @type {string}
    * @memberof GetTimeSeriesKst200ResponseValuesInner
    */
-  kstSignal?: string;
+  kstSignal: string;
 }
 
 /**
@@ -38,6 +38,9 @@ export interface GetTimeSeriesKst200ResponseValuesInner {
 export function instanceOfGetTimeSeriesKst200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesKst200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("kst" in value) || value["kst"] === undefined) return false;
+  if (!("kstSignal" in value) || value["kstSignal"] === undefined) return false;
   return true;
 }
 
@@ -55,9 +58,9 @@ export function GetTimeSeriesKst200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    kst: json["kst"] == null ? undefined : json["kst"],
-    kstSignal: json["kst_signal"] == null ? undefined : json["kst_signal"],
+    datetime: json["datetime"],
+    kst: json["kst"],
+    kstSignal: json["kst_signal"],
   };
 }
 

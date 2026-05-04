@@ -17,13 +17,13 @@ export interface GetTimeSeriesPlusDI200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesPlusDI200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * plus_di value
    * @type {string}
    * @memberof GetTimeSeriesPlusDI200ResponseValuesInner
    */
-  plusDi?: string;
+  plusDi: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesPlusDI200ResponseValuesInner {
 export function instanceOfGetTimeSeriesPlusDI200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesPlusDI200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("plusDi" in value) || value["plusDi"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesPlusDI200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    plusDi: json["plus_di"] == null ? undefined : json["plus_di"],
+    datetime: json["datetime"],
+    plusDi: json["plus_di"],
   };
 }
 

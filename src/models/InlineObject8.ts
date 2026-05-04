@@ -32,25 +32,28 @@ export interface InlineObject8 {
    * @type {InlineObject8Meta}
    * @memberof InlineObject8
    */
-  meta?: InlineObject8Meta;
+  meta: InlineObject8Meta;
   /**
    * Array of time series data points
    * @type {Array<InlineObject8ValuesInner>}
    * @memberof InlineObject8
    */
-  values?: Array<InlineObject8ValuesInner>;
+  values: Array<InlineObject8ValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof InlineObject8
    */
-  status?: string;
+  status: string;
 }
 
 /**
  * Check if a given object implements the InlineObject8 interface.
  */
 export function instanceOfInlineObject8(value: object): value is InlineObject8 {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -66,15 +69,11 @@ export function InlineObject8FromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : InlineObject8MetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(InlineObject8ValuesInnerFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: InlineObject8MetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      InlineObject8ValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -92,10 +91,7 @@ export function InlineObject8ToJSONTyped(
 
   return {
     meta: InlineObject8MetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(InlineObject8ValuesInnerToJSON),
+    values: (value["values"] as Array<any>).map(InlineObject8ValuesInnerToJSON),
     status: value["status"],
   };
 }

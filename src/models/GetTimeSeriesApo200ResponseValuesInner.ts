@@ -17,13 +17,13 @@ export interface GetTimeSeriesApo200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesApo200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * APO value
    * @type {string}
    * @memberof GetTimeSeriesApo200ResponseValuesInner
    */
-  apo?: string;
+  apo: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesApo200ResponseValuesInner {
 export function instanceOfGetTimeSeriesApo200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesApo200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("apo" in value) || value["apo"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesApo200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    apo: json["apo"] == null ? undefined : json["apo"],
+    datetime: json["datetime"],
+    apo: json["apo"],
   };
 }
 

@@ -25,37 +25,37 @@ export interface ExchangeScheduleResponseItem {
    * @type {string}
    * @memberof ExchangeScheduleResponseItem
    */
-  title?: string;
+  title: string;
   /**
    * Name of exchange
    * @type {string}
    * @memberof ExchangeScheduleResponseItem
    */
-  name?: string;
+  name: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof ExchangeScheduleResponseItem
    */
-  code?: string;
+  code: string;
   /**
    * Country to which stock exchange belongs to
    * @type {string}
    * @memberof ExchangeScheduleResponseItem
    */
-  country?: string;
+  country: string;
   /**
    * Time zone where exchange is located
    * @type {string}
    * @memberof ExchangeScheduleResponseItem
    */
-  timeZone?: string;
+  timeZone: string;
   /**
    * Exchange trading hours
    * @type {Array<ExchangeScheduleSession>}
    * @memberof ExchangeScheduleResponseItem
    */
-  sessions?: Array<ExchangeScheduleSession>;
+  sessions: Array<ExchangeScheduleSession>;
 }
 
 /**
@@ -64,6 +64,12 @@ export interface ExchangeScheduleResponseItem {
 export function instanceOfExchangeScheduleResponseItem(
   value: object,
 ): value is ExchangeScheduleResponseItem {
+  if (!("title" in value) || value["title"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("code" in value) || value["code"] === undefined) return false;
+  if (!("country" in value) || value["country"] === undefined) return false;
+  if (!("timeZone" in value) || value["timeZone"] === undefined) return false;
+  if (!("sessions" in value) || value["sessions"] === undefined) return false;
   return true;
 }
 
@@ -81,15 +87,14 @@ export function ExchangeScheduleResponseItemFromJSONTyped(
     return json;
   }
   return {
-    title: json["title"] == null ? undefined : json["title"],
-    name: json["name"] == null ? undefined : json["name"],
-    code: json["code"] == null ? undefined : json["code"],
-    country: json["country"] == null ? undefined : json["country"],
-    timeZone: json["time_zone"] == null ? undefined : json["time_zone"],
-    sessions:
-      json["sessions"] == null
-        ? undefined
-        : (json["sessions"] as Array<any>).map(ExchangeScheduleSessionFromJSON),
+    title: json["title"],
+    name: json["name"],
+    code: json["code"],
+    country: json["country"],
+    timeZone: json["time_zone"],
+    sessions: (json["sessions"] as Array<any>).map(
+      ExchangeScheduleSessionFromJSON,
+    ),
   };
 }
 
@@ -113,9 +118,8 @@ export function ExchangeScheduleResponseItemToJSONTyped(
     code: value["code"],
     country: value["country"],
     time_zone: value["timeZone"],
-    sessions:
-      value["sessions"] == null
-        ? undefined
-        : (value["sessions"] as Array<any>).map(ExchangeScheduleSessionToJSON),
+    sessions: (value["sessions"] as Array<any>).map(
+      ExchangeScheduleSessionToJSON,
+    ),
   };
 }

@@ -17,13 +17,13 @@ export interface GetTimeSeriesLinearReg200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesLinearReg200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * linearreg value
    * @type {string}
    * @memberof GetTimeSeriesLinearReg200ResponseValuesInner
    */
-  linearreg?: string;
+  linearreg: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesLinearReg200ResponseValuesInner {
 export function instanceOfGetTimeSeriesLinearReg200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesLinearReg200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("linearreg" in value) || value["linearreg"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesLinearReg200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    linearreg: json["linearreg"] == null ? undefined : json["linearreg"],
+    datetime: json["datetime"],
+    linearreg: json["linearreg"],
   };
 }
 

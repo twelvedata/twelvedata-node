@@ -17,31 +17,31 @@ export interface TimeSeriesCrossItem {
    * @type {string}
    * @memberof TimeSeriesCrossItem
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Price at the opening of the current bar
    * @type {string}
    * @memberof TimeSeriesCrossItem
    */
-  open?: string;
+  open: string;
   /**
    * Highest price which occurred during the current bar
    * @type {string}
    * @memberof TimeSeriesCrossItem
    */
-  high?: string;
+  high: string;
   /**
    * Lowest price which occurred during the current bar
    * @type {string}
    * @memberof TimeSeriesCrossItem
    */
-  low?: string;
+  low: string;
   /**
    * Close price at the end of the bar
    * @type {string}
    * @memberof TimeSeriesCrossItem
    */
-  close?: string;
+  close: string;
 }
 
 /**
@@ -50,6 +50,11 @@ export interface TimeSeriesCrossItem {
 export function instanceOfTimeSeriesCrossItem(
   value: object,
 ): value is TimeSeriesCrossItem {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("open" in value) || value["open"] === undefined) return false;
+  if (!("high" in value) || value["high"] === undefined) return false;
+  if (!("low" in value) || value["low"] === undefined) return false;
+  if (!("close" in value) || value["close"] === undefined) return false;
   return true;
 }
 
@@ -65,11 +70,11 @@ export function TimeSeriesCrossItemFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    open: json["open"] == null ? undefined : json["open"],
-    high: json["high"] == null ? undefined : json["high"],
-    low: json["low"] == null ? undefined : json["low"],
-    close: json["close"] == null ? undefined : json["close"],
+    datetime: json["datetime"],
+    open: json["open"],
+    high: json["high"],
+    low: json["low"],
+    close: json["close"],
   };
 }
 

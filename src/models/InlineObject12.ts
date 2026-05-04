@@ -32,19 +32,19 @@ export interface InlineObject12 {
    * @type {InlineObject12Meta}
    * @memberof InlineObject12
    */
-  meta?: InlineObject12Meta;
+  meta: InlineObject12Meta;
   /**
    * Array of time series data points
    * @type {Array<InlineObject12ValuesInner>}
    * @memberof InlineObject12
    */
-  values?: Array<InlineObject12ValuesInner>;
+  values: Array<InlineObject12ValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof InlineObject12
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface InlineObject12 {
 export function instanceOfInlineObject12(
   value: object,
 ): value is InlineObject12 {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -68,15 +71,11 @@ export function InlineObject12FromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : InlineObject12MetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(InlineObject12ValuesInnerFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: InlineObject12MetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      InlineObject12ValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -94,10 +93,9 @@ export function InlineObject12ToJSONTyped(
 
   return {
     meta: InlineObject12MetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(InlineObject12ValuesInnerToJSON),
+    values: (value["values"] as Array<any>).map(
+      InlineObject12ValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

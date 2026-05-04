@@ -32,13 +32,13 @@ export interface GetTimeSeriesCross200Response {
    * @type {CrossMeta}
    * @memberof GetTimeSeriesCross200Response
    */
-  meta?: CrossMeta;
+  meta: CrossMeta;
   /**
    * Array of time series data points
    * @type {Array<TimeSeriesCrossItem>}
    * @memberof GetTimeSeriesCross200Response
    */
-  values?: Array<TimeSeriesCrossItem>;
+  values: Array<TimeSeriesCrossItem>;
 }
 
 /**
@@ -47,6 +47,8 @@ export interface GetTimeSeriesCross200Response {
 export function instanceOfGetTimeSeriesCross200Response(
   value: object,
 ): value is GetTimeSeriesCross200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
   return true;
 }
 
@@ -64,11 +66,8 @@ export function GetTimeSeriesCross200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta: json["meta"] == null ? undefined : CrossMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(TimeSeriesCrossItemFromJSON),
+    meta: CrossMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(TimeSeriesCrossItemFromJSON),
   };
 }
 
@@ -88,9 +87,6 @@ export function GetTimeSeriesCross200ResponseToJSONTyped(
 
   return {
     meta: CrossMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(TimeSeriesCrossItemToJSON),
+    values: (value["values"] as Array<any>).map(TimeSeriesCrossItemToJSON),
   };
 }

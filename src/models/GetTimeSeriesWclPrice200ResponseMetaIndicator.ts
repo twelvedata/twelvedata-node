@@ -17,7 +17,7 @@ export interface GetTimeSeriesWclPrice200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesWclPrice200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
 }
 
 /**
@@ -26,6 +26,7 @@ export interface GetTimeSeriesWclPrice200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesWclPrice200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesWclPrice200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
   return true;
 }
 
@@ -46,7 +47,7 @@ export function GetTimeSeriesWclPrice200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
+    name: json["name"],
   };
 }
 

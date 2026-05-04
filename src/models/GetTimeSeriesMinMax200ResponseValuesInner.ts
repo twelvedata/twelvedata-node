@@ -17,19 +17,19 @@ export interface GetTimeSeriesMinMax200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMinMax200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Min value
    * @type {string}
    * @memberof GetTimeSeriesMinMax200ResponseValuesInner
    */
-  min?: string;
+  min: string;
   /**
    * Max value
    * @type {string}
    * @memberof GetTimeSeriesMinMax200ResponseValuesInner
    */
-  max?: string;
+  max: string;
 }
 
 /**
@@ -38,6 +38,9 @@ export interface GetTimeSeriesMinMax200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMinMax200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMinMax200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("min" in value) || value["min"] === undefined) return false;
+  if (!("max" in value) || value["max"] === undefined) return false;
   return true;
 }
 
@@ -55,9 +58,9 @@ export function GetTimeSeriesMinMax200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    min: json["min"] == null ? undefined : json["min"],
-    max: json["max"] == null ? undefined : json["max"],
+    datetime: json["datetime"],
+    min: json["min"],
+    max: json["max"],
   };
 }
 

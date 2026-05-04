@@ -17,13 +17,13 @@ export interface GetTimeSeriesMfi200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesMfi200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Number of periods to average over
    * @type {number}
    * @memberof GetTimeSeriesMfi200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesMfi200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesMfi200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesMfi200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
   return true;
 }
 
@@ -49,8 +52,8 @@ export function GetTimeSeriesMfi200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
+    name: json["name"],
+    timePeriod: json["time_period"],
   };
 }
 

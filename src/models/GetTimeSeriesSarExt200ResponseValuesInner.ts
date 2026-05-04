@@ -17,13 +17,13 @@ export interface GetTimeSeriesSarExt200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesSarExt200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * SAREXT value
    * @type {string}
    * @memberof GetTimeSeriesSarExt200ResponseValuesInner
    */
-  sarext?: string;
+  sarext: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesSarExt200ResponseValuesInner {
 export function instanceOfGetTimeSeriesSarExt200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesSarExt200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("sarext" in value) || value["sarext"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesSarExt200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    sarext: json["sarext"] == null ? undefined : json["sarext"],
+    datetime: json["datetime"],
+    sarext: json["sarext"],
   };
 }
 

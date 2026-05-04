@@ -32,19 +32,19 @@ export interface InlineObject10 {
    * @type {InlineObject10Meta}
    * @memberof InlineObject10
    */
-  meta?: InlineObject10Meta;
+  meta: InlineObject10Meta;
   /**
    * Array of time series data points
    * @type {Array<InlineObject10ValuesInner>}
    * @memberof InlineObject10
    */
-  values?: Array<InlineObject10ValuesInner>;
+  values: Array<InlineObject10ValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof InlineObject10
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface InlineObject10 {
 export function instanceOfInlineObject10(
   value: object,
 ): value is InlineObject10 {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -68,15 +71,11 @@ export function InlineObject10FromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : InlineObject10MetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(InlineObject10ValuesInnerFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: InlineObject10MetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      InlineObject10ValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -94,10 +93,9 @@ export function InlineObject10ToJSONTyped(
 
   return {
     meta: InlineObject10MetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(InlineObject10ValuesInnerToJSON),
+    values: (value["values"] as Array<any>).map(
+      InlineObject10ValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

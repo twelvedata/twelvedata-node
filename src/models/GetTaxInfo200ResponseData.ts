@@ -17,7 +17,7 @@ export interface GetTaxInfo200ResponseData {
    * @type {string}
    * @memberof GetTaxInfo200ResponseData
    */
-  taxIndicator?: string;
+  taxIndicator: string;
 }
 
 /**
@@ -26,6 +26,8 @@ export interface GetTaxInfo200ResponseData {
 export function instanceOfGetTaxInfo200ResponseData(
   value: object,
 ): value is GetTaxInfo200ResponseData {
+  if (!("taxIndicator" in value) || value["taxIndicator"] === undefined)
+    return false;
   return true;
 }
 
@@ -43,8 +45,7 @@ export function GetTaxInfo200ResponseDataFromJSONTyped(
     return json;
   }
   return {
-    taxIndicator:
-      json["tax_indicator"] == null ? undefined : json["tax_indicator"],
+    taxIndicator: json["tax_indicator"],
   };
 }
 

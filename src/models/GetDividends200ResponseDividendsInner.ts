@@ -17,13 +17,13 @@ export interface GetDividends200ResponseDividendsInner {
    * @type {string}
    * @memberof GetDividends200ResponseDividendsInner
    */
-  exDate?: string;
+  exDate: string;
   /**
    * Stands for the payment amount
    * @type {number}
    * @memberof GetDividends200ResponseDividendsInner
    */
-  amount?: number;
+  amount: number;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetDividends200ResponseDividendsInner {
 export function instanceOfGetDividends200ResponseDividendsInner(
   value: object,
 ): value is GetDividends200ResponseDividendsInner {
+  if (!("exDate" in value) || value["exDate"] === undefined) return false;
+  if (!("amount" in value) || value["amount"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetDividends200ResponseDividendsInnerFromJSONTyped(
     return json;
   }
   return {
-    exDate: json["ex_date"] == null ? undefined : json["ex_date"],
-    amount: json["amount"] == null ? undefined : json["amount"],
+    exDate: json["ex_date"],
+    amount: json["amount"],
   };
 }
 

@@ -17,13 +17,13 @@ export interface GetTimeSeriesMinusDM200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMinusDM200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Minus Directional Movement value
    * @type {string}
    * @memberof GetTimeSeriesMinusDM200ResponseValuesInner
    */
-  minusDm?: string;
+  minusDm: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesMinusDM200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMinusDM200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMinusDM200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("minusDm" in value) || value["minusDm"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesMinusDM200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    minusDm: json["minus_dm"] == null ? undefined : json["minus_dm"],
+    datetime: json["datetime"],
+    minusDm: json["minus_dm"],
   };
 }
 

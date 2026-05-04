@@ -17,19 +17,19 @@ export interface GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseMetaIndicato
    * @type {string}
    * @memberof GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * The period used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseMetaIndicator
    */
-  period?: number;
+  period: number;
   /**
    * The multiplier used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseMetaIndicator
    */
-  multiplier?: number;
+  multiplier: number;
 }
 
 /**
@@ -38,6 +38,10 @@ export interface GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseMetaIndicato
 export function instanceOfGetTimeSeriesSuperTrendHeikinAshiCandles200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("period" in value) || value["period"] === undefined) return false;
+  if (!("multiplier" in value) || value["multiplier"] === undefined)
+    return false;
   return true;
 }
 
@@ -58,9 +62,9 @@ export function GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseMetaIndicator
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    period: json["period"] == null ? undefined : json["period"],
-    multiplier: json["multiplier"] == null ? undefined : json["multiplier"],
+    name: json["name"],
+    period: json["period"],
+    multiplier: json["multiplier"],
   };
 }
 

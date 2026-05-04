@@ -17,25 +17,25 @@ export interface ExchangeScheduleSession {
    * @type {string}
    * @memberof ExchangeScheduleSession
    */
-  openTime?: string;
+  openTime: string;
   /**
    * Closing time of the session
    * @type {string}
    * @memberof ExchangeScheduleSession
    */
-  closeTime?: string;
+  closeTime: string;
   /**
    * Name of the session
    * @type {string}
    * @memberof ExchangeScheduleSession
    */
-  sessionName?: string;
+  sessionName: string;
   /**
    * Type of the session
    * @type {string}
    * @memberof ExchangeScheduleSession
    */
-  sessionType?: string;
+  sessionType: string;
 }
 
 /**
@@ -44,6 +44,12 @@ export interface ExchangeScheduleSession {
 export function instanceOfExchangeScheduleSession(
   value: object,
 ): value is ExchangeScheduleSession {
+  if (!("openTime" in value) || value["openTime"] === undefined) return false;
+  if (!("closeTime" in value) || value["closeTime"] === undefined) return false;
+  if (!("sessionName" in value) || value["sessionName"] === undefined)
+    return false;
+  if (!("sessionType" in value) || value["sessionType"] === undefined)
+    return false;
   return true;
 }
 
@@ -61,12 +67,10 @@ export function ExchangeScheduleSessionFromJSONTyped(
     return json;
   }
   return {
-    openTime: json["open_time"] == null ? undefined : json["open_time"],
-    closeTime: json["close_time"] == null ? undefined : json["close_time"],
-    sessionName:
-      json["session_name"] == null ? undefined : json["session_name"],
-    sessionType:
-      json["session_type"] == null ? undefined : json["session_type"],
+    openTime: json["open_time"],
+    closeTime: json["close_time"],
+    sessionName: json["session_name"],
+    sessionType: json["session_type"],
   };
 }
 

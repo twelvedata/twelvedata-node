@@ -8,7 +8,7 @@ Name | Type
 ------------ | -------------
 `symbol` | string
 `micCode` | string
-`lastChange` | Date
+`lastChange` | string
 
 ## Example
 

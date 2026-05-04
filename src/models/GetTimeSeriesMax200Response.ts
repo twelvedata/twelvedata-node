@@ -32,19 +32,19 @@ export interface GetTimeSeriesMax200Response {
    * @type {GetTimeSeriesMax200ResponseMeta}
    * @memberof GetTimeSeriesMax200Response
    */
-  meta?: GetTimeSeriesMax200ResponseMeta;
+  meta: GetTimeSeriesMax200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesMax200ResponseValuesInner>}
    * @memberof GetTimeSeriesMax200Response
    */
-  values?: Array<GetTimeSeriesMax200ResponseValuesInner>;
+  values: Array<GetTimeSeriesMax200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesMax200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesMax200Response {
 export function instanceOfGetTimeSeriesMax200Response(
   value: object,
 ): value is GetTimeSeriesMax200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesMax200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesMax200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesMax200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesMax200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesMax200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesMax200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesMax200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesMax200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesMax200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

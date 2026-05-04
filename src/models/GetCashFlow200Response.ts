@@ -32,13 +32,13 @@ export interface GetCashFlow200Response {
    * @type {GetCashFlow200ResponseMeta}
    * @memberof GetCashFlow200Response
    */
-  meta?: GetCashFlow200ResponseMeta;
+  meta: GetCashFlow200ResponseMeta;
   /**
    * Cash flow data
    * @type {Array<CashFlowStruct>}
    * @memberof GetCashFlow200Response
    */
-  cashFlow?: Array<CashFlowStruct>;
+  cashFlow: Array<CashFlowStruct>;
 }
 
 /**
@@ -47,6 +47,8 @@ export interface GetCashFlow200Response {
 export function instanceOfGetCashFlow200Response(
   value: object,
 ): value is GetCashFlow200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("cashFlow" in value) || value["cashFlow"] === undefined) return false;
   return true;
 }
 
@@ -64,14 +66,8 @@ export function GetCashFlow200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetCashFlow200ResponseMetaFromJSON(json["meta"]),
-    cashFlow:
-      json["cash_flow"] == null
-        ? undefined
-        : (json["cash_flow"] as Array<any>).map(CashFlowStructFromJSON),
+    meta: GetCashFlow200ResponseMetaFromJSON(json["meta"]),
+    cashFlow: (json["cash_flow"] as Array<any>).map(CashFlowStructFromJSON),
   };
 }
 
@@ -91,9 +87,6 @@ export function GetCashFlow200ResponseToJSONTyped(
 
   return {
     meta: GetCashFlow200ResponseMetaToJSON(value["meta"]),
-    cash_flow:
-      value["cashFlow"] == null
-        ? undefined
-        : (value["cashFlow"] as Array<any>).map(CashFlowStructToJSON),
+    cash_flow: (value["cashFlow"] as Array<any>).map(CashFlowStructToJSON),
   };
 }

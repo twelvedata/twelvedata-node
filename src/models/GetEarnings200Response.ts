@@ -32,19 +32,19 @@ export interface GetEarnings200Response {
    * @type {GetEarnings200ResponseMeta}
    * @memberof GetEarnings200Response
    */
-  meta?: GetEarnings200ResponseMeta;
+  meta: GetEarnings200ResponseMeta;
   /**
    * List of earnings data
    * @type {Array<EarningsItem>}
    * @memberof GetEarnings200Response
    */
-  earnings?: Array<EarningsItem>;
+  earnings: Array<EarningsItem>;
   /**
    * Response status
    * @type {string}
    * @memberof GetEarnings200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetEarnings200Response {
 export function instanceOfGetEarnings200Response(
   value: object,
 ): value is GetEarnings200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("earnings" in value) || value["earnings"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,15 +73,9 @@ export function GetEarnings200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetEarnings200ResponseMetaFromJSON(json["meta"]),
-    earnings:
-      json["earnings"] == null
-        ? undefined
-        : (json["earnings"] as Array<any>).map(EarningsItemFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetEarnings200ResponseMetaFromJSON(json["meta"]),
+    earnings: (json["earnings"] as Array<any>).map(EarningsItemFromJSON),
+    status: json["status"],
   };
 }
 
@@ -98,10 +95,7 @@ export function GetEarnings200ResponseToJSONTyped(
 
   return {
     meta: GetEarnings200ResponseMetaToJSON(value["meta"]),
-    earnings:
-      value["earnings"] == null
-        ? undefined
-        : (value["earnings"] as Array<any>).map(EarningsItemToJSON),
+    earnings: (value["earnings"] as Array<any>).map(EarningsItemToJSON),
     status: value["status"],
   };
 }

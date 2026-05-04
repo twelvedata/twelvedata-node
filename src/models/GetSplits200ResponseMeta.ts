@@ -17,37 +17,37 @@ export interface GetSplits200ResponseMeta {
    * @type {string}
    * @memberof GetSplits200ResponseMeta
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Name of the instrument
    * @type {string}
    * @memberof GetSplits200ResponseMeta
    */
-  name?: string;
+  name: string;
   /**
    * Currency in which the instrument is denominated
    * @type {string}
    * @memberof GetSplits200ResponseMeta
    */
-  currency?: string;
+  currency: string;
   /**
    * Exchange where instrument is traded
    * @type {string}
    * @memberof GetSplits200ResponseMeta
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof GetSplits200ResponseMeta
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Timezone of the exchange
    * @type {string}
    * @memberof GetSplits200ResponseMeta
    */
-  exchangeTimezone?: string;
+  exchangeTimezone: string;
 }
 
 /**
@@ -56,6 +56,13 @@ export interface GetSplits200ResponseMeta {
 export function instanceOfGetSplits200ResponseMeta(
   value: object,
 ): value is GetSplits200ResponseMeta {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("exchangeTimezone" in value) || value["exchangeTimezone"] === undefined)
+    return false;
   return true;
 }
 
@@ -73,13 +80,12 @@ export function GetSplits200ResponseMetaFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    currency: json["currency"] == null ? undefined : json["currency"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    exchangeTimezone:
-      json["exchange_timezone"] == null ? undefined : json["exchange_timezone"],
+    symbol: json["symbol"],
+    name: json["name"],
+    currency: json["currency"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
+    exchangeTimezone: json["exchange_timezone"],
   };
 }
 

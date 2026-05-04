@@ -17,31 +17,31 @@ export interface GetTimeSeriesMacd200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesMacd200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesMacd200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * Fast period value
    * @type {number}
    * @memberof GetTimeSeriesMacd200ResponseMetaIndicator
    */
-  fastPeriod?: number;
+  fastPeriod: number;
   /**
    * Slow period value
    * @type {number}
    * @memberof GetTimeSeriesMacd200ResponseMetaIndicator
    */
-  slowPeriod?: number;
+  slowPeriod: number;
   /**
    * Signal period value
    * @type {number}
    * @memberof GetTimeSeriesMacd200ResponseMetaIndicator
    */
-  signalPeriod?: number;
+  signalPeriod: number;
 }
 
 /**
@@ -50,6 +50,15 @@ export interface GetTimeSeriesMacd200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesMacd200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesMacd200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("fastPeriod" in value) || value["fastPeriod"] === undefined)
+    return false;
+  if (!("slowPeriod" in value) || value["slowPeriod"] === undefined)
+    return false;
+  if (!("signalPeriod" in value) || value["signalPeriod"] === undefined)
+    return false;
   return true;
 }
 
@@ -67,12 +76,11 @@ export function GetTimeSeriesMacd200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    fastPeriod: json["fast_period"] == null ? undefined : json["fast_period"],
-    slowPeriod: json["slow_period"] == null ? undefined : json["slow_period"],
-    signalPeriod:
-      json["signal_period"] == null ? undefined : json["signal_period"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    fastPeriod: json["fast_period"],
+    slowPeriod: json["slow_period"],
+    signalPeriod: json["signal_period"],
   };
 }
 

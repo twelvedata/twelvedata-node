@@ -6,6 +6,7 @@
 
 Name | Type
 ------------ | -------------
+`count` | number
 `data` | [Array&lt;EtfResponseItem&gt;](EtfResponseItem.md)
 `status` | string
 
@@ -16,6 +17,7 @@ import type { GetEtf200Response } from '@twelvedata/twelvedata-node'
 
 // TODO: Update the object below with actual values
 const example = {
+  "count": null,
   "data": null,
   "status": null,
 } satisfies GetEtf200Response

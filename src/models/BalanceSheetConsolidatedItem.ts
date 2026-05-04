@@ -25,7 +25,7 @@ export interface BalanceSheetConsolidatedItem {
    * @type {string}
    * @memberof BalanceSheetConsolidatedItem
    */
-  fiscalDate?: string;
+  fiscalDate: string;
   /**
    *
    * @type {AssetsInfo}
@@ -40,6 +40,8 @@ export interface BalanceSheetConsolidatedItem {
 export function instanceOfBalanceSheetConsolidatedItem(
   value: object,
 ): value is BalanceSheetConsolidatedItem {
+  if (!("fiscalDate" in value) || value["fiscalDate"] === undefined)
+    return false;
   return true;
 }
 
@@ -57,7 +59,7 @@ export function BalanceSheetConsolidatedItemFromJSONTyped(
     return json;
   }
   return {
-    fiscalDate: json["fiscal_date"] == null ? undefined : json["fiscal_date"],
+    fiscalDate: json["fiscal_date"],
     assets:
       json["assets"] == null ? undefined : AssetsInfoFromJSON(json["assets"]),
   };

@@ -17,49 +17,49 @@ export interface GetTimeSeriesMacdExt200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesMacdExt200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesMacdExt200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * The shorter time period for calculation
    * @type {number}
    * @memberof GetTimeSeriesMacdExt200ResponseMetaIndicator
    */
-  fastPeriod?: number;
+  fastPeriod: number;
   /**
    * The type of fast moving average used in the calculation
    * @type {string}
    * @memberof GetTimeSeriesMacdExt200ResponseMetaIndicator
    */
-  fastMaType?: string;
+  fastMaType: string;
   /**
    * The longer time period for calculation
    * @type {number}
    * @memberof GetTimeSeriesMacdExt200ResponseMetaIndicator
    */
-  slowPeriod?: number;
+  slowPeriod: number;
   /**
    * The type of slow moving average used in the calculation
    * @type {string}
    * @memberof GetTimeSeriesMacdExt200ResponseMetaIndicator
    */
-  slowMaType?: string;
+  slowMaType: string;
   /**
    * The time period used for generating the signal line
    * @type {number}
    * @memberof GetTimeSeriesMacdExt200ResponseMetaIndicator
    */
-  signalPeriod?: number;
+  signalPeriod: number;
   /**
    * The type of moving average used for generating the signal line
    * @type {string}
    * @memberof GetTimeSeriesMacdExt200ResponseMetaIndicator
    */
-  signalMaType?: string;
+  signalMaType: string;
 }
 
 /**
@@ -68,6 +68,21 @@ export interface GetTimeSeriesMacdExt200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesMacdExt200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesMacdExt200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("fastPeriod" in value) || value["fastPeriod"] === undefined)
+    return false;
+  if (!("fastMaType" in value) || value["fastMaType"] === undefined)
+    return false;
+  if (!("slowPeriod" in value) || value["slowPeriod"] === undefined)
+    return false;
+  if (!("slowMaType" in value) || value["slowMaType"] === undefined)
+    return false;
+  if (!("signalPeriod" in value) || value["signalPeriod"] === undefined)
+    return false;
+  if (!("signalMaType" in value) || value["signalMaType"] === undefined)
+    return false;
   return true;
 }
 
@@ -85,16 +100,14 @@ export function GetTimeSeriesMacdExt200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    fastPeriod: json["fast_period"] == null ? undefined : json["fast_period"],
-    fastMaType: json["fast_ma_type"] == null ? undefined : json["fast_ma_type"],
-    slowPeriod: json["slow_period"] == null ? undefined : json["slow_period"],
-    slowMaType: json["slow_ma_type"] == null ? undefined : json["slow_ma_type"],
-    signalPeriod:
-      json["signal_period"] == null ? undefined : json["signal_period"],
-    signalMaType:
-      json["signal_ma_type"] == null ? undefined : json["signal_ma_type"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    fastPeriod: json["fast_period"],
+    fastMaType: json["fast_ma_type"],
+    slowPeriod: json["slow_period"],
+    slowMaType: json["slow_ma_type"],
+    signalPeriod: json["signal_period"],
+    signalMaType: json["signal_ma_type"],
   };
 }
 

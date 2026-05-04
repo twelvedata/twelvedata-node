@@ -17,13 +17,13 @@ export interface GetTimeSeriesNatr200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesNatr200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * natr value
    * @type {string}
    * @memberof GetTimeSeriesNatr200ResponseValuesInner
    */
-  natr?: string;
+  natr: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesNatr200ResponseValuesInner {
 export function instanceOfGetTimeSeriesNatr200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesNatr200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("natr" in value) || value["natr"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesNatr200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    natr: json["natr"] == null ? undefined : json["natr"],
+    datetime: json["datetime"],
+    natr: json["natr"],
   };
 }
 

@@ -17,13 +17,13 @@ export interface GetTimeSeriesCorrel200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesCorrel200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Correl value
    * @type {string}
    * @memberof GetTimeSeriesCorrel200ResponseValuesInner
    */
-  correl?: string;
+  correl: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesCorrel200ResponseValuesInner {
 export function instanceOfGetTimeSeriesCorrel200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesCorrel200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("correl" in value) || value["correl"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesCorrel200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    correl: json["correl"] == null ? undefined : json["correl"],
+    datetime: json["datetime"],
+    correl: json["correl"],
   };
 }
 

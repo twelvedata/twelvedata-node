@@ -17,13 +17,13 @@ export interface GetTimeSeriesCeil200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesCeil200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesCeil200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesCeil200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesCeil200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesCeil200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
   return true;
 }
 
@@ -49,8 +52,8 @@ export function GetTimeSeriesCeil200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
+    name: json["name"],
+    seriesType: json["series_type"],
   };
 }
 

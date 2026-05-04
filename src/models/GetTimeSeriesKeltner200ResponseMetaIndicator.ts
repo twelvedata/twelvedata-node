@@ -17,37 +17,37 @@ export interface GetTimeSeriesKeltner200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesKeltner200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Number of periods to average over
    * @type {number}
    * @memberof GetTimeSeriesKeltner200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
   /**
    * The time period used for calculating the Average True Range
    * @type {number}
    * @memberof GetTimeSeriesKeltner200ResponseMetaIndicator
    */
-  atrTimePeriod?: number;
+  atrTimePeriod: number;
   /**
    * The factor used to adjust the indicator's sensitivity
    * @type {number}
    * @memberof GetTimeSeriesKeltner200ResponseMetaIndicator
    */
-  multiplier?: number;
+  multiplier: number;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesKeltner200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * The type of moving average used
    * @type {string}
    * @memberof GetTimeSeriesKeltner200ResponseMetaIndicator
    */
-  maType?: string;
+  maType: string;
 }
 
 /**
@@ -56,6 +56,16 @@ export interface GetTimeSeriesKeltner200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesKeltner200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesKeltner200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
+  if (!("atrTimePeriod" in value) || value["atrTimePeriod"] === undefined)
+    return false;
+  if (!("multiplier" in value) || value["multiplier"] === undefined)
+    return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("maType" in value) || value["maType"] === undefined) return false;
   return true;
 }
 
@@ -73,13 +83,12 @@ export function GetTimeSeriesKeltner200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
-    atrTimePeriod:
-      json["atr_time_period"] == null ? undefined : json["atr_time_period"],
-    multiplier: json["multiplier"] == null ? undefined : json["multiplier"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    maType: json["ma_type"] == null ? undefined : json["ma_type"],
+    name: json["name"],
+    timePeriod: json["time_period"],
+    atrTimePeriod: json["atr_time_period"],
+    multiplier: json["multiplier"],
+    seriesType: json["series_type"],
+    maType: json["ma_type"],
   };
 }
 

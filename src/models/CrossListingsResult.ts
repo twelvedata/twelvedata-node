@@ -25,13 +25,13 @@ export interface CrossListingsResult {
    * @type {number}
    * @memberof CrossListingsResult
    */
-  count?: number;
+  count: number;
   /**
    * List of cross listings
    * @type {Array<CrossListingsItem>}
    * @memberof CrossListingsResult
    */
-  list?: Array<CrossListingsItem>;
+  list: Array<CrossListingsItem>;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface CrossListingsResult {
 export function instanceOfCrossListingsResult(
   value: object,
 ): value is CrossListingsResult {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("list" in value) || value["list"] === undefined) return false;
   return true;
 }
 
@@ -55,11 +57,8 @@ export function CrossListingsResultFromJSONTyped(
     return json;
   }
   return {
-    count: json["count"] == null ? undefined : json["count"],
-    list:
-      json["list"] == null
-        ? undefined
-        : (json["list"] as Array<any>).map(CrossListingsItemFromJSON),
+    count: json["count"],
+    list: (json["list"] as Array<any>).map(CrossListingsItemFromJSON),
   };
 }
 
@@ -77,9 +76,6 @@ export function CrossListingsResultToJSONTyped(
 
   return {
     count: value["count"],
-    list:
-      value["list"] == null
-        ? undefined
-        : (value["list"] as Array<any>).map(CrossListingsItemToJSON),
+    list: (value["list"] as Array<any>).map(CrossListingsItemToJSON),
   };
 }

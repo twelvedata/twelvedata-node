@@ -17,13 +17,13 @@ export interface GetTimeSeriesHtDcPhase200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesHtDcPhase200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * HT_DCPHASE value
    * @type {string}
    * @memberof GetTimeSeriesHtDcPhase200ResponseValuesInner
    */
-  htDcphase?: string;
+  htDcphase: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesHtDcPhase200ResponseValuesInner {
 export function instanceOfGetTimeSeriesHtDcPhase200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesHtDcPhase200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("htDcphase" in value) || value["htDcphase"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesHtDcPhase200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    htDcphase: json["ht_dcphase"] == null ? undefined : json["ht_dcphase"],
+    datetime: json["datetime"],
+    htDcphase: json["ht_dcphase"],
   };
 }
 

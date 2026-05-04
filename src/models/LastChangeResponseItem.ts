@@ -17,19 +17,19 @@ export interface LastChangeResponseItem {
    * @type {string}
    * @memberof LastChangeResponseItem
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Market Identifier Code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof LastChangeResponseItem
    */
-  micCode?: string;
+  micCode: string;
   /**
    * The date and time of last changes, in `2006-01-02 15:04:05` format
-   * @type {Date}
+   * @type {string}
    * @memberof LastChangeResponseItem
    */
-  lastChange?: Date;
+  lastChange: string;
 }
 
 /**
@@ -38,6 +38,10 @@ export interface LastChangeResponseItem {
 export function instanceOfLastChangeResponseItem(
   value: object,
 ): value is LastChangeResponseItem {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("lastChange" in value) || value["lastChange"] === undefined)
+    return false;
   return true;
 }
 
@@ -55,10 +59,9 @@ export function LastChangeResponseItemFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    lastChange:
-      json["last_change"] == null ? undefined : new Date(json["last_change"]),
+    symbol: json["symbol"],
+    micCode: json["mic_code"],
+    lastChange: json["last_change"],
   };
 }
 
@@ -79,9 +82,6 @@ export function LastChangeResponseItemToJSONTyped(
   return {
     symbol: value["symbol"],
     mic_code: value["micCode"],
-    last_change:
-      value["lastChange"] == null
-        ? value["lastChange"]
-        : value["lastChange"].toISOString(),
+    last_change: value["lastChange"],
   };
 }

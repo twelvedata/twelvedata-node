@@ -25,13 +25,13 @@ export interface GetBonds200Response {
    * @type {GetBonds200ResponseResult}
    * @memberof GetBonds200Response
    */
-  result?: GetBonds200ResponseResult;
+  result: GetBonds200ResponseResult;
   /**
    * Response status
    * @type {string}
    * @memberof GetBonds200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetBonds200Response {
 export function instanceOfGetBonds200Response(
   value: object,
 ): value is GetBonds200Response {
+  if (!("result" in value) || value["result"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -55,11 +57,8 @@ export function GetBonds200ResponseFromJSONTyped(
     return json;
   }
   return {
-    result:
-      json["result"] == null
-        ? undefined
-        : GetBonds200ResponseResultFromJSON(json["result"]),
-    status: json["status"] == null ? undefined : json["status"],
+    result: GetBonds200ResponseResultFromJSON(json["result"]),
+    status: json["status"],
   };
 }
 

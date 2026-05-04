@@ -17,13 +17,13 @@ export interface GetTimeSeriesAvg200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesAvg200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Avg value
    * @type {string}
    * @memberof GetTimeSeriesAvg200ResponseValuesInner
    */
-  avg?: string;
+  avg: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesAvg200ResponseValuesInner {
 export function instanceOfGetTimeSeriesAvg200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesAvg200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("avg" in value) || value["avg"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesAvg200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    avg: json["avg"] == null ? undefined : json["avg"],
+    datetime: json["datetime"],
+    avg: json["avg"],
   };
 }
 

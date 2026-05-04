@@ -17,13 +17,13 @@ export interface GetTimeSeriesWclPrice200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesWclPrice200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * wclprice value
-   * @type {number}
+   * @type {string}
    * @memberof GetTimeSeriesWclPrice200ResponseValuesInner
    */
-  wclprice?: number;
+  wclprice: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesWclPrice200ResponseValuesInner {
 export function instanceOfGetTimeSeriesWclPrice200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesWclPrice200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("wclprice" in value) || value["wclprice"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesWclPrice200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    wclprice: json["wclprice"] == null ? undefined : json["wclprice"],
+    datetime: json["datetime"],
+    wclprice: json["wclprice"],
   };
 }
 

@@ -17,13 +17,13 @@ export interface GetTimeSeriesStdDev200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesStdDev200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Standard Deviation value
    * @type {string}
    * @memberof GetTimeSeriesStdDev200ResponseValuesInner
    */
-  stddev?: string;
+  stddev: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesStdDev200ResponseValuesInner {
 export function instanceOfGetTimeSeriesStdDev200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesStdDev200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("stddev" in value) || value["stddev"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesStdDev200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    stddev: json["stddev"] == null ? undefined : json["stddev"],
+    datetime: json["datetime"],
+    stddev: json["stddev"],
   };
 }
 

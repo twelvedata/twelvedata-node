@@ -32,19 +32,19 @@ export interface GetTimeSeriesKama200Response {
    * @type {GetTimeSeriesKama200ResponseMeta}
    * @memberof GetTimeSeriesKama200Response
    */
-  meta?: GetTimeSeriesKama200ResponseMeta;
+  meta: GetTimeSeriesKama200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesKama200ResponseValuesInner>}
    * @memberof GetTimeSeriesKama200Response
    */
-  values?: Array<GetTimeSeriesKama200ResponseValuesInner>;
+  values: Array<GetTimeSeriesKama200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesKama200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesKama200Response {
 export function instanceOfGetTimeSeriesKama200Response(
   value: object,
 ): value is GetTimeSeriesKama200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesKama200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesKama200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesKama200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesKama200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesKama200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesKama200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesKama200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesKama200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesKama200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

@@ -17,19 +17,19 @@ export interface GetTimeSeriesRocr100200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesRocr100200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesRocr100200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * The time period used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesRocr100200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
 }
 
 /**
@@ -38,6 +38,11 @@ export interface GetTimeSeriesRocr100200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesRocr100200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesRocr100200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
   return true;
 }
 
@@ -55,9 +60,9 @@ export function GetTimeSeriesRocr100200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    timePeriod: json["time_period"],
   };
 }
 

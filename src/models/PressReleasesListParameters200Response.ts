@@ -25,13 +25,13 @@ export interface PressReleasesListParameters200Response {
    * @type {Array<PressRelease>}
    * @memberof PressReleasesListParameters200Response
    */
-  pressReleases?: Array<PressRelease>;
+  pressReleases: Array<PressRelease>;
   /**
    * Response status
    * @type {string}
    * @memberof PressReleasesListParameters200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,9 @@ export interface PressReleasesListParameters200Response {
 export function instanceOfPressReleasesListParameters200Response(
   value: object,
 ): value is PressReleasesListParameters200Response {
+  if (!("pressReleases" in value) || value["pressReleases"] === undefined)
+    return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +60,10 @@ export function PressReleasesListParameters200ResponseFromJSONTyped(
     return json;
   }
   return {
-    pressReleases:
-      json["press_releases"] == null
-        ? undefined
-        : (json["press_releases"] as Array<any>).map(PressReleaseFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    pressReleases: (json["press_releases"] as Array<any>).map(
+      PressReleaseFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -80,10 +82,9 @@ export function PressReleasesListParameters200ResponseToJSONTyped(
   }
 
   return {
-    press_releases:
-      value["pressReleases"] == null
-        ? undefined
-        : (value["pressReleases"] as Array<any>).map(PressReleaseToJSON),
+    press_releases: (value["pressReleases"] as Array<any>).map(
+      PressReleaseToJSON,
+    ),
     status: value["status"],
   };
 }

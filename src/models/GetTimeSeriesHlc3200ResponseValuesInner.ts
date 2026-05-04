@@ -17,13 +17,13 @@ export interface GetTimeSeriesHlc3200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesHlc3200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * hlc3 value
    * @type {string}
    * @memberof GetTimeSeriesHlc3200ResponseValuesInner
    */
-  hlc3?: string;
+  hlc3: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesHlc3200ResponseValuesInner {
 export function instanceOfGetTimeSeriesHlc3200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesHlc3200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("hlc3" in value) || value["hlc3"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesHlc3200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    hlc3: json["hlc3"] == null ? undefined : json["hlc3"],
+    datetime: json["datetime"],
+    hlc3: json["hlc3"],
   };
 }
 

@@ -17,13 +17,13 @@ export interface InlineObject14ValuesInner {
    * @type {string}
    * @memberof InlineObject14ValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * SIN value
    * @type {string}
    * @memberof InlineObject14ValuesInner
    */
-  sin?: string;
+  sin: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface InlineObject14ValuesInner {
 export function instanceOfInlineObject14ValuesInner(
   value: object,
 ): value is InlineObject14ValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("sin" in value) || value["sin"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function InlineObject14ValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    sin: json["sin"] == null ? undefined : json["sin"],
+    datetime: json["datetime"],
+    sin: json["sin"],
   };
 }
 

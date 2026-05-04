@@ -17,13 +17,13 @@ export interface GetTimeSeriesKama200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesKama200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Kama value
    * @type {string}
    * @memberof GetTimeSeriesKama200ResponseValuesInner
    */
-  kama?: string;
+  kama: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesKama200ResponseValuesInner {
 export function instanceOfGetTimeSeriesKama200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesKama200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("kama" in value) || value["kama"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesKama200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    kama: json["kama"] == null ? undefined : json["kama"],
+    datetime: json["datetime"],
+    kama: json["kama"],
   };
 }
 

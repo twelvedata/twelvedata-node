@@ -32,19 +32,19 @@ export interface GetTimeSeriesPlusDI200Response {
    * @type {GetTimeSeriesPlusDI200ResponseMeta}
    * @memberof GetTimeSeriesPlusDI200Response
    */
-  meta?: GetTimeSeriesPlusDI200ResponseMeta;
+  meta: GetTimeSeriesPlusDI200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesPlusDI200ResponseValuesInner>}
    * @memberof GetTimeSeriesPlusDI200Response
    */
-  values?: Array<GetTimeSeriesPlusDI200ResponseValuesInner>;
+  values: Array<GetTimeSeriesPlusDI200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesPlusDI200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesPlusDI200Response {
 export function instanceOfGetTimeSeriesPlusDI200Response(
   value: object,
 ): value is GetTimeSeriesPlusDI200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesPlusDI200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesPlusDI200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesPlusDI200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesPlusDI200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesPlusDI200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesPlusDI200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesPlusDI200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesPlusDI200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesPlusDI200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

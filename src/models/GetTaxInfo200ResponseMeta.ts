@@ -17,31 +17,31 @@ export interface GetTaxInfo200ResponseMeta {
    * @type {string}
    * @memberof GetTaxInfo200ResponseMeta
    */
-  symbol?: string;
+  symbol: string;
   /**
    * The instrument name
    * @type {string}
    * @memberof GetTaxInfo200ResponseMeta
    */
-  name?: string;
+  name: string;
   /**
    * The exchange name where the instrument is traded
    * @type {string}
    * @memberof GetTaxInfo200ResponseMeta
    */
-  exchange?: string;
+  exchange: string;
   /**
    * The Market Identifier Code (MIC) of the exchange where the instrument is traded
    * @type {string}
    * @memberof GetTaxInfo200ResponseMeta
    */
-  micCode?: string;
+  micCode: string;
   /**
    * The instrument country name
    * @type {string}
    * @memberof GetTaxInfo200ResponseMeta
    */
-  country?: string;
+  country: string;
 }
 
 /**
@@ -50,6 +50,11 @@ export interface GetTaxInfo200ResponseMeta {
 export function instanceOfGetTaxInfo200ResponseMeta(
   value: object,
 ): value is GetTaxInfo200ResponseMeta {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("country" in value) || value["country"] === undefined) return false;
   return true;
 }
 
@@ -67,11 +72,11 @@ export function GetTaxInfo200ResponseMetaFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    country: json["country"] == null ? undefined : json["country"],
+    symbol: json["symbol"],
+    name: json["name"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
+    country: json["country"],
   };
 }
 

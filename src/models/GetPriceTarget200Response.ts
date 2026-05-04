@@ -32,19 +32,19 @@ export interface GetPriceTarget200Response {
    * @type {GetPriceTarget200ResponseMeta}
    * @memberof GetPriceTarget200Response
    */
-  meta?: GetPriceTarget200ResponseMeta;
+  meta: GetPriceTarget200ResponseMeta;
   /**
    *
    * @type {GetPriceTarget200ResponsePriceTarget}
    * @memberof GetPriceTarget200Response
    */
-  priceTarget?: GetPriceTarget200ResponsePriceTarget;
+  priceTarget: GetPriceTarget200ResponsePriceTarget;
   /**
    * Response status
    * @type {string}
    * @memberof GetPriceTarget200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,10 @@ export interface GetPriceTarget200Response {
 export function instanceOfGetPriceTarget200Response(
   value: object,
 ): value is GetPriceTarget200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("priceTarget" in value) || value["priceTarget"] === undefined)
+    return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,15 +74,11 @@ export function GetPriceTarget200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetPriceTarget200ResponseMetaFromJSON(json["meta"]),
-    priceTarget:
-      json["price_target"] == null
-        ? undefined
-        : GetPriceTarget200ResponsePriceTargetFromJSON(json["price_target"]),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetPriceTarget200ResponseMetaFromJSON(json["meta"]),
+    priceTarget: GetPriceTarget200ResponsePriceTargetFromJSON(
+      json["price_target"],
+    ),
+    status: json["status"],
   };
 }
 

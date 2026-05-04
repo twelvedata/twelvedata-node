@@ -8,8 +8,6 @@ Ensure you have Node.js v18.0.0 or later. We recommend the latest LTS version. U
 
 ## Setup
 
-Copy `.env.example` to `.env` and add your API key.
-
 Install dependencies
 
 ```bash
@@ -17,6 +15,14 @@ npm i
 or
 yarn install
 ```
+
+Export your API key
+
+```bash
+export TWELVEDATA_API_KEY=<your-api-key>
+```
+
+On Windows `cmd`: `set TWELVEDATA_API_KEY=<your-api-key>`. In PowerShell: `$env:TWELVEDATA_API_KEY="<your-api-key>"`.
 
 ## Run
 

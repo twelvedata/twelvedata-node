@@ -7,7 +7,7 @@ Average maturity of bond holdings for the fund and its category
 
 Name | Type
 ------------ | -------------
-`fund` | object
+`fund` | number
 `category` | number
 
 ## Example

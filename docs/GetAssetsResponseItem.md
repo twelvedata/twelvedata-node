@@ -8,6 +8,7 @@ Name | Type
 ------------ | -------------
 `code` | string
 `description` | string
+`icon` | string
 `micCode` | string
 `symbol` | string
 
@@ -20,6 +21,7 @@ import type { GetAssetsResponseItem } from '@twelvedata/twelvedata-node'
 const example = {
   "code": null,
   "description": null,
+  "icon": null,
   "micCode": null,
   "symbol": null,
 } satisfies GetAssetsResponseItem

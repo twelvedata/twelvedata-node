@@ -17,7 +17,7 @@ export interface GetTimeSeriesHeikinashiCandles200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesHeikinashiCandles200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
 }
 
 /**
@@ -26,6 +26,7 @@ export interface GetTimeSeriesHeikinashiCandles200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesHeikinashiCandles200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesHeikinashiCandles200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
   return true;
 }
 
@@ -46,7 +47,7 @@ export function GetTimeSeriesHeikinashiCandles200ResponseMetaIndicatorFromJSONTy
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
+    name: json["name"],
   };
 }
 

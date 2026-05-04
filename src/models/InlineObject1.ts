@@ -21,17 +21,32 @@ import {
  */
 export interface InlineObject1 {
   /**
-   *
+   * Count
+   * @type {number}
+   * @memberof InlineObject1
+   */
+  count: number;
+  /**
+   * List of indices
    * @type {Array<ModelIndex>}
    * @memberof InlineObject1
    */
-  data?: Array<ModelIndex>;
+  data: Array<ModelIndex>;
+  /**
+   * Response status
+   * @type {string}
+   * @memberof InlineObject1
+   */
+  status: string;
 }
 
 /**
  * Check if a given object implements the InlineObject1 interface.
  */
 export function instanceOfInlineObject1(value: object): value is InlineObject1 {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -47,10 +62,9 @@ export function InlineObject1FromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(ModelIndexFromJSON),
+    count: json["count"],
+    data: (json["data"] as Array<any>).map(ModelIndexFromJSON),
+    status: json["status"],
   };
 }
 
@@ -67,9 +81,8 @@ export function InlineObject1ToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(ModelIndexToJSON),
+    count: value["count"],
+    data: (value["data"] as Array<any>).map(ModelIndexToJSON),
+    status: value["status"],
   };
 }

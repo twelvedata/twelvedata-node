@@ -17,13 +17,13 @@ export interface InlineObject16ValuesInner {
    * @type {string}
    * @memberof InlineObject16ValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * TAN value
    * @type {string}
    * @memberof InlineObject16ValuesInner
    */
-  tan?: string;
+  tan: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface InlineObject16ValuesInner {
 export function instanceOfInlineObject16ValuesInner(
   value: object,
 ): value is InlineObject16ValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("tan" in value) || value["tan"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function InlineObject16ValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    tan: json["tan"] == null ? undefined : json["tan"],
+    datetime: json["datetime"],
+    tan: json["tan"],
   };
 }
 

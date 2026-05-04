@@ -39,31 +39,31 @@ export interface GetTechnicalIndicators200ResponseDataValue {
    * @type {boolean}
    * @memberof GetTechnicalIndicators200ResponseDataValue
    */
-  enable?: boolean;
+  enable: boolean;
   /**
    * Full indicator name
    * @type {string}
    * @memberof GetTechnicalIndicators200ResponseDataValue
    */
-  fullName?: string;
+  fullName: string;
   /**
    * Brief description of the indicator
    * @type {string}
    * @memberof GetTechnicalIndicators200ResponseDataValue
    */
-  description?: string;
+  description: string;
   /**
    * Group to which indicator belongs to
    * @type {string}
    * @memberof GetTechnicalIndicators200ResponseDataValue
    */
-  type?: string;
+  type: string;
   /**
    * If indicator should be plotted over price bars returns <code>true</code>, otherwise returns <code>false</code>
    * @type {boolean}
    * @memberof GetTechnicalIndicators200ResponseDataValue
    */
-  overlay?: boolean;
+  overlay: boolean;
   /**
    *
    * @type {TechnicalIndicatorsResponseMacdOutputValues}
@@ -90,6 +90,12 @@ export interface GetTechnicalIndicators200ResponseDataValue {
 export function instanceOfGetTechnicalIndicators200ResponseDataValue(
   value: object,
 ): value is GetTechnicalIndicators200ResponseDataValue {
+  if (!("enable" in value) || value["enable"] === undefined) return false;
+  if (!("fullName" in value) || value["fullName"] === undefined) return false;
+  if (!("description" in value) || value["description"] === undefined)
+    return false;
+  if (!("type" in value) || value["type"] === undefined) return false;
+  if (!("overlay" in value) || value["overlay"] === undefined) return false;
   return true;
 }
 
@@ -107,11 +113,11 @@ export function GetTechnicalIndicators200ResponseDataValueFromJSONTyped(
     return json;
   }
   return {
-    enable: json["enable"] == null ? undefined : json["enable"],
-    fullName: json["full_name"] == null ? undefined : json["full_name"],
-    description: json["description"] == null ? undefined : json["description"],
-    type: json["type"] == null ? undefined : json["type"],
-    overlay: json["overlay"] == null ? undefined : json["overlay"],
+    enable: json["enable"],
+    fullName: json["full_name"],
+    description: json["description"],
+    type: json["type"],
+    overlay: json["overlay"],
     outputValues:
       json["output_values"] == null
         ? undefined

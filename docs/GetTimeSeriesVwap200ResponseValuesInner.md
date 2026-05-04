@@ -7,9 +7,9 @@
 Name | Type
 ------------ | -------------
 `datetime` | string
-`vwapLower` | number
-`vwap` | number
-`vwapUpper` | number
+`vwapLower` | string
+`vwap` | string
+`vwapUpper` | string
 
 ## Example
 

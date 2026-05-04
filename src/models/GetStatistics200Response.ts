@@ -32,13 +32,13 @@ export interface GetStatistics200Response {
    * @type {GetStatistics200ResponseMeta}
    * @memberof GetStatistics200Response
    */
-  meta?: GetStatistics200ResponseMeta;
+  meta: GetStatistics200ResponseMeta;
   /**
    *
    * @type {GetStatistics200ResponseStatistics}
    * @memberof GetStatistics200Response
    */
-  statistics?: GetStatistics200ResponseStatistics;
+  statistics: GetStatistics200ResponseStatistics;
 }
 
 /**
@@ -47,6 +47,9 @@ export interface GetStatistics200Response {
 export function instanceOfGetStatistics200Response(
   value: object,
 ): value is GetStatistics200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("statistics" in value) || value["statistics"] === undefined)
+    return false;
   return true;
 }
 
@@ -64,14 +67,8 @@ export function GetStatistics200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetStatistics200ResponseMetaFromJSON(json["meta"]),
-    statistics:
-      json["statistics"] == null
-        ? undefined
-        : GetStatistics200ResponseStatisticsFromJSON(json["statistics"]),
+    meta: GetStatistics200ResponseMetaFromJSON(json["meta"]),
+    statistics: GetStatistics200ResponseStatisticsFromJSON(json["statistics"]),
   };
 }
 

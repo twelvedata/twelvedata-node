@@ -25,13 +25,13 @@ export interface GetBonds200ResponseResult {
    * @type {number}
    * @memberof GetBonds200ResponseResult
    */
-  count?: number;
+  count: number;
   /**
-   *
+   * List of bonds
    * @type {Array<BondResponseItem>}
    * @memberof GetBonds200ResponseResult
    */
-  list?: Array<BondResponseItem>;
+  list: Array<BondResponseItem>;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetBonds200ResponseResult {
 export function instanceOfGetBonds200ResponseResult(
   value: object,
 ): value is GetBonds200ResponseResult {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("list" in value) || value["list"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +59,8 @@ export function GetBonds200ResponseResultFromJSONTyped(
     return json;
   }
   return {
-    count: json["count"] == null ? undefined : json["count"],
-    list:
-      json["list"] == null
-        ? undefined
-        : (json["list"] as Array<any>).map(BondResponseItemFromJSON),
+    count: json["count"],
+    list: (json["list"] as Array<any>).map(BondResponseItemFromJSON),
   };
 }
 
@@ -81,9 +80,6 @@ export function GetBonds200ResponseResultToJSONTyped(
 
   return {
     count: value["count"],
-    list:
-      value["list"] == null
-        ? undefined
-        : (value["list"] as Array<any>).map(BondResponseItemToJSON),
+    list: (value["list"] as Array<any>).map(BondResponseItemToJSON),
   };
 }

@@ -17,13 +17,13 @@ export interface InlineObject9MetaIndicator {
    * @type {string}
    * @memberof InlineObject9MetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof InlineObject9MetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface InlineObject9MetaIndicator {
 export function instanceOfInlineObject9MetaIndicator(
   value: object,
 ): value is InlineObject9MetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
   return true;
 }
 
@@ -49,8 +52,8 @@ export function InlineObject9MetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
+    name: json["name"],
+    seriesType: json["series_type"],
   };
 }
 

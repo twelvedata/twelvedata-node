@@ -17,7 +17,7 @@ export interface EdgarFilingFile {
    * @type {string}
    * @memberof EdgarFilingFile
    */
-  name?: string;
+  name: string;
   /**
    * File size
    * @type {number}
@@ -29,13 +29,13 @@ export interface EdgarFilingFile {
    * @type {string}
    * @memberof EdgarFilingFile
    */
-  type?: string;
+  type: string;
   /**
    * File full url
    * @type {string}
    * @memberof EdgarFilingFile
    */
-  url?: string;
+  url: string;
 }
 
 /**
@@ -44,6 +44,9 @@ export interface EdgarFilingFile {
 export function instanceOfEdgarFilingFile(
   value: object,
 ): value is EdgarFilingFile {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("type" in value) || value["type"] === undefined) return false;
+  if (!("url" in value) || value["url"] === undefined) return false;
   return true;
 }
 
@@ -59,10 +62,10 @@ export function EdgarFilingFileFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
+    name: json["name"],
     size: json["size"] == null ? undefined : json["size"],
-    type: json["type"] == null ? undefined : json["type"],
-    url: json["url"] == null ? undefined : json["url"],
+    type: json["type"],
+    url: json["url"],
   };
 }
 

@@ -32,7 +32,7 @@ export interface GetAnalystRatingsUsEquities200Response {
    * @type {GetAnalystRatingsLight200ResponseMeta}
    * @memberof GetAnalystRatingsUsEquities200Response
    */
-  meta?: GetAnalystRatingsLight200ResponseMeta;
+  meta: GetAnalystRatingsLight200ResponseMeta;
   /**
    * List of analyst ratings
    * @type {Array<GetAnalystRatingsUsEquities200ResponseRatingsInner>}
@@ -44,7 +44,7 @@ export interface GetAnalystRatingsUsEquities200Response {
    * @type {string}
    * @memberof GetAnalystRatingsUsEquities200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,8 @@ export interface GetAnalystRatingsUsEquities200Response {
 export function instanceOfGetAnalystRatingsUsEquities200Response(
   value: object,
 ): value is GetAnalystRatingsUsEquities200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +72,14 @@ export function GetAnalystRatingsUsEquities200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetAnalystRatingsLight200ResponseMetaFromJSON(json["meta"]),
+    meta: GetAnalystRatingsLight200ResponseMetaFromJSON(json["meta"]),
     ratings:
       json["ratings"] == null
         ? undefined
         : (json["ratings"] as Array<any>).map(
             GetAnalystRatingsUsEquities200ResponseRatingsInnerFromJSON,
           ),
-    status: json["status"] == null ? undefined : json["status"],
+    status: json["status"],
   };
 }
 

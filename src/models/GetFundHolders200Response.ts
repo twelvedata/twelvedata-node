@@ -32,13 +32,13 @@ export interface GetFundHolders200Response {
    * @type {GetFundHolders200ResponseMeta}
    * @memberof GetFundHolders200Response
    */
-  meta?: GetFundHolders200ResponseMeta;
+  meta: GetFundHolders200ResponseMeta;
   /**
    * List of fund holders for the financial instrument
    * @type {Array<FundHolderItem>}
    * @memberof GetFundHolders200Response
    */
-  fundHolders?: Array<FundHolderItem>;
+  fundHolders: Array<FundHolderItem>;
 }
 
 /**
@@ -47,6 +47,9 @@ export interface GetFundHolders200Response {
 export function instanceOfGetFundHolders200Response(
   value: object,
 ): value is GetFundHolders200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("fundHolders" in value) || value["fundHolders"] === undefined)
+    return false;
   return true;
 }
 
@@ -64,14 +67,10 @@ export function GetFundHolders200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetFundHolders200ResponseMetaFromJSON(json["meta"]),
-    fundHolders:
-      json["fund_holders"] == null
-        ? undefined
-        : (json["fund_holders"] as Array<any>).map(FundHolderItemFromJSON),
+    meta: GetFundHolders200ResponseMetaFromJSON(json["meta"]),
+    fundHolders: (json["fund_holders"] as Array<any>).map(
+      FundHolderItemFromJSON,
+    ),
   };
 }
 
@@ -91,9 +90,8 @@ export function GetFundHolders200ResponseToJSONTyped(
 
   return {
     meta: GetFundHolders200ResponseMetaToJSON(value["meta"]),
-    fund_holders:
-      value["fundHolders"] == null
-        ? undefined
-        : (value["fundHolders"] as Array<any>).map(FundHolderItemToJSON),
+    fund_holders: (value["fundHolders"] as Array<any>).map(
+      FundHolderItemToJSON,
+    ),
   };
 }

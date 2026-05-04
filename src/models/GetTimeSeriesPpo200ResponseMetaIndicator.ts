@@ -17,31 +17,31 @@ export interface GetTimeSeriesPpo200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesPpo200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesPpo200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * The shorter time period for calculation
    * @type {number}
    * @memberof GetTimeSeriesPpo200ResponseMetaIndicator
    */
-  fastPeriod?: number;
+  fastPeriod: number;
   /**
    * The longer time period for calculation
    * @type {number}
    * @memberof GetTimeSeriesPpo200ResponseMetaIndicator
    */
-  slowPeriod?: number;
+  slowPeriod: number;
   /**
    * The type of moving average used
    * @type {string}
    * @memberof GetTimeSeriesPpo200ResponseMetaIndicator
    */
-  maType?: string;
+  maType: string;
 }
 
 /**
@@ -50,6 +50,14 @@ export interface GetTimeSeriesPpo200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesPpo200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesPpo200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("fastPeriod" in value) || value["fastPeriod"] === undefined)
+    return false;
+  if (!("slowPeriod" in value) || value["slowPeriod"] === undefined)
+    return false;
+  if (!("maType" in value) || value["maType"] === undefined) return false;
   return true;
 }
 
@@ -67,11 +75,11 @@ export function GetTimeSeriesPpo200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    fastPeriod: json["fast_period"] == null ? undefined : json["fast_period"],
-    slowPeriod: json["slow_period"] == null ? undefined : json["slow_period"],
-    maType: json["ma_type"] == null ? undefined : json["ma_type"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    fastPeriod: json["fast_period"],
+    slowPeriod: json["slow_period"],
+    maType: json["ma_type"],
   };
 }
 

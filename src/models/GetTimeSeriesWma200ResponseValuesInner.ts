@@ -17,13 +17,13 @@ export interface GetTimeSeriesWma200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesWma200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * WMA value
    * @type {string}
    * @memberof GetTimeSeriesWma200ResponseValuesInner
    */
-  wma?: string;
+  wma: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesWma200ResponseValuesInner {
 export function instanceOfGetTimeSeriesWma200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesWma200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("wma" in value) || value["wma"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesWma200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    wma: json["wma"] == null ? undefined : json["wma"],
+    datetime: json["datetime"],
+    wma: json["wma"],
   };
 }
 

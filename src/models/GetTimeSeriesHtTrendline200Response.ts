@@ -32,19 +32,19 @@ export interface GetTimeSeriesHtTrendline200Response {
    * @type {GetTimeSeriesHtTrendline200ResponseMeta}
    * @memberof GetTimeSeriesHtTrendline200Response
    */
-  meta?: GetTimeSeriesHtTrendline200ResponseMeta;
+  meta: GetTimeSeriesHtTrendline200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesHtTrendline200ResponseValuesInner>}
    * @memberof GetTimeSeriesHtTrendline200Response
    */
-  values?: Array<GetTimeSeriesHtTrendline200ResponseValuesInner>;
+  values: Array<GetTimeSeriesHtTrendline200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesHtTrendline200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesHtTrendline200Response {
 export function instanceOfGetTimeSeriesHtTrendline200Response(
   value: object,
 ): value is GetTimeSeriesHtTrendline200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesHtTrendline200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesHtTrendline200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesHtTrendline200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesHtTrendline200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesHtTrendline200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesHtTrendline200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesHtTrendline200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesHtTrendline200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesHtTrendline200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

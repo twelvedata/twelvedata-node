@@ -25,19 +25,19 @@ export interface GetQuote200Response {
    * @type {string}
    * @memberof GetQuote200Response
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Name of the instrument
    * @type {string}
    * @memberof GetQuote200Response
    */
-  name?: string;
+  name: string;
   /**
    * Exchange where instrument is traded
    * @type {string}
    * @memberof GetQuote200Response
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard. Available for stocks, ETFs, mutual funds, bonds
    * @type {string}
@@ -55,13 +55,13 @@ export interface GetQuote200Response {
    * @type {string}
    * @memberof GetQuote200Response
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Unix timestamp representing the opening candle of the specified interval
    * @type {number}
    * @memberof GetQuote200Response
    */
-  timestamp?: number;
+  timestamp: number;
   /**
    * Unix timestamp of last minute candle
    * @type {number}
@@ -73,25 +73,25 @@ export interface GetQuote200Response {
    * @type {string}
    * @memberof GetQuote200Response
    */
-  open?: string;
+  open: string;
   /**
    * Highest price which occurred during the current bar
    * @type {string}
    * @memberof GetQuote200Response
    */
-  high?: string;
+  high: string;
   /**
    * Lowest price which occurred during the current bar
    * @type {string}
    * @memberof GetQuote200Response
    */
-  low?: string;
+  low: string;
   /**
    * Close price at the end of the bar
    * @type {string}
    * @memberof GetQuote200Response
    */
-  close?: string;
+  close: string;
   /**
    * Trading volume during the bar. Available not for all instrument types
    * @type {string}
@@ -103,19 +103,19 @@ export interface GetQuote200Response {
    * @type {string}
    * @memberof GetQuote200Response
    */
-  previousClose?: string;
+  previousClose: string;
   /**
    * Close - previous_close
    * @type {string}
    * @memberof GetQuote200Response
    */
-  change?: string;
+  change: string;
   /**
    * (Close - previous_close) / previous_close * 100
    * @type {string}
    * @memberof GetQuote200Response
    */
-  percentChange?: string;
+  percentChange: string;
   /**
    * Average volume of the specified period. Available not for all instrument types
    * @type {string}
@@ -145,13 +145,13 @@ export interface GetQuote200Response {
    * @type {boolean}
    * @memberof GetQuote200Response
    */
-  isMarketOpen?: boolean;
+  isMarketOpen: boolean;
   /**
    *
    * @type {GetQuote200ResponseFiftyTwoWeek}
    * @memberof GetQuote200Response
    */
-  fiftyTwoWeek?: GetQuote200ResponseFiftyTwoWeek;
+  fiftyTwoWeek: GetQuote200ResponseFiftyTwoWeek;
   /**
    * Diff between the regular close price and the latest extended price. Displayed only if prepost is true
    * @type {string}
@@ -184,6 +184,24 @@ export interface GetQuote200Response {
 export function instanceOfGetQuote200Response(
   value: object,
 ): value is GetQuote200Response {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("timestamp" in value) || value["timestamp"] === undefined) return false;
+  if (!("open" in value) || value["open"] === undefined) return false;
+  if (!("high" in value) || value["high"] === undefined) return false;
+  if (!("low" in value) || value["low"] === undefined) return false;
+  if (!("close" in value) || value["close"] === undefined) return false;
+  if (!("previousClose" in value) || value["previousClose"] === undefined)
+    return false;
+  if (!("change" in value) || value["change"] === undefined) return false;
+  if (!("percentChange" in value) || value["percentChange"] === undefined)
+    return false;
+  if (!("isMarketOpen" in value) || value["isMarketOpen"] === undefined)
+    return false;
+  if (!("fiftyTwoWeek" in value) || value["fiftyTwoWeek"] === undefined)
+    return false;
   return true;
 }
 
@@ -199,25 +217,23 @@ export function GetQuote200ResponseFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
+    symbol: json["symbol"],
+    name: json["name"],
+    exchange: json["exchange"],
     micCode: json["mic_code"] == null ? undefined : json["mic_code"],
     currency: json["currency"] == null ? undefined : json["currency"],
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    timestamp: json["timestamp"] == null ? undefined : json["timestamp"],
+    datetime: json["datetime"],
+    timestamp: json["timestamp"],
     lastQuoteAt:
       json["last_quote_at"] == null ? undefined : json["last_quote_at"],
-    open: json["open"] == null ? undefined : json["open"],
-    high: json["high"] == null ? undefined : json["high"],
-    low: json["low"] == null ? undefined : json["low"],
-    close: json["close"] == null ? undefined : json["close"],
+    open: json["open"],
+    high: json["high"],
+    low: json["low"],
+    close: json["close"],
     volume: json["volume"] == null ? undefined : json["volume"],
-    previousClose:
-      json["previous_close"] == null ? undefined : json["previous_close"],
-    change: json["change"] == null ? undefined : json["change"],
-    percentChange:
-      json["percent_change"] == null ? undefined : json["percent_change"],
+    previousClose: json["previous_close"],
+    change: json["change"],
+    percentChange: json["percent_change"],
     averageVolume:
       json["average_volume"] == null ? undefined : json["average_volume"],
     rolling1dChange:
@@ -226,12 +242,10 @@ export function GetQuote200ResponseFromJSONTyped(
       json["rolling_7d_change"] == null ? undefined : json["rolling_7d_change"],
     rollingChange:
       json["rolling_change"] == null ? undefined : json["rolling_change"],
-    isMarketOpen:
-      json["is_market_open"] == null ? undefined : json["is_market_open"],
-    fiftyTwoWeek:
-      json["fifty_two_week"] == null
-        ? undefined
-        : GetQuote200ResponseFiftyTwoWeekFromJSON(json["fifty_two_week"]),
+    isMarketOpen: json["is_market_open"],
+    fiftyTwoWeek: GetQuote200ResponseFiftyTwoWeekFromJSON(
+      json["fifty_two_week"],
+    ),
     extendedChange:
       json["extended_change"] == null ? undefined : json["extended_change"],
     extendedPercentChange:

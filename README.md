@@ -3,8 +3,8 @@
 [![npm](https://img.shields.io/npm/v/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
 [![npm](https://img.shields.io/npm/types/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
 [![downloads](https://img.shields.io/npm/dm/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
-[![npm](https://img.shields.io/npm/l/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
-[![npm](https://img.shields.io/github/issues/twelvedata/twelvedata-node)](https://github.com/twelvedata/twelvedata-node/issues)
+[![license](https://img.shields.io/github/license/twelvedata/twelvedata-node)](https://github.com/twelvedata/twelvedata-node/blob/master/LICENSE.txt)
+[![issues](https://img.shields.io/github/issues/twelvedata/twelvedata-node)](https://github.com/twelvedata/twelvedata-node/issues)
 
 Twelve Data official library. This package supports all main features of the service:
 - Real-time and historical market data: time series, quotes, end-of-day prices, exchange rates, and market movers.
@@ -35,22 +35,12 @@ yarn add @twelvedata/twelvedata-node
 npm init -y && npm pkg set type=module && npm i @twelvedata/twelvedata-node
 ```
 
-### 2. Set up environment variables
-Create `.env` file and add to it: `TWELVEDATA_API_KEY=your_api_key`.
-
-### 3. Create `time-series.ts` script
-
-> `CreateConfig()` reads `TWELVEDATA_API_KEY` from `process.env` when no
-> `apiKey` argument is passed. The library does not load `.env` files itself —
-> load them in your application (e.g. via `import "dotenv/config";`) or set
-> the variable in your environment before calling `CreateConfig()`.
+### 2. Create `time-series.ts` script
 
 ```typescript
-import "dotenv/config";
-
 import { MarketDataApi, CreateConfig, TwelvedataApiError } from "@twelvedata/twelvedata-node";
 
-const config = CreateConfig();
+const config = CreateConfig("YOUR_API_KEY_HERE"); // defaults to process.env.TWELVEDATA_API_KEY
 const api = new MarketDataApi(config);
 
 async function main() {
@@ -64,15 +54,16 @@ async function main() {
     } catch (error) {
         if (error instanceof TwelvedataApiError) {
             console.error("API error:", error);
+        } else {
+            console.error("Unexpected error:", error);
         }
-        console.error("Unexpected error:", error);
     }
 }
 
 main().catch(console.error);
 ```
 
-### 4. Run the script
+### 3. Run the script
 
 Node.js >= 22:
 ```bash
@@ -101,21 +92,14 @@ the way back up.
 > for more details.
 ### Usage
 
-The client reads `TWELVEDATA_API_KEY` from `process.env` when no `apiKey`
-option is passed. The library does not load `.env` files itself — load them
-in your application (e.g. via `dotenv/config`) or set the variable in your
-environment before calling `connect()`.
-
 ```typescript
-import "dotenv/config";
-
 import {
     TwelvedataWebSocketClient,
     TwelvedataWebSocketError,
     WebSocketAuthError,
 } from "@twelvedata/twelvedata-node";
 
-const client = new TwelvedataWebSocketClient();
+const client = new TwelvedataWebSocketClient({ apiKey: "YOUR_API_KEY_HERE" }); // defaults to process.env.TWELVEDATA_API_KEY
 
 client.on("price", (event) => {
     console.log(`${event.symbol} @ ${event.price} (${event.timestamp})`);

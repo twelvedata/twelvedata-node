@@ -25,49 +25,49 @@ export interface SymbolSearchResponseItem {
    * @type {string}
    * @memberof SymbolSearchResponseItem
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Name of exchange
    * @type {string}
    * @memberof SymbolSearchResponseItem
    */
-  instrumentName?: string;
+  instrumentName: string;
   /**
    * Exchange where instrument is traded
    * @type {string}
    * @memberof SymbolSearchResponseItem
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof SymbolSearchResponseItem
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Time zone where exchange is located
    * @type {string}
    * @memberof SymbolSearchResponseItem
    */
-  exchangeTimezone?: string;
+  exchangeTimezone: string;
   /**
    * Type of instrument
    * @type {string}
    * @memberof SymbolSearchResponseItem
    */
-  instrumentType?: string;
+  instrumentType: string;
   /**
    * Country to which stock exchange belongs to
    * @type {string}
    * @memberof SymbolSearchResponseItem
    */
-  country?: string;
+  country: string;
   /**
    * Currency in which the instrument is traded
    * @type {string}
    * @memberof SymbolSearchResponseItem
    */
-  currency?: string;
+  currency: string;
   /**
    *
    * @type {SymbolSearchResponseItemAccess}
@@ -82,6 +82,17 @@ export interface SymbolSearchResponseItem {
 export function instanceOfSymbolSearchResponseItem(
   value: object,
 ): value is SymbolSearchResponseItem {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("instrumentName" in value) || value["instrumentName"] === undefined)
+    return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("exchangeTimezone" in value) || value["exchangeTimezone"] === undefined)
+    return false;
+  if (!("instrumentType" in value) || value["instrumentType"] === undefined)
+    return false;
+  if (!("country" in value) || value["country"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
   return true;
 }
 
@@ -99,17 +110,14 @@ export function SymbolSearchResponseItemFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    instrumentName:
-      json["instrument_name"] == null ? undefined : json["instrument_name"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    exchangeTimezone:
-      json["exchange_timezone"] == null ? undefined : json["exchange_timezone"],
-    instrumentType:
-      json["instrument_type"] == null ? undefined : json["instrument_type"],
-    country: json["country"] == null ? undefined : json["country"],
-    currency: json["currency"] == null ? undefined : json["currency"],
+    symbol: json["symbol"],
+    instrumentName: json["instrument_name"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
+    exchangeTimezone: json["exchange_timezone"],
+    instrumentType: json["instrument_type"],
+    country: json["country"],
+    currency: json["currency"],
     access:
       json["access"] == null
         ? undefined

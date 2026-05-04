@@ -17,13 +17,13 @@ export interface GetTimeSeriesLn200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesLn200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Natural logarithm value
    * @type {string}
    * @memberof GetTimeSeriesLn200ResponseValuesInner
    */
-  ln?: string;
+  ln: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesLn200ResponseValuesInner {
 export function instanceOfGetTimeSeriesLn200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesLn200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("ln" in value) || value["ln"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesLn200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    ln: json["ln"] == null ? undefined : json["ln"],
+    datetime: json["datetime"],
+    ln: json["ln"],
   };
 }
 

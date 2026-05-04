@@ -17,13 +17,13 @@ export interface InlineObject12ValuesInner {
    * @type {string}
    * @memberof InlineObject12ValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * COSH value
    * @type {string}
    * @memberof InlineObject12ValuesInner
    */
-  cosh?: string;
+  cosh: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface InlineObject12ValuesInner {
 export function instanceOfInlineObject12ValuesInner(
   value: object,
 ): value is InlineObject12ValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("cosh" in value) || value["cosh"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function InlineObject12ValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    cosh: json["cosh"] == null ? undefined : json["cosh"],
+    datetime: json["datetime"],
+    cosh: json["cosh"],
   };
 }
 

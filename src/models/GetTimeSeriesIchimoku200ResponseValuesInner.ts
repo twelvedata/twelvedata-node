@@ -17,7 +17,7 @@ export interface GetTimeSeriesIchimoku200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesIchimoku200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Tenkan-sen value
    * @type {string}
@@ -35,13 +35,13 @@ export interface GetTimeSeriesIchimoku200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesIchimoku200ResponseValuesInner
    */
-  senkouSpanA?: string;
+  senkouSpanA: string;
   /**
    * Senkou span B value
    * @type {string}
    * @memberof GetTimeSeriesIchimoku200ResponseValuesInner
    */
-  senkouSpanB?: string;
+  senkouSpanB: string;
   /**
    * Chikou span value
    * @type {string}
@@ -56,6 +56,11 @@ export interface GetTimeSeriesIchimoku200ResponseValuesInner {
 export function instanceOfGetTimeSeriesIchimoku200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesIchimoku200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("senkouSpanA" in value) || value["senkouSpanA"] === undefined)
+    return false;
+  if (!("senkouSpanB" in value) || value["senkouSpanB"] === undefined)
+    return false;
   return true;
 }
 
@@ -73,13 +78,11 @@ export function GetTimeSeriesIchimoku200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
+    datetime: json["datetime"],
     tenkanSen: json["tenkan_sen"] == null ? undefined : json["tenkan_sen"],
     kijunSen: json["kijun_sen"] == null ? undefined : json["kijun_sen"],
-    senkouSpanA:
-      json["senkou_span_a"] == null ? undefined : json["senkou_span_a"],
-    senkouSpanB:
-      json["senkou_span_b"] == null ? undefined : json["senkou_span_b"],
+    senkouSpanA: json["senkou_span_a"],
+    senkouSpanB: json["senkou_span_b"],
     chikouSpan: json["chikou_span"] == null ? undefined : json["chikou_span"],
   };
 }

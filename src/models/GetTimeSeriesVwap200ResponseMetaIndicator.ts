@@ -17,7 +17,7 @@ export interface GetTimeSeriesVwap200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesVwap200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Standard deviation time period
    * @type {number}
@@ -38,6 +38,7 @@ export interface GetTimeSeriesVwap200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesVwap200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesVwap200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
   return true;
 }
 
@@ -55,7 +56,7 @@ export function GetTimeSeriesVwap200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
+    name: json["name"],
     sdTimePeriod:
       json["sd_time_period"] == null ? undefined : json["sd_time_period"],
     sd: json["sd"] == null ? undefined : json["sd"],

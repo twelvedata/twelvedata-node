@@ -9,8 +9,8 @@ Name | Type
 ------------ | -------------
 `initialInvestment` | number
 `additionalInvestment` | number
-`initialIraInvestment` | object
-`additionalIraInvestment` | object
+`initialIraInvestment` | number
+`additionalIraInvestment` | number
 
 ## Example
 

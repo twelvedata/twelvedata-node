@@ -17,19 +17,19 @@ export interface GetTimeSeriesAroon200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesAroon200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Aroon down value
    * @type {string}
    * @memberof GetTimeSeriesAroon200ResponseValuesInner
    */
-  aroonDown?: string;
+  aroonDown: string;
   /**
    * Aroon up value
    * @type {string}
    * @memberof GetTimeSeriesAroon200ResponseValuesInner
    */
-  aroonUp?: string;
+  aroonUp: string;
 }
 
 /**
@@ -38,6 +38,9 @@ export interface GetTimeSeriesAroon200ResponseValuesInner {
 export function instanceOfGetTimeSeriesAroon200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesAroon200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("aroonDown" in value) || value["aroonDown"] === undefined) return false;
+  if (!("aroonUp" in value) || value["aroonUp"] === undefined) return false;
   return true;
 }
 
@@ -55,9 +58,9 @@ export function GetTimeSeriesAroon200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    aroonDown: json["aroon_down"] == null ? undefined : json["aroon_down"],
-    aroonUp: json["aroon_up"] == null ? undefined : json["aroon_up"],
+    datetime: json["datetime"],
+    aroonDown: json["aroon_down"],
+    aroonUp: json["aroon_up"],
   };
 }
 

@@ -6,7 +6,9 @@
 
 Name | Type
 ------------ | -------------
+`count` | number
 `data` | [Array&lt;ModelIndex&gt;](ModelIndex.md)
+`status` | string
 
 ## Example
 
@@ -15,7 +17,9 @@ import type { InlineObject1 } from '@twelvedata/twelvedata-node'
 
 // TODO: Update the object below with actual values
 const example = {
+  "count": null,
   "data": null,
+  "status": null,
 } satisfies InlineObject1
 
 console.log(example)

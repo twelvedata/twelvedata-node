@@ -17,13 +17,13 @@ export interface GetTimeSeriesMin200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMin200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Min value
    * @type {string}
    * @memberof GetTimeSeriesMin200ResponseValuesInner
    */
-  min?: string;
+  min: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesMin200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMin200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMin200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("min" in value) || value["min"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesMin200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    min: json["min"] == null ? undefined : json["min"],
+    datetime: json["datetime"],
+    min: json["min"],
   };
 }
 

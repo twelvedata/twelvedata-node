@@ -17,13 +17,13 @@ export interface GetTimeSeriesPivotPointsHL200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesPivotPointsHL200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * The time period used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesPivotPointsHL200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesPivotPointsHL200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesPivotPointsHL200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesPivotPointsHL200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
   return true;
 }
 
@@ -52,8 +55,8 @@ export function GetTimeSeriesPivotPointsHL200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
+    name: json["name"],
+    timePeriod: json["time_period"],
   };
 }
 

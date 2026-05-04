@@ -17,25 +17,25 @@ export interface GetTimeSeriesMama200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesMama200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesMama200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * The limit for the fast moving average
    * @type {number}
    * @memberof GetTimeSeriesMama200ResponseMetaIndicator
    */
-  fastLimit?: number;
+  fastLimit: number;
   /**
    * The limit for the slow moving average
    * @type {number}
    * @memberof GetTimeSeriesMama200ResponseMetaIndicator
    */
-  slowLimit?: number;
+  slowLimit: number;
 }
 
 /**
@@ -44,6 +44,11 @@ export interface GetTimeSeriesMama200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesMama200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesMama200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("fastLimit" in value) || value["fastLimit"] === undefined) return false;
+  if (!("slowLimit" in value) || value["slowLimit"] === undefined) return false;
   return true;
 }
 
@@ -61,10 +66,10 @@ export function GetTimeSeriesMama200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    fastLimit: json["fast_limit"] == null ? undefined : json["fast_limit"],
-    slowLimit: json["slow_limit"] == null ? undefined : json["slow_limit"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    fastLimit: json["fast_limit"],
+    slowLimit: json["slow_limit"],
   };
 }
 

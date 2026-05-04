@@ -17,13 +17,13 @@ export interface GetTimeSeriesCci200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesCci200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * CCI value
    * @type {string}
    * @memberof GetTimeSeriesCci200ResponseValuesInner
    */
-  cci?: string;
+  cci: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesCci200ResponseValuesInner {
 export function instanceOfGetTimeSeriesCci200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesCci200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("cci" in value) || value["cci"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesCci200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    cci: json["cci"] == null ? undefined : json["cci"],
+    datetime: json["datetime"],
+    cci: json["cci"],
   };
 }
 

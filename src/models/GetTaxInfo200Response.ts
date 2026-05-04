@@ -32,19 +32,19 @@ export interface GetTaxInfo200Response {
    * @type {GetTaxInfo200ResponseMeta}
    * @memberof GetTaxInfo200Response
    */
-  meta?: GetTaxInfo200ResponseMeta;
+  meta: GetTaxInfo200ResponseMeta;
   /**
    *
    * @type {GetTaxInfo200ResponseData}
    * @memberof GetTaxInfo200Response
    */
-  data?: GetTaxInfo200ResponseData;
+  data: GetTaxInfo200ResponseData;
   /**
    * The status of the request, e.g., `ok`, `error`
    * @type {string}
    * @memberof GetTaxInfo200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTaxInfo200Response {
 export function instanceOfGetTaxInfo200Response(
   value: object,
 ): value is GetTaxInfo200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,15 +73,9 @@ export function GetTaxInfo200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTaxInfo200ResponseMetaFromJSON(json["meta"]),
-    data:
-      json["data"] == null
-        ? undefined
-        : GetTaxInfo200ResponseDataFromJSON(json["data"]),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTaxInfo200ResponseMetaFromJSON(json["meta"]),
+    data: GetTaxInfo200ResponseDataFromJSON(json["data"]),
+    status: json["status"],
   };
 }
 

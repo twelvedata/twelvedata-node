@@ -17,43 +17,43 @@ export interface CountryResponseItem {
    * @type {string}
    * @memberof CountryResponseItem
    */
-  iso2?: string;
+  iso2: string;
   /**
    * Three-letter country code defined in ISO 3166
    * @type {string}
    * @memberof CountryResponseItem
    */
-  iso3?: string;
+  iso3: string;
   /**
    * Numeric country code defined in ISO 3166
    * @type {string}
    * @memberof CountryResponseItem
    */
-  numeric?: string;
+  numeric: string;
   /**
    * The full name of country
    * @type {string}
    * @memberof CountryResponseItem
    */
-  name?: string;
+  name: string;
   /**
    * Official name of country
    * @type {string}
    * @memberof CountryResponseItem
    */
-  officialName?: string;
+  officialName: string;
   /**
    * Capital of country
    * @type {string}
    * @memberof CountryResponseItem
    */
-  capital?: string;
+  capital: string;
   /**
    * Currency of country
    * @type {string}
    * @memberof CountryResponseItem
    */
-  currency?: string;
+  currency: string;
 }
 
 /**
@@ -62,6 +62,14 @@ export interface CountryResponseItem {
 export function instanceOfCountryResponseItem(
   value: object,
 ): value is CountryResponseItem {
+  if (!("iso2" in value) || value["iso2"] === undefined) return false;
+  if (!("iso3" in value) || value["iso3"] === undefined) return false;
+  if (!("numeric" in value) || value["numeric"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("officialName" in value) || value["officialName"] === undefined)
+    return false;
+  if (!("capital" in value) || value["capital"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
   return true;
 }
 
@@ -77,14 +85,13 @@ export function CountryResponseItemFromJSONTyped(
     return json;
   }
   return {
-    iso2: json["iso2"] == null ? undefined : json["iso2"],
-    iso3: json["iso3"] == null ? undefined : json["iso3"],
-    numeric: json["numeric"] == null ? undefined : json["numeric"],
-    name: json["name"] == null ? undefined : json["name"],
-    officialName:
-      json["official_name"] == null ? undefined : json["official_name"],
-    capital: json["capital"] == null ? undefined : json["capital"],
-    currency: json["currency"] == null ? undefined : json["currency"],
+    iso2: json["iso2"],
+    iso3: json["iso3"],
+    numeric: json["numeric"],
+    name: json["name"],
+    officialName: json["official_name"],
+    capital: json["capital"],
+    currency: json["currency"],
   };
 }
 

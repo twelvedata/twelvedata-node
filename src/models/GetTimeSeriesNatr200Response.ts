@@ -32,19 +32,19 @@ export interface GetTimeSeriesNatr200Response {
    * @type {GetTimeSeriesNatr200ResponseMeta}
    * @memberof GetTimeSeriesNatr200Response
    */
-  meta?: GetTimeSeriesNatr200ResponseMeta;
+  meta: GetTimeSeriesNatr200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesNatr200ResponseValuesInner>}
    * @memberof GetTimeSeriesNatr200Response
    */
-  values?: Array<GetTimeSeriesNatr200ResponseValuesInner>;
+  values: Array<GetTimeSeriesNatr200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesNatr200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesNatr200Response {
 export function instanceOfGetTimeSeriesNatr200Response(
   value: object,
 ): value is GetTimeSeriesNatr200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesNatr200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesNatr200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesNatr200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesNatr200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesNatr200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesNatr200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesNatr200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesNatr200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesNatr200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

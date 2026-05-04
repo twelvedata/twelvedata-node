@@ -17,13 +17,13 @@ export interface InlineObject9ValuesInner {
    * @type {string}
    * @memberof InlineObject9ValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * ASIN value
    * @type {string}
    * @memberof InlineObject9ValuesInner
    */
-  asin?: string;
+  asin: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface InlineObject9ValuesInner {
 export function instanceOfInlineObject9ValuesInner(
   value: object,
 ): value is InlineObject9ValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("asin" in value) || value["asin"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function InlineObject9ValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    asin: json["asin"] == null ? undefined : json["asin"],
+    datetime: json["datetime"],
+    asin: json["asin"],
   };
 }
 

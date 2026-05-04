@@ -17,37 +17,37 @@ export interface GetTimeSeriesIchimoku200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesIchimoku200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * The time period used for generating the conversation line
    * @type {number}
    * @memberof GetTimeSeriesIchimoku200ResponseMetaIndicator
    */
-  conversionLinePeriod?: number;
+  conversionLinePeriod: number;
   /**
    * The time period used for generating the base line
    * @type {number}
    * @memberof GetTimeSeriesIchimoku200ResponseMetaIndicator
    */
-  baseLinePeriod?: number;
+  baseLinePeriod: number;
   /**
    * The time period used for generating the leading span B line
    * @type {number}
    * @memberof GetTimeSeriesIchimoku200ResponseMetaIndicator
    */
-  leadingSpanBPeriod?: number;
+  leadingSpanBPeriod: number;
   /**
    * The time period used for generating the lagging span line
    * @type {number}
    * @memberof GetTimeSeriesIchimoku200ResponseMetaIndicator
    */
-  laggingSpanPeriod?: number;
+  laggingSpanPeriod: number;
   /**
    * Indicates whether to include ahead span period
    * @type {boolean}
    * @memberof GetTimeSeriesIchimoku200ResponseMetaIndicator
    */
-  includeAheadSpanPeriod?: boolean;
+  includeAheadSpanPeriod: boolean;
 }
 
 /**
@@ -56,6 +56,29 @@ export interface GetTimeSeriesIchimoku200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesIchimoku200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesIchimoku200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (
+    !("conversionLinePeriod" in value) ||
+    value["conversionLinePeriod"] === undefined
+  )
+    return false;
+  if (!("baseLinePeriod" in value) || value["baseLinePeriod"] === undefined)
+    return false;
+  if (
+    !("leadingSpanBPeriod" in value) ||
+    value["leadingSpanBPeriod"] === undefined
+  )
+    return false;
+  if (
+    !("laggingSpanPeriod" in value) ||
+    value["laggingSpanPeriod"] === undefined
+  )
+    return false;
+  if (
+    !("includeAheadSpanPeriod" in value) ||
+    value["includeAheadSpanPeriod"] === undefined
+  )
+    return false;
   return true;
 }
 
@@ -76,25 +99,12 @@ export function GetTimeSeriesIchimoku200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    conversionLinePeriod:
-      json["conversion_line_period"] == null
-        ? undefined
-        : json["conversion_line_period"],
-    baseLinePeriod:
-      json["base_line_period"] == null ? undefined : json["base_line_period"],
-    leadingSpanBPeriod:
-      json["leading_span_b_period"] == null
-        ? undefined
-        : json["leading_span_b_period"],
-    laggingSpanPeriod:
-      json["lagging_span_period"] == null
-        ? undefined
-        : json["lagging_span_period"],
-    includeAheadSpanPeriod:
-      json["include_ahead_span_period"] == null
-        ? undefined
-        : json["include_ahead_span_period"],
+    name: json["name"],
+    conversionLinePeriod: json["conversion_line_period"],
+    baseLinePeriod: json["base_line_period"],
+    leadingSpanBPeriod: json["leading_span_b_period"],
+    laggingSpanPeriod: json["lagging_span_period"],
+    includeAheadSpanPeriod: json["include_ahead_span_period"],
   };
 }
 

@@ -17,13 +17,13 @@ export interface GetTimeSeriesCmo200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesCmo200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * CMO value
    * @type {string}
    * @memberof GetTimeSeriesCmo200ResponseValuesInner
    */
-  cmo?: string;
+  cmo: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesCmo200ResponseValuesInner {
 export function instanceOfGetTimeSeriesCmo200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesCmo200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("cmo" in value) || value["cmo"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesCmo200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    cmo: json["cmo"] == null ? undefined : json["cmo"],
+    datetime: json["datetime"],
+    cmo: json["cmo"],
   };
 }
 

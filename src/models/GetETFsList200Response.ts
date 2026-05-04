@@ -25,13 +25,13 @@ export interface GetETFsList200Response {
    * @type {GetETFsList200ResponseResult}
    * @memberof GetETFsList200Response
    */
-  result?: GetETFsList200ResponseResult;
+  result: GetETFsList200ResponseResult;
   /**
    * Status of the response
    * @type {string}
    * @memberof GetETFsList200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetETFsList200Response {
 export function instanceOfGetETFsList200Response(
   value: object,
 ): value is GetETFsList200Response {
+  if (!("result" in value) || value["result"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +59,8 @@ export function GetETFsList200ResponseFromJSONTyped(
     return json;
   }
   return {
-    result:
-      json["result"] == null
-        ? undefined
-        : GetETFsList200ResponseResultFromJSON(json["result"]),
-    status: json["status"] == null ? undefined : json["status"],
+    result: GetETFsList200ResponseResultFromJSON(json["result"]),
+    status: json["status"],
   };
 }
 

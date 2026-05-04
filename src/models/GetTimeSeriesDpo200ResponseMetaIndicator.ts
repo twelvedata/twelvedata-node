@@ -17,25 +17,25 @@ export interface GetTimeSeriesDpo200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesDpo200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesDpo200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * Number of periods to average over
    * @type {number}
    * @memberof GetTimeSeriesDpo200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
   /**
    * Specifies if there should be a shift to match the current price
    * @type {boolean}
    * @memberof GetTimeSeriesDpo200ResponseMetaIndicator
    */
-  centered?: boolean;
+  centered: boolean;
 }
 
 /**
@@ -44,6 +44,12 @@ export interface GetTimeSeriesDpo200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesDpo200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesDpo200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
+  if (!("centered" in value) || value["centered"] === undefined) return false;
   return true;
 }
 
@@ -61,10 +67,10 @@ export function GetTimeSeriesDpo200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
-    centered: json["centered"] == null ? undefined : json["centered"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    timePeriod: json["time_period"],
+    centered: json["centered"],
   };
 }
 

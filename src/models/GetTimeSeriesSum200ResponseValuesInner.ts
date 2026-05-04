@@ -17,13 +17,13 @@ export interface GetTimeSeriesSum200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesSum200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Sum value
    * @type {string}
    * @memberof GetTimeSeriesSum200ResponseValuesInner
    */
-  sum?: string;
+  sum: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesSum200ResponseValuesInner {
 export function instanceOfGetTimeSeriesSum200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesSum200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("sum" in value) || value["sum"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesSum200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    sum: json["sum"] == null ? undefined : json["sum"],
+    datetime: json["datetime"],
+    sum: json["sum"],
   };
 }
 

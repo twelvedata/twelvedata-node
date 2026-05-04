@@ -25,49 +25,49 @@ export interface GetTimeSeriesRocr200ResponseMeta {
    * @type {string}
    * @memberof GetTimeSeriesRocr200ResponseMeta
    */
-  symbol?: string;
+  symbol: string;
   /**
    * The time gap between consecutive data points.
    * @type {string}
    * @memberof GetTimeSeriesRocr200ResponseMeta
    */
-  interval?: string;
+  interval: string;
   /**
    * The currency of a traded instrument.
    * @type {string}
    * @memberof GetTimeSeriesRocr200ResponseMeta
    */
-  currency?: string;
+  currency: string;
   /**
    * The timezone of the exchange where the instrument is traded.
    * @type {string}
    * @memberof GetTimeSeriesRocr200ResponseMeta
    */
-  exchangeTimezone?: string;
+  exchangeTimezone: string;
   /**
    * The exchange name where the instrument is traded.
    * @type {string}
    * @memberof GetTimeSeriesRocr200ResponseMeta
    */
-  exchange?: string;
+  exchange: string;
   /**
    * The Market Identifier Code (MIC) of the exchange where the instrument is traded.
    * @type {string}
    * @memberof GetTimeSeriesRocr200ResponseMeta
    */
-  micCode?: string;
+  micCode: string;
   /**
    * The asset class to which the instrument belongs.
    * @type {string}
    * @memberof GetTimeSeriesRocr200ResponseMeta
    */
-  type?: string;
+  type: string;
   /**
    *
    * @type {GetTimeSeriesRocr200ResponseMetaIndicator}
    * @memberof GetTimeSeriesRocr200ResponseMeta
    */
-  indicator?: GetTimeSeriesRocr200ResponseMetaIndicator;
+  indicator: GetTimeSeriesRocr200ResponseMetaIndicator;
 }
 
 /**
@@ -76,6 +76,15 @@ export interface GetTimeSeriesRocr200ResponseMeta {
 export function instanceOfGetTimeSeriesRocr200ResponseMeta(
   value: object,
 ): value is GetTimeSeriesRocr200ResponseMeta {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("interval" in value) || value["interval"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
+  if (!("exchangeTimezone" in value) || value["exchangeTimezone"] === undefined)
+    return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("type" in value) || value["type"] === undefined) return false;
+  if (!("indicator" in value) || value["indicator"] === undefined) return false;
   return true;
 }
 
@@ -93,18 +102,16 @@ export function GetTimeSeriesRocr200ResponseMetaFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    interval: json["interval"] == null ? undefined : json["interval"],
-    currency: json["currency"] == null ? undefined : json["currency"],
-    exchangeTimezone:
-      json["exchange_timezone"] == null ? undefined : json["exchange_timezone"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    type: json["type"] == null ? undefined : json["type"],
-    indicator:
-      json["indicator"] == null
-        ? undefined
-        : GetTimeSeriesRocr200ResponseMetaIndicatorFromJSON(json["indicator"]),
+    symbol: json["symbol"],
+    interval: json["interval"],
+    currency: json["currency"],
+    exchangeTimezone: json["exchange_timezone"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
+    type: json["type"],
+    indicator: GetTimeSeriesRocr200ResponseMetaIndicatorFromJSON(
+      json["indicator"],
+    ),
   };
 }
 

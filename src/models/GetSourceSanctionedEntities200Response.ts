@@ -25,19 +25,19 @@ export interface GetSourceSanctionedEntities200Response {
    * @type {Array<ResponseSanctionedEntitiy>}
    * @memberof GetSourceSanctionedEntities200Response
    */
-  sanctions?: Array<ResponseSanctionedEntitiy>;
+  sanctions: Array<ResponseSanctionedEntitiy>;
   /**
    * Total number of sanctioned entities
    * @type {number}
    * @memberof GetSourceSanctionedEntities200Response
    */
-  count?: number;
+  count: number;
   /**
    * Response status
    * @type {string}
    * @memberof GetSourceSanctionedEntities200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -46,6 +46,9 @@ export interface GetSourceSanctionedEntities200Response {
 export function instanceOfGetSourceSanctionedEntities200Response(
   value: object,
 ): value is GetSourceSanctionedEntities200Response {
+  if (!("sanctions" in value) || value["sanctions"] === undefined) return false;
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -63,14 +66,11 @@ export function GetSourceSanctionedEntities200ResponseFromJSONTyped(
     return json;
   }
   return {
-    sanctions:
-      json["sanctions"] == null
-        ? undefined
-        : (json["sanctions"] as Array<any>).map(
-            ResponseSanctionedEntitiyFromJSON,
-          ),
-    count: json["count"] == null ? undefined : json["count"],
-    status: json["status"] == null ? undefined : json["status"],
+    sanctions: (json["sanctions"] as Array<any>).map(
+      ResponseSanctionedEntitiyFromJSON,
+    ),
+    count: json["count"],
+    status: json["status"],
   };
 }
 
@@ -89,12 +89,9 @@ export function GetSourceSanctionedEntities200ResponseToJSONTyped(
   }
 
   return {
-    sanctions:
-      value["sanctions"] == null
-        ? undefined
-        : (value["sanctions"] as Array<any>).map(
-            ResponseSanctionedEntitiyToJSON,
-          ),
+    sanctions: (value["sanctions"] as Array<any>).map(
+      ResponseSanctionedEntitiyToJSON,
+    ),
     count: value["count"],
     status: value["status"],
   };

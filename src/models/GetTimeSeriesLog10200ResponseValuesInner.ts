@@ -17,13 +17,13 @@ export interface GetTimeSeriesLog10200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesLog10200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Log10 value
    * @type {string}
    * @memberof GetTimeSeriesLog10200ResponseValuesInner
    */
-  log10?: string;
+  log10: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesLog10200ResponseValuesInner {
 export function instanceOfGetTimeSeriesLog10200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesLog10200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("log10" in value) || value["log10"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesLog10200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    log10: json["log10"] == null ? undefined : json["log10"],
+    datetime: json["datetime"],
+    log10: json["log10"],
   };
 }
 

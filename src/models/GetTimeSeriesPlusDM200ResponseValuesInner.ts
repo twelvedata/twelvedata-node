@@ -17,13 +17,13 @@ export interface GetTimeSeriesPlusDM200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesPlusDM200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * plus_dm value
    * @type {string}
    * @memberof GetTimeSeriesPlusDM200ResponseValuesInner
    */
-  plusDm?: string;
+  plusDm: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesPlusDM200ResponseValuesInner {
 export function instanceOfGetTimeSeriesPlusDM200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesPlusDM200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("plusDm" in value) || value["plusDm"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesPlusDM200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    plusDm: json["plus_dm"] == null ? undefined : json["plus_dm"],
+    datetime: json["datetime"],
+    plusDm: json["plus_dm"],
   };
 }
 

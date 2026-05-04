@@ -17,25 +17,25 @@ export interface PressRelease {
    * @type {string}
    * @memberof PressRelease
    */
-  id?: string;
+  id: string;
   /**
    * Press release date in ISO 8601 format
    * @type {string}
    * @memberof PressRelease
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Press release title
    * @type {string}
    * @memberof PressRelease
    */
-  title?: string;
+  title: string;
   /**
    * Press release body in html format
    * @type {string}
    * @memberof PressRelease
    */
-  body?: string;
+  body: string;
   /**
    * Custom style applied to the release
    * @type {string}
@@ -54,6 +54,10 @@ export interface PressRelease {
  * Check if a given object implements the PressRelease interface.
  */
 export function instanceOfPressRelease(value: object): value is PressRelease {
+  if (!("id" in value) || value["id"] === undefined) return false;
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("title" in value) || value["title"] === undefined) return false;
+  if (!("body" in value) || value["body"] === undefined) return false;
   return true;
 }
 
@@ -69,10 +73,10 @@ export function PressReleaseFromJSONTyped(
     return json;
   }
   return {
-    id: json["id"] == null ? undefined : json["id"],
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    title: json["title"] == null ? undefined : json["title"],
-    body: json["body"] == null ? undefined : json["body"],
+    id: json["id"],
+    datetime: json["datetime"],
+    title: json["title"],
+    body: json["body"],
     style: json["style"] == null ? undefined : json["style"],
     language: json["language"] == null ? undefined : json["language"],
   };

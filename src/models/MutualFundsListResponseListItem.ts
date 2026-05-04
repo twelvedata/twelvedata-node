@@ -17,31 +17,31 @@ export interface MutualFundsListResponseListItem {
    * @type {string}
    * @memberof MutualFundsListResponseListItem
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Fund name
    * @type {string}
    * @memberof MutualFundsListResponseListItem
    */
-  name?: string;
+  name: string;
   /**
    * Country of fund incorporation
    * @type {string}
    * @memberof MutualFundsListResponseListItem
    */
-  country?: string;
+  country: string;
   /**
    * Investment company that manages the fund
    * @type {string}
    * @memberof MutualFundsListResponseListItem
    */
-  fundFamily?: string;
+  fundFamily: string;
   /**
    * Type of fund
    * @type {string}
    * @memberof MutualFundsListResponseListItem
    */
-  fundType?: string;
+  fundType: string;
   /**
    * Performance rating from `0` to `5`
    * @type {number}
@@ -59,19 +59,19 @@ export interface MutualFundsListResponseListItem {
    * @type {string}
    * @memberof MutualFundsListResponseListItem
    */
-  currency?: string;
+  currency: string;
   /**
    * Exchange name where the fund is listed
    * @type {string}
    * @memberof MutualFundsListResponseListItem
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof MutualFundsListResponseListItem
    */
-  micCode?: string;
+  micCode: string;
 }
 
 /**
@@ -80,6 +80,15 @@ export interface MutualFundsListResponseListItem {
 export function instanceOfMutualFundsListResponseListItem(
   value: object,
 ): value is MutualFundsListResponseListItem {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("country" in value) || value["country"] === undefined) return false;
+  if (!("fundFamily" in value) || value["fundFamily"] === undefined)
+    return false;
+  if (!("fundType" in value) || value["fundType"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
   return true;
 }
 
@@ -97,19 +106,19 @@ export function MutualFundsListResponseListItemFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    country: json["country"] == null ? undefined : json["country"],
-    fundFamily: json["fund_family"] == null ? undefined : json["fund_family"],
-    fundType: json["fund_type"] == null ? undefined : json["fund_type"],
+    symbol: json["symbol"],
+    name: json["name"],
+    country: json["country"],
+    fundFamily: json["fund_family"],
+    fundType: json["fund_type"],
     performanceRating:
       json["performance_rating"] == null
         ? undefined
         : json["performance_rating"],
     riskRating: json["risk_rating"] == null ? undefined : json["risk_rating"],
-    currency: json["currency"] == null ? undefined : json["currency"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
+    currency: json["currency"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
   };
 }
 

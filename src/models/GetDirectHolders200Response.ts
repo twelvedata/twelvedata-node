@@ -32,13 +32,13 @@ export interface GetDirectHolders200Response {
    * @type {GetDirectHolders200ResponseMeta}
    * @memberof GetDirectHolders200Response
    */
-  meta?: GetDirectHolders200ResponseMeta;
+  meta: GetDirectHolders200ResponseMeta;
   /**
    * List of direct holders for the financial instrument
    * @type {Array<DirectHolderItem>}
    * @memberof GetDirectHolders200Response
    */
-  directHolders?: Array<DirectHolderItem>;
+  directHolders: Array<DirectHolderItem>;
 }
 
 /**
@@ -47,6 +47,9 @@ export interface GetDirectHolders200Response {
 export function instanceOfGetDirectHolders200Response(
   value: object,
 ): value is GetDirectHolders200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("directHolders" in value) || value["directHolders"] === undefined)
+    return false;
   return true;
 }
 
@@ -64,14 +67,10 @@ export function GetDirectHolders200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetDirectHolders200ResponseMetaFromJSON(json["meta"]),
-    directHolders:
-      json["direct_holders"] == null
-        ? undefined
-        : (json["direct_holders"] as Array<any>).map(DirectHolderItemFromJSON),
+    meta: GetDirectHolders200ResponseMetaFromJSON(json["meta"]),
+    directHolders: (json["direct_holders"] as Array<any>).map(
+      DirectHolderItemFromJSON,
+    ),
   };
 }
 
@@ -91,9 +90,8 @@ export function GetDirectHolders200ResponseToJSONTyped(
 
   return {
     meta: GetDirectHolders200ResponseMetaToJSON(value["meta"]),
-    direct_holders:
-      value["directHolders"] == null
-        ? undefined
-        : (value["directHolders"] as Array<any>).map(DirectHolderItemToJSON),
+    direct_holders: (value["directHolders"] as Array<any>).map(
+      DirectHolderItemToJSON,
+    ),
   };
 }

@@ -17,13 +17,13 @@ export interface GetTimeSeriesBeta200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesBeta200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Beta value
    * @type {string}
    * @memberof GetTimeSeriesBeta200ResponseValuesInner
    */
-  beta?: string;
+  beta: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesBeta200ResponseValuesInner {
 export function instanceOfGetTimeSeriesBeta200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesBeta200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("beta" in value) || value["beta"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesBeta200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    beta: json["beta"] == null ? undefined : json["beta"],
+    datetime: json["datetime"],
+    beta: json["beta"],
   };
 }
 

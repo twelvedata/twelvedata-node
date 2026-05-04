@@ -17,37 +17,37 @@ export interface ETFsListResponseItem {
    * @type {string}
    * @memberof ETFsListResponseItem
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Full name of the fund
    * @type {string}
    * @memberof ETFsListResponseItem
    */
-  name?: string;
+  name: string;
   /**
    * Country of fund incorporation
    * @type {string}
    * @memberof ETFsListResponseItem
    */
-  country?: string;
+  country: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof ETFsListResponseItem
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Investment company that manages the fund
    * @type {string}
    * @memberof ETFsListResponseItem
    */
-  fundFamily?: string;
+  fundFamily: string;
   /**
    * Type of fund
    * @type {string}
    * @memberof ETFsListResponseItem
    */
-  fundType?: string;
+  fundType: string;
 }
 
 /**
@@ -56,6 +56,13 @@ export interface ETFsListResponseItem {
 export function instanceOfETFsListResponseItem(
   value: object,
 ): value is ETFsListResponseItem {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("country" in value) || value["country"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("fundFamily" in value) || value["fundFamily"] === undefined)
+    return false;
+  if (!("fundType" in value) || value["fundType"] === undefined) return false;
   return true;
 }
 
@@ -71,12 +78,12 @@ export function ETFsListResponseItemFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    country: json["country"] == null ? undefined : json["country"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    fundFamily: json["fund_family"] == null ? undefined : json["fund_family"],
-    fundType: json["fund_type"] == null ? undefined : json["fund_type"],
+    symbol: json["symbol"],
+    name: json["name"],
+    country: json["country"],
+    micCode: json["mic_code"],
+    fundFamily: json["fund_family"],
+    fundType: json["fund_type"],
   };
 }
 

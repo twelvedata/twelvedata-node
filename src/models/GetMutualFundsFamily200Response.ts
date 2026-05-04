@@ -17,13 +17,13 @@ export interface GetMutualFundsFamily200Response {
    * @type {{ [key: string]: Array<string>; }}
    * @memberof GetMutualFundsFamily200Response
    */
-  result?: { [key: string]: Array<string> };
+  result: { [key: string]: Array<string> };
   /**
    * Response status
    * @type {string}
    * @memberof GetMutualFundsFamily200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetMutualFundsFamily200Response {
 export function instanceOfGetMutualFundsFamily200Response(
   value: object,
 ): value is GetMutualFundsFamily200Response {
+  if (!("result" in value) || value["result"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetMutualFundsFamily200ResponseFromJSONTyped(
     return json;
   }
   return {
-    result: json["result"] == null ? undefined : json["result"],
-    status: json["status"] == null ? undefined : json["status"],
+    result: json["result"],
+    status: json["status"],
   };
 }
 

@@ -7,6 +7,7 @@
 Name | Type
 ------------ | -------------
 `data` | [Array&lt;StockExchange&gt;](StockExchange.md)
+`status` | string
 
 ## Example
 
@@ -16,6 +17,7 @@ import type { InlineObject7 } from '@twelvedata/twelvedata-node'
 // TODO: Update the object below with actual values
 const example = {
   "data": null,
+  "status": null,
 } satisfies InlineObject7
 
 console.log(example)

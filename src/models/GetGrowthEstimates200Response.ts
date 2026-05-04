@@ -32,7 +32,7 @@ export interface GetGrowthEstimates200Response {
    * @type {GetEarningsEstimate200ResponseMeta}
    * @memberof GetGrowthEstimates200Response
    */
-  meta?: GetEarningsEstimate200ResponseMeta;
+  meta: GetEarningsEstimate200ResponseMeta;
   /**
    *
    * @type {GetGrowthEstimates200ResponseGrowthEstimates}
@@ -44,7 +44,7 @@ export interface GetGrowthEstimates200Response {
    * @type {string}
    * @memberof GetGrowthEstimates200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,8 @@ export interface GetGrowthEstimates200Response {
 export function instanceOfGetGrowthEstimates200Response(
   value: object,
 ): value is GetGrowthEstimates200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +72,14 @@ export function GetGrowthEstimates200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetEarningsEstimate200ResponseMetaFromJSON(json["meta"]),
+    meta: GetEarningsEstimate200ResponseMetaFromJSON(json["meta"]),
     growthEstimates:
       json["growth_estimates"] == null
         ? undefined
         : GetGrowthEstimates200ResponseGrowthEstimatesFromJSON(
             json["growth_estimates"],
           ),
-    status: json["status"] == null ? undefined : json["status"],
+    status: json["status"],
   };
 }
 

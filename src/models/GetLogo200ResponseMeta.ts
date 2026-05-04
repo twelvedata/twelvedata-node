@@ -17,7 +17,7 @@ export interface GetLogo200ResponseMeta {
    * @type {string}
    * @memberof GetLogo200ResponseMeta
    */
-  symbol?: string;
+  symbol: string;
   /**
    * The exchange where the instrument is traded (for `crypto` only)
    * @type {string}
@@ -32,6 +32,7 @@ export interface GetLogo200ResponseMeta {
 export function instanceOfGetLogo200ResponseMeta(
   value: object,
 ): value is GetLogo200ResponseMeta {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
   return true;
 }
 
@@ -49,7 +50,7 @@ export function GetLogo200ResponseMetaFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
+    symbol: json["symbol"],
     exchange: json["exchange"] == null ? undefined : json["exchange"],
   };
 }

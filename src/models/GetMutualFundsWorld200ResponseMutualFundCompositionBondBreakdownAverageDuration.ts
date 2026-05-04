@@ -14,10 +14,10 @@ import { mapValues } from "../runtime";
 export interface GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration {
   /**
    * Average duration of bond holding of a fund
-   * @type {object}
+   * @type {number}
    * @memberof GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration
    */
-  fund?: object;
+  fund?: number;
   /**
    * Average duration of bond holding of funds in the same category
    * @type {number}

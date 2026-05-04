@@ -17,55 +17,55 @@ export interface GetTimeSeriesSarExt200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesSarExt200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * The initial value for the indicator calculation
    * @type {number}
    * @memberof GetTimeSeriesSarExt200ResponseMetaIndicator
    */
-  startValue?: number;
+  startValue: number;
   /**
    * The adjustment applied when the indicator's direction changes
    * @type {number}
    * @memberof GetTimeSeriesSarExt200ResponseMetaIndicator
    */
-  offsetOnReverse?: number;
+  offsetOnReverse: number;
   /**
    * The maximum acceleration value for long positions
    * @type {number}
    * @memberof GetTimeSeriesSarExt200ResponseMetaIndicator
    */
-  accelerationLimitLong?: number;
+  accelerationLimitLong: number;
   /**
    * The acceleration value for long positions
    * @type {number}
    * @memberof GetTimeSeriesSarExt200ResponseMetaIndicator
    */
-  accelerationLong?: number;
+  accelerationLong: number;
   /**
    * The highest allowed acceleration for long positions
    * @type {number}
    * @memberof GetTimeSeriesSarExt200ResponseMetaIndicator
    */
-  accelerationMaxLong?: number;
+  accelerationMaxLong: number;
   /**
    * The maximum acceleration value for short positions
    * @type {number}
    * @memberof GetTimeSeriesSarExt200ResponseMetaIndicator
    */
-  accelerationLimitShort?: number;
+  accelerationLimitShort: number;
   /**
    * The acceleration value for short positions
    * @type {number}
    * @memberof GetTimeSeriesSarExt200ResponseMetaIndicator
    */
-  accelerationShort?: number;
+  accelerationShort: number;
   /**
    * The highest allowed acceleration for short positions
    * @type {number}
    * @memberof GetTimeSeriesSarExt200ResponseMetaIndicator
    */
-  accelerationMaxShort?: number;
+  accelerationMaxShort: number;
 }
 
 /**
@@ -74,6 +74,38 @@ export interface GetTimeSeriesSarExt200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesSarExt200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesSarExt200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("startValue" in value) || value["startValue"] === undefined)
+    return false;
+  if (!("offsetOnReverse" in value) || value["offsetOnReverse"] === undefined)
+    return false;
+  if (
+    !("accelerationLimitLong" in value) ||
+    value["accelerationLimitLong"] === undefined
+  )
+    return false;
+  if (!("accelerationLong" in value) || value["accelerationLong"] === undefined)
+    return false;
+  if (
+    !("accelerationMaxLong" in value) ||
+    value["accelerationMaxLong"] === undefined
+  )
+    return false;
+  if (
+    !("accelerationLimitShort" in value) ||
+    value["accelerationLimitShort"] === undefined
+  )
+    return false;
+  if (
+    !("accelerationShort" in value) ||
+    value["accelerationShort"] === undefined
+  )
+    return false;
+  if (
+    !("accelerationMaxShort" in value) ||
+    value["accelerationMaxShort"] === undefined
+  )
+    return false;
   return true;
 }
 
@@ -91,32 +123,15 @@ export function GetTimeSeriesSarExt200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    startValue: json["start_value"] == null ? undefined : json["start_value"],
-    offsetOnReverse:
-      json["offset_on_reverse"] == null ? undefined : json["offset_on_reverse"],
-    accelerationLimitLong:
-      json["acceleration_limit_long"] == null
-        ? undefined
-        : json["acceleration_limit_long"],
-    accelerationLong:
-      json["acceleration_long"] == null ? undefined : json["acceleration_long"],
-    accelerationMaxLong:
-      json["acceleration_max_long"] == null
-        ? undefined
-        : json["acceleration_max_long"],
-    accelerationLimitShort:
-      json["acceleration_limit_short"] == null
-        ? undefined
-        : json["acceleration_limit_short"],
-    accelerationShort:
-      json["acceleration_short"] == null
-        ? undefined
-        : json["acceleration_short"],
-    accelerationMaxShort:
-      json["acceleration_max_short"] == null
-        ? undefined
-        : json["acceleration_max_short"],
+    name: json["name"],
+    startValue: json["start_value"],
+    offsetOnReverse: json["offset_on_reverse"],
+    accelerationLimitLong: json["acceleration_limit_long"],
+    accelerationLong: json["acceleration_long"],
+    accelerationMaxLong: json["acceleration_max_long"],
+    accelerationLimitShort: json["acceleration_limit_short"],
+    accelerationShort: json["acceleration_short"],
+    accelerationMaxShort: json["acceleration_max_short"],
   };
 }
 

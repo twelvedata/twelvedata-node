@@ -25,25 +25,25 @@ export interface ResponseSanctionItem {
    * @type {string}
    * @memberof ResponseSanctionItem
    */
-  source?: string;
+  source: string;
   /**
    * The sanction program
    * @type {string}
    * @memberof ResponseSanctionItem
    */
-  program?: string;
+  program: string;
   /**
    * Notes for the sanction
    * @type {string}
    * @memberof ResponseSanctionItem
    */
-  notes?: string;
+  notes: string;
   /**
    * Sanction lists
    * @type {Array<ResponseSanctionItemList>}
    * @memberof ResponseSanctionItem
    */
-  lists?: Array<ResponseSanctionItemList>;
+  lists: Array<ResponseSanctionItemList>;
 }
 
 /**
@@ -52,6 +52,10 @@ export interface ResponseSanctionItem {
 export function instanceOfResponseSanctionItem(
   value: object,
 ): value is ResponseSanctionItem {
+  if (!("source" in value) || value["source"] === undefined) return false;
+  if (!("program" in value) || value["program"] === undefined) return false;
+  if (!("notes" in value) || value["notes"] === undefined) return false;
+  if (!("lists" in value) || value["lists"] === undefined) return false;
   return true;
 }
 
@@ -67,13 +71,10 @@ export function ResponseSanctionItemFromJSONTyped(
     return json;
   }
   return {
-    source: json["source"] == null ? undefined : json["source"],
-    program: json["program"] == null ? undefined : json["program"],
-    notes: json["notes"] == null ? undefined : json["notes"],
-    lists:
-      json["lists"] == null
-        ? undefined
-        : (json["lists"] as Array<any>).map(ResponseSanctionItemListFromJSON),
+    source: json["source"],
+    program: json["program"],
+    notes: json["notes"],
+    lists: (json["lists"] as Array<any>).map(ResponseSanctionItemListFromJSON),
   };
 }
 
@@ -93,9 +94,6 @@ export function ResponseSanctionItemToJSONTyped(
     source: value["source"],
     program: value["program"],
     notes: value["notes"],
-    lists:
-      value["lists"] == null
-        ? undefined
-        : (value["lists"] as Array<any>).map(ResponseSanctionItemListToJSON),
+    lists: (value["lists"] as Array<any>).map(ResponseSanctionItemListToJSON),
   };
 }

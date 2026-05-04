@@ -6,8 +6,6 @@
  * NOTE: This code is auto generated, please do not edit it manually.
  */
 
-import { twelvedataErrorMiddleware } from "./errors";
-
 export const BASE_PATH = "https://api.twelvedata.com".replace(/\/+$/, "");
 
 export interface ConfigurationParameters {
@@ -91,34 +89,16 @@ export class Configuration {
   }
 }
 
-export const DefaultConfig = new Configuration({
-  headers: { "X-API-Version": "last" },
-  middleware: [twelvedataErrorMiddleware],
-});
-
-export const CreateConfig = (
-  userApiKey?: string,
-  userBasePath?: string,
-): Configuration => {
-  const apiKey = userApiKey || process.env.TWELVEDATA_API_KEY;
-  if (!apiKey) {
-    throw new Error("TWELVEDATA_API_KEY environment variable is not set");
-  }
-  const basePath = userBasePath || process.env.TWELVEDATA_API_BASE_URL;
-  return new Configuration({
-    apiKey: `apikey ${apiKey}`,
-    ...(basePath ? { basePath } : {}),
-    headers: { "X-API-Version": "last" },
-    middleware: [twelvedataErrorMiddleware],
-  });
-};
+export const DefaultConfig = new Configuration();
 
 /**
  * This is the base class for all generated API classes.
  */
 export class BaseAPI {
-  private static readonly jsonRegex =
-    /^(:?application\/json|[^;/ \t]+\/[^;/ \t]+[+]json)[ \t]*(:?;.*)?$/i;
+  private static readonly jsonRegex = new RegExp(
+    "^(:?application\/json|[^;/ \t]+\/[^;/ \t]+[+]json)[ \t]*(:?;.*)?$",
+    "i",
+  );
   private middleware: Middleware[];
 
   constructor(protected configuration = DefaultConfig) {
@@ -284,21 +264,13 @@ export class BaseAPI {
     }
     for (const middleware of this.middleware) {
       if (middleware.post) {
-        const cloned = response.clone();
-        const result = await middleware.post({
-          fetch: this.fetchApi,
-          url: fetchParams.url,
-          init: fetchParams.init,
-          response: cloned,
-        });
-        if (result) {
-          response = result;
-        } else {
-          // Consume the unused clone body so Node.js can release the
-          // underlying stream resources (MessagePort pairs created by
-          // ReadableStream.tee) and the process can exit cleanly.
-          cloned.arrayBuffer().catch(() => {});
-        }
+        response =
+          (await middleware.post({
+            fetch: this.fetchApi,
+            url: fetchParams.url,
+            init: fetchParams.init,
+            response: response.clone(),
+          })) || response;
       }
     }
     return response;
@@ -331,12 +303,6 @@ export class ResponseError extends Error {
     msg?: string,
   ) {
     super(msg);
-
-    // restore prototype chain
-    const actualProto = new.target.prototype;
-    if (Object.setPrototypeOf) {
-      Object.setPrototypeOf(this, actualProto);
-    }
   }
 }
 
@@ -347,12 +313,6 @@ export class FetchError extends Error {
     msg?: string,
   ) {
     super(msg);
-
-    // restore prototype chain
-    const actualProto = new.target.prototype;
-    if (Object.setPrototypeOf) {
-      Object.setPrototypeOf(this, actualProto);
-    }
   }
 }
 
@@ -363,12 +323,6 @@ export class RequiredError extends Error {
     msg?: string,
   ) {
     super(msg);
-
-    // restore prototype chain
-    const actualProto = new.target.prototype;
-    if (Object.setPrototypeOf) {
-      Object.setPrototypeOf(this, actualProto);
-    }
   }
 }
 

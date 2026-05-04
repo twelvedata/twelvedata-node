@@ -25,13 +25,13 @@ export interface GetTechnicalIndicators200Response {
    * @type {{ [key: string]: GetTechnicalIndicators200ResponseDataValue; }}
    * @memberof GetTechnicalIndicators200Response
    */
-  data?: { [key: string]: GetTechnicalIndicators200ResponseDataValue };
+  data: { [key: string]: GetTechnicalIndicators200ResponseDataValue };
   /**
    * Response status
    * @type {string}
    * @memberof GetTechnicalIndicators200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetTechnicalIndicators200Response {
 export function instanceOfGetTechnicalIndicators200Response(
   value: object,
 ): value is GetTechnicalIndicators200Response {
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,14 +59,11 @@ export function GetTechnicalIndicators200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : mapValues(
-            json["data"],
-            GetTechnicalIndicators200ResponseDataValueFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    data: mapValues(
+      json["data"],
+      GetTechnicalIndicators200ResponseDataValueFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -83,13 +82,10 @@ export function GetTechnicalIndicators200ResponseToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : mapValues(
-            value["data"],
-            GetTechnicalIndicators200ResponseDataValueToJSON,
-          ),
+    data: mapValues(
+      value["data"],
+      GetTechnicalIndicators200ResponseDataValueToJSON,
+    ),
     status: value["status"],
   };
 }

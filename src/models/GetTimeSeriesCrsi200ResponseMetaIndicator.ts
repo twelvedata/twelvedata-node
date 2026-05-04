@@ -17,31 +17,31 @@ export interface GetTimeSeriesCrsi200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesCrsi200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesCrsi200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * Number of periods for RSI used to calculate price momentum
    * @type {number}
    * @memberof GetTimeSeriesCrsi200ResponseMetaIndicator
    */
-  rsiPeriod?: number;
+  rsiPeriod: number;
   /**
    * Number of periods for RSI used to calculate up/down trend
    * @type {number}
    * @memberof GetTimeSeriesCrsi200ResponseMetaIndicator
    */
-  upDownLength?: number;
+  upDownLength: number;
   /**
    * Number of periods used to calculate PercentRank
    * @type {number}
    * @memberof GetTimeSeriesCrsi200ResponseMetaIndicator
    */
-  percentRankPeriod?: number;
+  percentRankPeriod: number;
 }
 
 /**
@@ -50,6 +50,17 @@ export interface GetTimeSeriesCrsi200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesCrsi200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesCrsi200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("rsiPeriod" in value) || value["rsiPeriod"] === undefined) return false;
+  if (!("upDownLength" in value) || value["upDownLength"] === undefined)
+    return false;
+  if (
+    !("percentRankPeriod" in value) ||
+    value["percentRankPeriod"] === undefined
+  )
+    return false;
   return true;
 }
 
@@ -67,15 +78,11 @@ export function GetTimeSeriesCrsi200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    rsiPeriod: json["rsi_period"] == null ? undefined : json["rsi_period"],
-    upDownLength:
-      json["up_down_length"] == null ? undefined : json["up_down_length"],
-    percentRankPeriod:
-      json["percent_rank_period"] == null
-        ? undefined
-        : json["percent_rank_period"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    rsiPeriod: json["rsi_period"],
+    upDownLength: json["up_down_length"],
+    percentRankPeriod: json["percent_rank_period"],
   };
 }
 

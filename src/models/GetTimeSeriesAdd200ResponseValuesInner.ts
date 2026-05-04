@@ -17,13 +17,13 @@ export interface GetTimeSeriesAdd200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesAdd200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Add value
    * @type {string}
    * @memberof GetTimeSeriesAdd200ResponseValuesInner
    */
-  add?: string;
+  add: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesAdd200ResponseValuesInner {
 export function instanceOfGetTimeSeriesAdd200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesAdd200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("add" in value) || value["add"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesAdd200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    add: json["add"] == null ? undefined : json["add"],
+    datetime: json["datetime"],
+    add: json["add"],
   };
 }
 

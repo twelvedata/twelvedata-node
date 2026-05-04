@@ -17,13 +17,13 @@ export interface GetTimeSeriesAdx200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesAdx200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Number of periods to average over
    * @type {number}
    * @memberof GetTimeSeriesAdx200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesAdx200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesAdx200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesAdx200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
   return true;
 }
 
@@ -49,8 +52,8 @@ export function GetTimeSeriesAdx200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
+    name: json["name"],
+    timePeriod: json["time_period"],
   };
 }
 

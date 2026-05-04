@@ -25,13 +25,13 @@ export interface GetETFsWorldPerformance200Response {
    * @type {GetETFsWorldPerformance200ResponseEtf}
    * @memberof GetETFsWorldPerformance200Response
    */
-  etf?: GetETFsWorldPerformance200ResponseEtf;
+  etf: GetETFsWorldPerformance200ResponseEtf;
   /**
    * Status of the response
    * @type {string}
    * @memberof GetETFsWorldPerformance200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetETFsWorldPerformance200Response {
 export function instanceOfGetETFsWorldPerformance200Response(
   value: object,
 ): value is GetETFsWorldPerformance200Response {
+  if (!("etf" in value) || value["etf"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +59,8 @@ export function GetETFsWorldPerformance200ResponseFromJSONTyped(
     return json;
   }
   return {
-    etf:
-      json["etf"] == null
-        ? undefined
-        : GetETFsWorldPerformance200ResponseEtfFromJSON(json["etf"]),
-    status: json["status"] == null ? undefined : json["status"],
+    etf: GetETFsWorldPerformance200ResponseEtfFromJSON(json["etf"]),
+    status: json["status"],
   };
 }
 

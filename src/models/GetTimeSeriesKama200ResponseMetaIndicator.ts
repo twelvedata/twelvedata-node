@@ -17,19 +17,19 @@ export interface GetTimeSeriesKama200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesKama200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type on which technical indicator is calculated
    * @type {string}
    * @memberof GetTimeSeriesKama200ResponseMetaIndicator
    */
-  seriesType?: string;
+  seriesType: string;
   /**
    * Number of periods to average over
    * @type {number}
    * @memberof GetTimeSeriesKama200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
 }
 
 /**
@@ -38,6 +38,11 @@ export interface GetTimeSeriesKama200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesKama200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesKama200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType" in value) || value["seriesType"] === undefined)
+    return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
   return true;
 }
 
@@ -55,9 +60,9 @@ export function GetTimeSeriesKama200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType: json["series_type"] == null ? undefined : json["series_type"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
+    name: json["name"],
+    seriesType: json["series_type"],
+    timePeriod: json["time_period"],
   };
 }
 

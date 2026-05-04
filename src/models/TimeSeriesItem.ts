@@ -17,31 +17,31 @@ export interface TimeSeriesItem {
    * @type {string}
    * @memberof TimeSeriesItem
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Price at the opening of current bar
    * @type {string}
    * @memberof TimeSeriesItem
    */
-  open?: string;
+  open: string;
   /**
    * Highest price which occurred during the current bar.
    * @type {string}
    * @memberof TimeSeriesItem
    */
-  high?: string;
+  high: string;
   /**
    * Lowest price which occurred during the current bar.
    * @type {string}
    * @memberof TimeSeriesItem
    */
-  low?: string;
+  low: string;
   /**
    * Close price at the end of the bar.
    * @type {string}
    * @memberof TimeSeriesItem
    */
-  close?: string;
+  close: string;
   /**
    * Trading volume which occurred during the current bar
    * @type {string}
@@ -56,6 +56,11 @@ export interface TimeSeriesItem {
 export function instanceOfTimeSeriesItem(
   value: object,
 ): value is TimeSeriesItem {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("open" in value) || value["open"] === undefined) return false;
+  if (!("high" in value) || value["high"] === undefined) return false;
+  if (!("low" in value) || value["low"] === undefined) return false;
+  if (!("close" in value) || value["close"] === undefined) return false;
   return true;
 }
 
@@ -71,11 +76,11 @@ export function TimeSeriesItemFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    open: json["open"] == null ? undefined : json["open"],
-    high: json["high"] == null ? undefined : json["high"],
-    low: json["low"] == null ? undefined : json["low"],
-    close: json["close"] == null ? undefined : json["close"],
+    datetime: json["datetime"],
+    open: json["open"],
+    high: json["high"],
+    low: json["low"],
+    close: json["close"],
     volume: json["volume"] == null ? undefined : json["volume"],
   };
 }

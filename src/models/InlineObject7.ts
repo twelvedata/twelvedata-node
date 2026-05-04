@@ -25,13 +25,21 @@ export interface InlineObject7 {
    * @type {Array<StockExchange>}
    * @memberof InlineObject7
    */
-  data?: Array<StockExchange>;
+  data: Array<StockExchange>;
+  /**
+   * Response status
+   * @type {string}
+   * @memberof InlineObject7
+   */
+  status: string;
 }
 
 /**
  * Check if a given object implements the InlineObject7 interface.
  */
 export function instanceOfInlineObject7(value: object): value is InlineObject7 {
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -47,10 +55,8 @@ export function InlineObject7FromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(StockExchangeFromJSON),
+    data: (json["data"] as Array<any>).map(StockExchangeFromJSON),
+    status: json["status"],
   };
 }
 
@@ -67,9 +73,7 @@ export function InlineObject7ToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(StockExchangeToJSON),
+    data: (value["data"] as Array<any>).map(StockExchangeToJSON),
+    status: value["status"],
   };
 }

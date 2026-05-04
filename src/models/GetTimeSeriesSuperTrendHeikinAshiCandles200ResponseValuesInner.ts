@@ -17,37 +17,37 @@ export interface GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInner 
    * @type {string}
    * @memberof GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * SuperTrend value
    * @type {string}
    * @memberof GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInner
    */
-  supertrend?: string;
+  supertrend: string;
   /**
    * Heikin-Ashi high values
    * @type {string}
    * @memberof GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInner
    */
-  heikinhighs?: string;
+  heikinhighs: string;
   /**
    * Heikin-Ashi open values
    * @type {string}
    * @memberof GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInner
    */
-  heikinopens?: string;
+  heikinopens: string;
   /**
    * Heikin-Ashi close values
    * @type {string}
    * @memberof GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInner
    */
-  heikincloses?: string;
+  heikincloses: string;
   /**
    * Heikin-Ashi low values
    * @type {string}
    * @memberof GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInner
    */
-  heikinlows?: string;
+  heikinlows: string;
 }
 
 /**
@@ -56,6 +56,17 @@ export interface GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInner 
 export function instanceOfGetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("supertrend" in value) || value["supertrend"] === undefined)
+    return false;
+  if (!("heikinhighs" in value) || value["heikinhighs"] === undefined)
+    return false;
+  if (!("heikinopens" in value) || value["heikinopens"] === undefined)
+    return false;
+  if (!("heikincloses" in value) || value["heikincloses"] === undefined)
+    return false;
+  if (!("heikinlows" in value) || value["heikinlows"] === undefined)
+    return false;
   return true;
 }
 
@@ -76,13 +87,12 @@ export function GetTimeSeriesSuperTrendHeikinAshiCandles200ResponseValuesInnerFr
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    supertrend: json["supertrend"] == null ? undefined : json["supertrend"],
-    heikinhighs: json["heikinhighs"] == null ? undefined : json["heikinhighs"],
-    heikinopens: json["heikinopens"] == null ? undefined : json["heikinopens"],
-    heikincloses:
-      json["heikincloses"] == null ? undefined : json["heikincloses"],
-    heikinlows: json["heikinlows"] == null ? undefined : json["heikinlows"],
+    datetime: json["datetime"],
+    supertrend: json["supertrend"],
+    heikinhighs: json["heikinhighs"],
+    heikinopens: json["heikinopens"],
+    heikincloses: json["heikincloses"],
+    heikinlows: json["heikinlows"],
   };
 }
 

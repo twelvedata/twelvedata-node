@@ -17,13 +17,13 @@ export interface GetTimeSeriesCeil200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesCeil200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Ceil value
    * @type {string}
    * @memberof GetTimeSeriesCeil200ResponseValuesInner
    */
-  ceil?: string;
+  ceil: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesCeil200ResponseValuesInner {
 export function instanceOfGetTimeSeriesCeil200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesCeil200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("ceil" in value) || value["ceil"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesCeil200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    ceil: json["ceil"] == null ? undefined : json["ceil"],
+    datetime: json["datetime"],
+    ceil: json["ceil"],
   };
 }
 

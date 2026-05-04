@@ -17,13 +17,13 @@ export interface GetTimeSeriesAtr200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesAtr200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * ATR value
    * @type {string}
    * @memberof GetTimeSeriesAtr200ResponseValuesInner
    */
-  atr?: string;
+  atr: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesAtr200ResponseValuesInner {
 export function instanceOfGetTimeSeriesAtr200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesAtr200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("atr" in value) || value["atr"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesAtr200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    atr: json["atr"] == null ? undefined : json["atr"],
+    datetime: json["datetime"],
+    atr: json["atr"],
   };
 }
 

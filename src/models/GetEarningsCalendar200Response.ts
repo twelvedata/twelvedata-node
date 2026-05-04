@@ -25,7 +25,7 @@ export interface GetEarningsCalendar200Response {
    * @type {{ [key: string]: Array<GetEarningsCalendar200ResponseEarningsValueInner>; }}
    * @memberof GetEarningsCalendar200Response
    */
-  earnings?: {
+  earnings: {
     [key: string]: Array<GetEarningsCalendar200ResponseEarningsValueInner>;
   };
   /**
@@ -33,7 +33,7 @@ export interface GetEarningsCalendar200Response {
    * @type {string}
    * @memberof GetEarningsCalendar200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -42,6 +42,8 @@ export interface GetEarningsCalendar200Response {
 export function instanceOfGetEarningsCalendar200Response(
   value: object,
 ): value is GetEarningsCalendar200Response {
+  if (!("earnings" in value) || value["earnings"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -59,8 +61,8 @@ export function GetEarningsCalendar200ResponseFromJSONTyped(
     return json;
   }
   return {
-    earnings: json["earnings"] == null ? undefined : json["earnings"],
-    status: json["status"] == null ? undefined : json["status"],
+    earnings: json["earnings"],
+    status: json["status"],
   };
 }
 

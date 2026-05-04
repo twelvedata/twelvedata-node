@@ -17,31 +17,31 @@ export interface GetTimeSeriesHeikinashiCandles200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Heikin-Ashi highs value
    * @type {string}
    * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
    */
-  heikinhighs?: string;
+  heikinhighs: string;
   /**
    * Heikin-Ashi opens value
    * @type {string}
    * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
    */
-  heikinopens?: string;
+  heikinopens: string;
   /**
    * Heikin-Ashi closes value
    * @type {string}
    * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
    */
-  heikincloses?: string;
+  heikincloses: string;
   /**
    * Heikin-Ashi lows value
    * @type {string}
    * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
    */
-  heikinlows?: string;
+  heikinlows: string;
 }
 
 /**
@@ -50,6 +50,15 @@ export interface GetTimeSeriesHeikinashiCandles200ResponseValuesInner {
 export function instanceOfGetTimeSeriesHeikinashiCandles200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesHeikinashiCandles200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("heikinhighs" in value) || value["heikinhighs"] === undefined)
+    return false;
+  if (!("heikinopens" in value) || value["heikinopens"] === undefined)
+    return false;
+  if (!("heikincloses" in value) || value["heikincloses"] === undefined)
+    return false;
+  if (!("heikinlows" in value) || value["heikinlows"] === undefined)
+    return false;
   return true;
 }
 
@@ -70,12 +79,11 @@ export function GetTimeSeriesHeikinashiCandles200ResponseValuesInnerFromJSONType
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    heikinhighs: json["heikinhighs"] == null ? undefined : json["heikinhighs"],
-    heikinopens: json["heikinopens"] == null ? undefined : json["heikinopens"],
-    heikincloses:
-      json["heikincloses"] == null ? undefined : json["heikincloses"],
-    heikinlows: json["heikinlows"] == null ? undefined : json["heikinlows"],
+    datetime: json["datetime"],
+    heikinhighs: json["heikinhighs"],
+    heikinopens: json["heikinopens"],
+    heikincloses: json["heikincloses"],
+    heikinlows: json["heikinlows"],
   };
 }
 

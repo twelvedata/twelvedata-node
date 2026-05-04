@@ -17,13 +17,13 @@ export interface GetCurrencyConversion200Response {
    * @type {string}
    * @memberof GetCurrencyConversion200Response
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Real-time exchange rate for the corresponding symbol
    * @type {number}
    * @memberof GetCurrencyConversion200Response
    */
-  rate?: number;
+  rate: number;
   /**
    * Amount of converted currency
    * @type {number}
@@ -35,7 +35,7 @@ export interface GetCurrencyConversion200Response {
    * @type {number}
    * @memberof GetCurrencyConversion200Response
    */
-  timestamp?: number;
+  timestamp: number;
 }
 
 /**
@@ -44,6 +44,9 @@ export interface GetCurrencyConversion200Response {
 export function instanceOfGetCurrencyConversion200Response(
   value: object,
 ): value is GetCurrencyConversion200Response {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("rate" in value) || value["rate"] === undefined) return false;
+  if (!("timestamp" in value) || value["timestamp"] === undefined) return false;
   return true;
 }
 
@@ -61,10 +64,10 @@ export function GetCurrencyConversion200ResponseFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    rate: json["rate"] == null ? undefined : json["rate"],
+    symbol: json["symbol"],
+    rate: json["rate"],
     amount: json["amount"] == null ? undefined : json["amount"],
-    timestamp: json["timestamp"] == null ? undefined : json["timestamp"],
+    timestamp: json["timestamp"],
   };
 }
 

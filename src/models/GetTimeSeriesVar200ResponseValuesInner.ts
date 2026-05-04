@@ -17,13 +17,13 @@ export interface GetTimeSeriesVar200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesVar200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * VAR value
    * @type {string}
    * @memberof GetTimeSeriesVar200ResponseValuesInner
    */
-  _var?: string;
+  _var: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesVar200ResponseValuesInner {
 export function instanceOfGetTimeSeriesVar200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesVar200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("_var" in value) || value["_var"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesVar200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    _var: json["var"] == null ? undefined : json["var"],
+    datetime: json["datetime"],
+    _var: json["var"],
   };
 }
 

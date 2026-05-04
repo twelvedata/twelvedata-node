@@ -9,6 +9,8 @@ Name | Type
 `timestamp` | string
 `currentUsage` | number
 `planLimit` | number
+`dailyUsage` | number
+`planDailyLimit` | number
 `planCategory` | string
 
 ## Example
@@ -21,6 +23,8 @@ const example = {
   "timestamp": null,
   "currentUsage": null,
   "planLimit": null,
+  "dailyUsage": null,
+  "planDailyLimit": null,
   "planCategory": null,
 } satisfies GetApiUsage200Response
 

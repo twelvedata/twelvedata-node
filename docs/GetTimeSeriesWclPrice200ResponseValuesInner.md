@@ -7,7 +7,7 @@
 Name | Type
 ------------ | -------------
 `datetime` | string
-`wclprice` | number
+`wclprice` | string
 
 ## Example
 

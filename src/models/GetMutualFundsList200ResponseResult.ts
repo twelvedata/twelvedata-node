@@ -25,13 +25,13 @@ export interface GetMutualFundsList200ResponseResult {
    * @type {number}
    * @memberof GetMutualFundsList200ResponseResult
    */
-  count?: number;
+  count: number;
   /**
    * List of mutual funds
    * @type {Array<MutualFundsListResponseListItem>}
    * @memberof GetMutualFundsList200ResponseResult
    */
-  list?: Array<MutualFundsListResponseListItem>;
+  list: Array<MutualFundsListResponseListItem>;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetMutualFundsList200ResponseResult {
 export function instanceOfGetMutualFundsList200ResponseResult(
   value: object,
 ): value is GetMutualFundsList200ResponseResult {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("list" in value) || value["list"] === undefined) return false;
   return true;
 }
 
@@ -57,13 +59,10 @@ export function GetMutualFundsList200ResponseResultFromJSONTyped(
     return json;
   }
   return {
-    count: json["count"] == null ? undefined : json["count"],
-    list:
-      json["list"] == null
-        ? undefined
-        : (json["list"] as Array<any>).map(
-            MutualFundsListResponseListItemFromJSON,
-          ),
+    count: json["count"],
+    list: (json["list"] as Array<any>).map(
+      MutualFundsListResponseListItemFromJSON,
+    ),
   };
 }
 
@@ -83,11 +82,8 @@ export function GetMutualFundsList200ResponseResultToJSONTyped(
 
   return {
     count: value["count"],
-    list:
-      value["list"] == null
-        ? undefined
-        : (value["list"] as Array<any>).map(
-            MutualFundsListResponseListItemToJSON,
-          ),
+    list: (value["list"] as Array<any>).map(
+      MutualFundsListResponseListItemToJSON,
+    ),
   };
 }

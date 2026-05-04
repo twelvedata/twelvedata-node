@@ -17,13 +17,13 @@ export interface GetTimeSeriesCoppock200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesCoppock200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Coppock value
    * @type {string}
    * @memberof GetTimeSeriesCoppock200ResponseValuesInner
    */
-  coppock?: string;
+  coppock: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesCoppock200ResponseValuesInner {
 export function instanceOfGetTimeSeriesCoppock200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesCoppock200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("coppock" in value) || value["coppock"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesCoppock200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    coppock: json["coppock"] == null ? undefined : json["coppock"],
+    datetime: json["datetime"],
+    coppock: json["coppock"],
   };
 }
 

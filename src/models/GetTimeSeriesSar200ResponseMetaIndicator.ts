@@ -17,19 +17,19 @@ export interface GetTimeSeriesSar200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesSar200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * The acceleration factor used in the indicator calculation
    * @type {number}
    * @memberof GetTimeSeriesSar200ResponseMetaIndicator
    */
-  acceleration?: number;
+  acceleration: number;
   /**
    * The maximum value considered for the indicator calculation
    * @type {number}
    * @memberof GetTimeSeriesSar200ResponseMetaIndicator
    */
-  maximum?: number;
+  maximum: number;
 }
 
 /**
@@ -38,6 +38,10 @@ export interface GetTimeSeriesSar200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesSar200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesSar200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("acceleration" in value) || value["acceleration"] === undefined)
+    return false;
+  if (!("maximum" in value) || value["maximum"] === undefined) return false;
   return true;
 }
 
@@ -55,10 +59,9 @@ export function GetTimeSeriesSar200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    acceleration:
-      json["acceleration"] == null ? undefined : json["acceleration"],
-    maximum: json["maximum"] == null ? undefined : json["maximum"],
+    name: json["name"],
+    acceleration: json["acceleration"],
+    maximum: json["maximum"],
   };
 }
 

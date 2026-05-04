@@ -17,19 +17,31 @@ export interface GetApiUsage200Response {
    * @type {string}
    * @memberof GetApiUsage200Response
    */
-  timestamp?: string;
+  timestamp: string;
   /**
    * Number of requests made in last minute
    * @type {number}
    * @memberof GetApiUsage200Response
    */
-  currentUsage?: number;
+  currentUsage: number;
   /**
    * Your personal API limit (requests/minute) depending on the plan
    * @type {number}
    * @memberof GetApiUsage200Response
    */
-  planLimit?: number;
+  planLimit: number;
+  /**
+   * Number of requests made in the current day. Returned only when the plan has a daily limit.
+   * @type {number}
+   * @memberof GetApiUsage200Response
+   */
+  dailyUsage?: number;
+  /**
+   * Your personal API limit (requests/day) depending on the plan. Returned only when the plan has a daily limit.
+   * @type {number}
+   * @memberof GetApiUsage200Response
+   */
+  planDailyLimit?: number;
   /**
    * Plan category name
    * @type {string}
@@ -44,6 +56,10 @@ export interface GetApiUsage200Response {
 export function instanceOfGetApiUsage200Response(
   value: object,
 ): value is GetApiUsage200Response {
+  if (!("timestamp" in value) || value["timestamp"] === undefined) return false;
+  if (!("currentUsage" in value) || value["currentUsage"] === undefined)
+    return false;
+  if (!("planLimit" in value) || value["planLimit"] === undefined) return false;
   return true;
 }
 
@@ -61,10 +77,12 @@ export function GetApiUsage200ResponseFromJSONTyped(
     return json;
   }
   return {
-    timestamp: json["timestamp"] == null ? undefined : json["timestamp"],
-    currentUsage:
-      json["current_usage"] == null ? undefined : json["current_usage"],
-    planLimit: json["plan_limit"] == null ? undefined : json["plan_limit"],
+    timestamp: json["timestamp"],
+    currentUsage: json["current_usage"],
+    planLimit: json["plan_limit"],
+    dailyUsage: json["daily_usage"] == null ? undefined : json["daily_usage"],
+    planDailyLimit:
+      json["plan_daily_limit"] == null ? undefined : json["plan_daily_limit"],
     planCategory:
       json["plan_category"] == null ? undefined : json["plan_category"],
   };
@@ -88,6 +106,8 @@ export function GetApiUsage200ResponseToJSONTyped(
     timestamp: value["timestamp"],
     current_usage: value["currentUsage"],
     plan_limit: value["planLimit"],
+    daily_usage: value["dailyUsage"],
+    plan_daily_limit: value["planDailyLimit"],
     plan_category: value["planCategory"],
   };
 }

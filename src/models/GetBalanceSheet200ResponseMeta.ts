@@ -17,43 +17,43 @@ export interface GetBalanceSheet200ResponseMeta {
    * @type {string}
    * @memberof GetBalanceSheet200ResponseMeta
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Name of the company
    * @type {string}
    * @memberof GetBalanceSheet200ResponseMeta
    */
-  name?: string;
+  name: string;
   /**
    * Currency of the balance sheet according to the ISO 4217 standard
    * @type {string}
    * @memberof GetBalanceSheet200ResponseMeta
    */
-  currency?: string;
+  currency: string;
   /**
    * Exchange where instrument is traded
    * @type {string}
    * @memberof GetBalanceSheet200ResponseMeta
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof GetBalanceSheet200ResponseMeta
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Exchange timezone
    * @type {string}
    * @memberof GetBalanceSheet200ResponseMeta
    */
-  exchangeTimezone?: string;
+  exchangeTimezone: string;
   /**
    * Values can be annual or quarterly
    * @type {string}
    * @memberof GetBalanceSheet200ResponseMeta
    */
-  period?: string;
+  period: string;
 }
 
 /**
@@ -62,6 +62,14 @@ export interface GetBalanceSheet200ResponseMeta {
 export function instanceOfGetBalanceSheet200ResponseMeta(
   value: object,
 ): value is GetBalanceSheet200ResponseMeta {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("exchangeTimezone" in value) || value["exchangeTimezone"] === undefined)
+    return false;
+  if (!("period" in value) || value["period"] === undefined) return false;
   return true;
 }
 
@@ -79,14 +87,13 @@ export function GetBalanceSheet200ResponseMetaFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    currency: json["currency"] == null ? undefined : json["currency"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    exchangeTimezone:
-      json["exchange_timezone"] == null ? undefined : json["exchange_timezone"],
-    period: json["period"] == null ? undefined : json["period"],
+    symbol: json["symbol"],
+    name: json["name"],
+    currency: json["currency"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
+    exchangeTimezone: json["exchange_timezone"],
+    period: json["period"],
   };
 }
 

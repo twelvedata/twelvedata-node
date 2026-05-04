@@ -17,13 +17,13 @@ export interface GetTimeSeriesFloor200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesFloor200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Floor value
    * @type {string}
    * @memberof GetTimeSeriesFloor200ResponseValuesInner
    */
-  floor?: string;
+  floor: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesFloor200ResponseValuesInner {
 export function instanceOfGetTimeSeriesFloor200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesFloor200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("floor" in value) || value["floor"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesFloor200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    floor: json["floor"] == null ? undefined : json["floor"],
+    datetime: json["datetime"],
+    floor: json["floor"],
   };
 }
 

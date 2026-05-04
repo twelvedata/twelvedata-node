@@ -510,11 +510,15 @@ export class TwelvedataWebSocketClient extends EventEmitter {
       return;
     }
     const attempt = this.reconnectAttempts + 1;
-    const delay = Math.min(
+    const baseDelay = Math.min(
       this.reconnectConfig.initialDelayMs *
         Math.pow(this.reconnectConfig.backoffFactor, this.reconnectAttempts),
       this.reconnectConfig.maxDelayMs,
     );
+    // Apply ±20% jitter so a fleet of clients reconnecting after the same
+    // outage doesn't thundering-herd the server on a synchronized cadence.
+    const jitter = baseDelay * 0.2 * (Math.random() * 2 - 1);
+    const delay = Math.max(0, Math.round(baseDelay + jitter));
     this.reconnectAttempts = attempt;
     this.emit("reconnecting", { attempt, delayMs: delay });
 

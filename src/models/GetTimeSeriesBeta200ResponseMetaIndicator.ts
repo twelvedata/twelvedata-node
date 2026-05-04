@@ -17,25 +17,25 @@ export interface GetTimeSeriesBeta200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesBeta200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Price type used as the first part of technical indicator
    * @type {string}
    * @memberof GetTimeSeriesBeta200ResponseMetaIndicator
    */
-  seriesType1?: string;
+  seriesType1: string;
   /**
    * Price type used as the second part of technical indicator
    * @type {string}
    * @memberof GetTimeSeriesBeta200ResponseMetaIndicator
    */
-  seriesType2?: string;
+  seriesType2: string;
   /**
    * Number of periods to average over
    * @type {number}
    * @memberof GetTimeSeriesBeta200ResponseMetaIndicator
    */
-  timePeriod?: number;
+  timePeriod: number;
 }
 
 /**
@@ -44,6 +44,13 @@ export interface GetTimeSeriesBeta200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesBeta200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesBeta200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("seriesType1" in value) || value["seriesType1"] === undefined)
+    return false;
+  if (!("seriesType2" in value) || value["seriesType2"] === undefined)
+    return false;
+  if (!("timePeriod" in value) || value["timePeriod"] === undefined)
+    return false;
   return true;
 }
 
@@ -61,12 +68,10 @@ export function GetTimeSeriesBeta200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    seriesType1:
-      json["series_type_1"] == null ? undefined : json["series_type_1"],
-    seriesType2:
-      json["series_type_2"] == null ? undefined : json["series_type_2"],
-    timePeriod: json["time_period"] == null ? undefined : json["time_period"],
+    name: json["name"],
+    seriesType1: json["series_type_1"],
+    seriesType2: json["series_type_2"],
+    timePeriod: json["time_period"],
   };
 }
 

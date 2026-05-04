@@ -32,19 +32,19 @@ export interface GetTimeSeriesMacdSlope200Response {
    * @type {GetTimeSeriesMacdSlope200ResponseMeta}
    * @memberof GetTimeSeriesMacdSlope200Response
    */
-  meta?: GetTimeSeriesMacdSlope200ResponseMeta;
+  meta: GetTimeSeriesMacdSlope200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesMacdSlope200ResponseValuesInner>}
    * @memberof GetTimeSeriesMacdSlope200Response
    */
-  values?: Array<GetTimeSeriesMacdSlope200ResponseValuesInner>;
+  values: Array<GetTimeSeriesMacdSlope200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesMacdSlope200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesMacdSlope200Response {
 export function instanceOfGetTimeSeriesMacdSlope200Response(
   value: object,
 ): value is GetTimeSeriesMacdSlope200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesMacdSlope200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesMacdSlope200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesMacdSlope200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesMacdSlope200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesMacdSlope200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesMacdSlope200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesMacdSlope200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesMacdSlope200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesMacdSlope200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

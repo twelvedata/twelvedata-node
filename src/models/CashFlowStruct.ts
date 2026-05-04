@@ -39,7 +39,7 @@ export interface CashFlowStruct {
    * @type {string}
    * @memberof CashFlowStruct
    */
-  fiscalDate?: string;
+  fiscalDate: string;
   /**
    * Fiscal quarter. Visible when `&period=quarterly`
    * @type {string}
@@ -102,6 +102,8 @@ export interface CashFlowStruct {
 export function instanceOfCashFlowStruct(
   value: object,
 ): value is CashFlowStruct {
+  if (!("fiscalDate" in value) || value["fiscalDate"] === undefined)
+    return false;
   return true;
 }
 
@@ -117,7 +119,7 @@ export function CashFlowStructFromJSONTyped(
     return json;
   }
   return {
-    fiscalDate: json["fiscal_date"] == null ? undefined : json["fiscal_date"],
+    fiscalDate: json["fiscal_date"],
     quarter: json["quarter"] == null ? undefined : json["quarter"],
     year: json["year"] == null ? undefined : json["year"],
     operatingActivities:

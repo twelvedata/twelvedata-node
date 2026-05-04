@@ -25,49 +25,49 @@ export interface InlineObject10Meta {
    * @type {string}
    * @memberof InlineObject10Meta
    */
-  symbol?: string;
+  symbol: string;
   /**
    * The time gap between consecutive data points.
    * @type {string}
    * @memberof InlineObject10Meta
    */
-  interval?: string;
+  interval: string;
   /**
    * The currency of a traded instrument.
    * @type {string}
    * @memberof InlineObject10Meta
    */
-  currency?: string;
+  currency: string;
   /**
    * The timezone of the exchange where the instrument is traded.
    * @type {string}
    * @memberof InlineObject10Meta
    */
-  exchangeTimezone?: string;
+  exchangeTimezone: string;
   /**
    * The exchange name where the instrument is traded.
    * @type {string}
    * @memberof InlineObject10Meta
    */
-  exchange?: string;
+  exchange: string;
   /**
    * The Market Identifier Code (MIC) of the exchange where the instrument is traded.
    * @type {string}
    * @memberof InlineObject10Meta
    */
-  micCode?: string;
+  micCode: string;
   /**
    * The asset class to which the instrument belongs.
    * @type {string}
    * @memberof InlineObject10Meta
    */
-  type?: string;
+  type: string;
   /**
    *
    * @type {InlineObject10MetaIndicator}
    * @memberof InlineObject10Meta
    */
-  indicator?: InlineObject10MetaIndicator;
+  indicator: InlineObject10MetaIndicator;
 }
 
 /**
@@ -76,6 +76,15 @@ export interface InlineObject10Meta {
 export function instanceOfInlineObject10Meta(
   value: object,
 ): value is InlineObject10Meta {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("interval" in value) || value["interval"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
+  if (!("exchangeTimezone" in value) || value["exchangeTimezone"] === undefined)
+    return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("type" in value) || value["type"] === undefined) return false;
+  if (!("indicator" in value) || value["indicator"] === undefined) return false;
   return true;
 }
 
@@ -91,18 +100,14 @@ export function InlineObject10MetaFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    interval: json["interval"] == null ? undefined : json["interval"],
-    currency: json["currency"] == null ? undefined : json["currency"],
-    exchangeTimezone:
-      json["exchange_timezone"] == null ? undefined : json["exchange_timezone"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    type: json["type"] == null ? undefined : json["type"],
-    indicator:
-      json["indicator"] == null
-        ? undefined
-        : InlineObject10MetaIndicatorFromJSON(json["indicator"]),
+    symbol: json["symbol"],
+    interval: json["interval"],
+    currency: json["currency"],
+    exchangeTimezone: json["exchange_timezone"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
+    type: json["type"],
+    indicator: InlineObject10MetaIndicatorFromJSON(json["indicator"]),
   };
 }
 

@@ -465,7 +465,7 @@ example().catch(console.error);
 
 Dividends
 
-The dividends endpoint provides historical dividend data for a specified stock, in many cases covering over a decade. It returns information on dividend payouts, including the amount, payment date, and frequency. This endpoint is ideal for users tracking dividend histories or evaluating the income potential of stocks.
+The dividends endpoint provides historical dividend data for a specified stock, in many cases covering over a decade. It returns information on dividend payouts, including the amount and frequency. This endpoint is ideal for users tracking dividend histories or evaluating the income potential of stocks.
 
 ### Example
 
@@ -573,7 +573,7 @@ example().catch(console.error);
 
 Dividends calendar
 
-The dividends calendar endpoint provides a detailed schedule of upcoming and past dividend events for specified date ranges. By using the &#x60;start_date&#x60; and &#x60;end_date&#x60; parameters, users can retrieve a list of companies issuing dividends, including the ex-dividend date, payment date, and dividend amount. This endpoint is ideal for tracking dividend payouts and planning investment strategies based on dividend schedules.
+The dividends calendar endpoint provides a detailed schedule of upcoming and past dividend events for specified date ranges. By using the &#x60;start_date&#x60; and &#x60;end_date&#x60; parameters, users can retrieve a list of companies issuing dividends, including the ex-dividend date and dividend amount. This endpoint is ideal for tracking dividend payouts and planning investment strategies based on dividend schedules.
 
 ### Example
 

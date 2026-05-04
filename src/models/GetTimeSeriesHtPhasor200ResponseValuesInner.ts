@@ -17,19 +17,19 @@ export interface GetTimeSeriesHtPhasor200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesHtPhasor200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * In_phase value
    * @type {string}
    * @memberof GetTimeSeriesHtPhasor200ResponseValuesInner
    */
-  inPhase?: string;
+  inPhase: string;
   /**
    * Quadrature value
    * @type {string}
    * @memberof GetTimeSeriesHtPhasor200ResponseValuesInner
    */
-  quadrature?: string;
+  quadrature: string;
 }
 
 /**
@@ -38,6 +38,10 @@ export interface GetTimeSeriesHtPhasor200ResponseValuesInner {
 export function instanceOfGetTimeSeriesHtPhasor200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesHtPhasor200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("inPhase" in value) || value["inPhase"] === undefined) return false;
+  if (!("quadrature" in value) || value["quadrature"] === undefined)
+    return false;
   return true;
 }
 
@@ -55,9 +59,9 @@ export function GetTimeSeriesHtPhasor200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    inPhase: json["in_phase"] == null ? undefined : json["in_phase"],
-    quadrature: json["quadrature"] == null ? undefined : json["quadrature"],
+    datetime: json["datetime"],
+    inPhase: json["in_phase"],
+    quadrature: json["quadrature"],
   };
 }
 

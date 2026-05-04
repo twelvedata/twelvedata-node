@@ -32,7 +32,7 @@ export interface GetIncomeStatement200Response {
    * @type {GetIncomeStatement200ResponseMeta}
    * @memberof GetIncomeStatement200Response
    */
-  meta?: GetIncomeStatement200ResponseMeta;
+  meta: GetIncomeStatement200ResponseMeta;
   /**
    * Income statement data
    * @type {Array<IncomeStatementBlock>}
@@ -47,6 +47,7 @@ export interface GetIncomeStatement200Response {
 export function instanceOfGetIncomeStatement200Response(
   value: object,
 ): value is GetIncomeStatement200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
   return true;
 }
 
@@ -64,10 +65,7 @@ export function GetIncomeStatement200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetIncomeStatement200ResponseMetaFromJSON(json["meta"]),
+    meta: GetIncomeStatement200ResponseMetaFromJSON(json["meta"]),
     incomeStatement:
       json["income_statement"] == null
         ? undefined

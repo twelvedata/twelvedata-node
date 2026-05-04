@@ -17,13 +17,13 @@ export interface GetTimeSeriesDpo200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesDpo200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * DPO value
    * @type {string}
    * @memberof GetTimeSeriesDpo200ResponseValuesInner
    */
-  dpo?: string;
+  dpo: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesDpo200ResponseValuesInner {
 export function instanceOfGetTimeSeriesDpo200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesDpo200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("dpo" in value) || value["dpo"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesDpo200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    dpo: json["dpo"] == null ? undefined : json["dpo"],
+    datetime: json["datetime"],
+    dpo: json["dpo"],
   };
 }
 

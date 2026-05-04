@@ -17,13 +17,13 @@ export interface GetTimeSeriesMom200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMom200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Mom value
    * @type {string}
    * @memberof GetTimeSeriesMom200ResponseValuesInner
    */
-  mom?: string;
+  mom: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesMom200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMom200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMom200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("mom" in value) || value["mom"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesMom200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    mom: json["mom"] == null ? undefined : json["mom"],
+    datetime: json["datetime"],
+    mom: json["mom"],
   };
 }
 

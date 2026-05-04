@@ -17,13 +17,13 @@ export interface GetETFsWorldSummary200ResponseEtfSummary {
    * @type {string}
    * @memberof GetETFsWorldSummary200ResponseEtfSummary
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Fund name
    * @type {string}
    * @memberof GetETFsWorldSummary200ResponseEtfSummary
    */
-  name?: string;
+  name: string;
   /**
    * Investment company that manages the fund
    * @type {string}
@@ -104,6 +104,8 @@ export interface GetETFsWorldSummary200ResponseEtfSummary {
 export function instanceOfGetETFsWorldSummary200ResponseEtfSummary(
   value: object,
 ): value is GetETFsWorldSummary200ResponseEtfSummary {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
   return true;
 }
 
@@ -121,8 +123,8 @@ export function GetETFsWorldSummary200ResponseEtfSummaryFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
+    symbol: json["symbol"],
+    name: json["name"],
     fundFamily: json["fund_family"] == null ? undefined : json["fund_family"],
     fundType: json["fund_type"] == null ? undefined : json["fund_type"],
     currency: json["currency"] == null ? undefined : json["currency"],

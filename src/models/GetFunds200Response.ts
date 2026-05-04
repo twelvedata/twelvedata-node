@@ -25,13 +25,13 @@ export interface GetFunds200Response {
    * @type {GetFunds200ResponseResult}
    * @memberof GetFunds200Response
    */
-  result?: GetFunds200ResponseResult;
+  result: GetFunds200ResponseResult;
   /**
    * Status of the response
    * @type {string}
    * @memberof GetFunds200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetFunds200Response {
 export function instanceOfGetFunds200Response(
   value: object,
 ): value is GetFunds200Response {
+  if (!("result" in value) || value["result"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -55,11 +57,8 @@ export function GetFunds200ResponseFromJSONTyped(
     return json;
   }
   return {
-    result:
-      json["result"] == null
-        ? undefined
-        : GetFunds200ResponseResultFromJSON(json["result"]),
-    status: json["status"] == null ? undefined : json["status"],
+    result: GetFunds200ResponseResultFromJSON(json["result"]),
+    status: json["status"],
   };
 }
 

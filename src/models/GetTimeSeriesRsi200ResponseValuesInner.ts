@@ -17,13 +17,13 @@ export interface GetTimeSeriesRsi200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesRsi200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * RSI value
    * @type {string}
    * @memberof GetTimeSeriesRsi200ResponseValuesInner
    */
-  rsi?: string;
+  rsi: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesRsi200ResponseValuesInner {
 export function instanceOfGetTimeSeriesRsi200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesRsi200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("rsi" in value) || value["rsi"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesRsi200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    rsi: json["rsi"] == null ? undefined : json["rsi"],
+    datetime: json["datetime"],
+    rsi: json["rsi"],
   };
 }
 

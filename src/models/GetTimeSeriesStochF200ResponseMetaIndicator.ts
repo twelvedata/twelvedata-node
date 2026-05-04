@@ -17,25 +17,25 @@ export interface GetTimeSeriesStochF200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesStochF200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * The fast_k period used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesStochF200ResponseMetaIndicator
    */
-  fastKPeriod?: number;
+  fastKPeriod: number;
   /**
    * The fast_d period used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesStochF200ResponseMetaIndicator
    */
-  fastDPeriod?: number;
+  fastDPeriod: number;
   /**
    * The type of fast Displaced Moving Average used
    * @type {string}
    * @memberof GetTimeSeriesStochF200ResponseMetaIndicator
    */
-  fastDmaType?: string;
+  fastDmaType: string;
 }
 
 /**
@@ -44,6 +44,13 @@ export interface GetTimeSeriesStochF200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesStochF200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesStochF200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("fastKPeriod" in value) || value["fastKPeriod"] === undefined)
+    return false;
+  if (!("fastDPeriod" in value) || value["fastDPeriod"] === undefined)
+    return false;
+  if (!("fastDmaType" in value) || value["fastDmaType"] === undefined)
+    return false;
   return true;
 }
 
@@ -61,13 +68,10 @@ export function GetTimeSeriesStochF200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    fastKPeriod:
-      json["fast_k_period"] == null ? undefined : json["fast_k_period"],
-    fastDPeriod:
-      json["fast_d_period"] == null ? undefined : json["fast_d_period"],
-    fastDmaType:
-      json["fast_dma_type"] == null ? undefined : json["fast_dma_type"],
+    name: json["name"],
+    fastKPeriod: json["fast_k_period"],
+    fastDPeriod: json["fast_d_period"],
+    fastDmaType: json["fast_dma_type"],
   };
 }
 

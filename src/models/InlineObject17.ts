@@ -32,19 +32,19 @@ export interface InlineObject17 {
    * @type {InlineObject17Meta}
    * @memberof InlineObject17
    */
-  meta?: InlineObject17Meta;
+  meta: InlineObject17Meta;
   /**
    * Array of time series data points
    * @type {Array<InlineObject17ValuesInner>}
    * @memberof InlineObject17
    */
-  values?: Array<InlineObject17ValuesInner>;
+  values: Array<InlineObject17ValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof InlineObject17
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface InlineObject17 {
 export function instanceOfInlineObject17(
   value: object,
 ): value is InlineObject17 {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -68,15 +71,11 @@ export function InlineObject17FromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : InlineObject17MetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(InlineObject17ValuesInnerFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: InlineObject17MetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      InlineObject17ValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -94,10 +93,9 @@ export function InlineObject17ToJSONTyped(
 
   return {
     meta: InlineObject17MetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(InlineObject17ValuesInnerToJSON),
+    values: (value["values"] as Array<any>).map(
+      InlineObject17ValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

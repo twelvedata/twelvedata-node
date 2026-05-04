@@ -17,13 +17,13 @@ export interface GetEarningsEstimate200ResponseEarningsEstimateInner {
    * @type {string}
    * @memberof GetEarningsEstimate200ResponseEarningsEstimateInner
    */
-  date?: string;
+  date: string;
   /**
    * Period of estimation, can be `current_quarter`, `next_quarter`, `current_year`, or `next_year`
    * @type {string}
    * @memberof GetEarningsEstimate200ResponseEarningsEstimateInner
    */
-  period?: string;
+  period: string;
   /**
    * Number of analysts that made the estimation
    * @type {number}
@@ -62,6 +62,8 @@ export interface GetEarningsEstimate200ResponseEarningsEstimateInner {
 export function instanceOfGetEarningsEstimate200ResponseEarningsEstimateInner(
   value: object,
 ): value is GetEarningsEstimate200ResponseEarningsEstimateInner {
+  if (!("date" in value) || value["date"] === undefined) return false;
+  if (!("period" in value) || value["period"] === undefined) return false;
   return true;
 }
 
@@ -82,8 +84,8 @@ export function GetEarningsEstimate200ResponseEarningsEstimateInnerFromJSONTyped
     return json;
   }
   return {
-    date: json["date"] == null ? undefined : json["date"],
-    period: json["period"] == null ? undefined : json["period"],
+    date: json["date"],
+    period: json["period"],
     numberOfAnalysts:
       json["number_of_analysts"] == null
         ? undefined

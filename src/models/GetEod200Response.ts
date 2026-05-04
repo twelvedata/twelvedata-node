@@ -17,13 +17,13 @@ export interface GetEod200Response {
    * @type {string}
    * @memberof GetEod200Response
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Exchange where instrument is traded
    * @type {string}
    * @memberof GetEod200Response
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
@@ -41,13 +41,13 @@ export interface GetEod200Response {
    * @type {string}
    * @memberof GetEod200Response
    */
-  datetime?: string;
+  datetime: string;
   /**
    * The most recent end of day close price
    * @type {string}
    * @memberof GetEod200Response
    */
-  close?: string;
+  close: string;
 }
 
 /**
@@ -56,6 +56,10 @@ export interface GetEod200Response {
 export function instanceOfGetEod200Response(
   value: object,
 ): value is GetEod200Response {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("close" in value) || value["close"] === undefined) return false;
   return true;
 }
 
@@ -71,12 +75,12 @@ export function GetEod200ResponseFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
+    symbol: json["symbol"],
+    exchange: json["exchange"],
     micCode: json["mic_code"] == null ? undefined : json["mic_code"],
     currency: json["currency"] == null ? undefined : json["currency"],
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    close: json["close"] == null ? undefined : json["close"],
+    datetime: json["datetime"],
+    close: json["close"],
   };
 }
 

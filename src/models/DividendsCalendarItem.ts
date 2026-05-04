@@ -31,17 +31,17 @@ export interface DividendsCalendarItem {
    */
   exchange?: string;
   /**
-   * Ex-dividend date
+   * Stands for the ex date
    * @type {string}
    * @memberof DividendsCalendarItem
    */
-  exDate?: string;
+  exDate: string;
   /**
    * Dividend payment amount
    * @type {number}
    * @memberof DividendsCalendarItem
    */
-  amount?: number;
+  amount: number;
 }
 
 /**
@@ -50,6 +50,8 @@ export interface DividendsCalendarItem {
 export function instanceOfDividendsCalendarItem(
   value: object,
 ): value is DividendsCalendarItem {
+  if (!("exDate" in value) || value["exDate"] === undefined) return false;
+  if (!("amount" in value) || value["amount"] === undefined) return false;
   return true;
 }
 
@@ -70,8 +72,8 @@ export function DividendsCalendarItemFromJSONTyped(
     symbol: json["symbol"] == null ? undefined : json["symbol"],
     micCode: json["mic_code"] == null ? undefined : json["mic_code"],
     exchange: json["exchange"] == null ? undefined : json["exchange"],
-    exDate: json["ex_date"] == null ? undefined : json["ex_date"],
-    amount: json["amount"] == null ? undefined : json["amount"],
+    exDate: json["ex_date"],
+    amount: json["amount"],
   };
 }
 

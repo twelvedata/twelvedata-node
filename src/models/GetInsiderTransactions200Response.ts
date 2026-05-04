@@ -32,13 +32,13 @@ export interface GetInsiderTransactions200Response {
    * @type {GetInsiderTransactions200ResponseMeta}
    * @memberof GetInsiderTransactions200Response
    */
-  meta?: GetInsiderTransactions200ResponseMeta;
+  meta: GetInsiderTransactions200ResponseMeta;
   /**
    * List of insider transactions
    * @type {Array<GetInsiderTransactions200ResponseInsiderTransactionsInner>}
    * @memberof GetInsiderTransactions200Response
    */
-  insiderTransactions?: Array<GetInsiderTransactions200ResponseInsiderTransactionsInner>;
+  insiderTransactions: Array<GetInsiderTransactions200ResponseInsiderTransactionsInner>;
 }
 
 /**
@@ -47,6 +47,12 @@ export interface GetInsiderTransactions200Response {
 export function instanceOfGetInsiderTransactions200Response(
   value: object,
 ): value is GetInsiderTransactions200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (
+    !("insiderTransactions" in value) ||
+    value["insiderTransactions"] === undefined
+  )
+    return false;
   return true;
 }
 
@@ -64,16 +70,10 @@ export function GetInsiderTransactions200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetInsiderTransactions200ResponseMetaFromJSON(json["meta"]),
-    insiderTransactions:
-      json["insider_transactions"] == null
-        ? undefined
-        : (json["insider_transactions"] as Array<any>).map(
-            GetInsiderTransactions200ResponseInsiderTransactionsInnerFromJSON,
-          ),
+    meta: GetInsiderTransactions200ResponseMetaFromJSON(json["meta"]),
+    insiderTransactions: (json["insider_transactions"] as Array<any>).map(
+      GetInsiderTransactions200ResponseInsiderTransactionsInnerFromJSON,
+    ),
   };
 }
 
@@ -93,11 +93,8 @@ export function GetInsiderTransactions200ResponseToJSONTyped(
 
   return {
     meta: GetInsiderTransactions200ResponseMetaToJSON(value["meta"]),
-    insider_transactions:
-      value["insiderTransactions"] == null
-        ? undefined
-        : (value["insiderTransactions"] as Array<any>).map(
-            GetInsiderTransactions200ResponseInsiderTransactionsInnerToJSON,
-          ),
+    insider_transactions: (value["insiderTransactions"] as Array<any>).map(
+      GetInsiderTransactions200ResponseInsiderTransactionsInnerToJSON,
+    ),
   };
 }

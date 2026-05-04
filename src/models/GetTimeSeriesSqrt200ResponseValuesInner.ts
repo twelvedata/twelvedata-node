@@ -17,13 +17,13 @@ export interface GetTimeSeriesSqrt200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesSqrt200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * SQRT value
    * @type {string}
    * @memberof GetTimeSeriesSqrt200ResponseValuesInner
    */
-  sqrt?: string;
+  sqrt: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesSqrt200ResponseValuesInner {
 export function instanceOfGetTimeSeriesSqrt200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesSqrt200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("sqrt" in value) || value["sqrt"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesSqrt200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    sqrt: json["sqrt"] == null ? undefined : json["sqrt"],
+    datetime: json["datetime"],
+    sqrt: json["sqrt"],
   };
 }
 

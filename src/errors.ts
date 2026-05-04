@@ -1,3 +1,11 @@
+/* tslint:disable */
+/* eslint-disable */
+/**
+ * Twelve Data API client for Node.js
+ *
+ * NOTE: This code is auto generated, please do not edit it manually.
+ */
+
 import type { Middleware, ResponseContext } from "./runtime";
 
 /**
@@ -98,7 +106,7 @@ function isErrorResponseBody(data: unknown): data is ErrorResponseBody {
 /**
  * Middleware that translates non-2xx Twelvedata API responses into
  * typed `TwelvedataApiError` subclasses. Attached by default to
- * `Configuration` instances created via `CreateConfig` and `DefaultConfig`.
+ * `Configuration` instances created via `CreateConfig`.
  *
  * Uses `response.clone()` because `Response.body` is a single-use stream
  * and downstream consumers may still need to read it.

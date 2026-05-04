@@ -17,19 +17,19 @@ export interface GetExchangeRate200Response {
    * @type {string}
    * @memberof GetExchangeRate200Response
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Real-time exchange rate for the corresponding symbol
    * @type {number}
    * @memberof GetExchangeRate200Response
    */
-  rate?: number;
+  rate: number;
   /**
    * Unix timestamp of the rate
    * @type {number}
    * @memberof GetExchangeRate200Response
    */
-  timestamp?: number;
+  timestamp: number;
 }
 
 /**
@@ -38,6 +38,9 @@ export interface GetExchangeRate200Response {
 export function instanceOfGetExchangeRate200Response(
   value: object,
 ): value is GetExchangeRate200Response {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("rate" in value) || value["rate"] === undefined) return false;
+  if (!("timestamp" in value) || value["timestamp"] === undefined) return false;
   return true;
 }
 
@@ -55,9 +58,9 @@ export function GetExchangeRate200ResponseFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    rate: json["rate"] == null ? undefined : json["rate"],
-    timestamp: json["timestamp"] == null ? undefined : json["timestamp"],
+    symbol: json["symbol"],
+    rate: json["rate"],
+    timestamp: json["timestamp"],
   };
 }
 

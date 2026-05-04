@@ -17,25 +17,25 @@ export interface GetEdgarFilingsArchive200ResponseMeta {
    * @type {string}
    * @memberof GetEdgarFilingsArchive200ResponseMeta
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Exchange name where the company is listed
    * @type {string}
    * @memberof GetEdgarFilingsArchive200ResponseMeta
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market Identifier Code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof GetEdgarFilingsArchive200ResponseMeta
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Issue type of the stock
    * @type {string}
    * @memberof GetEdgarFilingsArchive200ResponseMeta
    */
-  type?: string;
+  type: string;
 }
 
 /**
@@ -44,6 +44,10 @@ export interface GetEdgarFilingsArchive200ResponseMeta {
 export function instanceOfGetEdgarFilingsArchive200ResponseMeta(
   value: object,
 ): value is GetEdgarFilingsArchive200ResponseMeta {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("type" in value) || value["type"] === undefined) return false;
   return true;
 }
 
@@ -61,10 +65,10 @@ export function GetEdgarFilingsArchive200ResponseMetaFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    type: json["type"] == null ? undefined : json["type"],
+    symbol: json["symbol"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
+    type: json["type"],
   };
 }
 

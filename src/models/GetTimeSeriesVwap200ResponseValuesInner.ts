@@ -17,25 +17,25 @@ export interface GetTimeSeriesVwap200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesVwap200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * VWAP lower value
-   * @type {number}
+   * @type {string}
    * @memberof GetTimeSeriesVwap200ResponseValuesInner
    */
-  vwapLower?: number;
+  vwapLower?: string;
   /**
    * VWAP value
-   * @type {number}
+   * @type {string}
    * @memberof GetTimeSeriesVwap200ResponseValuesInner
    */
-  vwap?: number;
+  vwap: string;
   /**
    * VWAP upper value
-   * @type {number}
+   * @type {string}
    * @memberof GetTimeSeriesVwap200ResponseValuesInner
    */
-  vwapUpper?: number;
+  vwapUpper?: string;
 }
 
 /**
@@ -44,6 +44,8 @@ export interface GetTimeSeriesVwap200ResponseValuesInner {
 export function instanceOfGetTimeSeriesVwap200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesVwap200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("vwap" in value) || value["vwap"] === undefined) return false;
   return true;
 }
 
@@ -61,9 +63,9 @@ export function GetTimeSeriesVwap200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
+    datetime: json["datetime"],
     vwapLower: json["vwap_lower"] == null ? undefined : json["vwap_lower"],
-    vwap: json["vwap"] == null ? undefined : json["vwap"],
+    vwap: json["vwap"],
     vwapUpper: json["vwap_upper"] == null ? undefined : json["vwap_upper"],
   };
 }

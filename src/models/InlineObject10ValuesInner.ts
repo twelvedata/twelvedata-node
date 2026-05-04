@@ -17,13 +17,13 @@ export interface InlineObject10ValuesInner {
    * @type {string}
    * @memberof InlineObject10ValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * ATAN value
    * @type {string}
    * @memberof InlineObject10ValuesInner
    */
-  atan?: string;
+  atan: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface InlineObject10ValuesInner {
 export function instanceOfInlineObject10ValuesInner(
   value: object,
 ): value is InlineObject10ValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("atan" in value) || value["atan"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function InlineObject10ValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    atan: json["atan"] == null ? undefined : json["atan"],
+    datetime: json["datetime"],
+    atan: json["atan"],
   };
 }
 

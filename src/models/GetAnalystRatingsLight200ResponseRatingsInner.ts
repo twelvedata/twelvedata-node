@@ -17,13 +17,13 @@ export interface GetAnalystRatingsLight200ResponseRatingsInner {
    * @type {string}
    * @memberof GetAnalystRatingsLight200ResponseRatingsInner
    */
-  date?: string;
+  date: string;
   /**
    * Firm that issued the ranking
    * @type {string}
    * @memberof GetAnalystRatingsLight200ResponseRatingsInner
    */
-  firm?: string;
+  firm: string;
   /**
    * Defines the action of the firm to ranking, could be `Maintains`, `Upgrade`, `Downgrade`, `Initiates` or `Reiterates`
    * @type {string}
@@ -50,6 +50,8 @@ export interface GetAnalystRatingsLight200ResponseRatingsInner {
 export function instanceOfGetAnalystRatingsLight200ResponseRatingsInner(
   value: object,
 ): value is GetAnalystRatingsLight200ResponseRatingsInner {
+  if (!("date" in value) || value["date"] === undefined) return false;
+  if (!("firm" in value) || value["firm"] === undefined) return false;
   return true;
 }
 
@@ -70,8 +72,8 @@ export function GetAnalystRatingsLight200ResponseRatingsInnerFromJSONTyped(
     return json;
   }
   return {
-    date: json["date"] == null ? undefined : json["date"],
-    firm: json["firm"] == null ? undefined : json["firm"],
+    date: json["date"],
+    firm: json["firm"],
     ratingChange:
       json["rating_change"] == null ? undefined : json["rating_change"],
     ratingCurrent:

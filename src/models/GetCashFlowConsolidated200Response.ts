@@ -25,7 +25,7 @@ export interface GetCashFlowConsolidated200Response {
    * @type {Array<CashFlowData>}
    * @memberof GetCashFlowConsolidated200Response
    */
-  cashFlow?: Array<CashFlowData>;
+  cashFlow: Array<CashFlowData>;
   /**
    * Response status
    * @type {string}
@@ -40,6 +40,7 @@ export interface GetCashFlowConsolidated200Response {
 export function instanceOfGetCashFlowConsolidated200Response(
   value: object,
 ): value is GetCashFlowConsolidated200Response {
+  if (!("cashFlow" in value) || value["cashFlow"] === undefined) return false;
   return true;
 }
 
@@ -57,10 +58,7 @@ export function GetCashFlowConsolidated200ResponseFromJSONTyped(
     return json;
   }
   return {
-    cashFlow:
-      json["cash_flow"] == null
-        ? undefined
-        : (json["cash_flow"] as Array<any>).map(CashFlowDataFromJSON),
+    cashFlow: (json["cash_flow"] as Array<any>).map(CashFlowDataFromJSON),
     status: json["status"] == null ? undefined : json["status"],
   };
 }
@@ -80,10 +78,7 @@ export function GetCashFlowConsolidated200ResponseToJSONTyped(
   }
 
   return {
-    cash_flow:
-      value["cashFlow"] == null
-        ? undefined
-        : (value["cashFlow"] as Array<any>).map(CashFlowDataToJSON),
+    cash_flow: (value["cashFlow"] as Array<any>).map(CashFlowDataToJSON),
     status: value["status"],
   };
 }

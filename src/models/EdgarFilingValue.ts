@@ -25,13 +25,13 @@ export interface EdgarFilingValue {
    * @type {number}
    * @memberof EdgarFilingValue
    */
-  cik?: number;
+  cik: number;
   /**
    * Filing date in UNIX timestamp
    * @type {number}
    * @memberof EdgarFilingValue
    */
-  filedAt?: number;
+  filedAt: number;
   /**
    * Filing files
    * @type {Array<EdgarFilingFile>}
@@ -43,19 +43,19 @@ export interface EdgarFilingValue {
    * @type {string}
    * @memberof EdgarFilingValue
    */
-  filingUrl?: string;
+  filingUrl: string;
   /**
    * Filing form type
    * @type {string}
    * @memberof EdgarFilingValue
    */
-  formType?: string;
+  formType: string;
   /**
    * Ticker symbols associated with the filing
    * @type {Array<string>}
    * @memberof EdgarFilingValue
    */
-  ticker?: Array<string>;
+  ticker: Array<string>;
 }
 
 /**
@@ -64,6 +64,11 @@ export interface EdgarFilingValue {
 export function instanceOfEdgarFilingValue(
   value: object,
 ): value is EdgarFilingValue {
+  if (!("cik" in value) || value["cik"] === undefined) return false;
+  if (!("filedAt" in value) || value["filedAt"] === undefined) return false;
+  if (!("filingUrl" in value) || value["filingUrl"] === undefined) return false;
+  if (!("formType" in value) || value["formType"] === undefined) return false;
+  if (!("ticker" in value) || value["ticker"] === undefined) return false;
   return true;
 }
 
@@ -79,15 +84,15 @@ export function EdgarFilingValueFromJSONTyped(
     return json;
   }
   return {
-    cik: json["cik"] == null ? undefined : json["cik"],
-    filedAt: json["filed_at"] == null ? undefined : json["filed_at"],
+    cik: json["cik"],
+    filedAt: json["filed_at"],
     files:
       json["files"] == null
         ? undefined
         : (json["files"] as Array<any>).map(EdgarFilingFileFromJSON),
-    filingUrl: json["filing_url"] == null ? undefined : json["filing_url"],
-    formType: json["form_type"] == null ? undefined : json["form_type"],
-    ticker: json["ticker"] == null ? undefined : json["ticker"],
+    filingUrl: json["filing_url"],
+    formType: json["form_type"],
+    ticker: json["ticker"],
   };
 }
 

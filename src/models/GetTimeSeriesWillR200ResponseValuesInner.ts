@@ -17,13 +17,13 @@ export interface GetTimeSeriesWillR200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesWillR200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Williams %R value
    * @type {string}
    * @memberof GetTimeSeriesWillR200ResponseValuesInner
    */
-  willr?: string;
+  willr: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesWillR200ResponseValuesInner {
 export function instanceOfGetTimeSeriesWillR200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesWillR200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("willr" in value) || value["willr"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesWillR200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    willr: json["willr"] == null ? undefined : json["willr"],
+    datetime: json["datetime"],
+    willr: json["willr"],
   };
 }
 

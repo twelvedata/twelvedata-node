@@ -25,13 +25,13 @@ export interface GetMutualFundsWorldRisk200Response {
    * @type {GetMutualFundsWorldRisk200ResponseMutualFund}
    * @memberof GetMutualFundsWorldRisk200Response
    */
-  mutualFund?: GetMutualFundsWorldRisk200ResponseMutualFund;
+  mutualFund: GetMutualFundsWorldRisk200ResponseMutualFund;
   /**
    * Status of the response
    * @type {string}
    * @memberof GetMutualFundsWorldRisk200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,9 @@ export interface GetMutualFundsWorldRisk200Response {
 export function instanceOfGetMutualFundsWorldRisk200Response(
   value: object,
 ): value is GetMutualFundsWorldRisk200Response {
+  if (!("mutualFund" in value) || value["mutualFund"] === undefined)
+    return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,13 +60,10 @@ export function GetMutualFundsWorldRisk200ResponseFromJSONTyped(
     return json;
   }
   return {
-    mutualFund:
-      json["mutual_fund"] == null
-        ? undefined
-        : GetMutualFundsWorldRisk200ResponseMutualFundFromJSON(
-            json["mutual_fund"],
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    mutualFund: GetMutualFundsWorldRisk200ResponseMutualFundFromJSON(
+      json["mutual_fund"],
+    ),
+    status: json["status"],
   };
 }
 

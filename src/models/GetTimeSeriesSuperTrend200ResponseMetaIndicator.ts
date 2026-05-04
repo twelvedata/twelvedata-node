@@ -17,19 +17,19 @@ export interface GetTimeSeriesSuperTrend200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesSuperTrend200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * The period used for calculation in the indicator
    * @type {number}
    * @memberof GetTimeSeriesSuperTrend200ResponseMetaIndicator
    */
-  period?: number;
+  period: number;
   /**
    * The factor used to adjust the indicator's sensitivity
    * @type {number}
    * @memberof GetTimeSeriesSuperTrend200ResponseMetaIndicator
    */
-  multiplier?: number;
+  multiplier: number;
 }
 
 /**
@@ -38,6 +38,10 @@ export interface GetTimeSeriesSuperTrend200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesSuperTrend200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesSuperTrend200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("period" in value) || value["period"] === undefined) return false;
+  if (!("multiplier" in value) || value["multiplier"] === undefined)
+    return false;
   return true;
 }
 
@@ -58,9 +62,9 @@ export function GetTimeSeriesSuperTrend200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    period: json["period"] == null ? undefined : json["period"],
-    multiplier: json["multiplier"] == null ? undefined : json["multiplier"],
+    name: json["name"],
+    period: json["period"],
+    multiplier: json["multiplier"],
   };
 }
 

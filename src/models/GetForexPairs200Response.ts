@@ -21,17 +21,23 @@ import {
  */
 export interface GetForexPairs200Response {
   /**
+   * Count
+   * @type {number}
+   * @memberof GetForexPairs200Response
+   */
+  count: number;
+  /**
    * List of forex pairs
    * @type {Array<ForexResponseItem>}
    * @memberof GetForexPairs200Response
    */
-  data?: Array<ForexResponseItem>;
+  data: Array<ForexResponseItem>;
   /**
    * Response status
    * @type {string}
    * @memberof GetForexPairs200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +46,9 @@ export interface GetForexPairs200Response {
 export function instanceOfGetForexPairs200Response(
   value: object,
 ): value is GetForexPairs200Response {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +66,9 @@ export function GetForexPairs200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(ForexResponseItemFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    count: json["count"],
+    data: (json["data"] as Array<any>).map(ForexResponseItemFromJSON),
+    status: json["status"],
   };
 }
 
@@ -80,10 +87,8 @@ export function GetForexPairs200ResponseToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(ForexResponseItemToJSON),
+    count: value["count"],
+    data: (value["data"] as Array<any>).map(ForexResponseItemToJSON),
     status: value["status"],
   };
 }

@@ -17,13 +17,13 @@ export interface GetTimeSeriesAroonOsc200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesAroonOsc200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Aroon oscillator value
    * @type {string}
    * @memberof GetTimeSeriesAroonOsc200ResponseValuesInner
    */
-  aroonosc?: string;
+  aroonosc: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesAroonOsc200ResponseValuesInner {
 export function instanceOfGetTimeSeriesAroonOsc200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesAroonOsc200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("aroonosc" in value) || value["aroonosc"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesAroonOsc200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    aroonosc: json["aroonosc"] == null ? undefined : json["aroonosc"],
+    datetime: json["datetime"],
+    aroonosc: json["aroonosc"],
   };
 }
 

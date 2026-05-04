@@ -25,61 +25,61 @@ export interface EtfResponseItem {
    * @type {string}
    * @memberof EtfResponseItem
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Full name of the ETF
    * @type {string}
    * @memberof EtfResponseItem
    */
-  name?: string;
+  name: string;
   /**
    * Currency of the ETF according to the ISO 4217 standard
    * @type {string}
    * @memberof EtfResponseItem
    */
-  currency?: string;
+  currency: string;
   /**
    * Exchange where the ETF is traded
    * @type {string}
    * @memberof EtfResponseItem
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof EtfResponseItem
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Country where the ETF is located
    * @type {string}
    * @memberof EtfResponseItem
    */
-  country?: string;
+  country: string;
   /**
    * Financial instrument global identifier (FIGI)
    * @type {string}
    * @memberof EtfResponseItem
    */
-  figiCode?: string;
+  figiCode: string;
   /**
    * Classification of Financial Instruments (CFI)
    * @type {string}
    * @memberof EtfResponseItem
    */
-  cfiCode?: string;
+  cfiCode: string;
   /**
    * International securities identification number (ISIN)
    * @type {string}
    * @memberof EtfResponseItem
    */
-  isin?: string;
+  isin: string;
   /**
    * A unique nine-character alphanumeric code used to identify financial securities, ensuring accurate data retrieval for the specified asset
    * @type {string}
    * @memberof EtfResponseItem
    */
-  cusip?: string;
+  cusip: string;
   /**
    *
    * @type {EtfResponseItemAccess}
@@ -94,6 +94,16 @@ export interface EtfResponseItem {
 export function instanceOfEtfResponseItem(
   value: object,
 ): value is EtfResponseItem {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("country" in value) || value["country"] === undefined) return false;
+  if (!("figiCode" in value) || value["figiCode"] === undefined) return false;
+  if (!("cfiCode" in value) || value["cfiCode"] === undefined) return false;
+  if (!("isin" in value) || value["isin"] === undefined) return false;
+  if (!("cusip" in value) || value["cusip"] === undefined) return false;
   return true;
 }
 
@@ -109,16 +119,16 @@ export function EtfResponseItemFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    currency: json["currency"] == null ? undefined : json["currency"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    country: json["country"] == null ? undefined : json["country"],
-    figiCode: json["figi_code"] == null ? undefined : json["figi_code"],
-    cfiCode: json["cfi_code"] == null ? undefined : json["cfi_code"],
-    isin: json["isin"] == null ? undefined : json["isin"],
-    cusip: json["cusip"] == null ? undefined : json["cusip"],
+    symbol: json["symbol"],
+    name: json["name"],
+    currency: json["currency"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
+    country: json["country"],
+    figiCode: json["figi_code"],
+    cfiCode: json["cfi_code"],
+    isin: json["isin"],
+    cusip: json["cusip"],
     access:
       json["access"] == null
         ? undefined

@@ -25,31 +25,31 @@ export interface ResponseSanctionedEntitiy {
    * @type {string}
    * @memberof ResponseSanctionedEntitiy
    */
-  symbol?: string;
+  symbol: string;
   /**
    * The instrument name
    * @type {string}
    * @memberof ResponseSanctionedEntitiy
    */
-  name?: string;
+  name: string;
   /**
    * Market Identifier Code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof ResponseSanctionedEntitiy
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Country name
    * @type {string}
    * @memberof ResponseSanctionedEntitiy
    */
-  country?: string;
+  country: string;
   /**
    *
    * @type {ResponseSanctionItem}
    * @memberof ResponseSanctionedEntitiy
    */
-  sanction?: ResponseSanctionItem;
+  sanction: ResponseSanctionItem;
 }
 
 /**
@@ -58,6 +58,11 @@ export interface ResponseSanctionedEntitiy {
 export function instanceOfResponseSanctionedEntitiy(
   value: object,
 ): value is ResponseSanctionedEntitiy {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("country" in value) || value["country"] === undefined) return false;
+  if (!("sanction" in value) || value["sanction"] === undefined) return false;
   return true;
 }
 
@@ -75,14 +80,11 @@ export function ResponseSanctionedEntitiyFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    country: json["country"] == null ? undefined : json["country"],
-    sanction:
-      json["sanction"] == null
-        ? undefined
-        : ResponseSanctionItemFromJSON(json["sanction"]),
+    symbol: json["symbol"],
+    name: json["name"],
+    micCode: json["mic_code"],
+    country: json["country"],
+    sanction: ResponseSanctionItemFromJSON(json["sanction"]),
   };
 }
 

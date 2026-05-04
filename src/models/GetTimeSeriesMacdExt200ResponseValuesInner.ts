@@ -17,25 +17,25 @@ export interface GetTimeSeriesMacdExt200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMacdExt200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * MACD value
    * @type {string}
    * @memberof GetTimeSeriesMacdExt200ResponseValuesInner
    */
-  macd?: string;
+  macd: string;
   /**
    * MACD signal line value
    * @type {string}
    * @memberof GetTimeSeriesMacdExt200ResponseValuesInner
    */
-  macdSignal?: string;
+  macdSignal: string;
   /**
    * MACD histogram value
    * @type {string}
    * @memberof GetTimeSeriesMacdExt200ResponseValuesInner
    */
-  macdHist?: string;
+  macdHist: string;
 }
 
 /**
@@ -44,6 +44,11 @@ export interface GetTimeSeriesMacdExt200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMacdExt200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMacdExt200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("macd" in value) || value["macd"] === undefined) return false;
+  if (!("macdSignal" in value) || value["macdSignal"] === undefined)
+    return false;
+  if (!("macdHist" in value) || value["macdHist"] === undefined) return false;
   return true;
 }
 
@@ -61,10 +66,10 @@ export function GetTimeSeriesMacdExt200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    macd: json["macd"] == null ? undefined : json["macd"],
-    macdSignal: json["macd_signal"] == null ? undefined : json["macd_signal"],
-    macdHist: json["macd_hist"] == null ? undefined : json["macd_hist"],
+    datetime: json["datetime"],
+    macd: json["macd"],
+    macdSignal: json["macd_signal"],
+    macdHist: json["macd_hist"],
   };
 }
 

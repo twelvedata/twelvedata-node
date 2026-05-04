@@ -17,19 +17,19 @@ export interface EtfResponseItemAccess {
    * @type {string}
    * @memberof EtfResponseItemAccess
    */
-  global?: string;
+  global: string;
   /**
    * The individual plan name for the symbol
    * @type {string}
    * @memberof EtfResponseItemAccess
    */
-  plan?: string;
+  plan: string;
   /**
    * The business plan name for the symbol
    * @type {string}
    * @memberof EtfResponseItemAccess
    */
-  planBusiness?: string;
+  planBusiness: string;
 }
 
 /**
@@ -38,6 +38,10 @@ export interface EtfResponseItemAccess {
 export function instanceOfEtfResponseItemAccess(
   value: object,
 ): value is EtfResponseItemAccess {
+  if (!("global" in value) || value["global"] === undefined) return false;
+  if (!("plan" in value) || value["plan"] === undefined) return false;
+  if (!("planBusiness" in value) || value["planBusiness"] === undefined)
+    return false;
   return true;
 }
 
@@ -55,10 +59,9 @@ export function EtfResponseItemAccessFromJSONTyped(
     return json;
   }
   return {
-    global: json["global"] == null ? undefined : json["global"],
-    plan: json["plan"] == null ? undefined : json["plan"],
-    planBusiness:
-      json["plan_business"] == null ? undefined : json["plan_business"],
+    global: json["global"],
+    plan: json["plan"],
+    planBusiness: json["plan_business"],
   };
 }
 

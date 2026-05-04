@@ -17,13 +17,13 @@ export interface GetTimeSeriesUltOsc200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesUltOsc200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Ultimate Oscillator value
    * @type {string}
    * @memberof GetTimeSeriesUltOsc200ResponseValuesInner
    */
-  ultosc?: string;
+  ultosc: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesUltOsc200ResponseValuesInner {
 export function instanceOfGetTimeSeriesUltOsc200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesUltOsc200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("ultosc" in value) || value["ultosc"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesUltOsc200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    ultosc: json["ultosc"] == null ? undefined : json["ultosc"],
+    datetime: json["datetime"],
+    ultosc: json["ultosc"],
   };
 }
 

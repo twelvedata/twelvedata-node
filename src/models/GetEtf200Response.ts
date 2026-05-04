@@ -21,17 +21,23 @@ import {
  */
 export interface GetEtf200Response {
   /**
+   * Count
+   * @type {number}
+   * @memberof GetEtf200Response
+   */
+  count: number;
+  /**
    * List of ETFs
    * @type {Array<EtfResponseItem>}
    * @memberof GetEtf200Response
    */
-  data?: Array<EtfResponseItem>;
+  data: Array<EtfResponseItem>;
   /**
    * Response status
    * @type {string}
    * @memberof GetEtf200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +46,9 @@ export interface GetEtf200Response {
 export function instanceOfGetEtf200Response(
   value: object,
 ): value is GetEtf200Response {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -55,11 +64,9 @@ export function GetEtf200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(EtfResponseItemFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    count: json["count"],
+    data: (json["data"] as Array<any>).map(EtfResponseItemFromJSON),
+    status: json["status"],
   };
 }
 
@@ -76,10 +83,8 @@ export function GetEtf200ResponseToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(EtfResponseItemToJSON),
+    count: value["count"],
+    data: (value["data"] as Array<any>).map(EtfResponseItemToJSON),
     status: value["status"],
   };
 }

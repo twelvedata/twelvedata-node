@@ -17,13 +17,13 @@ export interface GetTimeSeriesTRange200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesTRange200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * trange value
    * @type {string}
    * @memberof GetTimeSeriesTRange200ResponseValuesInner
    */
-  trange?: string;
+  trange: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesTRange200ResponseValuesInner {
 export function instanceOfGetTimeSeriesTRange200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesTRange200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("trange" in value) || value["trange"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesTRange200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    trange: json["trange"] == null ? undefined : json["trange"],
+    datetime: json["datetime"],
+    trange: json["trange"],
   };
 }
 

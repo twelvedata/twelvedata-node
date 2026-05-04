@@ -17,13 +17,13 @@ export interface GetTimeSeriesMcGinleyDynamic200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMcGinleyDynamic200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * McGinley Dynamic value
    * @type {string}
    * @memberof GetTimeSeriesMcGinleyDynamic200ResponseValuesInner
    */
-  mcginleyDynamic?: string;
+  mcginleyDynamic: string;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesMcGinleyDynamic200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMcGinleyDynamic200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMcGinleyDynamic200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("mcginleyDynamic" in value) || value["mcginleyDynamic"] === undefined)
+    return false;
   return true;
 }
 
@@ -52,9 +55,8 @@ export function GetTimeSeriesMcGinleyDynamic200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    mcginleyDynamic:
-      json["mcginley_dynamic"] == null ? undefined : json["mcginley_dynamic"],
+    datetime: json["datetime"],
+    mcginleyDynamic: json["mcginley_dynamic"],
   };
 }
 

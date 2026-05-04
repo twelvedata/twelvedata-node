@@ -17,13 +17,13 @@ export interface GetEpsRevisions200ResponseEpsRevisionInner {
    * @type {string}
    * @memberof GetEpsRevisions200ResponseEpsRevisionInner
    */
-  date?: string;
+  date: string;
   /**
    * Period of estimation, can be `current_quarter`, `next_quarter`, `current_year`, or `next_year`
    * @type {string}
    * @memberof GetEpsRevisions200ResponseEpsRevisionInner
    */
-  period?: string;
+  period: string;
   /**
    * Number of up revisions over the last 7 days
    * @type {number}
@@ -56,6 +56,8 @@ export interface GetEpsRevisions200ResponseEpsRevisionInner {
 export function instanceOfGetEpsRevisions200ResponseEpsRevisionInner(
   value: object,
 ): value is GetEpsRevisions200ResponseEpsRevisionInner {
+  if (!("date" in value) || value["date"] === undefined) return false;
+  if (!("period" in value) || value["period"] === undefined) return false;
   return true;
 }
 
@@ -73,8 +75,8 @@ export function GetEpsRevisions200ResponseEpsRevisionInnerFromJSONTyped(
     return json;
   }
   return {
-    date: json["date"] == null ? undefined : json["date"],
-    period: json["period"] == null ? undefined : json["period"],
+    date: json["date"],
+    period: json["period"],
     upLastWeek: json["up_last_week"] == null ? undefined : json["up_last_week"],
     upLastMonth:
       json["up_last_month"] == null ? undefined : json["up_last_month"],

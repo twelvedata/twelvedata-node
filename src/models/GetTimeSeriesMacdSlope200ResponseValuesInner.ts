@@ -17,25 +17,25 @@ export interface GetTimeSeriesMacdSlope200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMacdSlope200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * MACD slope value
    * @type {string}
    * @memberof GetTimeSeriesMacdSlope200ResponseValuesInner
    */
-  macdSlope?: string;
+  macdSlope: string;
   /**
    * MACD signal slope value
    * @type {string}
    * @memberof GetTimeSeriesMacdSlope200ResponseValuesInner
    */
-  macdSignalSlope?: string;
+  macdSignalSlope: string;
   /**
    * MACD histogram slope value
    * @type {string}
    * @memberof GetTimeSeriesMacdSlope200ResponseValuesInner
    */
-  macdHistSlope?: string;
+  macdHistSlope: string;
 }
 
 /**
@@ -44,6 +44,12 @@ export interface GetTimeSeriesMacdSlope200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMacdSlope200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMacdSlope200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("macdSlope" in value) || value["macdSlope"] === undefined) return false;
+  if (!("macdSignalSlope" in value) || value["macdSignalSlope"] === undefined)
+    return false;
+  if (!("macdHistSlope" in value) || value["macdHistSlope"] === undefined)
+    return false;
   return true;
 }
 
@@ -61,12 +67,10 @@ export function GetTimeSeriesMacdSlope200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    macdSlope: json["macd_slope"] == null ? undefined : json["macd_slope"],
-    macdSignalSlope:
-      json["macd_signal_slope"] == null ? undefined : json["macd_signal_slope"],
-    macdHistSlope:
-      json["macd_hist_slope"] == null ? undefined : json["macd_hist_slope"],
+    datetime: json["datetime"],
+    macdSlope: json["macd_slope"],
+    macdSignalSlope: json["macd_signal_slope"],
+    macdHistSlope: json["macd_hist_slope"],
   };
 }
 

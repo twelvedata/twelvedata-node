@@ -743,7 +743,7 @@ export class FundamentalsApi extends runtime.BaseAPI {
   }
 
   /**
-   * The dividends endpoint provides historical dividend data for a specified stock, in many cases covering over a decade. It returns information on dividend payouts, including the amount, payment date, and frequency. This endpoint is ideal for users tracking dividend histories or evaluating the income potential of stocks.
+   * The dividends endpoint provides historical dividend data for a specified stock, in many cases covering over a decade. It returns information on dividend payouts, including the amount and frequency. This endpoint is ideal for users tracking dividend histories or evaluating the income potential of stocks.
    * Dividends
    */
   async getDividendsRaw(
@@ -821,7 +821,7 @@ export class FundamentalsApi extends runtime.BaseAPI {
   }
 
   /**
-   * The dividends endpoint provides historical dividend data for a specified stock, in many cases covering over a decade. It returns information on dividend payouts, including the amount, payment date, and frequency. This endpoint is ideal for users tracking dividend histories or evaluating the income potential of stocks.
+   * The dividends endpoint provides historical dividend data for a specified stock, in many cases covering over a decade. It returns information on dividend payouts, including the amount and frequency. This endpoint is ideal for users tracking dividend histories or evaluating the income potential of stocks.
    * Dividends
    */
   async getDividends(
@@ -836,7 +836,7 @@ export class FundamentalsApi extends runtime.BaseAPI {
   }
 
   /**
-   * The dividends calendar endpoint provides a detailed schedule of upcoming and past dividend events for specified date ranges. By using the `start_date` and `end_date` parameters, users can retrieve a list of companies issuing dividends, including the ex-dividend date, payment date, and dividend amount. This endpoint is ideal for tracking dividend payouts and planning investment strategies based on dividend schedules.
+   * The dividends calendar endpoint provides a detailed schedule of upcoming and past dividend events for specified date ranges. By using the `start_date` and `end_date` parameters, users can retrieve a list of companies issuing dividends, including the ex-dividend date and dividend amount. This endpoint is ideal for tracking dividend payouts and planning investment strategies based on dividend schedules.
    * Dividends calendar
    */
   async getDividendsCalendarRaw(
@@ -914,7 +914,7 @@ export class FundamentalsApi extends runtime.BaseAPI {
   }
 
   /**
-   * The dividends calendar endpoint provides a detailed schedule of upcoming and past dividend events for specified date ranges. By using the `start_date` and `end_date` parameters, users can retrieve a list of companies issuing dividends, including the ex-dividend date, payment date, and dividend amount. This endpoint is ideal for tracking dividend payouts and planning investment strategies based on dividend schedules.
+   * The dividends calendar endpoint provides a detailed schedule of upcoming and past dividend events for specified date ranges. By using the `start_date` and `end_date` parameters, users can retrieve a list of companies issuing dividends, including the ex-dividend date and dividend amount. This endpoint is ideal for tracking dividend payouts and planning investment strategies based on dividend schedules.
    * Dividends calendar
    */
   async getDividendsCalendar(

@@ -32,13 +32,13 @@ export interface GetSplits200Response {
    * @type {GetSplits200ResponseMeta}
    * @memberof GetSplits200Response
    */
-  meta?: GetSplits200ResponseMeta;
+  meta: GetSplits200ResponseMeta;
   /**
    * List of stock splits
    * @type {Array<GetSplits200ResponseSplitsInner>}
    * @memberof GetSplits200Response
    */
-  splits?: Array<GetSplits200ResponseSplitsInner>;
+  splits: Array<GetSplits200ResponseSplitsInner>;
 }
 
 /**
@@ -47,6 +47,8 @@ export interface GetSplits200Response {
 export function instanceOfGetSplits200Response(
   value: object,
 ): value is GetSplits200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("splits" in value) || value["splits"] === undefined) return false;
   return true;
 }
 
@@ -62,16 +64,10 @@ export function GetSplits200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetSplits200ResponseMetaFromJSON(json["meta"]),
-    splits:
-      json["splits"] == null
-        ? undefined
-        : (json["splits"] as Array<any>).map(
-            GetSplits200ResponseSplitsInnerFromJSON,
-          ),
+    meta: GetSplits200ResponseMetaFromJSON(json["meta"]),
+    splits: (json["splits"] as Array<any>).map(
+      GetSplits200ResponseSplitsInnerFromJSON,
+    ),
   };
 }
 
@@ -89,11 +85,8 @@ export function GetSplits200ResponseToJSONTyped(
 
   return {
     meta: GetSplits200ResponseMetaToJSON(value["meta"]),
-    splits:
-      value["splits"] == null
-        ? undefined
-        : (value["splits"] as Array<any>).map(
-            GetSplits200ResponseSplitsInnerToJSON,
-          ),
+    splits: (value["splits"] as Array<any>).map(
+      GetSplits200ResponseSplitsInnerToJSON,
+    ),
   };
 }

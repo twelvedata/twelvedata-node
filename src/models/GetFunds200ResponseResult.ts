@@ -25,13 +25,13 @@ export interface GetFunds200ResponseResult {
    * @type {number}
    * @memberof GetFunds200ResponseResult
    */
-  count?: number;
+  count: number;
   /**
-   *
+   * List of funds
    * @type {Array<FundResponseItem>}
    * @memberof GetFunds200ResponseResult
    */
-  list?: Array<FundResponseItem>;
+  list: Array<FundResponseItem>;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetFunds200ResponseResult {
 export function instanceOfGetFunds200ResponseResult(
   value: object,
 ): value is GetFunds200ResponseResult {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("list" in value) || value["list"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +59,8 @@ export function GetFunds200ResponseResultFromJSONTyped(
     return json;
   }
   return {
-    count: json["count"] == null ? undefined : json["count"],
-    list:
-      json["list"] == null
-        ? undefined
-        : (json["list"] as Array<any>).map(FundResponseItemFromJSON),
+    count: json["count"],
+    list: (json["list"] as Array<any>).map(FundResponseItemFromJSON),
   };
 }
 
@@ -81,9 +80,6 @@ export function GetFunds200ResponseResultToJSONTyped(
 
   return {
     count: value["count"],
-    list:
-      value["list"] == null
-        ? undefined
-        : (value["list"] as Array<any>).map(FundResponseItemToJSON),
+    list: (value["list"] as Array<any>).map(FundResponseItemToJSON),
   };
 }

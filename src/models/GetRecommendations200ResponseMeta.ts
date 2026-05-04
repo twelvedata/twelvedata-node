@@ -17,43 +17,43 @@ export interface GetRecommendations200ResponseMeta {
    * @type {string}
    * @memberof GetRecommendations200ResponseMeta
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Name of the instrument
    * @type {string}
    * @memberof GetRecommendations200ResponseMeta
    */
-  name?: string;
+  name: string;
   /**
    * Currency in which the instrument is traded
    * @type {string}
    * @memberof GetRecommendations200ResponseMeta
    */
-  currency?: string;
+  currency: string;
   /**
    * Timezone of the exchange
    * @type {string}
    * @memberof GetRecommendations200ResponseMeta
    */
-  exchangeTimezone?: string;
+  exchangeTimezone: string;
   /**
    * Exchange where the instrument is traded
    * @type {string}
    * @memberof GetRecommendations200ResponseMeta
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof GetRecommendations200ResponseMeta
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Type of the instrument
    * @type {string}
    * @memberof GetRecommendations200ResponseMeta
    */
-  type?: string;
+  type: string;
 }
 
 /**
@@ -62,6 +62,14 @@ export interface GetRecommendations200ResponseMeta {
 export function instanceOfGetRecommendations200ResponseMeta(
   value: object,
 ): value is GetRecommendations200ResponseMeta {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
+  if (!("exchangeTimezone" in value) || value["exchangeTimezone"] === undefined)
+    return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("type" in value) || value["type"] === undefined) return false;
   return true;
 }
 
@@ -79,14 +87,13 @@ export function GetRecommendations200ResponseMetaFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    currency: json["currency"] == null ? undefined : json["currency"],
-    exchangeTimezone:
-      json["exchange_timezone"] == null ? undefined : json["exchange_timezone"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
-    type: json["type"] == null ? undefined : json["type"],
+    symbol: json["symbol"],
+    name: json["name"],
+    currency: json["currency"],
+    exchangeTimezone: json["exchange_timezone"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
+    type: json["type"],
   };
 }
 

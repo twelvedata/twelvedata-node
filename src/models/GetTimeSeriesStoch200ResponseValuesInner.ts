@@ -17,19 +17,19 @@ export interface GetTimeSeriesStoch200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesStoch200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * slow_k value
    * @type {string}
    * @memberof GetTimeSeriesStoch200ResponseValuesInner
    */
-  slowK?: string;
+  slowK: string;
   /**
    * slow_d value
    * @type {string}
    * @memberof GetTimeSeriesStoch200ResponseValuesInner
    */
-  slowD?: string;
+  slowD: string;
 }
 
 /**
@@ -38,6 +38,9 @@ export interface GetTimeSeriesStoch200ResponseValuesInner {
 export function instanceOfGetTimeSeriesStoch200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesStoch200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("slowK" in value) || value["slowK"] === undefined) return false;
+  if (!("slowD" in value) || value["slowD"] === undefined) return false;
   return true;
 }
 
@@ -55,9 +58,9 @@ export function GetTimeSeriesStoch200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    slowK: json["slow_k"] == null ? undefined : json["slow_k"],
-    slowD: json["slow_d"] == null ? undefined : json["slow_d"],
+    datetime: json["datetime"],
+    slowK: json["slow_k"],
+    slowD: json["slow_d"],
   };
 }
 

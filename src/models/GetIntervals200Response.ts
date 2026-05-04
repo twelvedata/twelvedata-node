@@ -17,13 +17,13 @@ export interface GetIntervals200Response {
    * @type {Array<string>}
    * @memberof GetIntervals200Response
    */
-  data?: Array<string>;
+  data: Array<string>;
   /**
    * Status of the response
    * @type {string}
    * @memberof GetIntervals200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetIntervals200Response {
 export function instanceOfGetIntervals200Response(
   value: object,
 ): value is GetIntervals200Response {
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetIntervals200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data: json["data"] == null ? undefined : json["data"],
-    status: json["status"] == null ? undefined : json["status"],
+    data: json["data"],
+    status: json["status"],
   };
 }
 

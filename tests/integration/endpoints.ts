@@ -1,19 +1,18 @@
-import "dotenv/config";
-
 import {
   AdvancedApi,
   AnalysisApi,
+  CreateConfig,
   CurrenciesApi,
+  EndpointEnum,
   EtfsApi,
   FundamentalsApi,
   MarketDataApi,
   MutualFundsApi,
   ReferenceDataApi,
   RegulatoryApi,
+  SourceEnum,
   TechnicalIndicatorApi,
-} from "../src/apis";
-import { CreateConfig } from "../src/runtime";
-import { SourceEnum } from "../src/models";
+} from "@twelvedata/twelvedata-node";
 
 const SYMBOL_STOCK = "AAPL";
 const INTERVAL = "1day";
@@ -28,6 +27,9 @@ const START_DATE = "2025-01-01";
 const END_DATE = "2025-01-31";
 const FOREX_BASE = "EUR";
 const FOREX_QUOTE = "USD";
+const COUNTRY = "United States";
+const MIC_CODE = "XNYS";
+const LAST_CHANGES_ENDPOINT = EndpointEnum.PROFILE;
 const SANCTIONS_SOURCE = SourceEnum.OFAC;
 const DELAY_MS = 200;
 
@@ -278,6 +280,49 @@ async function testFundamentalsGetPressReleases(): Promise<void> {
   console.log(response);
 }
 
+async function testFundamentalsGetBalanceSheetConsolidated(): Promise<void> {
+  const response = await fundamentalsApi.getBalanceSheetConsolidated({
+    symbol: SYMBOL_STOCK,
+  });
+  assert(
+    Array.isArray(response.balanceSheet) && response.balanceSheet.length > 0,
+    "expected non-empty balanceSheet array",
+  );
+  console.log(response.balanceSheet[0]);
+}
+
+async function testFundamentalsGetCashFlowConsolidated(): Promise<void> {
+  const response = await fundamentalsApi.getCashFlowConsolidated({
+    symbol: SYMBOL_STOCK,
+  });
+  assert(
+    Array.isArray(response.cashFlow) && response.cashFlow.length > 0,
+    "expected non-empty cashFlow array",
+  );
+  console.log(response.cashFlow[0]);
+}
+
+async function testFundamentalsGetIncomeStatementConsolidated(): Promise<void> {
+  const response = await fundamentalsApi.getIncomeStatementConsolidated({
+    symbol: SYMBOL_STOCK,
+  });
+  assert(
+    Array.isArray(response.incomeStatement) &&
+      (response.incomeStatement?.length ?? 0) > 0,
+    "expected non-empty incomeStatement array",
+  );
+  console.log(response.incomeStatement?.[0]);
+}
+
+async function testFundamentalsGetLastChanges(): Promise<void> {
+  const response = await fundamentalsApi.getLastChanges({
+    endpoint: LAST_CHANGES_ENDPOINT,
+  });
+  assert(response.pagination != null, "expected pagination to be present");
+  assert(Array.isArray(response.data), "expected data array");
+  console.log(response.data[0] ?? response.pagination);
+}
+
 // --- AnalysisApi ---
 
 const analysisApi = new AnalysisApi(config);
@@ -372,6 +417,18 @@ async function testAnalysisGetRevenueEstimate(): Promise<void> {
   console.log(response);
 }
 
+async function testAnalysisGetAnalystRatingsLight(): Promise<void> {
+  const response = await analysisApi.getAnalystRatingsLight({
+    symbol: SYMBOL_STOCK,
+  });
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(response.ratings != null, "expected ratings to be present");
+  console.log(response);
+}
+
 // --- EtfsApi ---
 
 const etfsApi = new EtfsApi(config);
@@ -427,6 +484,32 @@ async function testEtfsGetETFsWorldRisk(): Promise<void> {
     `expected status ok, got ${response.status}`,
   );
   assert(response.etf != null, "expected response data");
+  console.log(response);
+}
+
+async function testEtfsGetETFsFamily(): Promise<void> {
+  const response = await etfsApi.getETFsFamily({ country: COUNTRY });
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(
+    response.result != null && Object.keys(response.result).length > 0,
+    "expected non-empty result map",
+  );
+  console.log(response);
+}
+
+async function testEtfsGetETFsType(): Promise<void> {
+  const response = await etfsApi.getETFsType({ country: COUNTRY });
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(
+    response.result != null && Object.keys(response.result).length > 0,
+    "expected non-empty result map",
+  );
   console.log(response);
 }
 
@@ -527,6 +610,48 @@ async function testMutualFundsGetMutualFundsWorldSustainability(): Promise<void>
     `expected status ok, got ${response.status}`,
   );
   assert(response.mutualFund != null, "expected response data");
+  console.log(response);
+}
+
+async function testMutualFundsGetMutualFundsFamily(): Promise<void> {
+  const response = await mutualFundsApi.getMutualFundsFamily({
+    country: COUNTRY,
+  });
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(
+    response.result != null && Object.keys(response.result).length > 0,
+    "expected non-empty result map",
+  );
+  console.log(response);
+}
+
+async function testMutualFundsGetMutualFundsList(): Promise<void> {
+  const response = await mutualFundsApi.getMutualFundsList({
+    symbol: SYMBOL_MUTUAL_FUND,
+  });
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(response.result != null, "expected result to be present");
+  console.log(response);
+}
+
+async function testMutualFundsGetMutualFundsType(): Promise<void> {
+  const response = await mutualFundsApi.getMutualFundsType({
+    country: COUNTRY,
+  });
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(
+    response.result != null && Object.keys(response.result).length > 0,
+    "expected non-empty result map",
+  );
   console.log(response);
 }
 
@@ -671,6 +796,91 @@ async function testReferenceDataGetCrossListings(): Promise<void> {
   console.log(response);
 }
 
+async function testReferenceDataGetBonds(): Promise<void> {
+  const response = await referenceDataApi.getBonds({});
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(response.result != null, "expected result to be present");
+  console.log(response);
+}
+
+async function testReferenceDataGetCommodities(): Promise<void> {
+  const response = await referenceDataApi.getCommodities({});
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(
+    Array.isArray(response.data) && response.data.length > 0,
+    "expected non-empty data array",
+  );
+  console.log(response.data[0]);
+}
+
+async function testReferenceDataGetCryptocurrencyExchanges(): Promise<void> {
+  const response = await referenceDataApi.getCryptocurrencyExchanges({});
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(
+    Array.isArray(response.data) && response.data.length > 0,
+    "expected non-empty data array",
+  );
+  console.log(response.data[0]);
+}
+
+async function testReferenceDataGetEtf(): Promise<void> {
+  const response = await referenceDataApi.getEtf({ symbol: SYMBOL_ETF });
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(
+    Array.isArray(response.data) && response.data.length > 0,
+    "expected non-empty data array",
+  );
+  console.log(response.data[0]);
+}
+
+async function testReferenceDataGetExchangeSchedule(): Promise<void> {
+  const response = await referenceDataApi.getExchangeSchedule({
+    micCode: MIC_CODE,
+  });
+  assert(
+    Array.isArray(response.data) && response.data.length > 0,
+    "expected non-empty data array",
+  );
+  console.log(response.data[0]);
+}
+
+async function testReferenceDataGetFunds(): Promise<void> {
+  const response = await referenceDataApi.getFunds({
+    symbol: SYMBOL_MUTUAL_FUND,
+  });
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(response.result != null, "expected result to be present");
+  console.log(response);
+}
+
+async function testReferenceDataGetTechnicalIndicators(): Promise<void> {
+  const response = await referenceDataApi.getTechnicalIndicators();
+  assert(
+    response.status === "ok",
+    `expected status ok, got ${response.status}`,
+  );
+  assert(
+    response.data != null && Object.keys(response.data).length > 0,
+    "expected non-empty data map",
+  );
+  console.log(Object.keys(response.data)[0]);
+}
+
 // --- RegulatoryApi ---
 
 const regulatoryApi = new RegulatoryApi(config);
@@ -725,6 +935,15 @@ async function testRegulatoryGetSourceSanctionedEntities(): Promise<void> {
   );
   assert(response.sanctions != null, "expected response data");
   console.log(response);
+}
+
+async function testRegulatoryGetEdgarFilingsArchive(): Promise<void> {
+  const response = await regulatoryApi.getEdgarFilingsArchive({
+    symbol: SYMBOL_STOCK,
+  });
+  assert(response.meta != null, "expected meta to be present");
+  assert(Array.isArray(response.values), "expected values array");
+  console.log(response.values[0] ?? response.meta);
 }
 
 // --- TechnicalIndicatorApi (2 only) ---
@@ -792,8 +1011,6 @@ async function main(): Promise<void> {
     testMarketDataGetCurrencyConversion,
   );
   await runTest("MarketData.getMarketMovers", testMarketDataGetMarketMovers);
-
-  await runTest("MarketData.getTimeSeries", testMarketDataGetTimeSeries);
   await runTest(
     "MarketData.getTimeSeriesCross",
     testMarketDataGetTimeSeriesCross,
@@ -836,6 +1053,22 @@ async function main(): Promise<void> {
     "Fundamentals.pressReleasesListParameters",
     testFundamentalsGetPressReleases,
   );
+  await runTest(
+    "Fundamentals.getBalanceSheetConsolidated",
+    testFundamentalsGetBalanceSheetConsolidated,
+  );
+  await runTest(
+    "Fundamentals.getCashFlowConsolidated",
+    testFundamentalsGetCashFlowConsolidated,
+  );
+  await runTest(
+    "Fundamentals.getIncomeStatementConsolidated",
+    testFundamentalsGetIncomeStatementConsolidated,
+  );
+  await runTest(
+    "Fundamentals.getLastChanges",
+    testFundamentalsGetLastChanges,
+  );
 
   await runTest(
     "Analysis.getAnalystRatingsUsEquities",
@@ -851,6 +1084,10 @@ async function main(): Promise<void> {
   await runTest("Analysis.getEpsTrend", testAnalysisGetEpsTrend);
   await runTest("Analysis.getGrowthEstimates", testAnalysisGetGrowthEstimates);
   await runTest("Analysis.getRevenueEstimate", testAnalysisGetRevenueEstimate);
+  await runTest(
+    "Analysis.getAnalystRatingsLight",
+    testAnalysisGetAnalystRatingsLight,
+  );
 
   await runTest("Etfs.getETFsWorld", testEtfsGetETFsWorld);
   await runTest("Etfs.getETFsWorldSummary", testEtfsGetETFsWorldSummary);
@@ -863,6 +1100,8 @@ async function main(): Promise<void> {
     testEtfsGetETFsWorldPerformance,
   );
   await runTest("Etfs.getETFsWorldRisk", testEtfsGetETFsWorldRisk);
+  await runTest("Etfs.getETFsFamily", testEtfsGetETFsFamily);
+  await runTest("Etfs.getETFsType", testEtfsGetETFsType);
 
   await runTest(
     "MutualFunds.getMutualFundsWorld",
@@ -896,6 +1135,18 @@ async function main(): Promise<void> {
     "MutualFunds.getMutualFundsWorldSustainability",
     testMutualFundsGetMutualFundsWorldSustainability,
   );
+  await runTest(
+    "MutualFunds.getMutualFundsFamily",
+    testMutualFundsGetMutualFundsFamily,
+  );
+  await runTest(
+    "MutualFunds.getMutualFundsList",
+    testMutualFundsGetMutualFundsList,
+  );
+  await runTest(
+    "MutualFunds.getMutualFundsType",
+    testMutualFundsGetMutualFundsType,
+  );
 
   await runTest("ReferenceData.getStocks", testReferenceDataGetStocks);
   await runTest("ReferenceData.getETFsList", testReferenceDataGetETFsList);
@@ -927,6 +1178,25 @@ async function main(): Promise<void> {
     "ReferenceData.getCrossListings",
     testReferenceDataGetCrossListings,
   );
+  await runTest("ReferenceData.getBonds", testReferenceDataGetBonds);
+  await runTest(
+    "ReferenceData.getCommodities",
+    testReferenceDataGetCommodities,
+  );
+  await runTest(
+    "ReferenceData.getCryptocurrencyExchanges",
+    testReferenceDataGetCryptocurrencyExchanges,
+  );
+  await runTest("ReferenceData.getEtf", testReferenceDataGetEtf);
+  await runTest(
+    "ReferenceData.getExchangeSchedule",
+    testReferenceDataGetExchangeSchedule,
+  );
+  await runTest("ReferenceData.getFunds", testReferenceDataGetFunds);
+  await runTest(
+    "ReferenceData.getTechnicalIndicators",
+    testReferenceDataGetTechnicalIndicators,
+  );
 
   await runTest("Regulatory.getDirectHolders", testRegulatoryGetDirectHolders);
   await runTest("Regulatory.getFundHolders", testRegulatoryGetFundHolders);
@@ -942,6 +1212,10 @@ async function main(): Promise<void> {
   await runTest(
     "Regulatory.getSourceSanctionedEntities",
     testRegulatoryGetSourceSanctionedEntities,
+  );
+  await runTest(
+    "Regulatory.getEdgarFilingsArchive",
+    testRegulatoryGetEdgarFilingsArchive,
   );
 
   await runTest(

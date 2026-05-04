@@ -17,25 +17,25 @@ export interface GetTimeSeriesKeltner200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesKeltner200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Upper line value
    * @type {string}
    * @memberof GetTimeSeriesKeltner200ResponseValuesInner
    */
-  upperLine?: string;
+  upperLine: string;
   /**
    * Middle line value
    * @type {string}
    * @memberof GetTimeSeriesKeltner200ResponseValuesInner
    */
-  middleLine?: string;
+  middleLine: string;
   /**
    * Lower line value
    * @type {string}
    * @memberof GetTimeSeriesKeltner200ResponseValuesInner
    */
-  lowerLine?: string;
+  lowerLine: string;
 }
 
 /**
@@ -44,6 +44,11 @@ export interface GetTimeSeriesKeltner200ResponseValuesInner {
 export function instanceOfGetTimeSeriesKeltner200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesKeltner200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("upperLine" in value) || value["upperLine"] === undefined) return false;
+  if (!("middleLine" in value) || value["middleLine"] === undefined)
+    return false;
+  if (!("lowerLine" in value) || value["lowerLine"] === undefined) return false;
   return true;
 }
 
@@ -61,10 +66,10 @@ export function GetTimeSeriesKeltner200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    upperLine: json["upper_line"] == null ? undefined : json["upper_line"],
-    middleLine: json["middle_line"] == null ? undefined : json["middle_line"],
-    lowerLine: json["lower_line"] == null ? undefined : json["lower_line"],
+    datetime: json["datetime"],
+    upperLine: json["upper_line"],
+    middleLine: json["middle_line"],
+    lowerLine: json["lower_line"],
   };
 }
 

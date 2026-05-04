@@ -32,19 +32,19 @@ export interface GetTimeSeriesCorrel200Response {
    * @type {GetTimeSeriesCorrel200ResponseMeta}
    * @memberof GetTimeSeriesCorrel200Response
    */
-  meta?: GetTimeSeriesCorrel200ResponseMeta;
+  meta: GetTimeSeriesCorrel200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesCorrel200ResponseValuesInner>}
    * @memberof GetTimeSeriesCorrel200Response
    */
-  values?: Array<GetTimeSeriesCorrel200ResponseValuesInner>;
+  values: Array<GetTimeSeriesCorrel200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesCorrel200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesCorrel200Response {
 export function instanceOfGetTimeSeriesCorrel200Response(
   value: object,
 ): value is GetTimeSeriesCorrel200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesCorrel200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesCorrel200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesCorrel200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesCorrel200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesCorrel200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesCorrel200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesCorrel200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesCorrel200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesCorrel200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

@@ -17,13 +17,13 @@ export interface GetEarliestTimestamp200Response {
    * @type {string}
    * @memberof GetEarliestTimestamp200Response
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Datetime converted to UNIX timestamp
    * @type {number}
    * @memberof GetEarliestTimestamp200Response
    */
-  unixTime?: number;
+  unixTime: number;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetEarliestTimestamp200Response {
 export function instanceOfGetEarliestTimestamp200Response(
   value: object,
 ): value is GetEarliestTimestamp200Response {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("unixTime" in value) || value["unixTime"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetEarliestTimestamp200ResponseFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    unixTime: json["unix_time"] == null ? undefined : json["unix_time"],
+    datetime: json["datetime"],
+    unixTime: json["unix_time"],
   };
 }
 

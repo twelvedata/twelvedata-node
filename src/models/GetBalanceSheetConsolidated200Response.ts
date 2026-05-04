@@ -25,7 +25,7 @@ export interface GetBalanceSheetConsolidated200Response {
    * @type {Array<BalanceSheetConsolidatedItem>}
    * @memberof GetBalanceSheetConsolidated200Response
    */
-  balanceSheet?: Array<BalanceSheetConsolidatedItem>;
+  balanceSheet: Array<BalanceSheetConsolidatedItem>;
   /**
    * Response status
    * @type {string}
@@ -40,6 +40,8 @@ export interface GetBalanceSheetConsolidated200Response {
 export function instanceOfGetBalanceSheetConsolidated200Response(
   value: object,
 ): value is GetBalanceSheetConsolidated200Response {
+  if (!("balanceSheet" in value) || value["balanceSheet"] === undefined)
+    return false;
   return true;
 }
 
@@ -57,12 +59,9 @@ export function GetBalanceSheetConsolidated200ResponseFromJSONTyped(
     return json;
   }
   return {
-    balanceSheet:
-      json["balance_sheet"] == null
-        ? undefined
-        : (json["balance_sheet"] as Array<any>).map(
-            BalanceSheetConsolidatedItemFromJSON,
-          ),
+    balanceSheet: (json["balance_sheet"] as Array<any>).map(
+      BalanceSheetConsolidatedItemFromJSON,
+    ),
     status: json["status"] == null ? undefined : json["status"],
   };
 }
@@ -82,12 +81,9 @@ export function GetBalanceSheetConsolidated200ResponseToJSONTyped(
   }
 
   return {
-    balance_sheet:
-      value["balanceSheet"] == null
-        ? undefined
-        : (value["balanceSheet"] as Array<any>).map(
-            BalanceSheetConsolidatedItemToJSON,
-          ),
+    balance_sheet: (value["balanceSheet"] as Array<any>).map(
+      BalanceSheetConsolidatedItemToJSON,
+    ),
     status: value["status"],
   };
 }

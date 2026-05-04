@@ -17,13 +17,13 @@ export interface GetTimeSeriesHtTrendline200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesHtTrendline200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * HT_TRENDLINE value
    * @type {string}
    * @memberof GetTimeSeriesHtTrendline200ResponseValuesInner
    */
-  htTrendline?: string;
+  htTrendline: string;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesHtTrendline200ResponseValuesInner {
 export function instanceOfGetTimeSeriesHtTrendline200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesHtTrendline200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("htTrendline" in value) || value["htTrendline"] === undefined)
+    return false;
   return true;
 }
 
@@ -52,9 +55,8 @@ export function GetTimeSeriesHtTrendline200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    htTrendline:
-      json["ht_trendline"] == null ? undefined : json["ht_trendline"],
+    datetime: json["datetime"],
+    htTrendline: json["ht_trendline"],
   };
 }
 

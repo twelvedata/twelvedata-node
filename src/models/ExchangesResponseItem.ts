@@ -25,31 +25,31 @@ export interface ExchangesResponseItem {
    * @type {string}
    * @memberof ExchangesResponseItem
    */
-  title?: string;
+  title: string;
   /**
    * Name of exchange
    * @type {string}
    * @memberof ExchangesResponseItem
    */
-  name?: string;
+  name: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof ExchangesResponseItem
    */
-  code?: string;
+  code: string;
   /**
    * Country to which stock exchange belongs to
    * @type {string}
    * @memberof ExchangesResponseItem
    */
-  country?: string;
+  country: string;
   /**
    * Time zone where exchange is located
    * @type {string}
    * @memberof ExchangesResponseItem
    */
-  timezone?: string;
+  timezone: string;
   /**
    *
    * @type {ExchangesResponseItemAccess}
@@ -64,6 +64,11 @@ export interface ExchangesResponseItem {
 export function instanceOfExchangesResponseItem(
   value: object,
 ): value is ExchangesResponseItem {
+  if (!("title" in value) || value["title"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("code" in value) || value["code"] === undefined) return false;
+  if (!("country" in value) || value["country"] === undefined) return false;
+  if (!("timezone" in value) || value["timezone"] === undefined) return false;
   return true;
 }
 
@@ -81,11 +86,11 @@ export function ExchangesResponseItemFromJSONTyped(
     return json;
   }
   return {
-    title: json["title"] == null ? undefined : json["title"],
-    name: json["name"] == null ? undefined : json["name"],
-    code: json["code"] == null ? undefined : json["code"],
-    country: json["country"] == null ? undefined : json["country"],
-    timezone: json["timezone"] == null ? undefined : json["timezone"],
+    title: json["title"],
+    name: json["name"],
+    code: json["code"],
+    country: json["country"],
+    timezone: json["timezone"],
     access:
       json["access"] == null
         ? undefined

@@ -17,13 +17,13 @@ export interface GetLastChanges200ResponsePagination {
    * @type {number}
    * @memberof GetLastChanges200ResponsePagination
    */
-  currentPage?: number;
+  currentPage: number;
   /**
    * Records per page
    * @type {number}
    * @memberof GetLastChanges200ResponsePagination
    */
-  perPage?: number;
+  perPage: number;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetLastChanges200ResponsePagination {
 export function instanceOfGetLastChanges200ResponsePagination(
   value: object,
 ): value is GetLastChanges200ResponsePagination {
+  if (!("currentPage" in value) || value["currentPage"] === undefined)
+    return false;
+  if (!("perPage" in value) || value["perPage"] === undefined) return false;
   return true;
 }
 
@@ -49,9 +52,8 @@ export function GetLastChanges200ResponsePaginationFromJSONTyped(
     return json;
   }
   return {
-    currentPage:
-      json["current_page"] == null ? undefined : json["current_page"],
-    perPage: json["per_page"] == null ? undefined : json["per_page"],
+    currentPage: json["current_page"],
+    perPage: json["per_page"],
   };
 }
 

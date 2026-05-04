@@ -21,17 +21,23 @@ import {
  */
 export interface GetCryptocurrencies200Response {
   /**
+   * Count
+   * @type {number}
+   * @memberof GetCryptocurrencies200Response
+   */
+  count: number;
+  /**
    * List of cryptocurrencies
    * @type {Array<CryptocurrencyResponseItem>}
    * @memberof GetCryptocurrencies200Response
    */
-  data?: Array<CryptocurrencyResponseItem>;
+  data: Array<CryptocurrencyResponseItem>;
   /**
    * Response status
    * @type {string}
    * @memberof GetCryptocurrencies200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +46,9 @@ export interface GetCryptocurrencies200Response {
 export function instanceOfGetCryptocurrencies200Response(
   value: object,
 ): value is GetCryptocurrencies200Response {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +66,9 @@ export function GetCryptocurrencies200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(CryptocurrencyResponseItemFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    count: json["count"],
+    data: (json["data"] as Array<any>).map(CryptocurrencyResponseItemFromJSON),
+    status: json["status"],
   };
 }
 
@@ -80,10 +87,8 @@ export function GetCryptocurrencies200ResponseToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(CryptocurrencyResponseItemToJSON),
+    count: value["count"],
+    data: (value["data"] as Array<any>).map(CryptocurrencyResponseItemToJSON),
     status: value["status"],
   };
 }

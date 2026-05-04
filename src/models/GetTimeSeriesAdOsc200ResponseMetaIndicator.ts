@@ -17,19 +17,19 @@ export interface GetTimeSeriesAdOsc200ResponseMetaIndicator {
    * @type {string}
    * @memberof GetTimeSeriesAdOsc200ResponseMetaIndicator
    */
-  name?: string;
+  name: string;
   /**
    * Number of periods for fast moving average
    * @type {number}
    * @memberof GetTimeSeriesAdOsc200ResponseMetaIndicator
    */
-  fastPeriod?: number;
+  fastPeriod: number;
   /**
    * Number of periods for slow moving average
    * @type {number}
    * @memberof GetTimeSeriesAdOsc200ResponseMetaIndicator
    */
-  slowPeriod?: number;
+  slowPeriod: number;
 }
 
 /**
@@ -38,6 +38,11 @@ export interface GetTimeSeriesAdOsc200ResponseMetaIndicator {
 export function instanceOfGetTimeSeriesAdOsc200ResponseMetaIndicator(
   value: object,
 ): value is GetTimeSeriesAdOsc200ResponseMetaIndicator {
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("fastPeriod" in value) || value["fastPeriod"] === undefined)
+    return false;
+  if (!("slowPeriod" in value) || value["slowPeriod"] === undefined)
+    return false;
   return true;
 }
 
@@ -55,9 +60,9 @@ export function GetTimeSeriesAdOsc200ResponseMetaIndicatorFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
-    fastPeriod: json["fast_period"] == null ? undefined : json["fast_period"],
-    slowPeriod: json["slow_period"] == null ? undefined : json["slow_period"],
+    name: json["name"],
+    fastPeriod: json["fast_period"],
+    slowPeriod: json["slow_period"],
   };
 }
 

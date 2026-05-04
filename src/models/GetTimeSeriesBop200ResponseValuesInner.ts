@@ -17,13 +17,13 @@ export interface GetTimeSeriesBop200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesBop200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Bop value
    * @type {string}
    * @memberof GetTimeSeriesBop200ResponseValuesInner
    */
-  bop?: string;
+  bop: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesBop200ResponseValuesInner {
 export function instanceOfGetTimeSeriesBop200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesBop200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("bop" in value) || value["bop"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesBop200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    bop: json["bop"] == null ? undefined : json["bop"],
+    datetime: json["datetime"],
+    bop: json["bop"],
   };
 }
 

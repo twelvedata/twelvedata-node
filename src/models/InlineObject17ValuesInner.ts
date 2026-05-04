@@ -17,13 +17,13 @@ export interface InlineObject17ValuesInner {
    * @type {string}
    * @memberof InlineObject17ValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * TANH value
    * @type {string}
    * @memberof InlineObject17ValuesInner
    */
-  tanh?: string;
+  tanh: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface InlineObject17ValuesInner {
 export function instanceOfInlineObject17ValuesInner(
   value: object,
 ): value is InlineObject17ValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("tanh" in value) || value["tanh"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function InlineObject17ValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    tanh: json["tanh"] == null ? undefined : json["tanh"],
+    datetime: json["datetime"],
+    tanh: json["tanh"],
   };
 }
 

@@ -17,19 +17,19 @@ export interface GetTimeSeriesStochF200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesStochF200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * fast_k value
    * @type {string}
    * @memberof GetTimeSeriesStochF200ResponseValuesInner
    */
-  fastK?: string;
+  fastK: string;
   /**
    * fast_d value
    * @type {string}
    * @memberof GetTimeSeriesStochF200ResponseValuesInner
    */
-  fastD?: string;
+  fastD: string;
 }
 
 /**
@@ -38,6 +38,9 @@ export interface GetTimeSeriesStochF200ResponseValuesInner {
 export function instanceOfGetTimeSeriesStochF200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesStochF200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("fastK" in value) || value["fastK"] === undefined) return false;
+  if (!("fastD" in value) || value["fastD"] === undefined) return false;
   return true;
 }
 
@@ -55,9 +58,9 @@ export function GetTimeSeriesStochF200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    fastK: json["fast_k"] == null ? undefined : json["fast_k"],
-    fastD: json["fast_d"] == null ? undefined : json["fast_d"],
+    datetime: json["datetime"],
+    fastK: json["fast_k"],
+    fastD: json["fast_d"],
   };
 }
 

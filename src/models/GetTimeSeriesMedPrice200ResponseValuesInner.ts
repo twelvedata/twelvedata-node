@@ -17,13 +17,13 @@ export interface GetTimeSeriesMedPrice200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMedPrice200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Medprice value
    * @type {string}
    * @memberof GetTimeSeriesMedPrice200ResponseValuesInner
    */
-  medprice?: string;
+  medprice: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesMedPrice200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMedPrice200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMedPrice200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("medprice" in value) || value["medprice"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesMedPrice200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    medprice: json["medprice"] == null ? undefined : json["medprice"],
+    datetime: json["datetime"],
+    medprice: json["medprice"],
   };
 }
 

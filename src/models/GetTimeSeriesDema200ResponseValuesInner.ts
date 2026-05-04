@@ -17,13 +17,13 @@ export interface GetTimeSeriesDema200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesDema200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Dema value
    * @type {string}
    * @memberof GetTimeSeriesDema200ResponseValuesInner
    */
-  dema?: string;
+  dema: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesDema200ResponseValuesInner {
 export function instanceOfGetTimeSeriesDema200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesDema200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("dema" in value) || value["dema"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesDema200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    dema: json["dema"] == null ? undefined : json["dema"],
+    datetime: json["datetime"],
+    dema: json["dema"],
   };
 }
 

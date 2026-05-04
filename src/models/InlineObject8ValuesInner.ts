@@ -17,13 +17,13 @@ export interface InlineObject8ValuesInner {
    * @type {string}
    * @memberof InlineObject8ValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * ACOS value
    * @type {string}
    * @memberof InlineObject8ValuesInner
    */
-  acos?: string;
+  acos: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface InlineObject8ValuesInner {
 export function instanceOfInlineObject8ValuesInner(
   value: object,
 ): value is InlineObject8ValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("acos" in value) || value["acos"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function InlineObject8ValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    acos: json["acos"] == null ? undefined : json["acos"],
+    datetime: json["datetime"],
+    acos: json["acos"],
   };
 }
 

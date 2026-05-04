@@ -17,25 +17,25 @@ export interface GetIpoCalendar200ResponseValueInner {
    * @type {string}
    * @memberof GetIpoCalendar200ResponseValueInner
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Name of the company
    * @type {string}
    * @memberof GetIpoCalendar200ResponseValueInner
    */
-  name?: string;
+  name: string;
   /**
    * Exchange name where the company is listed
    * @type {string}
    * @memberof GetIpoCalendar200ResponseValueInner
    */
-  exchange?: string;
+  exchange: string;
   /**
    * Market Identifier Code (MIC) under ISO 10383 standard
    * @type {string}
    * @memberof GetIpoCalendar200ResponseValueInner
    */
-  micCode?: string;
+  micCode: string;
   /**
    * The lower bound of stock price range if available
    * @type {number}
@@ -59,7 +59,7 @@ export interface GetIpoCalendar200ResponseValueInner {
    * @type {string}
    * @memberof GetIpoCalendar200ResponseValueInner
    */
-  currency?: string;
+  currency: string;
   /**
    * Number of shares, if available
    * @type {number}
@@ -74,6 +74,11 @@ export interface GetIpoCalendar200ResponseValueInner {
 export function instanceOfGetIpoCalendar200ResponseValueInner(
   value: object,
 ): value is GetIpoCalendar200ResponseValueInner {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("name" in value) || value["name"] === undefined) return false;
+  if (!("exchange" in value) || value["exchange"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
+  if (!("currency" in value) || value["currency"] === undefined) return false;
   return true;
 }
 
@@ -91,16 +96,16 @@ export function GetIpoCalendar200ResponseValueInnerFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    name: json["name"] == null ? undefined : json["name"],
-    exchange: json["exchange"] == null ? undefined : json["exchange"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
+    symbol: json["symbol"],
+    name: json["name"],
+    exchange: json["exchange"],
+    micCode: json["mic_code"],
     priceRangeLow:
       json["price_range_low"] == null ? undefined : json["price_range_low"],
     priceRangeHigh:
       json["price_range_high"] == null ? undefined : json["price_range_high"],
     offerPrice: json["offer_price"] == null ? undefined : json["offer_price"],
-    currency: json["currency"] == null ? undefined : json["currency"],
+    currency: json["currency"],
     shares: json["shares"] == null ? undefined : json["shares"],
   };
 }

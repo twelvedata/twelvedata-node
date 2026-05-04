@@ -17,13 +17,13 @@ export interface GetTimeSeriesSuperTrend200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesSuperTrend200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * SuperTrend value
    * @type {string}
    * @memberof GetTimeSeriesSuperTrend200ResponseValuesInner
    */
-  supertrend?: string;
+  supertrend: string;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesSuperTrend200ResponseValuesInner {
 export function instanceOfGetTimeSeriesSuperTrend200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesSuperTrend200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("supertrend" in value) || value["supertrend"] === undefined)
+    return false;
   return true;
 }
 
@@ -52,8 +55,8 @@ export function GetTimeSeriesSuperTrend200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    supertrend: json["supertrend"] == null ? undefined : json["supertrend"],
+    datetime: json["datetime"],
+    supertrend: json["supertrend"],
   };
 }
 

@@ -25,13 +25,13 @@ export interface GetSymbolSearch200Response {
    * @type {Array<SymbolSearchResponseItem>}
    * @memberof GetSymbolSearch200Response
    */
-  data?: Array<SymbolSearchResponseItem>;
+  data: Array<SymbolSearchResponseItem>;
   /**
    * Status of the response
    * @type {string}
    * @memberof GetSymbolSearch200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetSymbolSearch200Response {
 export function instanceOfGetSymbolSearch200Response(
   value: object,
 ): value is GetSymbolSearch200Response {
+  if (!("data" in value) || value["data"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +59,8 @@ export function GetSymbolSearch200ResponseFromJSONTyped(
     return json;
   }
   return {
-    data:
-      json["data"] == null
-        ? undefined
-        : (json["data"] as Array<any>).map(SymbolSearchResponseItemFromJSON),
-    status: json["status"] == null ? undefined : json["status"],
+    data: (json["data"] as Array<any>).map(SymbolSearchResponseItemFromJSON),
+    status: json["status"],
   };
 }
 
@@ -80,10 +79,7 @@ export function GetSymbolSearch200ResponseToJSONTyped(
   }
 
   return {
-    data:
-      value["data"] == null
-        ? undefined
-        : (value["data"] as Array<any>).map(SymbolSearchResponseItemToJSON),
+    data: (value["data"] as Array<any>).map(SymbolSearchResponseItemToJSON),
     status: value["status"],
   };
 }

@@ -17,13 +17,13 @@ export interface GetTimeSeriesMult200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMult200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Mult value
    * @type {string}
    * @memberof GetTimeSeriesMult200ResponseValuesInner
    */
-  mult?: string;
+  mult: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesMult200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMult200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMult200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("mult" in value) || value["mult"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesMult200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    mult: json["mult"] == null ? undefined : json["mult"],
+    datetime: json["datetime"],
+    mult: json["mult"],
   };
 }
 

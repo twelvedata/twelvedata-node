@@ -17,13 +17,13 @@ export interface GetTimeSeriesT3ma200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesT3ma200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * T3MA value
    * @type {string}
    * @memberof GetTimeSeriesT3ma200ResponseValuesInner
    */
-  t3ma?: string;
+  t3ma: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesT3ma200ResponseValuesInner {
 export function instanceOfGetTimeSeriesT3ma200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesT3ma200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("t3ma" in value) || value["t3ma"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesT3ma200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    t3ma: json["t3ma"] == null ? undefined : json["t3ma"],
+    datetime: json["datetime"],
+    t3ma: json["t3ma"],
   };
 }
 

@@ -17,13 +17,13 @@ export interface GetTimeSeriesSma200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesSma200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * SMA value
    * @type {string}
    * @memberof GetTimeSeriesSma200ResponseValuesInner
    */
-  sma?: string;
+  sma: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesSma200ResponseValuesInner {
 export function instanceOfGetTimeSeriesSma200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesSma200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("sma" in value) || value["sma"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesSma200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    sma: json["sma"] == null ? undefined : json["sma"],
+    datetime: json["datetime"],
+    sma: json["sma"],
   };
 }
 

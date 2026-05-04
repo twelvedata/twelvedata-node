@@ -17,13 +17,13 @@ export interface GetTimeSeriesTsf200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesTsf200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * TSF value
    * @type {string}
    * @memberof GetTimeSeriesTsf200ResponseValuesInner
    */
-  tsf?: string;
+  tsf: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesTsf200ResponseValuesInner {
 export function instanceOfGetTimeSeriesTsf200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesTsf200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("tsf" in value) || value["tsf"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesTsf200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    tsf: json["tsf"] == null ? undefined : json["tsf"],
+    datetime: json["datetime"],
+    tsf: json["tsf"],
   };
 }
 

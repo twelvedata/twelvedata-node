@@ -32,13 +32,13 @@ export interface GetDividends200Response {
    * @type {GetDividends200ResponseMeta}
    * @memberof GetDividends200Response
    */
-  meta?: GetDividends200ResponseMeta;
+  meta: GetDividends200ResponseMeta;
   /**
    * List of dividends
    * @type {Array<GetDividends200ResponseDividendsInner>}
    * @memberof GetDividends200Response
    */
-  dividends?: Array<GetDividends200ResponseDividendsInner>;
+  dividends: Array<GetDividends200ResponseDividendsInner>;
 }
 
 /**
@@ -47,6 +47,8 @@ export interface GetDividends200Response {
 export function instanceOfGetDividends200Response(
   value: object,
 ): value is GetDividends200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("dividends" in value) || value["dividends"] === undefined) return false;
   return true;
 }
 
@@ -64,16 +66,10 @@ export function GetDividends200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetDividends200ResponseMetaFromJSON(json["meta"]),
-    dividends:
-      json["dividends"] == null
-        ? undefined
-        : (json["dividends"] as Array<any>).map(
-            GetDividends200ResponseDividendsInnerFromJSON,
-          ),
+    meta: GetDividends200ResponseMetaFromJSON(json["meta"]),
+    dividends: (json["dividends"] as Array<any>).map(
+      GetDividends200ResponseDividendsInnerFromJSON,
+    ),
   };
 }
 
@@ -93,11 +89,8 @@ export function GetDividends200ResponseToJSONTyped(
 
   return {
     meta: GetDividends200ResponseMetaToJSON(value["meta"]),
-    dividends:
-      value["dividends"] == null
-        ? undefined
-        : (value["dividends"] as Array<any>).map(
-            GetDividends200ResponseDividendsInnerToJSON,
-          ),
+    dividends: (value["dividends"] as Array<any>).map(
+      GetDividends200ResponseDividendsInnerToJSON,
+    ),
   };
 }

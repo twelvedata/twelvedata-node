@@ -17,7 +17,7 @@ export interface GetAssetsResponseItem {
    * @type {string}
    * @memberof GetAssetsResponseItem
    */
-  code?: string;
+  code: string;
   /**
    * Description of the asset
    * @type {string}
@@ -25,11 +25,17 @@ export interface GetAssetsResponseItem {
    */
   description?: string;
   /**
+   * Icon of the asset
+   * @type {string}
+   * @memberof GetAssetsResponseItem
+   */
+  icon?: string;
+  /**
    * Market identifier code, e.g. DIGITAL_CURRENCY, PHYSICAL_CURRENCY, etc.
    * @type {string}
    * @memberof GetAssetsResponseItem
    */
-  micCode?: string;
+  micCode: string;
   /**
    * Currency symbol
    * @type {string}
@@ -44,6 +50,8 @@ export interface GetAssetsResponseItem {
 export function instanceOfGetAssetsResponseItem(
   value: object,
 ): value is GetAssetsResponseItem {
+  if (!("code" in value) || value["code"] === undefined) return false;
+  if (!("micCode" in value) || value["micCode"] === undefined) return false;
   return true;
 }
 
@@ -61,9 +69,10 @@ export function GetAssetsResponseItemFromJSONTyped(
     return json;
   }
   return {
-    code: json["code"] == null ? undefined : json["code"],
+    code: json["code"],
     description: json["description"] == null ? undefined : json["description"],
-    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
+    icon: json["icon"] == null ? undefined : json["icon"],
+    micCode: json["mic_code"],
     symbol: json["symbol"] == null ? undefined : json["symbol"],
   };
 }
@@ -83,6 +92,7 @@ export function GetAssetsResponseItemToJSONTyped(
   return {
     code: value["code"],
     description: value["description"],
+    icon: value["icon"],
     mic_code: value["micCode"],
     symbol: value["symbol"],
   };

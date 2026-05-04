@@ -32,7 +32,7 @@ export interface GetAnalystRatingsLight200Response {
    * @type {GetAnalystRatingsLight200ResponseMeta}
    * @memberof GetAnalystRatingsLight200Response
    */
-  meta?: GetAnalystRatingsLight200ResponseMeta;
+  meta: GetAnalystRatingsLight200ResponseMeta;
   /**
    * List of analyst ratings
    * @type {Array<GetAnalystRatingsLight200ResponseRatingsInner>}
@@ -44,7 +44,7 @@ export interface GetAnalystRatingsLight200Response {
    * @type {string}
    * @memberof GetAnalystRatingsLight200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,8 @@ export interface GetAnalystRatingsLight200Response {
 export function instanceOfGetAnalystRatingsLight200Response(
   value: object,
 ): value is GetAnalystRatingsLight200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +72,14 @@ export function GetAnalystRatingsLight200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetAnalystRatingsLight200ResponseMetaFromJSON(json["meta"]),
+    meta: GetAnalystRatingsLight200ResponseMetaFromJSON(json["meta"]),
     ratings:
       json["ratings"] == null
         ? undefined
         : (json["ratings"] as Array<any>).map(
             GetAnalystRatingsLight200ResponseRatingsInnerFromJSON,
           ),
-    status: json["status"] == null ? undefined : json["status"],
+    status: json["status"],
   };
 }
 

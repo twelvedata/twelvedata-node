@@ -17,13 +17,13 @@ export interface GetTimeSeriesPercentB200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesPercentB200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Percent_b value
    * @type {string}
    * @memberof GetTimeSeriesPercentB200ResponseValuesInner
    */
-  percentB?: string;
+  percentB: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesPercentB200ResponseValuesInner {
 export function instanceOfGetTimeSeriesPercentB200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesPercentB200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("percentB" in value) || value["percentB"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesPercentB200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    percentB: json["percent_b"] == null ? undefined : json["percent_b"],
+    datetime: json["datetime"],
+    percentB: json["percent_b"],
   };
 }
 

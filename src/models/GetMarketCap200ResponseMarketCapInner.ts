@@ -17,13 +17,13 @@ export interface GetMarketCap200ResponseMarketCapInner {
    * @type {string}
    * @memberof GetMarketCap200ResponseMarketCapInner
    */
-  date?: string;
+  date: string;
   /**
    * Market capitalization value
    * @type {number}
    * @memberof GetMarketCap200ResponseMarketCapInner
    */
-  value?: number;
+  value: number;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetMarketCap200ResponseMarketCapInner {
 export function instanceOfGetMarketCap200ResponseMarketCapInner(
   value: object,
 ): value is GetMarketCap200ResponseMarketCapInner {
+  if (!("date" in value) || value["date"] === undefined) return false;
+  if (!("value" in value) || value["value"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetMarketCap200ResponseMarketCapInnerFromJSONTyped(
     return json;
   }
   return {
-    date: json["date"] == null ? undefined : json["date"],
-    value: json["value"] == null ? undefined : json["value"],
+    date: json["date"],
+    value: json["value"],
   };
 }
 

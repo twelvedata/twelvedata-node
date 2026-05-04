@@ -17,13 +17,13 @@ export interface GetTimeSeriesMfi200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMfi200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * MFI value
    * @type {string}
    * @memberof GetTimeSeriesMfi200ResponseValuesInner
    */
-  mfi?: string;
+  mfi: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesMfi200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMfi200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMfi200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("mfi" in value) || value["mfi"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesMfi200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    mfi: json["mfi"] == null ? undefined : json["mfi"],
+    datetime: json["datetime"],
+    mfi: json["mfi"],
   };
 }
 

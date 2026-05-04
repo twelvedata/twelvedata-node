@@ -17,13 +17,13 @@ export interface GetTimeSeriesPpo200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesPpo200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * PPO value
    * @type {string}
    * @memberof GetTimeSeriesPpo200ResponseValuesInner
    */
-  ppo?: string;
+  ppo: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesPpo200ResponseValuesInner {
 export function instanceOfGetTimeSeriesPpo200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesPpo200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("ppo" in value) || value["ppo"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesPpo200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    ppo: json["ppo"] == null ? undefined : json["ppo"],
+    datetime: json["datetime"],
+    ppo: json["ppo"],
   };
 }
 

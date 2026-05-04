@@ -17,13 +17,13 @@ export interface GetTimeSeriesAdxr200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesAdxr200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Adxr value
    * @type {string}
    * @memberof GetTimeSeriesAdxr200ResponseValuesInner
    */
-  adxr?: string;
+  adxr: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesAdxr200ResponseValuesInner {
 export function instanceOfGetTimeSeriesAdxr200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesAdxr200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("adxr" in value) || value["adxr"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesAdxr200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    adxr: json["adxr"] == null ? undefined : json["adxr"],
+    datetime: json["datetime"],
+    adxr: json["adxr"],
   };
 }
 

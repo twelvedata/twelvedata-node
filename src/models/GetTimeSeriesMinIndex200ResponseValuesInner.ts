@@ -17,13 +17,13 @@ export interface GetTimeSeriesMinIndex200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesMinIndex200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Index of lowest value over period
    * @type {string}
    * @memberof GetTimeSeriesMinIndex200ResponseValuesInner
    */
-  minidx?: string;
+  minidx: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesMinIndex200ResponseValuesInner {
 export function instanceOfGetTimeSeriesMinIndex200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesMinIndex200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("minidx" in value) || value["minidx"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesMinIndex200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    minidx: json["minidx"] == null ? undefined : json["minidx"],
+    datetime: json["datetime"],
+    minidx: json["minidx"],
   };
 }
 

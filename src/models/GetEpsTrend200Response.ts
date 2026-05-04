@@ -32,19 +32,19 @@ export interface GetEpsTrend200Response {
    * @type {GetEarningsEstimate200ResponseMeta}
    * @memberof GetEpsTrend200Response
    */
-  meta?: GetEarningsEstimate200ResponseMeta;
+  meta: GetEarningsEstimate200ResponseMeta;
   /**
    * EPS trend data
    * @type {Array<GetEpsTrend200ResponseEpsTrendInner>}
    * @memberof GetEpsTrend200Response
    */
-  epsTrend?: Array<GetEpsTrend200ResponseEpsTrendInner>;
+  epsTrend: Array<GetEpsTrend200ResponseEpsTrendInner>;
   /**
    * Status of the response
    * @type {string}
    * @memberof GetEpsTrend200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetEpsTrend200Response {
 export function instanceOfGetEpsTrend200Response(
   value: object,
 ): value is GetEpsTrend200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("epsTrend" in value) || value["epsTrend"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetEpsTrend200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetEarningsEstimate200ResponseMetaFromJSON(json["meta"]),
-    epsTrend:
-      json["eps_trend"] == null
-        ? undefined
-        : (json["eps_trend"] as Array<any>).map(
-            GetEpsTrend200ResponseEpsTrendInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetEarningsEstimate200ResponseMetaFromJSON(json["meta"]),
+    epsTrend: (json["eps_trend"] as Array<any>).map(
+      GetEpsTrend200ResponseEpsTrendInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetEpsTrend200ResponseToJSONTyped(
 
   return {
     meta: GetEarningsEstimate200ResponseMetaToJSON(value["meta"]),
-    eps_trend:
-      value["epsTrend"] == null
-        ? undefined
-        : (value["epsTrend"] as Array<any>).map(
-            GetEpsTrend200ResponseEpsTrendInnerToJSON,
-          ),
+    eps_trend: (value["epsTrend"] as Array<any>).map(
+      GetEpsTrend200ResponseEpsTrendInnerToJSON,
+    ),
     status: value["status"],
   };
 }

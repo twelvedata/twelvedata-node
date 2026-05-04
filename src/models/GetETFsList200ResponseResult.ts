@@ -25,13 +25,13 @@ export interface GetETFsList200ResponseResult {
    * @type {number}
    * @memberof GetETFsList200ResponseResult
    */
-  count?: number;
+  count: number;
   /**
    * List of ETFs
    * @type {Array<ETFsListResponseItem>}
    * @memberof GetETFsList200ResponseResult
    */
-  list?: Array<ETFsListResponseItem>;
+  list: Array<ETFsListResponseItem>;
 }
 
 /**
@@ -40,6 +40,8 @@ export interface GetETFsList200ResponseResult {
 export function instanceOfGetETFsList200ResponseResult(
   value: object,
 ): value is GetETFsList200ResponseResult {
+  if (!("count" in value) || value["count"] === undefined) return false;
+  if (!("list" in value) || value["list"] === undefined) return false;
   return true;
 }
 
@@ -57,11 +59,8 @@ export function GetETFsList200ResponseResultFromJSONTyped(
     return json;
   }
   return {
-    count: json["count"] == null ? undefined : json["count"],
-    list:
-      json["list"] == null
-        ? undefined
-        : (json["list"] as Array<any>).map(ETFsListResponseItemFromJSON),
+    count: json["count"],
+    list: (json["list"] as Array<any>).map(ETFsListResponseItemFromJSON),
   };
 }
 
@@ -81,9 +80,6 @@ export function GetETFsList200ResponseResultToJSONTyped(
 
   return {
     count: value["count"],
-    list:
-      value["list"] == null
-        ? undefined
-        : (value["list"] as Array<any>).map(ETFsListResponseItemToJSON),
+    list: (value["list"] as Array<any>).map(ETFsListResponseItemToJSON),
   };
 }

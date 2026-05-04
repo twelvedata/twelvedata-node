@@ -6,6 +6,7 @@
 
 Name | Type
 ------------ | -------------
+`count` | number
 `data` | [Array&lt;CryptocurrencyResponseItem&gt;](CryptocurrencyResponseItem.md)
 `status` | string
 
@@ -16,6 +17,7 @@ import type { GetCryptocurrencies200Response } from '@twelvedata/twelvedata-node
 
 // TODO: Update the object below with actual values
 const example = {
+  "count": null,
   "data": null,
   "status": null,
 } satisfies GetCryptocurrencies200Response

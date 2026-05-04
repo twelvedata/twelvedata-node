@@ -17,25 +17,25 @@ export interface CryptocurrencyResponseItem {
    * @type {string}
    * @memberof CryptocurrencyResponseItem
    */
-  symbol?: string;
+  symbol: string;
   /**
    * List of exchanges where the cryptocurrency is available
    * @type {Array<string>}
    * @memberof CryptocurrencyResponseItem
    */
-  availableExchanges?: Array<string>;
+  availableExchanges: Array<string>;
   /**
    * Base currency of the cryptocurrency pair
    * @type {string}
    * @memberof CryptocurrencyResponseItem
    */
-  currencyBase?: string;
+  currencyBase: string;
   /**
    * Quote currency of the cryptocurrency pair
    * @type {string}
    * @memberof CryptocurrencyResponseItem
    */
-  currencyQuote?: string;
+  currencyQuote: string;
 }
 
 /**
@@ -44,6 +44,16 @@ export interface CryptocurrencyResponseItem {
 export function instanceOfCryptocurrencyResponseItem(
   value: object,
 ): value is CryptocurrencyResponseItem {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (
+    !("availableExchanges" in value) ||
+    value["availableExchanges"] === undefined
+  )
+    return false;
+  if (!("currencyBase" in value) || value["currencyBase"] === undefined)
+    return false;
+  if (!("currencyQuote" in value) || value["currencyQuote"] === undefined)
+    return false;
   return true;
 }
 
@@ -61,15 +71,10 @@ export function CryptocurrencyResponseItemFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    availableExchanges:
-      json["available_exchanges"] == null
-        ? undefined
-        : json["available_exchanges"],
-    currencyBase:
-      json["currency_base"] == null ? undefined : json["currency_base"],
-    currencyQuote:
-      json["currency_quote"] == null ? undefined : json["currency_quote"],
+    symbol: json["symbol"],
+    availableExchanges: json["available_exchanges"],
+    currencyBase: json["currency_base"],
+    currencyQuote: json["currency_quote"],
   };
 }
 

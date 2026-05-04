@@ -17,13 +17,13 @@ export interface GetTimeSeriesRvol200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesRvol200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * RVOL value
    * @type {string}
    * @memberof GetTimeSeriesRvol200ResponseValuesInner
    */
-  rvol?: string;
+  rvol: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesRvol200ResponseValuesInner {
 export function instanceOfGetTimeSeriesRvol200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesRvol200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("rvol" in value) || value["rvol"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesRvol200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    rvol: json["rvol"] == null ? undefined : json["rvol"],
+    datetime: json["datetime"],
+    rvol: json["rvol"],
   };
 }
 

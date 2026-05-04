@@ -17,7 +17,7 @@ export interface GetPrice200Response {
    * @type {string}
    * @memberof GetPrice200Response
    */
-  price?: string;
+  price: string;
 }
 
 /**
@@ -26,6 +26,7 @@ export interface GetPrice200Response {
 export function instanceOfGetPrice200Response(
   value: object,
 ): value is GetPrice200Response {
+  if (!("price" in value) || value["price"] === undefined) return false;
   return true;
 }
 
@@ -41,7 +42,7 @@ export function GetPrice200ResponseFromJSONTyped(
     return json;
   }
   return {
-    price: json["price"] == null ? undefined : json["price"],
+    price: json["price"],
   };
 }
 

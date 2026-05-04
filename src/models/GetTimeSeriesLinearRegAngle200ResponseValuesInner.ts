@@ -17,13 +17,13 @@ export interface GetTimeSeriesLinearRegAngle200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesLinearRegAngle200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Linear regression angle value
    * @type {string}
    * @memberof GetTimeSeriesLinearRegAngle200ResponseValuesInner
    */
-  linearregangle?: string;
+  linearregangle: string;
 }
 
 /**
@@ -32,6 +32,9 @@ export interface GetTimeSeriesLinearRegAngle200ResponseValuesInner {
 export function instanceOfGetTimeSeriesLinearRegAngle200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesLinearRegAngle200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("linearregangle" in value) || value["linearregangle"] === undefined)
+    return false;
   return true;
 }
 
@@ -52,9 +55,8 @@ export function GetTimeSeriesLinearRegAngle200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    linearregangle:
-      json["linearregangle"] == null ? undefined : json["linearregangle"],
+    datetime: json["datetime"],
+    linearregangle: json["linearregangle"],
   };
 }
 

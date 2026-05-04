@@ -17,13 +17,13 @@ export interface GetEpsTrend200ResponseEpsTrendInner {
    * @type {string}
    * @memberof GetEpsTrend200ResponseEpsTrendInner
    */
-  date?: string;
+  date: string;
   /**
    * Period of estimation, can be `current_quarter`, `next_quarter`, `current_year`, or `next_year`
    * @type {string}
    * @memberof GetEpsTrend200ResponseEpsTrendInner
    */
-  period?: string;
+  period: string;
   /**
    * Actual EPS estimation for the period
    * @type {number}
@@ -62,6 +62,8 @@ export interface GetEpsTrend200ResponseEpsTrendInner {
 export function instanceOfGetEpsTrend200ResponseEpsTrendInner(
   value: object,
 ): value is GetEpsTrend200ResponseEpsTrendInner {
+  if (!("date" in value) || value["date"] === undefined) return false;
+  if (!("period" in value) || value["period"] === undefined) return false;
   return true;
 }
 
@@ -79,8 +81,8 @@ export function GetEpsTrend200ResponseEpsTrendInnerFromJSONTyped(
     return json;
   }
   return {
-    date: json["date"] == null ? undefined : json["date"],
-    period: json["period"] == null ? undefined : json["period"],
+    date: json["date"],
+    period: json["period"],
     currentEstimate:
       json["current_estimate"] == null ? undefined : json["current_estimate"],
     _7daysAgo: json["7_days_ago"] == null ? undefined : json["7_days_ago"],

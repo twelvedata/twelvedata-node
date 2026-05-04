@@ -32,7 +32,7 @@ export interface GetKeyExecutives200Response {
    * @type {GetKeyExecutives200ResponseMeta}
    * @memberof GetKeyExecutives200Response
    */
-  meta?: GetKeyExecutives200ResponseMeta;
+  meta: GetKeyExecutives200ResponseMeta;
   /**
    * List of key executives
    * @type {Array<GetKeyExecutives200ResponseKeyExecutivesInner>}
@@ -47,6 +47,7 @@ export interface GetKeyExecutives200Response {
 export function instanceOfGetKeyExecutives200Response(
   value: object,
 ): value is GetKeyExecutives200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
   return true;
 }
 
@@ -64,10 +65,7 @@ export function GetKeyExecutives200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetKeyExecutives200ResponseMetaFromJSON(json["meta"]),
+    meta: GetKeyExecutives200ResponseMetaFromJSON(json["meta"]),
     keyExecutives:
       json["key_executives"] == null
         ? undefined

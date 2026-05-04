@@ -17,7 +17,7 @@ export interface CryptocurrencyExchangesResponseItem {
    * @type {string}
    * @memberof CryptocurrencyExchangesResponseItem
    */
-  name?: string;
+  name: string;
 }
 
 /**
@@ -26,6 +26,7 @@ export interface CryptocurrencyExchangesResponseItem {
 export function instanceOfCryptocurrencyExchangesResponseItem(
   value: object,
 ): value is CryptocurrencyExchangesResponseItem {
+  if (!("name" in value) || value["name"] === undefined) return false;
   return true;
 }
 
@@ -43,7 +44,7 @@ export function CryptocurrencyExchangesResponseItemFromJSONTyped(
     return json;
   }
   return {
-    name: json["name"] == null ? undefined : json["name"],
+    name: json["name"],
   };
 }
 

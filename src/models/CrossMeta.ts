@@ -17,49 +17,62 @@ export interface CrossMeta {
    * @type {string}
    * @memberof CrossMeta
    */
-  baseInstrument?: string;
+  baseInstrument: string;
   /**
    * Base currency
    * @type {string}
    * @memberof CrossMeta
    */
-  baseCurrency?: string;
+  baseCurrency: string;
   /**
    * Base exchange
    * @type {string}
    * @memberof CrossMeta
    */
-  baseExchange?: string;
+  baseExchange: string;
   /**
    * Interval between two consecutive points in time series
    * @type {string}
    * @memberof CrossMeta
    */
-  interval?: string;
+  interval: string;
   /**
    * Quote instrument symbol
    * @type {string}
    * @memberof CrossMeta
    */
-  quoteInstrument?: string;
+  quoteInstrument: string;
   /**
    * Quote currency
    * @type {string}
    * @memberof CrossMeta
    */
-  quoteCurrency?: string;
+  quoteCurrency: string;
   /**
    * Quote exchange
    * @type {string}
    * @memberof CrossMeta
    */
-  quoteExchange?: string;
+  quoteExchange: string;
 }
 
 /**
  * Check if a given object implements the CrossMeta interface.
  */
 export function instanceOfCrossMeta(value: object): value is CrossMeta {
+  if (!("baseInstrument" in value) || value["baseInstrument"] === undefined)
+    return false;
+  if (!("baseCurrency" in value) || value["baseCurrency"] === undefined)
+    return false;
+  if (!("baseExchange" in value) || value["baseExchange"] === undefined)
+    return false;
+  if (!("interval" in value) || value["interval"] === undefined) return false;
+  if (!("quoteInstrument" in value) || value["quoteInstrument"] === undefined)
+    return false;
+  if (!("quoteCurrency" in value) || value["quoteCurrency"] === undefined)
+    return false;
+  if (!("quoteExchange" in value) || value["quoteExchange"] === undefined)
+    return false;
   return true;
 }
 
@@ -75,19 +88,13 @@ export function CrossMetaFromJSONTyped(
     return json;
   }
   return {
-    baseInstrument:
-      json["base_instrument"] == null ? undefined : json["base_instrument"],
-    baseCurrency:
-      json["base_currency"] == null ? undefined : json["base_currency"],
-    baseExchange:
-      json["base_exchange"] == null ? undefined : json["base_exchange"],
-    interval: json["interval"] == null ? undefined : json["interval"],
-    quoteInstrument:
-      json["quote_instrument"] == null ? undefined : json["quote_instrument"],
-    quoteCurrency:
-      json["quote_currency"] == null ? undefined : json["quote_currency"],
-    quoteExchange:
-      json["quote_exchange"] == null ? undefined : json["quote_exchange"],
+    baseInstrument: json["base_instrument"],
+    baseCurrency: json["base_currency"],
+    baseExchange: json["base_exchange"],
+    interval: json["interval"],
+    quoteInstrument: json["quote_instrument"],
+    quoteCurrency: json["quote_currency"],
+    quoteExchange: json["quote_exchange"],
   };
 }
 

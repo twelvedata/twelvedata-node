@@ -17,13 +17,13 @@ export interface GetTimeSeriesSar200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesSar200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * SAR value
    * @type {string}
    * @memberof GetTimeSeriesSar200ResponseValuesInner
    */
-  sar?: string;
+  sar: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesSar200ResponseValuesInner {
 export function instanceOfGetTimeSeriesSar200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesSar200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("sar" in value) || value["sar"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesSar200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    sar: json["sar"] == null ? undefined : json["sar"],
+    datetime: json["datetime"],
+    sar: json["sar"],
   };
 }
 

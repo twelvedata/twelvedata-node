@@ -32,13 +32,13 @@ export interface GetEdgarFilingsArchive200Response {
    * @type {GetEdgarFilingsArchive200ResponseMeta}
    * @memberof GetEdgarFilingsArchive200Response
    */
-  meta?: GetEdgarFilingsArchive200ResponseMeta;
+  meta: GetEdgarFilingsArchive200ResponseMeta;
   /**
    * List of filings
    * @type {Array<EdgarFilingValue>}
    * @memberof GetEdgarFilingsArchive200Response
    */
-  values?: Array<EdgarFilingValue>;
+  values: Array<EdgarFilingValue>;
 }
 
 /**
@@ -47,6 +47,8 @@ export interface GetEdgarFilingsArchive200Response {
 export function instanceOfGetEdgarFilingsArchive200Response(
   value: object,
 ): value is GetEdgarFilingsArchive200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
   return true;
 }
 
@@ -64,14 +66,8 @@ export function GetEdgarFilingsArchive200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetEdgarFilingsArchive200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(EdgarFilingValueFromJSON),
+    meta: GetEdgarFilingsArchive200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(EdgarFilingValueFromJSON),
   };
 }
 
@@ -91,9 +87,6 @@ export function GetEdgarFilingsArchive200ResponseToJSONTyped(
 
   return {
     meta: GetEdgarFilingsArchive200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(EdgarFilingValueToJSON),
+    values: (value["values"] as Array<any>).map(EdgarFilingValueToJSON),
   };
 }

@@ -17,13 +17,13 @@ export interface GetTimeSeriesAdOsc200ResponseValuesInner {
    * @type {string}
    * @memberof GetTimeSeriesAdOsc200ResponseValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * Adosc value
    * @type {string}
    * @memberof GetTimeSeriesAdOsc200ResponseValuesInner
    */
-  adosc?: string;
+  adosc: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface GetTimeSeriesAdOsc200ResponseValuesInner {
 export function instanceOfGetTimeSeriesAdOsc200ResponseValuesInner(
   value: object,
 ): value is GetTimeSeriesAdOsc200ResponseValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("adosc" in value) || value["adosc"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function GetTimeSeriesAdOsc200ResponseValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    adosc: json["adosc"] == null ? undefined : json["adosc"],
+    datetime: json["datetime"],
+    adosc: json["adosc"],
   };
 }
 

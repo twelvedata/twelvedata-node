@@ -36,7 +36,7 @@ import {
     InternalServerError,
 } from "@twelvedata/twelvedata-node";
 
-const config = CreateConfig();
+const config = CreateConfig("YOUR_API_KEY_HERE"); // defaults to process.env.TWELVEDATA_API_KEY
 const api = new MarketDataApi(config);
 
 async function main() {
@@ -105,7 +105,7 @@ import {
     WebSocketReconnectError,
 } from "@twelvedata/twelvedata-node";
 
-const client = new TwelvedataWebSocketClient();
+const client = new TwelvedataWebSocketClient({ apiKey: "YOUR_API_KEY_HERE" }); // defaults to process.env.TWELVEDATA_API_KEY
 
 client.on("error", (error) => {
     if (error instanceof TwelvedataWebSocketError) {

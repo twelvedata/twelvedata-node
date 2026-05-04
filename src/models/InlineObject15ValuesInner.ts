@@ -17,13 +17,13 @@ export interface InlineObject15ValuesInner {
    * @type {string}
    * @memberof InlineObject15ValuesInner
    */
-  datetime?: string;
+  datetime: string;
   /**
    * SINH value
    * @type {string}
    * @memberof InlineObject15ValuesInner
    */
-  sinh?: string;
+  sinh: string;
 }
 
 /**
@@ -32,6 +32,8 @@ export interface InlineObject15ValuesInner {
 export function instanceOfInlineObject15ValuesInner(
   value: object,
 ): value is InlineObject15ValuesInner {
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
+  if (!("sinh" in value) || value["sinh"] === undefined) return false;
   return true;
 }
 
@@ -49,8 +51,8 @@ export function InlineObject15ValuesInnerFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"] == null ? undefined : json["datetime"],
-    sinh: json["sinh"] == null ? undefined : json["sinh"],
+    datetime: json["datetime"],
+    sinh: json["sinh"],
   };
 }
 

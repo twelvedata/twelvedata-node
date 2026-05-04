@@ -17,25 +17,25 @@ export interface ForexResponseItem {
    * @type {string}
    * @memberof ForexResponseItem
    */
-  symbol?: string;
+  symbol: string;
   /**
    * Group to which currency pair belongs to, could be: Major, Minor, Exotic and Exotic-Cross
    * @type {string}
    * @memberof ForexResponseItem
    */
-  currencyGroup?: string;
+  currencyGroup: string;
   /**
    * Base currency name according to ISO 4217 standard
    * @type {string}
    * @memberof ForexResponseItem
    */
-  currencyBase?: string;
+  currencyBase: string;
   /**
    * Quote currency name according to ISO 4217 standard
    * @type {string}
    * @memberof ForexResponseItem
    */
-  currencyQuote?: string;
+  currencyQuote: string;
 }
 
 /**
@@ -44,6 +44,13 @@ export interface ForexResponseItem {
 export function instanceOfForexResponseItem(
   value: object,
 ): value is ForexResponseItem {
+  if (!("symbol" in value) || value["symbol"] === undefined) return false;
+  if (!("currencyGroup" in value) || value["currencyGroup"] === undefined)
+    return false;
+  if (!("currencyBase" in value) || value["currencyBase"] === undefined)
+    return false;
+  if (!("currencyQuote" in value) || value["currencyQuote"] === undefined)
+    return false;
   return true;
 }
 
@@ -59,13 +66,10 @@ export function ForexResponseItemFromJSONTyped(
     return json;
   }
   return {
-    symbol: json["symbol"] == null ? undefined : json["symbol"],
-    currencyGroup:
-      json["currency_group"] == null ? undefined : json["currency_group"],
-    currencyBase:
-      json["currency_base"] == null ? undefined : json["currency_base"],
-    currencyQuote:
-      json["currency_quote"] == null ? undefined : json["currency_quote"],
+    symbol: json["symbol"],
+    currencyGroup: json["currency_group"],
+    currencyBase: json["currency_base"],
+    currencyQuote: json["currency_quote"],
   };
 }
 

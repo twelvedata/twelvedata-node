@@ -32,19 +32,19 @@ export interface GetTimeSeriesSum200Response {
    * @type {GetTimeSeriesSum200ResponseMeta}
    * @memberof GetTimeSeriesSum200Response
    */
-  meta?: GetTimeSeriesSum200ResponseMeta;
+  meta: GetTimeSeriesSum200ResponseMeta;
   /**
    * Array of time series data points
    * @type {Array<GetTimeSeriesSum200ResponseValuesInner>}
    * @memberof GetTimeSeriesSum200Response
    */
-  values?: Array<GetTimeSeriesSum200ResponseValuesInner>;
+  values: Array<GetTimeSeriesSum200ResponseValuesInner>;
   /**
    * Response status
    * @type {string}
    * @memberof GetTimeSeriesSum200Response
    */
-  status?: string;
+  status: string;
 }
 
 /**
@@ -53,6 +53,9 @@ export interface GetTimeSeriesSum200Response {
 export function instanceOfGetTimeSeriesSum200Response(
   value: object,
 ): value is GetTimeSeriesSum200Response {
+  if (!("meta" in value) || value["meta"] === undefined) return false;
+  if (!("values" in value) || value["values"] === undefined) return false;
+  if (!("status" in value) || value["status"] === undefined) return false;
   return true;
 }
 
@@ -70,17 +73,11 @@ export function GetTimeSeriesSum200ResponseFromJSONTyped(
     return json;
   }
   return {
-    meta:
-      json["meta"] == null
-        ? undefined
-        : GetTimeSeriesSum200ResponseMetaFromJSON(json["meta"]),
-    values:
-      json["values"] == null
-        ? undefined
-        : (json["values"] as Array<any>).map(
-            GetTimeSeriesSum200ResponseValuesInnerFromJSON,
-          ),
-    status: json["status"] == null ? undefined : json["status"],
+    meta: GetTimeSeriesSum200ResponseMetaFromJSON(json["meta"]),
+    values: (json["values"] as Array<any>).map(
+      GetTimeSeriesSum200ResponseValuesInnerFromJSON,
+    ),
+    status: json["status"],
   };
 }
 
@@ -100,12 +97,9 @@ export function GetTimeSeriesSum200ResponseToJSONTyped(
 
   return {
     meta: GetTimeSeriesSum200ResponseMetaToJSON(value["meta"]),
-    values:
-      value["values"] == null
-        ? undefined
-        : (value["values"] as Array<any>).map(
-            GetTimeSeriesSum200ResponseValuesInnerToJSON,
-          ),
+    values: (value["values"] as Array<any>).map(
+      GetTimeSeriesSum200ResponseValuesInnerToJSON,
+    ),
     status: value["status"],
   };
 }

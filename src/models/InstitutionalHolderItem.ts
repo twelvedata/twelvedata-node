@@ -17,7 +17,7 @@ export interface InstitutionalHolderItem {
    * @type {string}
    * @memberof InstitutionalHolderItem
    */
-  entityName?: string;
+  entityName: string;
   /**
    * Refers to date reported
    * @type {string}
@@ -50,6 +50,8 @@ export interface InstitutionalHolderItem {
 export function instanceOfInstitutionalHolderItem(
   value: object,
 ): value is InstitutionalHolderItem {
+  if (!("entityName" in value) || value["entityName"] === undefined)
+    return false;
   return true;
 }
 
@@ -67,7 +69,7 @@ export function InstitutionalHolderItemFromJSONTyped(
     return json;
   }
   return {
-    entityName: json["entity_name"] == null ? undefined : json["entity_name"],
+    entityName: json["entity_name"],
     dateReported:
       json["date_reported"] == null ? undefined : json["date_reported"],
     shares: json["shares"] == null ? undefined : json["shares"],
