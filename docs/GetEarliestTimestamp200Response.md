@@ -6,8 +6,8 @@
 
 Name | Type
 ------------ | -------------
-`unixTime` | number
 `datetime` | string
+`unixTime` | number
 
 ## Example
 
@@ -16,8 +16,8 @@ import type { GetEarliestTimestamp200Response } from '@twelvedata/twelvedata-nod
 
 // TODO: Update the object below with actual values
 const example = {
-  "unixTime": null,
   "datetime": null,
+  "unixTime": null,
 } satisfies GetEarliestTimestamp200Response
 
 console.log(example)

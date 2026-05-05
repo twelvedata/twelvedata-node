@@ -41,17 +41,17 @@ export interface GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdow
    */
   averageMaturity?: GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturity;
   /**
-   * Breakdown of the fund’s bond holdings by credit rating and their respective portfolio weights
-   * @type {Array<GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner>}
-   * @memberof GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
-   */
-  creditQuality?: Array<GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner>;
-  /**
    *
    * @type {GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration}
    * @memberof GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
    */
   averageDuration?: GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration;
+  /**
+   * Breakdown of the fund’s bond holdings by credit rating and their respective portfolio weights
+   * @type {Array<GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner>}
+   * @memberof GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
+   */
+  creditQuality?: Array<GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner>;
 }
 
 /**
@@ -86,17 +86,17 @@ export function GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
         : GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturityFromJSON(
             json["average_maturity"],
           ),
-    creditQuality:
-      json["credit_quality"] == null
-        ? undefined
-        : (json["credit_quality"] as Array<any>).map(
-            GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInnerFromJSON,
-          ),
     averageDuration:
       json["average_duration"] == null
         ? undefined
         : GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDurationFromJSON(
             json["average_duration"],
+          ),
+    creditQuality:
+      json["credit_quality"] == null
+        ? undefined
+        : (json["credit_quality"] as Array<any>).map(
+            GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInnerFromJSON,
           ),
   };
 }
@@ -123,15 +123,15 @@ export function GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
       GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturityToJSON(
         value["averageMaturity"],
       ),
+    average_duration:
+      GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDurationToJSON(
+        value["averageDuration"],
+      ),
     credit_quality:
       value["creditQuality"] == null
         ? undefined
         : (value["creditQuality"] as Array<any>).map(
             GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInnerToJSON,
           ),
-    average_duration:
-      GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDurationToJSON(
-        value["averageDuration"],
-      ),
   };
 }

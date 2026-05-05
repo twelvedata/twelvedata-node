@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
 [![npm](https://img.shields.io/npm/types/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
 [![downloads](https://img.shields.io/npm/dm/@twelvedata/twelvedata-node)](https://www.npmjs.com/package/@twelvedata/twelvedata-node)
-[![license](https://img.shields.io/github/license/twelvedata/twelvedata-node)](https://github.com/twelvedata/twelvedata-node/blob/master/LICENSE.txt)
+[![license](https://img.shields.io/github/license/twelvedata/twelvedata-node)](https://github.com/twelvedata/twelvedata-node/blob/master/LICENSE)
 [![issues](https://img.shields.io/github/issues/twelvedata/twelvedata-node)](https://github.com/twelvedata/twelvedata-node/issues)
 
 Twelve Data official library. This package supports all main features of the service:
@@ -212,7 +212,7 @@ For more guidance on contributing, see the [GitHub Docs](https://docs.github.com
 
 ## License
 
-This project is licensed under the MIT. See the `LICENSE.txt` file in this repository for more details.
+This project is licensed under the MIT. See the `LICENSE` file in this repository for more details.
 ## Migrating from 1.0.x to 1.1.0
 
 Version 1.1.0 replaces `axios` with the native `fetch` API. This removes the `axios` dependency but introduces a **breaking change** in response handling:
