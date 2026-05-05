@@ -1065,10 +1065,7 @@ async function main(): Promise<void> {
     "Fundamentals.getIncomeStatementConsolidated",
     testFundamentalsGetIncomeStatementConsolidated,
   );
-  await runTest(
-    "Fundamentals.getLastChanges",
-    testFundamentalsGetLastChanges,
-  );
+  await runTest("Fundamentals.getLastChanges", testFundamentalsGetLastChanges);
 
   await runTest(
     "Analysis.getAnalystRatingsUsEquities",

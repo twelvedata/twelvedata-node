@@ -48,17 +48,17 @@ export interface ResponseMutualFundWorldComposition {
    */
   majorMarketSectors?: Array<GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner>;
   /**
-   *
-   * @type {GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation}
-   * @memberof ResponseMutualFundWorldComposition
-   */
-  assetAllocation?: GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation;
-  /**
    * Top holdings of the fund with their respective weights in the overall portfolio composition
    * @type {Array<GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner>}
    * @memberof ResponseMutualFundWorldComposition
    */
   topHoldings?: Array<GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner>;
+  /**
+   *
+   * @type {GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation}
+   * @memberof ResponseMutualFundWorldComposition
+   */
+  assetAllocation?: GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation;
   /**
    *
    * @type {GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown}
@@ -96,17 +96,17 @@ export function ResponseMutualFundWorldCompositionFromJSONTyped(
         : (json["major_market_sectors"] as Array<any>).map(
             GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInnerFromJSON,
           ),
-    assetAllocation:
-      json["asset_allocation"] == null
-        ? undefined
-        : GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocationFromJSON(
-            json["asset_allocation"],
-          ),
     topHoldings:
       json["top_holdings"] == null
         ? undefined
         : (json["top_holdings"] as Array<any>).map(
             GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInnerFromJSON,
+          ),
+    assetAllocation:
+      json["asset_allocation"] == null
+        ? undefined
+        : GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocationFromJSON(
+            json["asset_allocation"],
           ),
     bondBreakdown:
       json["bond_breakdown"] == null
@@ -138,16 +138,16 @@ export function ResponseMutualFundWorldCompositionToJSONTyped(
         : (value["majorMarketSectors"] as Array<any>).map(
             GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInnerToJSON,
           ),
-    asset_allocation:
-      GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocationToJSON(
-        value["assetAllocation"],
-      ),
     top_holdings:
       value["topHoldings"] == null
         ? undefined
         : (value["topHoldings"] as Array<any>).map(
             GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInnerToJSON,
           ),
+    asset_allocation:
+      GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocationToJSON(
+        value["assetAllocation"],
+      ),
     bond_breakdown:
       GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownToJSON(
         value["bondBreakdown"],
