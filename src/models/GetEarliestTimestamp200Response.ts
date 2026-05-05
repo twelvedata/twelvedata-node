@@ -13,17 +13,17 @@ import { mapValues } from "../runtime";
  */
 export interface GetEarliestTimestamp200Response {
   /**
-   * Earliest datetime, the format depends on interval
-   * @type {string}
-   * @memberof GetEarliestTimestamp200Response
-   */
-  datetime: string;
-  /**
    * Datetime converted to UNIX timestamp
    * @type {number}
    * @memberof GetEarliestTimestamp200Response
    */
   unixTime: number;
+  /**
+   * Earliest datetime, the format depends on interval
+   * @type {string}
+   * @memberof GetEarliestTimestamp200Response
+   */
+  datetime: string;
 }
 
 /**
@@ -32,8 +32,8 @@ export interface GetEarliestTimestamp200Response {
 export function instanceOfGetEarliestTimestamp200Response(
   value: object,
 ): value is GetEarliestTimestamp200Response {
-  if (!("datetime" in value) || value["datetime"] === undefined) return false;
   if (!("unixTime" in value) || value["unixTime"] === undefined) return false;
+  if (!("datetime" in value) || value["datetime"] === undefined) return false;
   return true;
 }
 
@@ -51,8 +51,8 @@ export function GetEarliestTimestamp200ResponseFromJSONTyped(
     return json;
   }
   return {
-    datetime: json["datetime"],
     unixTime: json["unix_time"],
+    datetime: json["datetime"],
   };
 }
 
@@ -71,7 +71,7 @@ export function GetEarliestTimestamp200ResponseToJSONTyped(
   }
 
   return {
-    datetime: value["datetime"],
     unix_time: value["unixTime"],
+    datetime: value["datetime"],
   };
 }

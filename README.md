@@ -32,7 +32,9 @@ yarn add @twelvedata/twelvedata-node
 
 ### 1. Set up a new project
 ```bash
-npm init -y && npm pkg set type=module && npm i @twelvedata/twelvedata-node
+mkdir my-node-app && cd my-node-app
+npm init -y && npm pkg set type=module
+npm i @twelvedata/twelvedata-node
 ```
 
 ### 2. Create `time-series.ts` script

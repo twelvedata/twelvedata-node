@@ -8,9 +8,9 @@ Mutual fund composition
 Name | Type
 ------------ | -------------
 `majorMarketSectors` | [Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner&gt;](GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner.md)
-`topHoldings` | [Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner&gt;](GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner.md)
 `assetAllocation` | [GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation](GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation.md)
-`bondBreakdown` | [GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown.md)
+`topHoldings` | [Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner&gt;](GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner.md)
+`bondBreakdown` | [ResponseMutualFundWorldCompositionBondBreakdown](ResponseMutualFundWorldCompositionBondBreakdown.md)
 
 ## Example
 
@@ -20,8 +20,8 @@ import type { ResponseMutualFundWorldComposition } from '@twelvedata/twelvedata-
 // TODO: Update the object below with actual values
 const example = {
   "majorMarketSectors": null,
-  "topHoldings": null,
   "assetAllocation": null,
+  "topHoldings": null,
   "bondBreakdown": null,
 } satisfies ResponseMutualFundWorldComposition
 

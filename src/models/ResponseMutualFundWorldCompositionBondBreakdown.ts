@@ -31,51 +31,51 @@ import {
 /**
  * Breakdown of the fund’s bond holdings by maturity, duration, and credit quality
  * @export
- * @interface GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
+ * @interface ResponseMutualFundWorldCompositionBondBreakdown
  */
-export interface GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown {
+export interface ResponseMutualFundWorldCompositionBondBreakdown {
   /**
    *
    * @type {GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturity}
-   * @memberof GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
+   * @memberof ResponseMutualFundWorldCompositionBondBreakdown
    */
   averageMaturity?: GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageMaturity;
   /**
    * Breakdown of the fund’s bond holdings by credit rating and their respective portfolio weights
    * @type {Array<GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner>}
-   * @memberof GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
+   * @memberof ResponseMutualFundWorldCompositionBondBreakdown
    */
   creditQuality?: Array<GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownCreditQualityInner>;
   /**
    *
    * @type {GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration}
-   * @memberof GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
+   * @memberof ResponseMutualFundWorldCompositionBondBreakdown
    */
   averageDuration?: GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownAverageDuration;
 }
 
 /**
- * Check if a given object implements the GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown interface.
+ * Check if a given object implements the ResponseMutualFundWorldCompositionBondBreakdown interface.
  */
-export function instanceOfGetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown(
+export function instanceOfResponseMutualFundWorldCompositionBondBreakdown(
   value: object,
-): value is GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown {
+): value is ResponseMutualFundWorldCompositionBondBreakdown {
   return true;
 }
 
-export function GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownFromJSON(
+export function ResponseMutualFundWorldCompositionBondBreakdownFromJSON(
   json: any,
-): GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown {
-  return GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownFromJSONTyped(
+): ResponseMutualFundWorldCompositionBondBreakdown {
+  return ResponseMutualFundWorldCompositionBondBreakdownFromJSONTyped(
     json,
     false,
   );
 }
 
-export function GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownFromJSONTyped(
+export function ResponseMutualFundWorldCompositionBondBreakdownFromJSONTyped(
   json: any,
   ignoreDiscriminator: boolean,
-): GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown {
+): ResponseMutualFundWorldCompositionBondBreakdown {
   if (json == null) {
     return json;
   }
@@ -101,17 +101,17 @@ export function GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
   };
 }
 
-export function GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownToJSON(
+export function ResponseMutualFundWorldCompositionBondBreakdownToJSON(
   json: any,
-): GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown {
-  return GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownToJSONTyped(
+): ResponseMutualFundWorldCompositionBondBreakdown {
+  return ResponseMutualFundWorldCompositionBondBreakdownToJSONTyped(
     json,
     false,
   );
 }
 
-export function GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdownToJSONTyped(
-  value?: GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown | null,
+export function ResponseMutualFundWorldCompositionBondBreakdownToJSONTyped(
+  value?: ResponseMutualFundWorldCompositionBondBreakdown | null,
   ignoreDiscriminator: boolean = false,
 ): any {
   if (value == null) {

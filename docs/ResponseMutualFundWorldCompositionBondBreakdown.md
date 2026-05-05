@@ -1,5 +1,5 @@
 
-# GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
+# ResponseMutualFundWorldCompositionBondBreakdown
 
 Breakdown of the fund’s bond holdings by maturity, duration, and credit quality
 
@@ -14,14 +14,14 @@ Name | Type
 ## Example
 
 ```typescript
-import type { GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown } from '@twelvedata/twelvedata-node'
+import type { ResponseMutualFundWorldCompositionBondBreakdown } from '@twelvedata/twelvedata-node'
 
 // TODO: Update the object below with actual values
 const example = {
   "averageMaturity": null,
   "creditQuality": null,
   "averageDuration": null,
-} satisfies GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
+} satisfies ResponseMutualFundWorldCompositionBondBreakdown
 
 console.log(example)
 
@@ -30,7 +30,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown
+const exampleParsed = JSON.parse(exampleJSON) as ResponseMutualFundWorldCompositionBondBreakdown
 console.log(exampleParsed)
 ```
 
