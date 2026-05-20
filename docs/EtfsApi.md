@@ -98,7 +98,7 @@ example().catch(console.error);
 
 ## getETFsList
 
-> GetETFsList200Response getETFsList(symbol, figi, isin, cusip, cik, country, fundFamily, fundType, page, outputsize)
+> GetETFsList200Response getETFsList(symbol, figi, isin, cusip, cik, country, fundFamily, fundType, format, delimiter, dp, page, outputsize)
 
 ETFs directory
 
@@ -138,6 +138,12 @@ async function example() {
     fundFamily: iShares,
     // string | Filter by the type of fund (optional)
     fundType: Large Blend,
+    // FormatEnum | The format of the response data (optional)
+    format: ...,
+    // string | The separator used in the CSV response data (optional)
+    delimiter: delimiter_example,
+    // number | Number of decimal places for floating values (optional)
+    dp: 789,
     // number | Page number (optional)
     page: 789,
     // number | Number of records in response (optional)
@@ -169,6 +175,9 @@ example().catch(console.error);
 | **country** | `string` | Filter by country name or alpha code, e.g., &#x60;United States&#x60; or &#x60;US&#x60; | [Optional] [Defaults to `undefined`] |
 | **fundFamily** | `string` | Filter by investment company that manages the fund | [Optional] [Defaults to `undefined`] |
 | **fundType** | `string` | Filter by the type of fund | [Optional] [Defaults to `undefined`] |
+| **format** | `FormatEnum` | The format of the response data | [Optional] [Defaults to `undefined`] [Enum: JSON, CSV] |
+| **delimiter** | `string` | The separator used in the CSV response data | [Optional] [Defaults to `&#39;;&#39;`] |
+| **dp** | `number` | Number of decimal places for floating values | [Optional] [Defaults to `5`] |
 | **page** | `number` | Page number | [Optional] [Defaults to `1`] |
 | **outputsize** | `number` | Number of records in response | [Optional] [Defaults to `50`] |
 

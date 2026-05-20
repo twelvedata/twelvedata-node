@@ -15,6 +15,7 @@ import type {
   ApiParameterTooLongErrorResponseBody,
   ApiTooManyRequestsErrorResponseBody,
   ApiUnauthorizedErrorResponseBody,
+  FormatEnum,
   GetMutualFundsFamily200Response,
   GetMutualFundsList200Response,
   GetMutualFundsType200Response,
@@ -42,6 +43,8 @@ import {
   ApiTooManyRequestsErrorResponseBodyToJSON,
   ApiUnauthorizedErrorResponseBodyFromJSON,
   ApiUnauthorizedErrorResponseBodyToJSON,
+  FormatEnumFromJSON,
+  FormatEnumToJSON,
   GetMutualFundsFamily200ResponseFromJSON,
   GetMutualFundsFamily200ResponseToJSON,
   GetMutualFundsList200ResponseFromJSON,
@@ -82,6 +85,9 @@ export interface GetMutualFundsListRequest {
   fundType?: string;
   performanceRating?: number;
   riskRating?: number;
+  format?: FormatEnum;
+  delimiter?: string;
+  dp?: number;
   page?: number;
   outputsize?: number;
 }
@@ -273,6 +279,18 @@ export class MutualFundsApi extends runtime.BaseAPI {
 
     if (requestParameters["riskRating"] != null) {
       queryParameters["risk_rating"] = requestParameters["riskRating"];
+    }
+
+    if (requestParameters["format"] != null) {
+      queryParameters["format"] = requestParameters["format"];
+    }
+
+    if (requestParameters["delimiter"] != null) {
+      queryParameters["delimiter"] = requestParameters["delimiter"];
+    }
+
+    if (requestParameters["dp"] != null) {
+      queryParameters["dp"] = requestParameters["dp"];
     }
 
     if (requestParameters["page"] != null) {

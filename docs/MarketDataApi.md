@@ -147,7 +147,7 @@ async function example() {
   const api = new MarketDataApi(config);
 
   const body = {
-    // MarketEnum | Maket type
+    // MarketEnum | Market type
     market: stocks,
     // DirectionEnum | Specifies direction of the snapshot gainers or losers (optional)
     direction: ...,
@@ -178,7 +178,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **market** | `MarketEnum` | Maket type | [Defaults to `undefined`] [Enum: stocks, etf, mutual_funds, forex, crypto] |
+| **market** | `MarketEnum` | Market type | [Defaults to `undefined`] [Enum: stocks, etf, mutual_funds, forex, crypto] |
 | **direction** | `DirectionEnum` | Specifies direction of the snapshot gainers or losers | [Optional] [Defaults to `undefined`] [Enum: gainers, losers] |
 | **outputsize** | `number` | Specifies the size of the snapshot. Can be in a range from &#x60;1&#x60; to &#x60;50&#x60; | [Optional] [Defaults to `30`] |
 | **country** | `string` | Country of the snapshot, applicable to non-currencies only. Takes country name or alpha code | [Optional] [Defaults to `&#39;USA&#39;`] |

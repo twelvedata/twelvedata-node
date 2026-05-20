@@ -15,6 +15,7 @@ import type {
   ApiParameterTooLongErrorResponseBody,
   ApiTooManyRequestsErrorResponseBody,
   ApiUnauthorizedErrorResponseBody,
+  FormatEnum,
   GetETFsFamily200Response,
   GetETFsList200Response,
   GetETFsType200Response,
@@ -39,6 +40,8 @@ import {
   ApiTooManyRequestsErrorResponseBodyToJSON,
   ApiUnauthorizedErrorResponseBodyFromJSON,
   ApiUnauthorizedErrorResponseBodyToJSON,
+  FormatEnumFromJSON,
+  FormatEnumToJSON,
   GetETFsFamily200ResponseFromJSON,
   GetETFsFamily200ResponseToJSON,
   GetETFsList200ResponseFromJSON,
@@ -71,6 +74,9 @@ export interface GetETFsListRequest {
   country?: string;
   fundFamily?: string;
   fundType?: string;
+  format?: FormatEnum;
+  delimiter?: string;
+  dp?: number;
   page?: number;
   outputsize?: number;
 }
@@ -226,6 +232,18 @@ export class EtfsApi extends runtime.BaseAPI {
 
     if (requestParameters["fundType"] != null) {
       queryParameters["fund_type"] = requestParameters["fundType"];
+    }
+
+    if (requestParameters["format"] != null) {
+      queryParameters["format"] = requestParameters["format"];
+    }
+
+    if (requestParameters["delimiter"] != null) {
+      queryParameters["delimiter"] = requestParameters["delimiter"];
+    }
+
+    if (requestParameters["dp"] != null) {
+      queryParameters["dp"] = requestParameters["dp"];
     }
 
     if (requestParameters["page"] != null) {

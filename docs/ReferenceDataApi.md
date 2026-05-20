@@ -126,7 +126,7 @@ example().catch(console.error);
 
 ## getCommodities
 
-> GetCommodities200Response getCommodities(symbol, category, format, delimiter)
+> GetCommodities200Response getCommodities(symbol, category, format, delimiter, page, outputsize)
 
 Commodities
 
@@ -158,6 +158,10 @@ async function example() {
     format: ...,
     // string | The separator used in the CSV response data (optional)
     delimiter: delimiter_example,
+    // number | Page number of the results to fetch (optional)
+    page: 789,
+    // number | Determines the number of data points returned in the output (optional)
+    outputsize: 789,
   } satisfies GetCommoditiesRequest;
 
   try {
@@ -181,6 +185,8 @@ example().catch(console.error);
 | **category** | `string` | Filter by category of commodity | [Optional] [Defaults to `undefined`] |
 | **format** | `FormatEnum` | The format of the response data | [Optional] [Defaults to `undefined`] [Enum: JSON, CSV] |
 | **delimiter** | `string` | The separator used in the CSV response data | [Optional] [Defaults to `&#39;;&#39;`] |
+| **page** | `number` | Page number of the results to fetch | [Optional] [Defaults to `1`] |
+| **outputsize** | `number` | Determines the number of data points returned in the output | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 
@@ -370,7 +376,7 @@ example().catch(console.error);
 
 ## getCryptocurrencies
 
-> GetCryptocurrencies200Response getCryptocurrencies(symbol, exchange, currencyBase, currencyQuote, format, delimiter)
+> GetCryptocurrencies200Response getCryptocurrencies(symbol, exchange, currencyBase, currencyQuote, format, delimiter, page, outputsize)
 
 Cryptocurrency pairs
 
@@ -406,6 +412,10 @@ async function example() {
     format: ...,
     // string | The separator used in the CSV response data (optional)
     delimiter: delimiter_example,
+    // number | Page number of the results to fetch (optional)
+    page: 789,
+    // number | Determines the number of data points returned in the output (optional)
+    outputsize: 789,
   } satisfies GetCryptocurrenciesRequest;
 
   try {
@@ -431,6 +441,8 @@ example().catch(console.error);
 | **currencyQuote** | `string` | Filter by currency quote | [Optional] [Defaults to `undefined`] |
 | **format** | `FormatEnum` | The format of the response data | [Optional] [Defaults to `undefined`] [Enum: JSON, CSV] |
 | **delimiter** | `string` | The separator used in the CSV response data | [Optional] [Defaults to `&#39;;&#39;`] |
+| **page** | `number` | Page number of the results to fetch | [Optional] [Defaults to `1`] |
+| **outputsize** | `number` | Determines the number of data points returned in the output | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 
@@ -643,7 +655,7 @@ example().catch(console.error);
 
 ## getEtf
 
-> GetEtf200Response getEtf(symbol, figi, isin, cusip, cik, exchange, micCode, country, format, delimiter, showPlan, includeDelisted)
+> GetEtf200Response getEtf(symbol, figi, isin, cusip, cik, exchange, micCode, country, format, delimiter, showPlan, includeDelisted, page, outputsize)
 
 ETFs
 
@@ -691,6 +703,10 @@ async function example() {
     showPlan: true,
     // boolean | Include delisted identifiers (optional)
     includeDelisted: true,
+    // number | Page number of the results to fetch (optional)
+    page: 789,
+    // number | Determines the number of data points returned in the output (optional)
+    outputsize: 789,
   } satisfies GetEtfRequest;
 
   try {
@@ -722,6 +738,8 @@ example().catch(console.error);
 | **delimiter** | `string` | The separator used in the CSV response data | [Optional] [Defaults to `&#39;;&#39;`] |
 | **showPlan** | `boolean` | Adds info on which plan symbol is available | [Optional] [Defaults to `false`] |
 | **includeDelisted** | `boolean` | Include delisted identifiers | [Optional] [Defaults to `false`] |
+| **page** | `number` | Page number of the results to fetch | [Optional] [Defaults to `1`] |
+| **outputsize** | `number` | Determines the number of data points returned in the output | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 
@@ -937,7 +955,7 @@ example().catch(console.error);
 
 ## getForexPairs
 
-> GetForexPairs200Response getForexPairs(symbol, currencyBase, currencyQuote, format, delimiter)
+> GetForexPairs200Response getForexPairs(symbol, currencyBase, currencyQuote, format, delimiter, page, outputsize)
 
 Forex pairs
 
@@ -971,6 +989,10 @@ async function example() {
     format: ...,
     // string | The separator used in the CSV response data (optional)
     delimiter: delimiter_example,
+    // number | Page number of the results to fetch (optional)
+    page: 789,
+    // number | Determines the number of data points returned in the output (optional)
+    outputsize: 789,
   } satisfies GetForexPairsRequest;
 
   try {
@@ -995,6 +1017,8 @@ example().catch(console.error);
 | **currencyQuote** | `string` | Filter by currency quote | [Optional] [Defaults to `undefined`] |
 | **format** | `FormatEnum` | The format of the response data | [Optional] [Defaults to `undefined`] [Enum: JSON, CSV] |
 | **delimiter** | `string` | The separator used in the CSV response data | [Optional] [Defaults to `&#39;;&#39;`] |
+| **page** | `number` | Page number of the results to fetch | [Optional] [Defaults to `1`] |
+| **outputsize** | `number` | Determines the number of data points returned in the output | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 
@@ -1362,7 +1386,7 @@ example().catch(console.error);
 
 ## getStocks
 
-> GetStocks200Response getStocks(symbol, figi, isin, cusip, cik, exchange, micCode, country, type, format, delimiter, showPlan, includeDelisted)
+> GetStocks200Response getStocks(symbol, figi, isin, cusip, cik, exchange, micCode, country, type, format, delimiter, showPlan, includeDelisted, page, outputsize)
 
 Stocks
 
@@ -1412,6 +1436,10 @@ async function example() {
     showPlan: true,
     // boolean | Include delisted identifiers (optional)
     includeDelisted: true,
+    // number | Page number of the results to fetch (optional)
+    page: 789,
+    // number | Determines the number of data points returned in the output (optional)
+    outputsize: 789,
   } satisfies GetStocksRequest;
 
   try {
@@ -1444,6 +1472,8 @@ example().catch(console.error);
 | **delimiter** | `string` | The separator used in the CSV response data | [Optional] [Defaults to `&#39;;&#39;`] |
 | **showPlan** | `boolean` | Adds info on which plan symbol is available | [Optional] [Defaults to `false`] |
 | **includeDelisted** | `boolean` | Include delisted identifiers | [Optional] [Defaults to `false`] |
+| **page** | `number` | Page number of the results to fetch | [Optional] [Defaults to `1`] |
+| **outputsize** | `number` | Determines the number of data points returned in the output | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 

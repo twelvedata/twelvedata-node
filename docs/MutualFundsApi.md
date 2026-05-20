@@ -101,7 +101,7 @@ example().catch(console.error);
 
 ## getMutualFundsList
 
-> GetMutualFundsList200Response getMutualFundsList(symbol, figi, isin, cusip, cik, country, fundFamily, fundType, performanceRating, riskRating, page, outputsize)
+> GetMutualFundsList200Response getMutualFundsList(symbol, figi, isin, cusip, cik, country, fundFamily, fundType, performanceRating, riskRating, format, delimiter, dp, page, outputsize)
 
 MFs directory
 
@@ -145,6 +145,12 @@ async function example() {
     performanceRating: 4,
     // number | Filter by risk rating from `0` to `5` (optional)
     riskRating: 4,
+    // FormatEnum | The format of the response data (optional)
+    format: ...,
+    // string | The separator used in the CSV response data (optional)
+    delimiter: delimiter_example,
+    // number | Number of decimal places for floating values (optional)
+    dp: 789,
     // number | Page number (optional)
     page: 789,
     // number | Number of records in response (optional)
@@ -178,6 +184,9 @@ example().catch(console.error);
 | **fundType** | `string` | Filter by the type of fund | [Optional] [Defaults to `undefined`] |
 | **performanceRating** | `number` | Filter by performance rating from &#x60;0&#x60; to &#x60;5&#x60; | [Optional] [Defaults to `undefined`] |
 | **riskRating** | `number` | Filter by risk rating from &#x60;0&#x60; to &#x60;5&#x60; | [Optional] [Defaults to `undefined`] |
+| **format** | `FormatEnum` | The format of the response data | [Optional] [Defaults to `undefined`] [Enum: JSON, CSV] |
+| **delimiter** | `string` | The separator used in the CSV response data | [Optional] [Defaults to `&#39;;&#39;`] |
+| **dp** | `number` | Number of decimal places for floating values | [Optional] [Defaults to `5`] |
 | **page** | `number` | Page number | [Optional] [Defaults to `1`] |
 | **outputsize** | `number` | Number of records in response | [Optional] [Defaults to `100`] |
 

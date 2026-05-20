@@ -13,7 +13,7 @@ import { mapValues } from "../runtime";
  */
 export interface GetETFsFamily200Response {
   /**
-   * List of ETFs by country
+   * List of fund families by country
    * @type {{ [key: string]: Array<string>; }}
    * @memberof GetETFsFamily200Response
    */

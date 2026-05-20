@@ -112,6 +112,8 @@ export interface GetCommoditiesRequest {
   category?: string;
   format?: FormatEnum;
   delimiter?: string;
+  page?: number;
+  outputsize?: number;
 }
 
 export interface GetCrossListingsRequest {
@@ -128,6 +130,8 @@ export interface GetCryptocurrenciesRequest {
   currencyQuote?: string;
   format?: FormatEnum;
   delimiter?: string;
+  page?: number;
+  outputsize?: number;
 }
 
 export interface GetCryptocurrencyExchangesRequest {
@@ -159,6 +163,8 @@ export interface GetEtfRequest {
   delimiter?: string;
   showPlan?: boolean;
   includeDelisted?: boolean;
+  page?: number;
+  outputsize?: number;
 }
 
 export interface GetExchangeScheduleRequest {
@@ -184,6 +190,8 @@ export interface GetForexPairsRequest {
   currencyQuote?: string;
   format?: FormatEnum;
   delimiter?: string;
+  page?: number;
+  outputsize?: number;
 }
 
 export interface GetFundsRequest {
@@ -221,6 +229,8 @@ export interface GetStocksRequest {
   delimiter?: string;
   showPlan?: boolean;
   includeDelisted?: boolean;
+  page?: number;
+  outputsize?: number;
 }
 
 export interface GetSymbolSearchRequest {
@@ -335,6 +345,14 @@ export class ReferenceDataApi extends runtime.BaseAPI {
 
     if (requestParameters["delimiter"] != null) {
       queryParameters["delimiter"] = requestParameters["delimiter"];
+    }
+
+    if (requestParameters["page"] != null) {
+      queryParameters["page"] = requestParameters["page"];
+    }
+
+    if (requestParameters["outputsize"] != null) {
+      queryParameters["outputsize"] = requestParameters["outputsize"];
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -524,6 +542,14 @@ export class ReferenceDataApi extends runtime.BaseAPI {
 
     if (requestParameters["delimiter"] != null) {
       queryParameters["delimiter"] = requestParameters["delimiter"];
+    }
+
+    if (requestParameters["page"] != null) {
+      queryParameters["page"] = requestParameters["page"];
+    }
+
+    if (requestParameters["outputsize"] != null) {
+      queryParameters["outputsize"] = requestParameters["outputsize"];
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -769,6 +795,14 @@ export class ReferenceDataApi extends runtime.BaseAPI {
         requestParameters["includeDelisted"];
     }
 
+    if (requestParameters["page"] != null) {
+      queryParameters["page"] = requestParameters["page"];
+    }
+
+    if (requestParameters["outputsize"] != null) {
+      queryParameters["outputsize"] = requestParameters["outputsize"];
+    }
+
     const headerParameters: runtime.HTTPHeaders = {};
 
     if (this.configuration && this.configuration.apiKey) {
@@ -975,6 +1009,14 @@ export class ReferenceDataApi extends runtime.BaseAPI {
 
     if (requestParameters["delimiter"] != null) {
       queryParameters["delimiter"] = requestParameters["delimiter"];
+    }
+
+    if (requestParameters["page"] != null) {
+      queryParameters["page"] = requestParameters["page"];
+    }
+
+    if (requestParameters["outputsize"] != null) {
+      queryParameters["outputsize"] = requestParameters["outputsize"];
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1320,6 +1362,14 @@ export class ReferenceDataApi extends runtime.BaseAPI {
     if (requestParameters["includeDelisted"] != null) {
       queryParameters["include_delisted"] =
         requestParameters["includeDelisted"];
+    }
+
+    if (requestParameters["page"] != null) {
+      queryParameters["page"] = requestParameters["page"];
+    }
+
+    if (requestParameters["outputsize"] != null) {
+      queryParameters["outputsize"] = requestParameters["outputsize"];
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
