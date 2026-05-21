@@ -10,7 +10,7 @@ Name | Type
 `majorMarketSectors` | [Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner&gt;](GetMutualFundsWorld200ResponseMutualFundCompositionMajorMarketSectorsInner.md)
 `assetAllocation` | [GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation](GetMutualFundsWorld200ResponseMutualFundCompositionAssetAllocation.md)
 `topHoldings` | [Array&lt;GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner&gt;](GetMutualFundsWorld200ResponseMutualFundCompositionTopHoldingsInner.md)
-`bondBreakdown` | [ResponseMutualFundWorldCompositionBondBreakdown](ResponseMutualFundWorldCompositionBondBreakdown.md)
+`bondBreakdown` | [GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown](GetMutualFundsWorld200ResponseMutualFundCompositionBondBreakdown.md)
 
 ## Example
 

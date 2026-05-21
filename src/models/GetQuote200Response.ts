@@ -37,7 +37,7 @@ export interface GetQuote200Response {
    * @type {string}
    * @memberof GetQuote200Response
    */
-  exchange: string;
+  exchange?: string;
   /**
    * Market identifier code (MIC) under ISO 10383 standard. Available for stocks, ETFs, mutual funds, bonds
    * @type {string}
@@ -186,7 +186,6 @@ export function instanceOfGetQuote200Response(
 ): value is GetQuote200Response {
   if (!("symbol" in value) || value["symbol"] === undefined) return false;
   if (!("name" in value) || value["name"] === undefined) return false;
-  if (!("exchange" in value) || value["exchange"] === undefined) return false;
   if (!("datetime" in value) || value["datetime"] === undefined) return false;
   if (!("timestamp" in value) || value["timestamp"] === undefined) return false;
   if (!("open" in value) || value["open"] === undefined) return false;
@@ -219,7 +218,7 @@ export function GetQuote200ResponseFromJSONTyped(
   return {
     symbol: json["symbol"],
     name: json["name"],
-    exchange: json["exchange"],
+    exchange: json["exchange"] == null ? undefined : json["exchange"],
     micCode: json["mic_code"] == null ? undefined : json["mic_code"],
     currency: json["currency"] == null ? undefined : json["currency"],
     datetime: json["datetime"],

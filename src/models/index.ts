@@ -764,7 +764,6 @@ export * from "./RangeEnum";
 export * from "./RangeSplitsEnum";
 export * from "./RatingChangeEnum";
 export * from "./ResponseMutualFundWorldComposition";
-export * from "./ResponseMutualFundWorldCompositionBondBreakdown";
 export * from "./ResponseMutualFundWorldPerformance";
 export * from "./ResponseMutualFundWorldPurchaseInfo";
 export * from "./ResponseMutualFundWorldRatings";

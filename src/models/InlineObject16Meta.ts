@@ -37,25 +37,25 @@ export interface InlineObject16Meta {
    * @type {string}
    * @memberof InlineObject16Meta
    */
-  currency: string;
+  currency?: string;
   /**
    * The timezone of the exchange where the instrument is traded.
    * @type {string}
    * @memberof InlineObject16Meta
    */
-  exchangeTimezone: string;
+  exchangeTimezone?: string;
   /**
    * The exchange name where the instrument is traded.
    * @type {string}
    * @memberof InlineObject16Meta
    */
-  exchange: string;
+  exchange?: string;
   /**
    * The Market Identifier Code (MIC) of the exchange where the instrument is traded.
    * @type {string}
    * @memberof InlineObject16Meta
    */
-  micCode: string;
+  micCode?: string;
   /**
    * The asset class to which the instrument belongs.
    * @type {string}
@@ -78,11 +78,6 @@ export function instanceOfInlineObject16Meta(
 ): value is InlineObject16Meta {
   if (!("symbol" in value) || value["symbol"] === undefined) return false;
   if (!("interval" in value) || value["interval"] === undefined) return false;
-  if (!("currency" in value) || value["currency"] === undefined) return false;
-  if (!("exchangeTimezone" in value) || value["exchangeTimezone"] === undefined)
-    return false;
-  if (!("exchange" in value) || value["exchange"] === undefined) return false;
-  if (!("micCode" in value) || value["micCode"] === undefined) return false;
   if (!("type" in value) || value["type"] === undefined) return false;
   if (!("indicator" in value) || value["indicator"] === undefined) return false;
   return true;
@@ -102,10 +97,11 @@ export function InlineObject16MetaFromJSONTyped(
   return {
     symbol: json["symbol"],
     interval: json["interval"],
-    currency: json["currency"],
-    exchangeTimezone: json["exchange_timezone"],
-    exchange: json["exchange"],
-    micCode: json["mic_code"],
+    currency: json["currency"] == null ? undefined : json["currency"],
+    exchangeTimezone:
+      json["exchange_timezone"] == null ? undefined : json["exchange_timezone"],
+    exchange: json["exchange"] == null ? undefined : json["exchange"],
+    micCode: json["mic_code"] == null ? undefined : json["mic_code"],
     type: json["type"],
     indicator: InlineObject16MetaIndicatorFromJSON(json["indicator"]),
   };
