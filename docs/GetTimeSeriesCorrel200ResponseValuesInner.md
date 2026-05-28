@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `correl` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesCorrel200ResponseValuesInner } from '@twelvedata/twel
 const example = {
   "datetime": null,
   "correl": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesCorrel200ResponseValuesInner
 
 console.log(example)

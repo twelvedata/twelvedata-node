@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `tsf` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesTsf200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "tsf": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesTsf200ResponseValuesInner
 
 console.log(example)

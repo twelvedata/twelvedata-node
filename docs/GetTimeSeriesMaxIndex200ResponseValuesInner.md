@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `maxidx` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesMaxIndex200ResponseValuesInner } from '@twelvedata/tw
 const example = {
   "datetime": null,
   "maxidx": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesMaxIndex200ResponseValuesInner
 
 console.log(example)

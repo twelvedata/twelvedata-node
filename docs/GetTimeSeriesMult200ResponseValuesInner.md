@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `mult` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesMult200ResponseValuesInner } from '@twelvedata/twelve
 const example = {
   "datetime": null,
   "mult": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesMult200ResponseValuesInner
 
 console.log(example)

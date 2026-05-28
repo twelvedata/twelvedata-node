@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `htDcphase` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesHtDcPhase200ResponseValuesInner } from '@twelvedata/t
 const example = {
   "datetime": null,
   "htDcphase": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesHtDcPhase200ResponseValuesInner
 
 console.log(example)

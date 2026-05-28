@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `htTrendmode` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesHtTrendMode200ResponseValuesInner } from '@twelvedata
 const example = {
   "datetime": null,
   "htTrendmode": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesHtTrendMode200ResponseValuesInner
 
 console.log(example)

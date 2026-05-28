@@ -10,6 +10,11 @@ Name | Type
 `upperBand` | string
 `middleBand` | string
 `lowerBand` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -22,6 +27,11 @@ const example = {
   "upperBand": null,
   "middleBand": null,
   "lowerBand": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesBBands200ResponseValuesInner
 
 console.log(example)

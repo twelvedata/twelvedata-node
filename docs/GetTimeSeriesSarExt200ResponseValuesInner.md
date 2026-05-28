@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `sarext` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesSarExt200ResponseValuesInner } from '@twelvedata/twel
 const example = {
   "datetime": null,
   "sarext": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesSarExt200ResponseValuesInner
 
 console.log(example)

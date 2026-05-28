@@ -9,6 +9,11 @@ Name | Type
 `datetime` | string
 `inPhase` | string
 `quadrature` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -20,6 +25,11 @@ const example = {
   "datetime": null,
   "inPhase": null,
   "quadrature": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesHtPhasor200ResponseValuesInner
 
 console.log(example)

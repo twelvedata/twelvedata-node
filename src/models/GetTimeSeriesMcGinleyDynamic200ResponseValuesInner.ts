@@ -24,6 +24,36 @@ export interface GetTimeSeriesMcGinleyDynamic200ResponseValuesInner {
    * @memberof GetTimeSeriesMcGinleyDynamic200ResponseValuesInner
    */
   mcginleyDynamic: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMcGinleyDynamic200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMcGinleyDynamic200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMcGinleyDynamic200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMcGinleyDynamic200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMcGinleyDynamic200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -57,6 +87,11 @@ export function GetTimeSeriesMcGinleyDynamic200ResponseValuesInnerFromJSONTyped(
   return {
     datetime: json["datetime"],
     mcginleyDynamic: json["mcginley_dynamic"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -80,5 +115,10 @@ export function GetTimeSeriesMcGinleyDynamic200ResponseValuesInnerToJSONTyped(
   return {
     datetime: value["datetime"],
     mcginley_dynamic: value["mcginleyDynamic"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

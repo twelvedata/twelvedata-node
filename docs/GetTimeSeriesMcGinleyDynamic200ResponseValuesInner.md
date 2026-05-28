@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `mcginleyDynamic` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesMcGinleyDynamic200ResponseValuesInner } from '@twelve
 const example = {
   "datetime": null,
   "mcginleyDynamic": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesMcGinleyDynamic200ResponseValuesInner
 
 console.log(example)

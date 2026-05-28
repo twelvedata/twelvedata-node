@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `atr` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesAtr200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "atr": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesAtr200ResponseValuesInner
 
 console.log(example)

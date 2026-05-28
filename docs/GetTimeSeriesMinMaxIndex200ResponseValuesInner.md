@@ -9,6 +9,11 @@ Name | Type
 `datetime` | string
 `minidx` | string
 `maxidx` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -20,6 +25,11 @@ const example = {
   "datetime": null,
   "minidx": null,
   "maxidx": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesMinMaxIndex200ResponseValuesInner
 
 console.log(example)

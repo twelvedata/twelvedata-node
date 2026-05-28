@@ -24,6 +24,36 @@ export interface InlineObject17ValuesInner {
    * @memberof InlineObject17ValuesInner
    */
   tanh: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject17ValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject17ValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject17ValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject17ValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject17ValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -53,6 +83,11 @@ export function InlineObject17ValuesInnerFromJSONTyped(
   return {
     datetime: json["datetime"],
     tanh: json["tanh"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -73,5 +108,10 @@ export function InlineObject17ValuesInnerToJSONTyped(
   return {
     datetime: value["datetime"],
     tanh: value["tanh"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

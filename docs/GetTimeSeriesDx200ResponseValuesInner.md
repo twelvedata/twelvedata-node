@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `dx` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesDx200ResponseValuesInner } from '@twelvedata/twelveda
 const example = {
   "datetime": null,
   "dx": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesDx200ResponseValuesInner
 
 console.log(example)

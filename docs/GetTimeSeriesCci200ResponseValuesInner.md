@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `cci` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesCci200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "cci": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesCci200ResponseValuesInner
 
 console.log(example)

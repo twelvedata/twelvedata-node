@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `apo` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesApo200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "apo": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesApo200ResponseValuesInner
 
 console.log(example)

@@ -24,6 +24,36 @@ export interface GetTimeSeriesDiv200ResponseValuesInner {
    * @memberof GetTimeSeriesDiv200ResponseValuesInner
    */
   div: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesDiv200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesDiv200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesDiv200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesDiv200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesDiv200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -53,6 +83,11 @@ export function GetTimeSeriesDiv200ResponseValuesInnerFromJSONTyped(
   return {
     datetime: json["datetime"],
     div: json["div"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -73,5 +108,10 @@ export function GetTimeSeriesDiv200ResponseValuesInnerToJSONTyped(
   return {
     datetime: value["datetime"],
     div: value["div"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

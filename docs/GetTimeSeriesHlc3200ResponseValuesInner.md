@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `hlc3` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesHlc3200ResponseValuesInner } from '@twelvedata/twelve
 const example = {
   "datetime": null,
   "hlc3": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesHlc3200ResponseValuesInner
 
 console.log(example)

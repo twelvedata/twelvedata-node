@@ -10,6 +10,11 @@ Name | Type
 `upperLine` | string
 `middleLine` | string
 `lowerLine` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -22,6 +27,11 @@ const example = {
   "upperLine": null,
   "middleLine": null,
   "lowerLine": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesKeltner200ResponseValuesInner
 
 console.log(example)

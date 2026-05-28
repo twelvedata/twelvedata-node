@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `willr` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesWillR200ResponseValuesInner } from '@twelvedata/twelv
 const example = {
   "datetime": null,
   "willr": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesWillR200ResponseValuesInner
 
 console.log(example)

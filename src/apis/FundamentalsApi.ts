@@ -1703,7 +1703,7 @@ export class FundamentalsApi extends runtime.BaseAPI {
   }
 
   /**
-   * The profile endpoint provides detailed company information, including the company\'s name, industry, sector, CEO, headquarters location, and market capitalization. This data is useful for obtaining a comprehensive overview of a company\'s business and financial standing.
+   * The profile endpoint provides detailed company information, including the company\'s name, industry, sector, CEO, and headquarters location. This data is useful for obtaining a comprehensive overview of a company\'s business and financial standing.
    * Profile
    */
   async getProfileRaw(
@@ -1765,7 +1765,7 @@ export class FundamentalsApi extends runtime.BaseAPI {
   }
 
   /**
-   * The profile endpoint provides detailed company information, including the company\'s name, industry, sector, CEO, headquarters location, and market capitalization. This data is useful for obtaining a comprehensive overview of a company\'s business and financial standing.
+   * The profile endpoint provides detailed company information, including the company\'s name, industry, sector, CEO, and headquarters location. This data is useful for obtaining a comprehensive overview of a company\'s business and financial standing.
    * Profile
    */
   async getProfile(

@@ -24,6 +24,36 @@ export interface InlineObject10ValuesInner {
    * @memberof InlineObject10ValuesInner
    */
   atan: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject10ValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject10ValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject10ValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject10ValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject10ValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -53,6 +83,11 @@ export function InlineObject10ValuesInnerFromJSONTyped(
   return {
     datetime: json["datetime"],
     atan: json["atan"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -73,5 +108,10 @@ export function InlineObject10ValuesInnerToJSONTyped(
   return {
     datetime: value["datetime"],
     atan: value["atan"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

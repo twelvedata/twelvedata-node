@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `supertrend` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesSuperTrend200ResponseValuesInner } from '@twelvedata/
 const example = {
   "datetime": null,
   "supertrend": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesSuperTrend200ResponseValuesInner
 
 console.log(example)

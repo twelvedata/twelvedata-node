@@ -11,6 +11,11 @@ Name | Type
 `heikinopens` | string
 `heikincloses` | string
 `heikinlows` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -24,6 +29,11 @@ const example = {
   "heikinopens": null,
   "heikincloses": null,
   "heikinlows": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesHeikinashiCandles200ResponseValuesInner
 
 console.log(example)

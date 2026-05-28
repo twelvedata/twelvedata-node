@@ -9,6 +9,11 @@ Name | Type
 `datetime` | string
 `aroonDown` | string
 `aroonUp` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -20,6 +25,11 @@ const example = {
   "datetime": null,
   "aroonDown": null,
   "aroonUp": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesAroon200ResponseValuesInner
 
 console.log(example)

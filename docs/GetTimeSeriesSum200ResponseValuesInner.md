@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `sum` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesSum200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "sum": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesSum200ResponseValuesInner
 
 console.log(example)

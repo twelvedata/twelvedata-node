@@ -36,6 +36,36 @@ export interface GetTimeSeriesBBands200ResponseValuesInner {
    * @memberof GetTimeSeriesBBands200ResponseValuesInner
    */
   lowerBand: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesBBands200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesBBands200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesBBands200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesBBands200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesBBands200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -70,6 +100,11 @@ export function GetTimeSeriesBBands200ResponseValuesInnerFromJSONTyped(
     upperBand: json["upper_band"],
     middleBand: json["middle_band"],
     lowerBand: json["lower_band"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -92,5 +127,10 @@ export function GetTimeSeriesBBands200ResponseValuesInnerToJSONTyped(
     upper_band: value["upperBand"],
     middle_band: value["middleBand"],
     lower_band: value["lowerBand"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

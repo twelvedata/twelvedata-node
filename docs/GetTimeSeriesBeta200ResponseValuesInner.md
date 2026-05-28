@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `beta` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesBeta200ResponseValuesInner } from '@twelvedata/twelve
 const example = {
   "datetime": null,
   "beta": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesBeta200ResponseValuesInner
 
 console.log(example)

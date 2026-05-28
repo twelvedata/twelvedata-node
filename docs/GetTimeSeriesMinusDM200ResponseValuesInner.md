@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `minusDm` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesMinusDM200ResponseValuesInner } from '@twelvedata/twe
 const example = {
   "datetime": null,
   "minusDm": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesMinusDM200ResponseValuesInner
 
 console.log(example)

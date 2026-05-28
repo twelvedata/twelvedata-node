@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `sar` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesSar200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "sar": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesSar200ResponseValuesInner
 
 console.log(example)

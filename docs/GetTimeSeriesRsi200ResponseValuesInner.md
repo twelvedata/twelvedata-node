@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `rsi` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesRsi200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "rsi": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesRsi200ResponseValuesInner
 
 console.log(example)

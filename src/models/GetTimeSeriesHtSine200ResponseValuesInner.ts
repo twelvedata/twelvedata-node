@@ -30,6 +30,36 @@ export interface GetTimeSeriesHtSine200ResponseValuesInner {
    * @memberof GetTimeSeriesHtSine200ResponseValuesInner
    */
   htLeadsine: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesHtSine200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesHtSine200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesHtSine200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesHtSine200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesHtSine200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -62,6 +92,11 @@ export function GetTimeSeriesHtSine200ResponseValuesInnerFromJSONTyped(
     datetime: json["datetime"],
     htSine: json["ht_sine"],
     htLeadsine: json["ht_leadsine"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -83,5 +118,10 @@ export function GetTimeSeriesHtSine200ResponseValuesInnerToJSONTyped(
     datetime: value["datetime"],
     ht_sine: value["htSine"],
     ht_leadsine: value["htLeadsine"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

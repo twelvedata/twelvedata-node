@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `dpo` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesDpo200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "dpo": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesDpo200ResponseValuesInner
 
 console.log(example)

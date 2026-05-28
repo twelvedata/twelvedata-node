@@ -10,6 +10,11 @@ Name | Type
 `macd` | string
 `macdSignal` | string
 `macdHist` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -22,6 +27,11 @@ const example = {
   "macd": null,
   "macdSignal": null,
   "macdHist": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesMacd200ResponseValuesInner
 
 console.log(example)

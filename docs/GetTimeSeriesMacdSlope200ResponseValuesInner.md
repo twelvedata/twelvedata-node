@@ -10,6 +10,11 @@ Name | Type
 `macdSlope` | string
 `macdSignalSlope` | string
 `macdHistSlope` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -22,6 +27,11 @@ const example = {
   "macdSlope": null,
   "macdSignalSlope": null,
   "macdHistSlope": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesMacdSlope200ResponseValuesInner
 
 console.log(example)

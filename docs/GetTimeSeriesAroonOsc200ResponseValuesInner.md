@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `aroonosc` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesAroonOsc200ResponseValuesInner } from '@twelvedata/tw
 const example = {
   "datetime": null,
   "aroonosc": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesAroonOsc200ResponseValuesInner
 
 console.log(example)

@@ -9,6 +9,11 @@ Name | Type
 `datetime` | string
 `mama` | string
 `fama` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -20,6 +25,11 @@ const example = {
   "datetime": null,
   "mama": null,
   "fama": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesMama200ResponseValuesInner
 
 console.log(example)

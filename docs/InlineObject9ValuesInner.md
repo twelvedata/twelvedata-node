@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `asin` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { InlineObject9ValuesInner } from '@twelvedata/twelvedata-node'
 const example = {
   "datetime": null,
   "asin": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies InlineObject9ValuesInner
 
 console.log(example)

@@ -42,6 +42,36 @@ export interface GetTimeSeriesHeikinashiCandles200ResponseValuesInner {
    * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
    */
   heikinlows: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesHeikinashiCandles200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -84,6 +114,11 @@ export function GetTimeSeriesHeikinashiCandles200ResponseValuesInnerFromJSONType
     heikinopens: json["heikinopens"],
     heikincloses: json["heikincloses"],
     heikinlows: json["heikinlows"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -110,5 +145,10 @@ export function GetTimeSeriesHeikinashiCandles200ResponseValuesInnerToJSONTyped(
     heikinopens: value["heikinopens"],
     heikincloses: value["heikincloses"],
     heikinlows: value["heikinlows"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

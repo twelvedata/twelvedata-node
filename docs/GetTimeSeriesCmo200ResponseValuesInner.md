@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `cmo` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesCmo200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "cmo": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesCmo200ResponseValuesInner
 
 console.log(example)

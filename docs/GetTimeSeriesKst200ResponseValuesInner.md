@@ -9,6 +9,11 @@ Name | Type
 `datetime` | string
 `kst` | string
 `kstSignal` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -20,6 +25,11 @@ const example = {
   "datetime": null,
   "kst": null,
   "kstSignal": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesKst200ResponseValuesInner
 
 console.log(example)

@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `linearregslope` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesLinearRegSlope200ResponseValuesInner } from '@twelved
 const example = {
   "datetime": null,
   "linearregslope": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesLinearRegSlope200ResponseValuesInner
 
 console.log(example)

@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `trange` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesTRange200ResponseValuesInner } from '@twelvedata/twel
 const example = {
   "datetime": null,
   "trange": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesTRange200ResponseValuesInner
 
 console.log(example)

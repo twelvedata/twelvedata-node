@@ -9,6 +9,11 @@ Name | Type
 `datetime` | string
 `slowK` | string
 `slowD` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -20,6 +25,11 @@ const example = {
   "datetime": null,
   "slowK": null,
   "slowD": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesStoch200ResponseValuesInner
 
 console.log(example)

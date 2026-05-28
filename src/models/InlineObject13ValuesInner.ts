@@ -13,6 +13,36 @@ import { mapValues } from "../runtime";
  */
 export interface InlineObject13ValuesInner {
   /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject13ValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject13ValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject13ValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject13ValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof InlineObject13ValuesInner
+   */
+  volume?: string;
+  /**
    *
    * @type {string}
    * @memberof InlineObject13ValuesInner
@@ -49,6 +79,11 @@ export function InlineObject13ValuesInnerFromJSONTyped(
     return json;
   }
   return {
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
     datetime: json["datetime"] == null ? undefined : json["datetime"],
     mavp: json["mavp"] == null ? undefined : json["mavp"],
   };
@@ -69,6 +104,11 @@ export function InlineObject13ValuesInnerToJSONTyped(
   }
 
   return {
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
     datetime: value["datetime"],
     mavp: value["mavp"],
   };

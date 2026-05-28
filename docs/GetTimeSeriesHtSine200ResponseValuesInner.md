@@ -9,6 +9,11 @@ Name | Type
 `datetime` | string
 `htSine` | string
 `htLeadsine` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -20,6 +25,11 @@ const example = {
   "datetime": null,
   "htSine": null,
   "htLeadsine": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesHtSine200ResponseValuesInner
 
 console.log(example)

@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `plusDi` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesPlusDI200ResponseValuesInner } from '@twelvedata/twel
 const example = {
   "datetime": null,
   "plusDi": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesPlusDI200ResponseValuesInner
 
 console.log(example)

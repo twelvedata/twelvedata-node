@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `floor` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesFloor200ResponseValuesInner } from '@twelvedata/twelv
 const example = {
   "datetime": null,
   "floor": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesFloor200ResponseValuesInner
 
 console.log(example)

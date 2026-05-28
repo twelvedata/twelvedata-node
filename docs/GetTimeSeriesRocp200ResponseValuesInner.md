@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `rocp` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesRocp200ResponseValuesInner } from '@twelvedata/twelve
 const example = {
   "datetime": null,
   "rocp": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesRocp200ResponseValuesInner
 
 console.log(example)

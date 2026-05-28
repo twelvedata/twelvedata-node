@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `htDcperiod` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesHtDcPeriod200ResponseValuesInner } from '@twelvedata/
 const example = {
   "datetime": null,
   "htDcperiod": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesHtDcPeriod200ResponseValuesInner
 
 console.log(example)

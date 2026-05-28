@@ -30,6 +30,36 @@ export interface GetTimeSeriesMinMaxIndex200ResponseValuesInner {
    * @memberof GetTimeSeriesMinMaxIndex200ResponseValuesInner
    */
   maxidx: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMinMaxIndex200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMinMaxIndex200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMinMaxIndex200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMinMaxIndex200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMinMaxIndex200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -64,6 +94,11 @@ export function GetTimeSeriesMinMaxIndex200ResponseValuesInnerFromJSONTyped(
     datetime: json["datetime"],
     minidx: json["minidx"],
     maxidx: json["maxidx"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -85,5 +120,10 @@ export function GetTimeSeriesMinMaxIndex200ResponseValuesInnerToJSONTyped(
     datetime: value["datetime"],
     minidx: value["minidx"],
     maxidx: value["maxidx"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

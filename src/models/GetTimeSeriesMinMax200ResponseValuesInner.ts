@@ -30,6 +30,36 @@ export interface GetTimeSeriesMinMax200ResponseValuesInner {
    * @memberof GetTimeSeriesMinMax200ResponseValuesInner
    */
   max: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMinMax200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMinMax200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMinMax200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMinMax200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMinMax200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -61,6 +91,11 @@ export function GetTimeSeriesMinMax200ResponseValuesInnerFromJSONTyped(
     datetime: json["datetime"],
     min: json["min"],
     max: json["max"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -82,5 +117,10 @@ export function GetTimeSeriesMinMax200ResponseValuesInnerToJSONTyped(
     datetime: value["datetime"],
     min: value["min"],
     max: value["max"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

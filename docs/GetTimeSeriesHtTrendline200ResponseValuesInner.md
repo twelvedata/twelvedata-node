@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `htTrendline` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesHtTrendline200ResponseValuesInner } from '@twelvedata
 const example = {
   "datetime": null,
   "htTrendline": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesHtTrendline200ResponseValuesInner
 
 console.log(example)

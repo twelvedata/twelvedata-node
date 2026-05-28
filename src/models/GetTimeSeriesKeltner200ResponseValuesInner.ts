@@ -36,6 +36,36 @@ export interface GetTimeSeriesKeltner200ResponseValuesInner {
    * @memberof GetTimeSeriesKeltner200ResponseValuesInner
    */
   lowerLine: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesKeltner200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesKeltner200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesKeltner200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesKeltner200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesKeltner200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -70,6 +100,11 @@ export function GetTimeSeriesKeltner200ResponseValuesInnerFromJSONTyped(
     upperLine: json["upper_line"],
     middleLine: json["middle_line"],
     lowerLine: json["lower_line"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -92,5 +127,10 @@ export function GetTimeSeriesKeltner200ResponseValuesInnerToJSONTyped(
     upper_line: value["upperLine"],
     middle_line: value["middleLine"],
     lower_line: value["lowerLine"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

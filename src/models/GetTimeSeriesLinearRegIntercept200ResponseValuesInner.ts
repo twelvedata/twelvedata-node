@@ -24,6 +24,36 @@ export interface GetTimeSeriesLinearRegIntercept200ResponseValuesInner {
    * @memberof GetTimeSeriesLinearRegIntercept200ResponseValuesInner
    */
   linearregintercept: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesLinearRegIntercept200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesLinearRegIntercept200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesLinearRegIntercept200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesLinearRegIntercept200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesLinearRegIntercept200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -60,6 +90,11 @@ export function GetTimeSeriesLinearRegIntercept200ResponseValuesInnerFromJSONTyp
   return {
     datetime: json["datetime"],
     linearregintercept: json["linearregintercept"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -83,5 +118,10 @@ export function GetTimeSeriesLinearRegIntercept200ResponseValuesInnerToJSONTyped
   return {
     datetime: value["datetime"],
     linearregintercept: value["linearregintercept"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

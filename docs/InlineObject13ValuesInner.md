@@ -6,6 +6,11 @@
 
 Name | Type
 ------------ | -------------
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 `datetime` | string
 `mavp` | string
 
@@ -16,6 +21,11 @@ import type { InlineObject13ValuesInner } from '@twelvedata/twelvedata-node'
 
 // TODO: Update the object below with actual values
 const example = {
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
   "datetime": null,
   "mavp": null,
 } satisfies InlineObject13ValuesInner

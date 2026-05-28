@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `mfi` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesMfi200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "mfi": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesMfi200ResponseValuesInner
 
 console.log(example)

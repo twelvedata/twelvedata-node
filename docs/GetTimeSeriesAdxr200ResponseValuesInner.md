@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `adxr` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesAdxr200ResponseValuesInner } from '@twelvedata/twelve
 const example = {
   "datetime": null,
   "adxr": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesAdxr200ResponseValuesInner
 
 console.log(example)

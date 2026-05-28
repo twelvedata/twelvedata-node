@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `roc` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesRoc200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "roc": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesRoc200ResponseValuesInner
 
 console.log(example)

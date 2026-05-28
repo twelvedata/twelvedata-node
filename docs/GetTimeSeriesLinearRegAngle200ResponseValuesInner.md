@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `linearregangle` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesLinearRegAngle200ResponseValuesInner } from '@twelved
 const example = {
   "datetime": null,
   "linearregangle": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesLinearRegAngle200ResponseValuesInner
 
 console.log(example)

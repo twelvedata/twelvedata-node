@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `linearregintercept` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesLinearRegIntercept200ResponseValuesInner } from '@twe
 const example = {
   "datetime": null,
   "linearregintercept": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesLinearRegIntercept200ResponseValuesInner
 
 console.log(example)

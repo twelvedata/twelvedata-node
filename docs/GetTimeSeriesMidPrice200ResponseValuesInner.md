@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `midprice` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesMidPrice200ResponseValuesInner } from '@twelvedata/tw
 const example = {
   "datetime": null,
   "midprice": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesMidPrice200ResponseValuesInner
 
 console.log(example)

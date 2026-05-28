@@ -9,6 +9,11 @@ Name | Type
 `datetime` | string
 `pivotPointH` | number
 `pivotPointL` | number
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -20,6 +25,11 @@ const example = {
   "datetime": null,
   "pivotPointH": null,
   "pivotPointL": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesPivotPointsHL200ResponseValuesInner
 
 console.log(example)

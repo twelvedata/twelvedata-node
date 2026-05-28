@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `t3ma` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesT3ma200ResponseValuesInner } from '@twelvedata/twelve
 const example = {
   "datetime": null,
   "t3ma": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesT3ma200ResponseValuesInner
 
 console.log(example)

@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `obv` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesObv200ResponseValuesInner } from '@twelvedata/twelved
 const example = {
   "datetime": null,
   "obv": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesObv200ResponseValuesInner
 
 console.log(example)

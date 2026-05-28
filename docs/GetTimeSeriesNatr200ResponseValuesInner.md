@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `natr` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesNatr200ResponseValuesInner } from '@twelvedata/twelve
 const example = {
   "datetime": null,
   "natr": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesNatr200ResponseValuesInner
 
 console.log(example)

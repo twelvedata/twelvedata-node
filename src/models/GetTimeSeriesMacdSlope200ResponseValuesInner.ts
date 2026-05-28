@@ -36,6 +36,36 @@ export interface GetTimeSeriesMacdSlope200ResponseValuesInner {
    * @memberof GetTimeSeriesMacdSlope200ResponseValuesInner
    */
   macdHistSlope: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMacdSlope200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMacdSlope200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMacdSlope200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMacdSlope200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesMacdSlope200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -71,6 +101,11 @@ export function GetTimeSeriesMacdSlope200ResponseValuesInnerFromJSONTyped(
     macdSlope: json["macd_slope"],
     macdSignalSlope: json["macd_signal_slope"],
     macdHistSlope: json["macd_hist_slope"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -93,5 +128,10 @@ export function GetTimeSeriesMacdSlope200ResponseValuesInnerToJSONTyped(
     macd_slope: value["macdSlope"],
     macd_signal_slope: value["macdSignalSlope"],
     macd_hist_slope: value["macdHistSlope"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

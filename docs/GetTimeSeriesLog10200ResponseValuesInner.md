@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `log10` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesLog10200ResponseValuesInner } from '@twelvedata/twelv
 const example = {
   "datetime": null,
   "log10": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesLog10200ResponseValuesInner
 
 console.log(example)

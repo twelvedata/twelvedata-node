@@ -30,6 +30,36 @@ export interface GetTimeSeriesAroon200ResponseValuesInner {
    * @memberof GetTimeSeriesAroon200ResponseValuesInner
    */
   aroonUp: string;
+  /**
+   * Price at the opening of current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesAroon200ResponseValuesInner
+   */
+  open?: string;
+  /**
+   * Highest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesAroon200ResponseValuesInner
+   */
+  high?: string;
+  /**
+   * Lowest price which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesAroon200ResponseValuesInner
+   */
+  low?: string;
+  /**
+   * Close price at the end of the bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesAroon200ResponseValuesInner
+   */
+  close?: string;
+  /**
+   * Trading volume which occurred during the current bar. Returned when `include_ohlc` is `true`.
+   * @type {string}
+   * @memberof GetTimeSeriesAroon200ResponseValuesInner
+   */
+  volume?: string;
 }
 
 /**
@@ -61,6 +91,11 @@ export function GetTimeSeriesAroon200ResponseValuesInnerFromJSONTyped(
     datetime: json["datetime"],
     aroonDown: json["aroon_down"],
     aroonUp: json["aroon_up"],
+    open: json["open"] == null ? undefined : json["open"],
+    high: json["high"] == null ? undefined : json["high"],
+    low: json["low"] == null ? undefined : json["low"],
+    close: json["close"] == null ? undefined : json["close"],
+    volume: json["volume"] == null ? undefined : json["volume"],
   };
 }
 
@@ -82,5 +117,10 @@ export function GetTimeSeriesAroon200ResponseValuesInnerToJSONTyped(
     datetime: value["datetime"],
     aroon_down: value["aroonDown"],
     aroon_up: value["aroonUp"],
+    open: value["open"],
+    high: value["high"],
+    low: value["low"],
+    close: value["close"],
+    volume: value["volume"],
   };
 }

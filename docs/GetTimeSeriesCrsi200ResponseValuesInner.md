@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `crsi` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesCrsi200ResponseValuesInner } from '@twelvedata/twelve
 const example = {
   "datetime": null,
   "crsi": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesCrsi200ResponseValuesInner
 
 console.log(example)

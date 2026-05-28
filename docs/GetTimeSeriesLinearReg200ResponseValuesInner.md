@@ -8,6 +8,11 @@ Name | Type
 ------------ | -------------
 `datetime` | string
 `linearreg` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -18,6 +23,11 @@ import type { GetTimeSeriesLinearReg200ResponseValuesInner } from '@twelvedata/t
 const example = {
   "datetime": null,
   "linearreg": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesLinearReg200ResponseValuesInner
 
 console.log(example)

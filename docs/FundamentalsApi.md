@@ -1596,7 +1596,7 @@ example().catch(console.error);
 
 Profile
 
-The profile endpoint provides detailed company information, including the company\&#39;s name, industry, sector, CEO, headquarters location, and market capitalization. This data is useful for obtaining a comprehensive overview of a company\&#39;s business and financial standing.
+The profile endpoint provides detailed company information, including the company\&#39;s name, industry, sector, CEO, and headquarters location. This data is useful for obtaining a comprehensive overview of a company\&#39;s business and financial standing.
 
 ### Example
 

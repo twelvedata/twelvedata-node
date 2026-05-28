@@ -9,6 +9,11 @@ Name | Type
 `datetime` | string
 `k` | string
 `d` | string
+`open` | string
+`high` | string
+`low` | string
+`close` | string
+`volume` | string
 
 ## Example
 
@@ -20,6 +25,11 @@ const example = {
   "datetime": null,
   "k": null,
   "d": null,
+  "open": null,
+  "high": null,
+  "low": null,
+  "close": null,
+  "volume": null,
 } satisfies GetTimeSeriesStochRsi200ResponseValuesInner
 
 console.log(example)
